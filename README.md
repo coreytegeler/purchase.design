@@ -1,2 +1,2 @@
 # pc-gd
-Purchase College Graphic Design Department
+Purchase College graphic design department
