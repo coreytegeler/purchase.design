@@ -1,0 +1,20 @@
+<h1>Purchase College Graphic Design</h1>
+
+<nav>
+	<ul class="groups">
+		<h3>Groups</h3>
+		<% @groups.each do |group| %>
+			<li><%= group.name %></li>
+			<ul class="people">
+			<% group.people.each do |person| %>
+				<li><%= person.name %></li>
+				<ul class="people">
+				<% person.works.each do |work| %>
+					<li><%= work.name %></li>
+				<% end %>
+				</ul>
+			<% end %>
+			</ul>
+		<% end %>
+	</ul>
+</nav>

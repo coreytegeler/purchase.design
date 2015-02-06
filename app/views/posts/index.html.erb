@@ -1,0 +1,16 @@
+<h1>
+	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
+	Posts
+</h1>
+<ul id="posts">
+	<% @posts.each do |post| %>
+		<li>
+			<%= post.position %> &nbsp;
+			<strong><%= post.title %></strong>
+			<%= post.visible ? 'Visible' : 'Invisible' %>
+			<%= link_to("Show", {:action => 'show', :id => post.id}, :class => 'action show') %> &nbsp;
+			<%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'action edit') %> &nbsp;
+			<%= link_to("Delete", {:action => 'delete', :id => post.id}, :class => 'action delete') %>
+		</li>
+	<% end %>
+</ul>

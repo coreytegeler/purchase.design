@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Purchase College Graphic Design Dept. | <%= @page_title || 'Admin' %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-16">
+</head>
+<body>
+<% if !flash[:notice].blank? %>
+	<div class="notice <%= flash[:type] %>">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

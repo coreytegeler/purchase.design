@@ -1,0 +1,17 @@
+<h1>
+	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
+	Groups
+</h1>
+<ul id="groups">
+	<% @groups.each do |group| %>
+		<li>
+			<%= group.position %> &nbsp;
+			<strong><%= group.name %></strong>
+			<%= group.visible ? 'Visible' : 'Invisible' %>
+			<%= group.people.size %>
+			<%= link_to("Show", {:action => 'show', :id => group.id}, :class => 'action show') %> &nbsp;
+			<%= link_to("Edit", {:action => 'edit', :id => group.id}, :class => 'action edit') %> &nbsp;
+			<%= link_to("Delete", {:action => 'delete', :id => group.id}, :class => 'action delete') %>
+		</li>
+	<% end %>
+</ul>

@@ -1,0 +1,17 @@
+<h1>
+	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+	<%= @post.title %>
+</h1>
+<ul>
+	<li><%= @post.visible ? 'Visible' : 'Invisible' %></li>
+	<li>Created at <%= @post.created_at %></li>
+	<li>Last updated at <%= @post.updated_at %></li>
+	<li>Associated groups: 
+		<% @groups.each do |group| %>
+			<%= group.name %>
+		<% end %>
+	</li>
+	<li><%= @post.content %></li>
+</ul>
+<%= link_to("Edit", {:action => 'edit', :id => @post.id}, :class => 'action edit') %> &nbsp;
+<%= link_to("Delete", {:action => 'delete', :id => @post.id}, :class => 'action delete') %>

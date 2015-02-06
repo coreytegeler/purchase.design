@@ -1,0 +1,8 @@
+<h1>
+	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+	<%= @group.name %>
+</h1>
+<%= form_for(:group, :url => {:action => 'update', :id => @group.id}) do |f| %>
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+	<%= submit_tag("Update") %>
+<% end %>
