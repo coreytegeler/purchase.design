@@ -1,0 +1,17 @@
+<h1>
+	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
+	<%= pluralize(@people.size, "People") %>
+</h1>
+<ul id="persons">
+	<% @people.each do |person| %>
+		<li>
+			<%= person.position %> &nbsp;
+			<strong><%= person.name %></strong>
+			<%= person.visible ? 'Visible' : 'Invisible' %>
+			<%= person.works.size %>
+			<%= link_to("Show", {:action => 'show', :id => person.id}, :class => 'action show') %> &nbsp;
+			<%= link_to("Edit", {:action => 'edit', :id => person.id}, :class => 'action edit') %> &nbsp;
+			<%= link_to("Delete", {:action => 'delete', :id => person.id}, :class => 'action delete') %>
+		</li>
+	<% end %>
+</ul>

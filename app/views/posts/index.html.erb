@@ -1,10 +1,10 @@
 <h1>
 	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
-	Posts
+	<%= pluralize(@posts.size, "Post") %>
 </h1>
 <ul id="posts">
 	<% @posts.each do |post| %>
-		<li>
+		<li class="<%= cycle('odd', 'even') %>">
 			<%= post.position %> &nbsp;
 			<strong><%= post.title %></strong>
 			<%= post.visible ? 'Visible' : 'Invisible' %>

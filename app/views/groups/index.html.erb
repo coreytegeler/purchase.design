@@ -1,6 +1,6 @@
 <h1>
 	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
-	Groups
+	<%= pluralize(@groups.size, "Group") %>
 </h1>
 <ul id="groups">
 	<% @groups.each do |group| %>

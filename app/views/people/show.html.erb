@@ -1,0 +1,10 @@
+<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+
+<h1><%= @person.name %></h1>
+<ul>
+	<li><%= @person.works.size %></li>
+	<li><%= has_works(@person) %></li>
+	<li><%= status(@person.visible) %></li>
+	<li>Created on <%= @person.created_at.to_s(:simple) %></li>
+	<li>Last updated on <%= @person.updated_at.to_s(:simple) %></li>
+</ul>

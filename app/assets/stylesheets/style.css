@@ -24,6 +24,9 @@ h2 {
 h3 {
 	margin: 0;
 }
+main {
+	padding: 0 30px;
+}
 .symb {
 	font-size: 95px;
 	text-decoration: none;
@@ -32,7 +35,7 @@ h3 {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
 }
-input, textarea {
+input, textarea, select {
 	font-size: 35px;
 	font-weight: 700;
 	color:white;
@@ -42,6 +45,9 @@ input, textarea {
 	cursor: pointer;
 	display: block;
 	margin: 10px 0;
+}
+select {
+	padding: 20px;
 }
 textarea {
 	height: 200px;

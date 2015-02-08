@@ -1,4 +1,9 @@
 <%= f.text_field(:title) %>
+
+<% @groups = Group.sorted %>
+<% @groups_array = Array.new %>
+<% @groups.each do |g| @groups_array.push(g.name) end %>
+<%= select_tag('Select', options_for_select(@groups_array)) %>
 <%= f.text_field(:position) %>
 <%= f.text_field(:visible) %>
 <%= f.text_area(:content) %>
