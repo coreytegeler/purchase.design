@@ -1,5 +1,7 @@
-<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
-<h1>New post</h1>
+<h1>
+	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+	New post
+</h1>
 <%= form_for(:post, :url => {:action => 'create', :id => @post.id}) do |f| %>
 	<%= render(:partial => "form", :locals => {:f => f}) %>
 	<%= submit_tag("Create") %>

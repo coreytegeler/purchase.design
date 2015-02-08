@@ -1,0 +1,10 @@
+<% if object && object.errors.size > 0 %>
+	<div class="notice errors bad">
+		<%#= pluralize(object.errors.size, "error") %>
+		<ul id="error_list">
+			<%object.errors.full_messages.each do |m| %>
+				<li><%= m %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>

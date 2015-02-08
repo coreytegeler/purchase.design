@@ -13,6 +13,12 @@
 		<%= flash[:notice] %>
 	</div>
 <% end %>
+
+<% if @form_object %>
+	<%= error_messages_for(@form_object) %>
+<% end %>
+
+
 <main>
 	<%= yield %>
 </main>

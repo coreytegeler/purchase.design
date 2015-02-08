@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @groups = Group.order('position ASC')
   end
 
   def create
@@ -20,12 +21,14 @@ class PostsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'index')
     else
+      @groups = Group.order('position ASC')
       render('new')
     end
   end
 
   def edit
     @post = Post.find(params[:id])
+    @groups = Group.order('position ASC')
   end
 
   def update
@@ -35,6 +38,7 @@ class PostsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'show', :id => @post.id)
     else
+      @groups = Group.order('position ASC')
       render('new')
     end
   end

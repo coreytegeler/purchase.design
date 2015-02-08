@@ -9,6 +9,8 @@ class PeopleController < ApplicationController
 
   def new
     @person = Person.new
+    @person_count = Person.count + 1
+    @groups = Group.order('position ASC')
   end
 
   def create
@@ -18,12 +20,16 @@ class PeopleController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'index')
     else
+      @person_count = Person.count + 1
+      @groups = Group.order('position ASC')
       render('new')
     end
   end
 
   def edit
     @person = Person.find(params[:id])
+    @person_count = Person.count
+    @groups = Group.order('position ASC')
   end
 
   def update
@@ -33,6 +39,8 @@ class PeopleController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'show', :id => @person.id)
     else
+      @person_count = Person.count
+      @groups = Group.order('position ASC')
       render('new')
     end
   end
@@ -54,7 +62,7 @@ class PeopleController < ApplicationController
     def person_params
       # raises an error if :person is not present
       # allows listed attributes to be mass-assigned
-      params.require(:person).permit(:name, :position, :visible, :group_id)
+      params.require(:person).permit(:name, :position, :visible, :group_id, :grad_year)
     end
 
 end

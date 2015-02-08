@@ -4,6 +4,8 @@ class Group < ActiveRecord::Base
 	has_and_belongs_to_many :admins
 	has_and_belongs_to_many :posts
 
+	validates_presence_of [:name]
+
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
 	scope :sorted, lambda {order("groups.position ASC")}

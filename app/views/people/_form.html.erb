@@ -1,3 +1,21 @@
+<% @form_object = @person %>
+
+<%= f.label(:name) %>
 <%= f.text_field(:name) %>
-<%= f.text_field(:position) %>
-<%= f.text_field(:visible) %>
+
+<%= f.label(:group_id, "Type") %>
+<%= f.select(:group_id, @groups.map {|g| [g.name.singularize, g.id]}, {include_blank: 'Select'}) %>
+
+<%= f.label(:position) %>
+<%= f.select(:position, 1..@person_count) %>
+
+<%= f.label(:visible) %>
+<%= f.check_box(:visible) %>
+
+<%= f.label(:permalink) %>
+<%= f.text_field(:permalink) %>
+
+<%= f.label(:grad_year) %>
+<% @future = Time.now.year + 4 %>
+<% @past = 1967 %>
+<%= f.select(:grad_year, @past..@future, {include_blank: 'Select'}) %>

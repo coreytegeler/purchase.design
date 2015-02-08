@@ -5,6 +5,8 @@ class Person < ActiveRecord::Base
 	has_many :works
 	has_many :admins, :through => :person_edits
 
+	validates_presence_of [:name,:group_id,:grad_year]
+
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
 	scope :sorted, lambda {order("people.position ASC")}

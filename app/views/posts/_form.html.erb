@@ -1,9 +1,19 @@
+<% @form_object = @post %>
+
+<%= f.label(:title) %>
 <%= f.text_field(:title) %>
 
-<% @groups = Group.sorted %>
-<% @groups_array = Array.new %>
-<% @groups.each do |g| @groups_array.push(g.name) end %>
-<%= select_tag('Select', options_for_select(@groups_array)) %>
+<%= f.label(:category) %>
+<%= f.select(:category, @groups.map {|g| [g.name, g.id]}) %>
+
+<%= f.label(:position) %>
 <%= f.text_field(:position) %>
-<%= f.text_field(:visible) %>
+
+<%= f.label(:visible) %>
+<%= f.check_box(:visible) %>
+
+<%= f.label(:content) %>
 <%= f.text_area(:content) %>
+
+<%= f.label(:image) %>
+<%= f.file_field(:image) %>

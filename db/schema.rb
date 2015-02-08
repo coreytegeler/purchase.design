@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206210431) do
+ActiveRecord::Schema.define(version: 20150208201438) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150206210431) do
     t.boolean  "visible",    limit: 1,   default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.integer  "grad_year",  limit: 4
   end
 
   add_index "people", ["group_id"], name: "index_people_on_group_id", using: :btree

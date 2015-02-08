@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
 
 	has_and_belongs_to_many :groups
 
+	validates_presence_of [:title]
+
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
 	scope :sorted, lambda {order("posts.position ASC")}
