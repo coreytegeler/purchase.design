@@ -1,0 +1,12 @@
+<h1>
+	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+	<%= @full_name %>
+</h1>
+<ul>
+	<li><%= @admin.username %></li>
+	<li><%= @admin.email %></li>
+	<li>Created at <%= @admin.created_at %></li>
+	<li>Last updated at <%= @admin.updated_at %></li>
+</ul>
+<%= link_to("Edit", {:action => 'edit', :id => @admin.id}, :class => 'action edit') %> &nbsp;
+<%= link_to("Delete", {:action => 'delete', :id => @admin.id}, :class => 'action delete') %>

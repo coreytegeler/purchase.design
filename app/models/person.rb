@@ -6,6 +6,7 @@ class Person < ActiveRecord::Base
 	has_many :admins, :through => :person_edits
 
 	validates_presence_of [:name,:group_id,:grad_year]
+	validates_uniqueness_of :slug
 
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}

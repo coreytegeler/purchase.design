@@ -1,0 +1,17 @@
+<h1>
+	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+	Are you sure you want to delete <u><%= @admin.first_name %>
+	<% if !@admin.last_name.blank? %>
+		<%= '&nbsp;' + @admin.last_name %>
+	<% end %>
+	</u>?
+</h1>
+<%= form_for(:admin, :url => {:action => 'destroy', :id => @admin.id}) do |f| %>
+	<%= submit_tag("YES") %>
+<% end %>
+<ul>
+	<li><%= @admin.username %></li>
+	<li><%= @admin.email %></li>
+	<li>Created at <%= @admin.created_at %></li>
+	<li>Last updated at <%= @admin.updated_at %></li>
+</ul>

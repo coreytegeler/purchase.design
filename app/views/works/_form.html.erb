@@ -1,5 +1,17 @@
-<% @form_object = @work %>
-
+<%= f.label(:title) %>
 <%= f.text_field(:title) %>
-<%= f.text_field(:position) %>
-<%= f.text_field(:visible) %>
+
+<%= f.label(:slug) %>
+<%= f.text_field(:slug) %>
+
+<%= f.label('Creator') %>
+<%= f.select(:person_id, @people.map {|p| [p.name, p.id]}) %>
+
+<%= f.label(:position) %>
+<%= f.select(:position, 1..@work_count) %>
+
+<%= f.label(:visible) %>
+<%= f.check_box(:visible) %>
+
+<%= f.label(:image) %>
+<%= f.file_field(:image) %>

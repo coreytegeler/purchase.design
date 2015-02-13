@@ -7,6 +7,7 @@
 		<li>
 			<%= work.position %> &nbsp;
 			<strong><%= work.title %></strong>
+			<div><%= work.slug %></div>
 			<%= work.visible ? 'Visible' : 'Invisible' %>
 			<%#= work.person.name %>
 			<%= link_to("Show", {:action => 'show', :id => work.id}, :class => 'action show') %> &nbsp;

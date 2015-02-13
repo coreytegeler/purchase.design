@@ -10,6 +10,8 @@ class WorksController < ApplicationController
 
   def new
     @work = Work.new
+    @work_count = Work.count
+    @people = Person.sorted
   end
 
   def create
@@ -19,12 +21,16 @@ class WorksController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'index')
     else
+      @work_count = Work.count
+      @people = Person.sorted
       render('new')
     end
   end
 
   def edit
     @work = Work.find(params[:id])
+    @work_count = Work.count
+    @people = Person.sorted
   end
 
   def update
@@ -34,6 +40,8 @@ class WorksController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'show', :id => @work.id)
     else
+      @work_count = Work.count
+      @people = Person.sorted
       render('new')
     end
   end
@@ -55,7 +63,7 @@ class WorksController < ApplicationController
     def work_params
       # raises an error if :work is not present
       # allows listed attributes to be mass-assigned
-      params.require(:work).permit(:title, :position, :visible)
+      params.require(:work).permit(:title, :slug, :position, :visible)
     end
 
 end

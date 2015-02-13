@@ -1,0 +1,8 @@
+<h1>
+	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+	New admin
+</h1>
+<%= form_for(:admin, :url => {:action => 'create', :id => @admin.id}) do |f| %>
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+	<%= submit_tag("Create") %>
+<% end %>

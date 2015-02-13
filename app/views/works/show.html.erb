@@ -4,7 +4,10 @@
 </h1>
 <ul>
 	<li><%= @work.person %></li>
+	<li><%= @work.slug %></li>
 	<li><%= status(@work.visible) %></li>
 	<li>Created on <%= @work.created_at.to_s(:simple) %></li>
 	<li>Last updated on <%= @work.updated_at.to_s(:simple) %></li>
 </ul>
+<%= link_to("Edit", {:action => 'edit', :id => @work.id}, :class => 'action edit') %> &nbsp;
+<%= link_to("Delete", {:action => 'delete', :id => @work.id}, :class => 'action delete') %>

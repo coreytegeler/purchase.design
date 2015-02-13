@@ -1,6 +1,8 @@
 class Work < ActiveRecord::Base
 	belongs_to :person
 
+	validates_uniqueness_of :slug
+
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
 	scope :sorted, lambda {order("works.position ASC")}

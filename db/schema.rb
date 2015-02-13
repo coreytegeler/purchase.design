@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208201438) do
+ActiveRecord::Schema.define(version: 20150213180604) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 20150208201438) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.string   "permalink",  limit: 255
+    t.string   "slug",       limit: 255
     t.integer  "position",   limit: 4
     t.boolean  "visible",    limit: 1,   default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
   end
 
-  add_index "groups", ["permalink"], name: "index_groups_on_permalink", using: :btree
+  add_index "groups", ["slug"], name: "index_groups_on_slug", using: :btree
 
   create_table "groups_posts", id: false, force: :cascade do |t|
     t.integer "group_id", limit: 4
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150208201438) do
   create_table "people", force: :cascade do |t|
     t.integer  "group_id",   limit: 4
     t.string   "name",       limit: 255
-    t.string   "permalink",  limit: 255
+    t.string   "slug",       limit: 255
     t.integer  "position",   limit: 4
     t.boolean  "visible",    limit: 1,   default: false
     t.datetime "created_at",                             null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20150208201438) do
   end
 
   add_index "people", ["group_id"], name: "index_people_on_group_id", using: :btree
-  add_index "people", ["permalink"], name: "index_people_on_permalink", using: :btree
+  add_index "people", ["slug"], name: "index_people_on_slug", using: :btree
 
   create_table "person_edits", force: :cascade do |t|
     t.integer  "admin_id",   limit: 4
@@ -75,17 +75,18 @@ ActiveRecord::Schema.define(version: 20150208201438) do
   add_index "person_edits", ["admin_id", "person_id"], name: "index_person_edits_on_admin_id_and_person_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "category",   limit: 255
-    t.string   "permalink",  limit: 255
-    t.integer  "position",   limit: 4
-    t.text     "content",    limit: 65535
-    t.boolean  "visible",    limit: 1,     default: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.string   "title",        limit: 255
+    t.string   "category",     limit: 255
+    t.string   "slug",         limit: 255
+    t.integer  "position",     limit: 4
+    t.text     "content",      limit: 65535
+    t.boolean  "visible",      limit: 1,     default: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "content_type", limit: 255
   end
 
-  add_index "posts", ["permalink"], name: "index_posts_on_permalink", using: :btree
+  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
 
   create_table "works", force: :cascade do |t|
     t.integer  "person_id",    limit: 4
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(version: 20150208201438) do
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
     t.date     "date"
+    t.string   "slug",         limit: 255
   end
 
   add_index "works", ["person_id"], name: "index_works_on_person_id", using: :btree

@@ -86,7 +86,7 @@ label {
 	font-weight: 700;
 	color:white;
 }
-input[type=submit], input[type=text], textarea, select {
+input[type=submit], input[type=password], input[type=text], textarea, select {
 	font-size: 35px;
 	font-weight: 700;
 	color:white;
