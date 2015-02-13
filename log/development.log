@@ -38588,3 +38588,1330 @@ Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 
 
 
 Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:08:55 -0500
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:23:50 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:23:51 -0500
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:24:00 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 73ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:24:00 -0500
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:24:22 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 9ms
+
+SyntaxError (/Users/coreytegeler/Sites/pcgd/app/views/access/index.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+ @username session[:username] 
+                  ^):
+  app/views/access/index.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (85.4ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:24:24 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 8ms
+
+SyntaxError (/Users/coreytegeler/Sites/pcgd/app/views/access/index.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+ @username session[:username] 
+                  ^):
+  app/views/access/index.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (80.1ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:24:28 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:24:29 -0500
+
+
+Started GET "/login" for ::1 at 2015-02-13 17:29:29 -0500
+
+SyntaxError (/Users/coreytegeler/Sites/pcgd/app/controllers/access_controller.rb:3: syntax error, unexpected '=', expecting keyword_end
+...n :confirm_logged_in, :except = [:login, :attempt_login, :lo...
+...                               ^):
+  app/controllers/access_controller.rb:3: syntax error, unexpected '=', expecting keyword_end
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.4ms)
+
+
+Started GET "/login" for ::1 at 2015-02-13 17:29:50 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 56ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:29:50 -0500
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:29:52 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gzRwptaQwEunmcEPZmIuJgrFxdBgBFggRzryvD9nnCA6u02vbtN+jwx/fhyM2I5RbvjZjqepbfDv0QpKs4Dodw==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 84ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:29:52 -0500
+Processing by AccessController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `confirm_logged_in' for #<AccessController:0x007fb800c06038>):
+  activesupport (4.2.0) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:145:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:145:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (78.3ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:30:23 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gzRwptaQwEunmcEPZmIuJgrFxdBgBFggRzryvD9nnCA6u02vbtN+jwx/fhyM2I5RbvjZjqepbfDv0QpKs4Dodw==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 83ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:30:23 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 53ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:30:23 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:24 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:24 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:30:24 -0500
+
+
+Started GET "/logout" for ::1 at 2015-02-13 17:30:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (8.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (97.0ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:30:32 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gzRwptaQwEunmcEPZmIuJgrFxdBgBFggRzryvD9nnCA6u02vbtN+jwx/fhyM2I5RbvjZjqepbfDv0QpKs4Dodw==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 72ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:30:32 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:30:32 -0500
+
+
+Started GET "/access/logout" for ::1 at 2015-02-13 17:30:34 -0500
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-02-13 17:30:34 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 64ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:30:38 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"54rIpb3LLWl188Aadd+ltYXwJ5yY+NOq4T+ZNUhocPleBfWsBYiTrd4VfwmfZQXC4c07wl9V5npJ1GHDxI8Erg==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 70ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2015-02-13 17:30:38 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:30:38 -0500
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:30:40 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtBKNTZAYYHBzCLY808oKFQ5+//GsovQUEdTPKUF8ZOLX3c8jgPfRWoqncsZ9YhfMATnoQEfvgD4rKvKKeKFxA==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 71ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:30:41 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:30:41 -0500
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:31:59 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Users):
+    1: <% @page_title = 'Admin menu' %>
+    2: <% @user_id = session[:user_id] %>
+    3: <% @users_name = Users.find(@user_id) %>
+    4: 
+    5: <h1>Welcome <%= @users_name %></h1>
+    6: <ul>
+  app/views/access/index.html.erb:3:in `_app_views_access_index_html_erb___2031874078141151376_70214117030240'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (77.0ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:32:08 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::User):
+    1: <% @page_title = 'Admin menu' %>
+    2: <% @user_id = session[:user_id] %>
+    3: <% @users_name = User.find(@user_id) %>
+    4: 
+    5: <h1>Welcome <%= @users_name %></h1>
+    6: <ul>
+  app/views/access/index.html.erb:3:in `_app_views_access_index_html_erb___2031874078141151376_70214093583980'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (80.0ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:33:01 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Users):
+    1: <% @page_title = 'Admin menu' %>
+    2: <% @user_id = session[:user_id] %>
+    3: <% @users_name = Users.find(@user_id) %>
+    4: 
+    5: <h1>Welcome <%= @users_name %></h1>
+    6: <ul>
+  app/views/access/index.html.erb:3:in `_app_views_access_index_html_erb___2031874078141151376_70214093497100'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (72.0ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:33:09 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Admins):
+    1: <% @page_title = 'Admin menu' %>
+    2: <% @user_id = session[:user_id] %>
+    3: <% @users_name = Admins.find(@user_id) %>
+    4: 
+    5: <h1>Welcome <%= @users_name %></h1>
+    6: <ul>
+  app/views/access/index.html.erb:3:in `_app_views_access_index_html_erb___2031874078141151376_70214093160120'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (78.9ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:33:14 -0500
+Processing by AccessController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 4 LIMIT 1[0m
+  Rendered access/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 59ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:33:14 -0500
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:34:00 -0500
+Processing by AccessController#index as HTML
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 4 LIMIT 1
+  Rendered access/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:34:00 -0500
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:37:11 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtBKNTZAYYHBzCLY808oKFQ5+//GsovQUEdTPKUF8ZOLX3c8jgPfRWoqncsZ9YhfMATnoQEfvgD4rKvKKeKFxA==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 74ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:37:11 -0500
+Processing by AccessController#index as HTML
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = NULL LIMIT 1
+  Rendered access/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 11ms
+
+ActiveRecord::RecordNotFound (Couldn't find Admin with 'id'=):
+  app/views/access/index.html.erb:3:in `_app_views_access_index_html_erb___2031874078141151376_70214098955800'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.7ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:37:29 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:37:29 -0500
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:37:31 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-13 17:37:32 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts`  ORDER BY posts.position ASC
+  Rendered posts/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 76ms (Views: 68.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2015-02-13 17:37:33 -0500
+Processing by PostsController#new as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT `groups`.* FROM `groups`  ORDER BY position ASC
+  Rendered posts/_form.html.erb (24.5ms)
+  Rendered posts/new.html.erb within layouts/application (29.6ms)
+  Rendered application/_error_messages.html.erb (0.7ms)
+Completed 200 OK in 102ms (Views: 84.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-13 17:37:36 -0500
+Processing by PostsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts`  ORDER BY posts.position ASC
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/groups" for ::1 at 2015-02-13 17:37:40 -0500
+Processing by GroupsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `groups`[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups`  ORDER BY groups.position ASC
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `people` WHERE `people`.`group_id` = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `people` WHERE `people`.`group_id` = 3
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `people` WHERE `people`.`group_id` = 2[0m
+  Rendered groups/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 85ms (Views: 81.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/groups/edit/1" for ::1 at 2015-02-13 17:37:44 -0500
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `people`[0m
+  Rendered groups/_form.html.erb (2.2ms)
+  Rendered groups/edit.html.erb within layouts/application (7.1ms)
+  Rendered application/_error_messages.html.erb (0.1ms)
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/groups" for ::1 at 2015-02-13 17:37:46 -0500
+Processing by GroupsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `groups`
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT `groups`.* FROM `groups`  ORDER BY groups.position ASC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `people` WHERE `people`.`group_id` = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `people` WHERE `people`.`group_id` = 3[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people` WHERE `people`.`group_id` = 2
+  Rendered groups/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/people" for ::1 at 2015-02-13 17:37:51 -0500
+Processing by PeopleController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `people`[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT `people`.* FROM `people`  ORDER BY people.position ASC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 3[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 8
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 9[0m
+  Rendered people/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 79ms (Views: 75.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/people/delete/3" for ::1 at 2015-02-13 17:37:54 -0500
+Processing by PeopleController#delete as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPerson Load (0.3ms)[0m  SELECT  `people`.* FROM `people` WHERE `people`.`id` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 3[0m
+  Rendered people/delete.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 70ms (Views: 67.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/people/destroy/3" for ::1 at 2015-02-13 17:37:56 -0500
+Processing by PeopleController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rOII5oH18ezgIlfrYUZNFHtQQEyO1fq52krvdN8/U6wVbTXvObZPKEvE6PiL/O1jH21cEkl4z2lyoReCU9gn+w==", "commit"=>"YES", "id"=>"3"}
+  [1m[35mPerson Load (0.3ms)[0m  SELECT  `people`.* FROM `people` WHERE `people`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `people` WHERE `people`.`id` = 3
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/people
+Completed 302 Found in 10ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/people" for ::1 at 2015-02-13 17:37:56 -0500
+Processing by PeopleController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people`
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT `people`.* FROM `people`  ORDER BY people.position ASC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 8
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 9[0m
+  Rendered people/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:37:56 -0500
+
+
+Started GET "/people/new" for ::1 at 2015-02-13 17:37:58 -0500
+Processing by PeopleController#new as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people`
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT `groups`.* FROM `groups`  ORDER BY position ASC[0m
+  Rendered people/_form.html.erb (9.4ms)
+  Rendered people/new.html.erb within layouts/application (14.9ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined method `permalink' for #<Person:0x007fb7fe2f9ff0>):
+    13: <%= f.check_box(:visible) %>
+    14: 
+    15: <%= f.label(:permalink) %>
+    16: <%= f.text_field(:permalink) %>
+    17: 
+    18: <%= f.label(:grad_year) %>
+    19: <% @future = Time.now.year + 4 %>
+  app/views/people/_form.html.erb:16:in `_app_views_people__form_html_erb__2575826358617163368_70214156793980'
+  app/views/people/new.html.erb:6:in `block in _app_views_people_new_html_erb___4104309541243040293_70214163143840'
+  app/views/people/new.html.erb:5:in `_app_views_people_new_html_erb___4104309541243040293_70214163143840'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (73.2ms)
+
+
+Started GET "/people/new" for ::1 at 2015-02-13 17:37:58 -0500
+Processing by PeopleController#new as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people`
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT `groups`.* FROM `groups`  ORDER BY position ASC[0m
+  Rendered people/_form.html.erb (8.6ms)
+  Rendered people/new.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined method `permalink' for #<Person:0x007fb8008f3288>):
+    13: <%= f.check_box(:visible) %>
+    14: 
+    15: <%= f.label(:permalink) %>
+    16: <%= f.text_field(:permalink) %>
+    17: 
+    18: <%= f.label(:grad_year) %>
+    19: <% @future = Time.now.year + 4 %>
+  app/views/people/_form.html.erb:16:in `_app_views_people__form_html_erb__2575826358617163368_70214129864580'
+  app/views/people/new.html.erb:6:in `block in _app_views_people_new_html_erb___4104309541243040293_70214129998940'
+  app/views/people/new.html.erb:5:in `_app_views_people_new_html_erb___4104309541243040293_70214129998940'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.6ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (79.8ms)
+
+
+Started GET "/people/new" for ::1 at 2015-02-13 17:38:29 -0500
+Processing by PeopleController#new as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people`
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT `groups`.* FROM `groups`  ORDER BY position ASC[0m
+  Rendered people/_form.html.erb (7.0ms)
+  Rendered people/new.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (undefined method `permalink' for #<Person:0x007fb80391fd30>):
+    13: <%= f.check_box(:visible) %>
+    14: 
+    15: <%= f.label(:permalink) %>
+    16: <%= f.text_field(:permalink) %>
+    17: 
+    18: <%= f.label(:grad_year) %>
+    19: <% @future = Time.now.year + 4 %>
+  app/views/people/_form.html.erb:16:in `_app_views_people__form_html_erb__2575826358617163368_70214156793980'
+  app/views/people/new.html.erb:6:in `block in _app_views_people_new_html_erb___4104309541243040293_70214163143840'
+  app/views/people/new.html.erb:5:in `_app_views_people_new_html_erb___4104309541243040293_70214163143840'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (72.1ms)
+
+
+Started GET "/people/new" for ::1 at 2015-02-13 17:38:29 -0500
+Processing by PeopleController#new as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people`
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT `groups`.* FROM `groups`  ORDER BY position ASC[0m
+  Rendered people/_form.html.erb (6.5ms)
+  Rendered people/new.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `permalink' for #<Person:0x007fb7fca56d40>):
+    13: <%= f.check_box(:visible) %>
+    14: 
+    15: <%= f.label(:permalink) %>
+    16: <%= f.text_field(:permalink) %>
+    17: 
+    18: <%= f.label(:grad_year) %>
+    19: <% @future = Time.now.year + 4 %>
+  app/views/people/_form.html.erb:16:in `_app_views_people__form_html_erb__2575826358617163368_70214129864580'
+  app/views/people/new.html.erb:6:in `block in _app_views_people_new_html_erb___4104309541243040293_70214129998940'
+  app/views/people/new.html.erb:5:in `_app_views_people_new_html_erb___4104309541243040293_70214129998940'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (78.5ms)
+
+
+Started GET "/people/new" for ::1 at 2015-02-13 17:38:39 -0500
+Processing by PeopleController#new as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people`
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT `groups`.* FROM `groups`  ORDER BY position ASC[0m
+  Rendered people/_form.html.erb (4.9ms)
+  Rendered people/new.html.erb within layouts/application (7.9ms)
+  Rendered application/_error_messages.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 63.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:38:39 -0500
+
+
+Started GET "/people" for ::1 at 2015-02-13 17:38:42 -0500
+Processing by PeopleController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `people`
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT `people`.* FROM `people`  ORDER BY people.position ASC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 8
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `works` WHERE `works`.`person_id` = 9[0m
+  Rendered people/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 60ms (Views: 58.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-02-13 17:38:45 -0500
+Processing by ApplicationController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT `groups`.* FROM `groups`  ORDER BY groups.position ASC
+  [1m[36mPerson Load (0.3ms)[0m  [1mSELECT `people`.* FROM `people` WHERE `people`.`group_id` = 1[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT `works`.* FROM `works` WHERE `works`.`person_id` = 8
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT `people`.* FROM `people` WHERE `people`.`group_id` = 3[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT `works`.* FROM `works` WHERE `works`.`person_id` = 9
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT `people`.* FROM `people` WHERE `people`.`group_id` = 2[0m
+  Rendered application/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 75ms (Views: 73.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:38:45 -0500
+
+
+Started GET "/login" for ::1 at 2015-02-13 17:38:54 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 58ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:38:54 -0500
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:38:56 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Pe3O8Nfd4rZ3tLXMsBUfOAtszZ9yXObFkTf9Pni5p5JeIoyexzJTnI4bcTYevQLhBCvaLpkRku+rycCdQWSyQ==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 74ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:38:56 -0500
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:38:56 -0500
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:42:20 -0500
+Processing by AccessController#index as HTML
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = NULL LIMIT 1[0m
+  Rendered access/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 13ms
+
+ActiveRecord::RecordNotFound (Couldn't find Admin with 'id'=):
+  app/views/access/index.html.erb:3:in `_app_views_access_index_html_erb___2031874078141151376_70214108841460'
+
+
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/coreytegeler/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (79.3ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:42:55 -0500
+Processing by AccessController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-02-13 17:42:55 -0500
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:42:55 -0500
+
+
+Started POST "/access/attempt_login" for ::1 at 2015-02-13 17:42:56 -0500
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3FOqr4Q2iIxN8DhTfwUrqu+nWVzwRrDAeW2bXPylvJxl3JemPHU2SOYWh0CVv4vdi5pFAjfrhRDRhmOqcELIyw==", "username"=>"corey", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  `admins`.* FROM `admins` WHERE `admins`.`username` = 'corey'  ORDER BY `admins`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 86ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/admin" for ::1 at 2015-02-13 17:42:56 -0500
+Processing by AccessController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 4 LIMIT 1[0m
+  Rendered access/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 54.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/access-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/admins-dfa7b291102a59957590b4e00e20f1c8.css?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/application-792c27a9dfe921eb6e382b1fc67e9691.css?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/style-f491f3bd4725b2001ae004713900e706.css?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/access-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/admins-46c9a194bd0668e67d57241f94473dc8.js?body=1" for ::1 at 2015-02-13 17:42:57 -0500
+
+
+Started GET "/assets/application-ce0e47cfa0c77c32b0b8b508f07e4b19.js?body=1" for ::1 at 2015-02-13 17:42:57 -0500
