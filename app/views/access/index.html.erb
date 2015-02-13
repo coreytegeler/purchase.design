@@ -1,0 +1,12 @@
+<% @page_title = 'Admin menu' %>
+
+<h1>Welcome</h1>
+<ul>
+	<li><%= link_to("Admins", :controller => 'admin') %></li>
+	<li><%= link_to("Posts", :controller => 'posts') %></li>
+	<li><%= link_to("Groups", :controller => 'groups') %></li>
+	<li><%= link_to("People", :controller => 'people') %></li>
+	<li><%= link_to("Works", :controller => 'works') %></li>
+</ul>
+
+<%= link_to("Logout", :action => 'logout') %>

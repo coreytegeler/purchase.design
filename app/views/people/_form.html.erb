@@ -7,7 +7,7 @@
 <%= f.select(:group_id, @groups.map {|g| [g.name.singularize, g.id]}, {include_blank: 'Select'}) %>
 
 <%= f.label(:position) %>
-<%= f.select(:position, 1..@person_count) %>
+<%= f.select(:position, 1..@people_count) %>
 
 <%= f.label(:visible) %>
 <%= f.check_box(:visible) %>

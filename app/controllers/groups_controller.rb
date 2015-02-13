@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @groups_count = Person.count + 1
   end
 
   def create
@@ -18,12 +19,14 @@ class GroupsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'index')
     else
+      @groups_count = Person.count + 1
       render('new')
     end
   end
 
   def edit
     @group = Group.find(params[:id])
+    @groups_count = Person.count
   end
 
   def update
@@ -33,6 +36,7 @@ class GroupsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'show', :id => @group.id)
     else
+      @groups_count = Person.count
       render('new')
     end
   end
@@ -54,7 +58,7 @@ class GroupsController < ApplicationController
     def group_params
       # raises an error if :group is not present
       # allows listed attributes to be mass-assigned
-      params.require(:group).permit(:name, :position, :visible)
+      params.require(:group).permit(:name, :slug, :position, :visible)
     end
 
 end

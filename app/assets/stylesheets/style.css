@@ -99,6 +99,9 @@ input[type=submit], input[type=password], input[type=text], textarea, select {
 input[type=submit], select {
 	cursor: pointer;
 }
+input[type=submit] {
+	margin: 40px 0;
+}
 input[type=checkbox] {
 	display: block;
 }

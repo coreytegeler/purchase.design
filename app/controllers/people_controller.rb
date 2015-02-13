@@ -9,7 +9,7 @@ class PeopleController < ApplicationController
 
   def new
     @person = Person.new
-    @person_count = Person.count + 1
+    @people_count = Person.count + 1
     @groups = Group.order('position ASC')
   end
 
@@ -20,7 +20,7 @@ class PeopleController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'index')
     else
-      @person_count = Person.count + 1
+      @people_count = Person.count + 1
       @groups = Group.order('position ASC')
       render('new')
     end
@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
 
   def edit
     @person = Person.find(params[:id])
-    @person_count = Person.count
+    @people_count = Person.count
     @groups = Group.order('position ASC')
   end
 
@@ -39,7 +39,7 @@ class PeopleController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'show', :id => @person.id)
     else
-      @person_count = Person.count
+      @people_count = Person.count
       @groups = Group.order('position ASC')
       render('new')
     end

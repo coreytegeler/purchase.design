@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213180604) do
+ActiveRecord::Schema.define(version: 20150213211602) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
     t.string   "last_name",       limit: 255
     t.string   "email",           limit: 255
     t.string   "username",        limit: 25
-    t.string   "hashed_password", limit: 255
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "password_digest", limit: 255
   end
 
   add_index "admins", ["username"], name: "index_admins_on_username", using: :btree

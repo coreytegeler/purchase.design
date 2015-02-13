@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @posts_count = Post.count + 1
     @groups = Group.order('position ASC')
   end
 
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'index')
     else
+      @posts_count = Post.count + 1
       @groups = Group.order('position ASC')
       render('new')
     end
@@ -28,6 +30,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @posts_count = Post.count
     @groups = Group.order('position ASC')
   end
 
@@ -38,6 +41,7 @@ class PostsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'show', :id => @post.id)
     else
+      @posts_count = Post.count
       @groups = Group.order('position ASC')
       render('new')
     end

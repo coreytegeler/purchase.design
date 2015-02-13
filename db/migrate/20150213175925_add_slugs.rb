@@ -7,7 +7,7 @@ class AddSlugs < ActiveRecord::Migration
   end
 
   def down 
-  	drop_column("works", "slug")
+  	remove_column("works", "slug")
   	rename_column("people", "slug", "permalink")
   	rename_column("posts", "slug", "permalink")
   	rename_column("groups", "slug", "permalink")

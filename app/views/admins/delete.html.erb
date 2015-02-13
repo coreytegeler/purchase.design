@@ -2,7 +2,7 @@
 	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
 	Are you sure you want to delete <u><%= @admin.first_name %>
 	<% if !@admin.last_name.blank? %>
-		<%= '&nbsp;' + @admin.last_name %>
+		<%= ' ' + @admin.last_name %>
 	<% end %>
 	</u>?
 </h1>

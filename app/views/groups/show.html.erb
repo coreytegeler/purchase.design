@@ -2,9 +2,9 @@
 	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
 	<%= @group.name %>
 </h1>
-<span><%= @group.slug %></span>
 <ul>
 	<li><%= @group.people.size %></li>
+	<li><%= @group.slug %></li>
 	<li><%= @group.visible ? 'Visible' : 'Invisible' %></li>
 	<li>Created on <%= @group.created_at.to_s(:simple) %></li>
 	<li>Last updated on <%= @group.updated_at.to_s(:simple) %></li>

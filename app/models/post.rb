@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
 	validates_uniqueness_of :slug
 	validates_inclusion_of :content_type, :in => CONTENT_TYPES, :message => "must be #{CONTENT_TYPES.join(' or ')}"
-	validates_presence_of [:title, :content]
+	validates_presence_of :title
 
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}

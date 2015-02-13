@@ -7,10 +7,13 @@
 <%= f.select(:category, @groups.map {|g| [g.name, g.id]}) %>
 
 <%= f.label(:position) %>
-<%= f.text_field(:position) %>
+<%= f.select(:position, 1..@posts_count) %>
 
 <%= f.label(:visible) %>
 <%= f.check_box(:visible) %>
+
+<%= f.label(:content_type) %>
+<%= f.select(:content_type, [['text'], ['HTML']]) %>
 
 <%= f.label(:content) %>
 <%= f.text_area(:content) %>

@@ -1,4 +1,5 @@
 <% @form_object = @admin %>
+<% @new = !@admin.persisted? %>
 
 <%= f.label(:username) %>
 <%= f.text_field(:username) %>
@@ -12,17 +13,13 @@
 <%= f.label(:email) %>
 <%= f.text_field(:email) %>
 
-<% if !@admin.save %>
+<% if @new %>
 	<%= f.label('Confirm email') %>
 	<%= f.text_field(:email_confirmation) %>
 <% end %>
 
-<% if !@admin.save %>
-	<%= f.label('Password') %>
-<% else %>
-	<%= f.label('New password') %>
-<% end %>
-<%= f.password_field(:hashed_password) %>
+<%= f.label(:password) %>
+<%= f.password_field(:password) %>
 
-<%= f.label('Confirm password') %>
-<%= f.password_field(:hashed_password_confirmation) %>
+<%= f.label(:password_confirmation) %>
+<%= f.password_field(:password_confirmation) %>
