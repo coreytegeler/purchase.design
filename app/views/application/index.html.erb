@@ -2,15 +2,15 @@
 
 <nav>
 	<ul class="groups">
-		<h3>Groups</h3>
+		<h3><%= link_to("Groups", {:controller => 'groups'}) %></h3>
 		<% @groups.each do |group| %>
-			<li><%= group.name %></li>
+			<li><%= link_to(group.name, {:controller => 'people', :action => 'index', :id => group.id}) %></li>
 			<ul class="people">
 			<% group.people.each do |person| %>
-				<li><%= person.name %></li>
+				<li><%= link_to(person.first_name, {:controller => 'people', :action => 'edit', :id => person.id}) %></li>
 				<ul class="people">
 				<% person.works.each do |work| %>
-					<li><%= work.name %></li>
+					<li><%= link_to(work.title, {:controller => 'works', :action => 'edit', :id => work.id}) %></li>
 				<% end %>
 				</ul>
 			<% end %>

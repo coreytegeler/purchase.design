@@ -32,7 +32,7 @@ class AdminsController < ApplicationController
     if @admin.update_attributes(admin_params)
       flash[:notice] = "#{admin.first_name} was updated!"
       flash[:type] = 'good'
-      redirect_to(:action => 'show', :id => @admin.id)
+      redirect_to(:action => 'index')
     else
       render('new')
     end

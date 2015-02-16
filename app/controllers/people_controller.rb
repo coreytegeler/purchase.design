@@ -37,7 +37,7 @@ class PeopleController < ApplicationController
     if @person.update_attributes(person_params)
       flash[:notice] = "#{@person.name} was updated!"
       flash[:type] = 'good'
-      redirect_to(:action => 'show', :id => @person.id)
+      redirect_to(:action => 'index')
     else
       @people_count = Person.count
       @groups = Group.order('position ASC')
@@ -62,7 +62,7 @@ class PeopleController < ApplicationController
     def person_params
       # raises an error if :person is not present
       # allows listed attributes to be mass-assigned
-      params.require(:person).permit(:name, :position, :visible, :group_id, :grad_year)
+      params.require(:person).permit(:first_name, :last_name, :name, :position, :visible, :group_id, :grad_year)
     end
 
 end

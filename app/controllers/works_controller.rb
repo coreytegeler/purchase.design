@@ -1,7 +1,9 @@
 class WorksController < ApplicationController
 
+  before_action :find_people
+
   def index
-    @works = Work.sorted
+    @works = Work.where(:person_id => @person.id)
   end
 
   def show
@@ -9,8 +11,8 @@ class WorksController < ApplicationController
   end
 
   def new
-    @work = Work.new
-    @work_count = Work.count
+    @work = Work.new({:person_id => @person.id})
+    @work_count = Work.count + 1
     @people = Person.sorted
   end
 
@@ -19,9 +21,9 @@ class WorksController < ApplicationController
     if @work.save
       flash[:notice] = "#{@work.title} was created!"
       flash[:type] = 'good'
-      redirect_to(:action => 'index')
+      redirect_to(:action => 'index', :person_id => @person_id)
     else
-      @work_count = Work.count
+      @work_count = Work.count + 1
       @people = Person.sorted
       render('new')
     end
@@ -38,7 +40,7 @@ class WorksController < ApplicationController
     if @work.update_attributes(work_params)
       flash[:notice] = "#{@work.title} was updated!"
       flash[:type] = 'good'
-      redirect_to(:action => 'show', :id => @work.id)
+      redirect_to(:action => 'index', :person_id => @person_id)
     else
       @work_count = Work.count
       @people = Person.sorted
@@ -55,7 +57,7 @@ class WorksController < ApplicationController
     work = Work.find(params[:id]).destroy
     flash[:notice] = "#{work.title} was deleted!"
     flash[:type] = 'good'
-    redirect_to(:action => 'index')
+    redirect_to(:action => 'index', :person_id => @person_id)
   end
 
   private 
@@ -63,7 +65,13 @@ class WorksController < ApplicationController
     def work_params
       # raises an error if :work is not present
       # allows listed attributes to be mass-assigned
-      params.require(:work).permit(:title, :slug, :position, :visible)
+      params.require(:work).permit(:title, :slug, :position, :visible, :person_id)
+    end
+
+    def find_people
+      if params[:person_id]
+        @person = Person.find(params[:person_id])
+      end
     end
 
 end

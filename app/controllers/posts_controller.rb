@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     if @post.update_attributes(post_params)
       flash[:notice] = "#{@post.title} was updated!"
       flash[:type] = 'good'
-      redirect_to(:action => 'show', :id => @post.id)
+      redirect_to(:action => 'index')
     else
       @posts_count = Post.count
       @groups = Group.order('position ASC')

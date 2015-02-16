@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
     if @group.update_attributes(group_params)
       flash[:notice] = "#{@group.name} was updated!"
       flash[:type] = 'good'
-      redirect_to(:action => 'show', :id => @group.id)
+      redirect_to(:action => 'index')
     else
       @groups_count = Person.count
       render('new')

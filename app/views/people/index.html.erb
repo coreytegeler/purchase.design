@@ -6,9 +6,10 @@
 	<% @people.each do |person| %>
 		<li>
 			<%= person.position %> &nbsp;
-			<strong><%= person.name %></strong>
+			<strong><%= person.first_name %></strong>
 			<%= person.visible ? 'Visible' : 'Invisible' %>
 			<%= person.works.size %>
+			<%= link_to("Works", {:controller => 'works', :person_id => person.id}, :class => 'action show') %> &nbsp;
 			<%= link_to("Show", {:action => 'show', :id => person.id}, :class => 'action show') %> &nbsp;
 			<%= link_to("Edit", {:action => 'edit', :id => person.id}, :class => 'action edit') %> &nbsp;
 			<%= link_to("Delete", {:action => 'delete', :id => person.id}, :class => 'action delete') %>
