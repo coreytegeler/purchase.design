@@ -1,0 +1,10 @@
+<h1>
+	<%= link_to("\u2B05", {:controller => 'community', :action => 'admin'}, :class => 'back-link symb') %>
+	Are you sure you want to delete <u><%= @event.name %></u>?
+</h1>
+<%= form_for(:event, :url => {:action => 'destroy', :id => @event.id}) do |f| %>
+	<%= submit_tag("YES") %>
+<% end %>
+<ul>
+	<li><%= @event.name %></li>
+</ul>

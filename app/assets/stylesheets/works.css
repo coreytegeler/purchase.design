@@ -1,0 +1,66 @@
+section#works {
+	display: table;
+	width: 100%;
+}
+section#works .work {
+	width: 400px;
+	margin-bottom: 40px;
+	float:left;
+}
+section#works .work .image_holder {
+	width: 100px;
+	float:left;
+}
+section#works .work .image_holder img {
+	width: 100%;
+}
+section#works .work .info_holder {
+	width: 280px;
+	padding-left: 20px;
+	float:left;
+}
+section#works .work .info_holder h4.designer {
+	margin: 0;
+}
+section#works .work .info_holder p.caption {
+	margin: 0;
+}
+
+
+
+.block {
+	
+}
+.stack {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	display: table;
+	margin: auto;
+}
+.stack .work {
+	position: absolute;
+	width: 100%;
+	max-height: 500px;
+	height: auto;
+}
+.stack .work .image_wrapper {
+	max-width: 300px;
+	max-height: 300px;
+	overflow: hidden;
+	border: 2px solid black;
+	background: white;
+}
+.stack .work .image_wrapper img {
+	max-width: 300px;
+	max-height: 300px;
+	width: 100%;
+	opacity: 0;
+	vertical-align: bottom;
+}
+.stack .work:last-child .image_wrapper img {
+	opacity: 1;
+}
+.stack .work h3 {
+	display: none;
+}

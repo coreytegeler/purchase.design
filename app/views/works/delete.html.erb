@@ -1,13 +1,7 @@
 <h1>
 	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
-	Are you sure you want to delete <u><%= @work.title %></u>?
+	Are you sure you want to delete <u><%= @work.name %></u>?
 </h1>
 <%= form_for(:work, :url => {:action => 'destroy', :id => @work.id}) do |f| %>
 	<%= submit_tag("YES") %>
 <% end %>
-<ul>
-	<li><%#= @work.person.name %></li>
-	<li><%= @work.visible ? 'Visible' : 'Invisible' %></li>
-	<li>Created at <%= @work.created_at %></li>
-	<li>Last updated at <%= @work.updated_at %></li>
-</ul>

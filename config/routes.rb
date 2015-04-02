@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
 
-  root "application#index"
+  get 'model/resources'
 
+  root "public#index"
+
+  get 'show/:slug', :to => 'public#show'
   get 'admin', :to => 'access#index'
   get 'login', :to => 'access#login'
+
+  get 'faculty', :to => 'faculties#index'
+  get 'faculty/:action', :to => 'faculties#action'
+  post 'faculty/:action', :to => 'faculties#action'
+
+  get 'work', :to => 'works#index'
+  get 'work/:action', :to => 'works#action'
+  post 'work/:action', :to => 'works#action'
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
 

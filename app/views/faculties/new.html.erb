@@ -1,0 +1,8 @@
+<h1>
+	<%= link_to("\u2B05", {:controller => 'faculties', :action => 'admin'}, :class => 'back-link symb') %>
+	New faculty member
+</h1>
+<%= form_for(:faculty, :url => {:action => 'create'}) do |f| %>
+	<%= render(:partial => 'form', :locals => {:f => f}) %>
+	<%= submit_tag("Create") %>
+<% end %>

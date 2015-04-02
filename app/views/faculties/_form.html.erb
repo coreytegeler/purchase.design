@@ -1,0 +1,52 @@
+<%= f.label(:name) %>
+<%= f.text_field(:name) %>
+
+<%= f.label(:title) %>
+<%= f.text_field(:title) %>
+
+<%= f.label(:email) %>
+<%= f.text_field(:email) %>
+
+<%= f.label(:summary) %>
+<%= f.text_area(:summary) %>
+
+<% if @faculty.image.exists? %>
+	<%= image_tag @faculty.image.url(:thumb) %>
+</br>
+<% end %>
+
+<%= f.label(:image) %>
+<%= f.file_field(:image) %>
+
+
+<% @past = 1972 %>
+<% @present = Time.now.year %>
+
+<%= f.label(:first_year) %>
+<%= f.select(:first_year, @past..@present, {include_blank: 'Select'}) %>
+
+<div class="table">
+	<div class="row">
+		<div class="cell"><label>Alma Mater</label></div>
+		<div class="cell"><label>Degree</label></div>
+		<div class="cell"><label>Year</label></div>
+	</div>
+	<div class="row">
+		<%= f.fields_for :alma_maters do |builder| %>
+			<%# if builder.object.new_record? %>
+			<div class="cell"><%= builder.text_field(:college) %></div>
+			<div class="cell"><%= builder.text_field(:degree) %></div>
+			<div class="cell"><%= builder.select(:year, 1900..@present, {include_blank: 'Select'}) %></div>
+			<%# end %>
+		<% end %>
+	</div>
+</div>
+
+
+
+<%= f.label(:position) %>
+<%= f.select(:position, 1..@count, :selected => @faculty.position) %>
+
+<%= f.label(:visible) %>
+<%= f.check_box(:visible, :checked => true) %>
+

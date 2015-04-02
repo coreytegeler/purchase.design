@@ -1,5 +1,6 @@
 class AccessController < ApplicationController
 
+  layout 'access'
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   def index
@@ -11,15 +12,15 @@ class AccessController < ApplicationController
   end
 
   def attempt_login 
-  	if params[:username].present? && params[:password].present?
-  		found_user = Admin.where(:username => params[:username]).first
+  	if params[:email].present? && params[:password].present?
+  		found_user = Admin.where(:email => params[:email]).first
   		if found_user
   			authorized_user = found_user.authenticate(params[:password])
   		end
   	end
   	if authorized_user
   		session[:admin_id] = authorized_user.id
-      session[:username] = authorized_user.username
+      session[:email] = authorized_user.email
   		flash[:notice] = "You're in!"
   		flash[:type] = "good"
   		redirect_to(:action => 'index')
@@ -32,22 +33,14 @@ class AccessController < ApplicationController
 
   def logout
     session[:admin_id] = nil
-    session[:username] = nil
+    session[:email] = nil
   	flash[:notice] = "Bye bye"
   	flash[:type] = "good"
-  	redirect_to(:action => 'login')
+  	redirect_to(:controller => 'public')
   end
 
-  private
-
-  def confirm_logged_in
-    unless session[:admin_id]
-      flash[:notice] = "You are not logged in"
-      redirect_to(:action => 'login')
-      return false
-    else
-      return true
-    end
+  def admin?
+    session[:admin_id]
   end
 
 end

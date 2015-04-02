@@ -1,17 +1,28 @@
-<%= f.label(:title) %>
-<%= f.text_field(:title) %>
+<%= f.label(:name) %>
+<%= f.text_field(:name) %>
 
-<%= f.label(:slug) %>
-<%= f.text_field(:slug) %>
+<%= f.label(:designer) %>
+<%= f.text_field(:designer) %>
 
-<%= f.label('Creator') %>
-<%= f.select(:person_id, @people.map {|p| [p.name, p.id]}) %>
-
-<%= f.label(:position) %>
-<%= f.select(:position, 1..@work_count) %>
-
-<%= f.label(:visible) %>
-<%= f.check_box(:visible) %>
+<% if @work.image.exists? %>
+	<%= image_tag @work.image.url(:thumb) %>
+</br>
+<% end %>
 
 <%= f.label(:image) %>
 <%= f.file_field(:image) %>
+
+<%= f.label(:caption) %>
+<%= f.text_area(:caption) %>
+
+<%= f.label(:year) %>
+<% @present = Time.now.year %>
+<% @past = 1972 %>
+<%= f.select(:year, @past..@present, {include_blank: 'Select'}) %>
+
+<%= f.label(:position) %>
+<%= f.select(:position, 1..@count) %>
+
+<%= f.label(:visible) %>
+<%= f.check_box(:visible, :checked => true) %>
+

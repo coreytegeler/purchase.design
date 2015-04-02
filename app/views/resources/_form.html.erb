@@ -1,0 +1,28 @@
+<%= f.label(:name) %>
+<%= f.text_field(:name) %>
+
+<%= f.label(:link) %>
+<%= f.text_field(:link) %>
+
+<%= f.label(:caption) %>
+<%= f.text_area(:caption) %>
+
+<%= f.label(:type_id) %>
+<%= f.select(:type_id, @types.map {|t| [t.name, t.id]}, :selected => params[:type_id], include_blank: 'Select') %>
+
+<div class="upload_field">
+	<% if @resource.image.exists? %>
+		<%= image_tag @resource.image.url(:thumb) %>
+	</br>
+	<% end %>
+</div>
+
+<%= f.label(:image) %>
+<%= f.file_field(:image) %>
+
+<%= f.label(:position) %>
+<%= f.select(:position, 1..@count) %>
+
+<%= f.label(:visible) %>
+<%= f.check_box(:visible, :checked => true) %>
+

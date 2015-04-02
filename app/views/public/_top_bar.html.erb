@@ -1,0 +1,19 @@
+<div id="top_bar">
+	<header>
+		<% @logo = "background-image: url(" + random_logo + ")" %>
+		<%= link_to( "", {:controller => 'public', :action => 'index'}, {:id => 'logo', :style => @logo}) %>
+	</header>
+	<nav>
+		<div class="right">
+			<ul id="nav_links">
+				<li class="nav_link"><%= link_to("Mission", {:controller => 'public', :action => 'index'}) %></li>
+				<li class="nav_link"><%= link_to("Work", {:controller => 'work', :action => 'index'}) %></li>
+				<li class="nav_link"><%= link_to("Faculty", {:controller => 'faculty', :action => 'index'}) %></li>
+				<li class="nav_link"><%= link_to("Alumni", {:controller => 'alumni', :action => 'index'}) %></li>
+				<li class="nav_link"><%= link_to("Community", {:controller => 'community', :action => 'index'}) %></li>
+				<li class="nav_link"><%= link_to("Resources", {:controller => 'resources', :action => 'index'}) %></li>
+				<li class="nav_link"><%= link_to("Apply", {:controller => 'apply', :action => 'index'}) %></li>
+			</ul>
+		</div>
+	</nav>
+</div>

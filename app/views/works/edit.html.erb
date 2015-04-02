@@ -1,6 +1,6 @@
 <h1>
-	<%= link_to("\u2B05", {:action => 'index', :person_id => @person.id}, :class => 'back-link symb') %>
-	<%= @work.title %>
+	<%= link_to("\u2B05", {:controller => 'students', :action => 'admin'}, :class => 'back-link symb') %>
+	<%= @work.name %>
 </h1>
 
 <%= form_for(:work, :url => {:action => 'update', :id => @work.id}) do |f| %>

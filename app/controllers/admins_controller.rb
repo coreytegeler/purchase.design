@@ -1,4 +1,8 @@
 class AdminsController < ApplicationController
+
+  layout 'access'
+  before_action :confirm_logged_in
+
   def index
     @admins = Admin.sorted
   end
@@ -30,7 +34,8 @@ class AdminsController < ApplicationController
   def update
     @admin = Admin.find(params[:id])
     if @admin.update_attributes(admin_params)
-      flash[:notice] = "#{admin.first_name} was updated!"
+      @admin.full_name = @admin.first_name + " " +@admin.last_name
+      flash[:notice] = "#{@admin.first_name} was updated!"
       flash[:type] = 'good'
       redirect_to(:action => 'index')
     else
@@ -45,17 +50,25 @@ class AdminsController < ApplicationController
   def destroy
     #don't need an instance variable since it is not being called elsewhere
     admin = Admin.find(params[:id]).destroy
-    flash[:notice] = "#{admin.first_name} was deleted!"
+    flash[:notice] = "#{@admin.first_name} was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'index')
   end
 
+  def admin?
+    session[:admin_id]
+  end
+
   private 
+
+    def create_full_name
+      self.full_name(:first_name)
+    end
 
     def admin_params
       # raises an error if :admin is not present
       # allows listed attributes to be mass-assigned
-      params.require(:admin).permit(:first_name, :last_name, :username, :password, :email)
+      params.require(:admin).permit(:first_name, :last_name, :full_name, :password, :email)
     end
 
 end

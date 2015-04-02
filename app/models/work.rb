@@ -1,7 +1,4 @@
 class Work < ActiveRecord::Base
-	belongs_to :person
-
-	validates_uniqueness_of :slug
 
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
@@ -11,4 +8,15 @@ class Work < ActiveRecord::Base
 	scope :search, lambda {|query|
 		where(["name LIKE ?", "%#{query}%"])
 	}
+
+	acts_as_list scope: [:position]
+
+	has_attached_file :image, :styles => { 
+		:thumb => ["200x200"], 
+		:medium => ["600x600>"], 
+		:large => ["1200x1200>"] }, 
+		:default_url => "/images/:style/missing.png"
+  	validates_attachment_content_type :image, 
+  content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
+
 end

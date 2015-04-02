@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Purchase College Graphic Design Dept. | <%= @page_title || '' %></title>
+  <%= stylesheet_link_tag "application", params[:controller], :media => "all", 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "access", :media => "all", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "application", params[:controller], 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-16">
+</head>
+<body class="admin">
+  <% if !flash[:notice].blank? %>
+    <div class="notice <%= flash[:type] %>">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <div id="border">
+    <% if @form_object %>
+    	<%= error_messages_for(@form_object) %>
+    <% end %>
+
+    <main>
+      <%= render 'access/top_bar' %>
+      <section id="page_content">
+      	<%= yield %>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

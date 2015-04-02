@@ -11,26 +11,76 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216193924) do
+ActiveRecord::Schema.define(version: 20150402154951) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
     t.string   "last_name",       limit: 255
     t.string   "email",           limit: 255
-    t.string   "username",        limit: 25
+    t.string   "full_name",       limit: 25
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "password_digest", limit: 255
   end
 
-  add_index "admins", ["username"], name: "index_admins_on_username", using: :btree
+  add_index "admins", ["full_name"], name: "index_admins_on_full_name", using: :btree
 
-  create_table "admins_groups", id: false, force: :cascade do |t|
-    t.integer "admin_id", limit: 4
-    t.integer "group_id", limit: 4
+  create_table "alma_maters", force: :cascade do |t|
+    t.string  "college",    limit: 255
+    t.string  "degree",     limit: 255
+    t.date    "year"
+    t.integer "faculty_id", limit: 4
   end
 
-  add_index "admins_groups", ["admin_id", "group_id"], name: "index_admins_groups_on_admin_id_and_group_id", using: :btree
+  create_table "alumni", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.date     "year"
+    t.text     "caption",    limit: 65535
+    t.integer  "position",   limit: 4
+    t.boolean  "visible",    limit: 1,     default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
+  create_table "apply", force: :cascade do |t|
+    t.text    "summary", limit: 65535
+    t.boolean "visible", limit: 1,     default: false
+  end
+
+  create_table "event_images", force: :cascade do |t|
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.integer  "event_id",           limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string  "name",     limit: 255
+    t.text    "summary",  limit: 65535
+    t.date    "date"
+    t.integer "position", limit: 4
+    t.boolean "visible",  limit: 1,     default: false
+  end
+
+  create_table "faculties", force: :cascade do |t|
+    t.string   "name",               limit: 255
+    t.text     "summary",            limit: 65535
+    t.date     "first_year"
+    t.date     "last_year"
+    t.boolean  "current",            limit: 1,     default: true
+    t.boolean  "visible",            limit: 1,     default: false
+    t.integer  "position",           limit: 4
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.string   "title",              limit: 255
+    t.string   "email",              limit: 255
+    t.string   "website",            limit: 255
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -42,13 +92,6 @@ ActiveRecord::Schema.define(version: 20150216193924) do
   end
 
   add_index "groups", ["slug"], name: "index_groups_on_slug", using: :btree
-
-  create_table "groups_posts", id: false, force: :cascade do |t|
-    t.integer "group_id", limit: 4
-    t.integer "post_id",  limit: 4
-  end
-
-  add_index "groups_posts", ["group_id", "post_id"], name: "index_groups_posts_on_group_id_and_post_id", using: :btree
 
   create_table "people", force: :cascade do |t|
     t.integer  "group_id",   limit: 4
@@ -90,19 +133,42 @@ ActiveRecord::Schema.define(version: 20150216193924) do
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
 
-  create_table "works", force: :cascade do |t|
-    t.integer  "person_id",    limit: 4
-    t.string   "title",        limit: 255
-    t.integer  "position",     limit: 4
-    t.boolean  "visible",      limit: 1,     default: false
-    t.text     "content_type", limit: 65535
-    t.text     "content",      limit: 65535
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-    t.date     "date"
-    t.string   "slug",         limit: 255
+  create_table "resource_types", force: :cascade do |t|
+    t.string  "name",     limit: 255
+    t.integer "position", limit: 4
+    t.boolean "visible",  limit: 1,   default: false
   end
 
-  add_index "works", ["person_id"], name: "index_works_on_person_id", using: :btree
+  create_table "resources", force: :cascade do |t|
+    t.string   "name",               limit: 255
+    t.string   "link",               limit: 255
+    t.string   "type",               limit: 255
+    t.text     "caption",            limit: 65535
+    t.integer  "position",           limit: 4
+    t.boolean  "visible",            limit: 1,     default: false
+    t.integer  "type_id",            limit: 4
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.text    "summary", limit: 65535
+    t.boolean "visible", limit: 1,     default: false
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string   "name",               limit: 255
+    t.string   "designer",           limit: 255
+    t.date     "year"
+    t.text     "caption",            limit: 65535
+    t.integer  "position",           limit: 4
+    t.boolean  "visible",            limit: 1,     default: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
 
 end

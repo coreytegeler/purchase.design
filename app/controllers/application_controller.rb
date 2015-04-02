@@ -8,4 +8,18 @@ class ApplicationController < ActionController::Base
   	@posts = Post.sorted
   end
 
+  def logged_in?
+  	!!session[:admin_id]
+  end
+
+  def confirm_logged_in
+    unless session[:admin_id]
+      flash[:notice] = "You are not logged in"
+      redirect_to(:action => 'login')
+      return false
+    else
+      return true
+    end
+  end
+
 end

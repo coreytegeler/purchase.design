@@ -1,19 +1,16 @@
-<h1>
-	<%= link_to("+", {:action => 'new', :person_id => @person.id}, :class => 'action new symb') %>
-	<%= pluralize(@works.size, "Work") %>
-</h1>
-<ul id="works">
-	<% @works.each do |work| %>
-		<li>
-			<%= work.position %> &nbsp;
-			<strong><%= work.title %></strong>
-			(<i><%= work.slug %></i>)
-			by <%= work.person.name %>
-			<%#= work.visible ? 'Visible' : 'Invisible' %>
-			<%#= work.person.name %>
-			<%= link_to("Show", {:action => 'show', :id => work.id, :person_id => @person.id}, :class => 'action show') %> &nbsp;
-			<%= link_to("Edit", {:action => 'edit', :id => work.id, :person_id => @person.id}, :class => 'action edit') %> &nbsp;
-			<%= link_to("Delete", {:action => 'delete', :id => work.id, :person_id => @person.id}, :class => 'action delete') %>
-		</li>
-	<% end %>
-</ul>
+<h1 id="page_title">Work</h1>
+<section class="clear" id="works">
+	<div class="block">
+		<div class="stack">
+			<% @works.each_with_index do |work, index| %>
+				<% @shift = 5 * index %>
+				<div class="work" style="bottom: <%= @shift %>px; left: <%= @shift %>px;">
+					<h3><%= work.name %></h3>
+					<div class="image_wrapper">
+						<%= image_tag work.image.url(:medium) %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</section>

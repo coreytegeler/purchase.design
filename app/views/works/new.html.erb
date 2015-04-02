@@ -1,5 +1,5 @@
 <h1>
-	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
+	<%= link_to("\u2B05", {:controller => 'students', :action => 'index'}, :class => 'back-link symb') %>
 	New work
 </h1>
 <%= form_for(:work, :url => {:action => 'create'}) do |f| %>

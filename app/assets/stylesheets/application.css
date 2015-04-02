@@ -1,15 +1,142 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url(http://fonts.googleapis.com/css?family=PT+Mono);
+
+/***************/
+/*DEFAULT STUFF*/
+/***************/
+html {
+	height: 100%;
+}
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-size: 24px;
+	margin: 0;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+a {
+	color: white;
+}
+h1 {
+	display: inline-block;
+	font-size: 95px;
+    margin: 0 0 20px 0;
+}
+h1 a {
+	text-decoration: none;
+}
+h2 {
+	margin: 0 0 5px 0;
+}
+h3 {
+	margin: 0;
+}
+h4 {
+	margin: 0;
+}
+ul {
+	padding: 0;
+	margin: 0;
+}
+li {
+	list-style: none;
+}
+/**********/
+/*SIDE BAR*/
+/**********/
+#top_bar {
+	position: absolute;
+  	top: 0;
+  	left: 0;
+  	height: 110px;
+  	width: 100%;
+  	display: block;
+}
+#top_bar header {
+	width: 110px;
+	height: 110px;
+	display: block;
+	float: left;
+}
+#top_bar nav {
+	display: table;
+	height: 100%;
+	width: calc(100% - 110px);
+	width: -moz-calc(100% - 110px);
+	width: -webkit-calc(100% - 110px);
+	position: absolute;
+	left: 110px;
+	top: 0;
+}
+#top_bar nav .right {
+	height: 100%;
+  	float: right;
+  	display: table;
+}
+#top_bar nav .right ul#nav_links {
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0;
+}
+#top_bar nav .right ul#nav_links li.nav_link {
+	float: left;
+	padding: 5px;
+	margin: 0 15px 0 0;
+}
+#top_bar nav .right ul#nav_links li.nav_link:last-child {
+	margin-right: 38px;
+}
+#top_bar nav .right ul#nav_links li.nav_link a {
+	text-decoration: none;
+	font-size: 22px;
+	padding-bottom: 2px;
+}
+#top_bar nav .right ul#nav_links li.nav_link a.selected,
+#top_bar nav .right ul#nav_links li.nav_link a:hover {
+	border-bottom: 2px solid;
+}
+/*****************/
+/*CONTENT SECTION*/
+/*****************/
+#border {
+	width: calc(100% - 40px);
+	width: -moz-calc(100% - 40px);
+	width: -webkit-calc(100% - 40px);
+	height: 100%;
+	border: 20px solid;
+	display: table;
+}
+main {
+	height: 100%;
+	padding: 0 50px 50px 50px;
+	position: relative;
+}
+#page_content {
+	padding-top: 110px;
+}
+#content {
+	padding: 0 30px 0 150px
+}
+/**********************/
+/*TOP NOTIFICATION BAR*/
+/**********************/
+.notice {
+	font-size: 30px;
+	font-weight: 700;
+	padding: 10px;
+	color: black;
+	height: 35px;
+}
+.notice.good {
+	background: lime;
+}
+.notice.bad {
+	background: red;
+}
+/*********/
+/*HELPERS*/
+/*********/
+.clear {
+	clear: both;
+}

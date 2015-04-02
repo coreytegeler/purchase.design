@@ -1,0 +1,32 @@
+<section id="community">
+	<h1>Community</h1>
+	<%= link_to("View", {:action => 'index'}, :class => 'back-link symb') %>
+	</br>
+
+	<div id="events">
+		<h2>
+			Events
+			<%= link_to("+", {:controller => 'events', :action => 'new'}, :class => 'symb') %>
+		</h2>
+		<% @events.each do |event| %>
+			<div class="image_holder">
+				<%# if event.image.exists? %>
+					<%#= image_tag event.image.url(:thumb) %>
+				<%# end %>
+			</div>
+			<div class="info_holder">
+				<h3 class="name"><%= event.name %></h3>
+				<% if !event.date.blank? %>
+					<h4 class="date"><%= event.date %></h4>
+				<% end %>
+				<% if !event.summary.blank? %>
+					<p class="caption"><%= event.summary %></p>
+				<% end %>
+				<%= link_to("Edit", {:controller => 'events', :action => 'edit', :id => event.id}, :class => 'action edit') %> &nbsp;
+				<%= link_to("Delete", {:controller => 'events', :action => 'delete', :id => event.id}, :class => 'action delete') %>
+			</div>
+		<% end %>
+	</div>
+
+
+</section>

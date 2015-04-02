@@ -1,0 +1,18 @@
+<h1>
+	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
+	<%= pluralize(@works.size, "Work") %>
+</h1>
+<ul id="works">
+	<% @works.each do |work| %>
+		<li>
+			<%= work.position %> &nbsp;
+			<strong><%= work.name %></strong>
+			by <%= work.designer %>
+			<%#= work.visible ? 'Visible' : 'Invisible' %>
+			<%#= work.person.name %>
+			<%= link_to("Show", {:action => 'show', :id => work.id}, :class => 'action show') %> &nbsp;
+			<%= link_to("Edit", {:action => 'edit', :id => work.id}, :class => 'action edit') %> &nbsp;
+			<%= link_to("Delete", {:action => 'delete', :id => work.id}, :class => 'action delete') %>
+		</li>
+	<% end %>
+</ul>

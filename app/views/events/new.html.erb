@@ -1,0 +1,8 @@
+<h1>
+	<%= link_to("\u2B05", {:controller => 'community', :action => 'admin'}, :class => 'back-link symb') %>
+	New event
+</h1>
+<%= form_for(:event, :url => {:action => 'create', :id => @event.id}) do |f| %>
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+	<%= submit_tag("Create") %>
+<% end %>

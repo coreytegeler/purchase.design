@@ -1,0 +1,14 @@
+<h1>
+	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
+	<%= pluralize(@faculties.size, "Faculty Member") %>
+</h1>
+<ul id="faculties">
+	<% @faculties.each do |faculty| %>
+		<li>
+			<%= faculty.position %> &nbsp;
+			<strong><%= faculty.name %></strong>
+			<%= link_to("Edit", {:action => 'edit', :id => faculty.id}, :class => 'action edit') %> &nbsp;
+			<%= link_to("Delete", {:action => 'delete', :id => faculty.id}, :class => 'action delete') %>
+		</li>
+	<% end %>
+</ul>

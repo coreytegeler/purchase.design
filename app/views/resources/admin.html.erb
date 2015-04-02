@@ -1,0 +1,24 @@
+<h1>
+	<%= pluralize(@resources.size, "Resource") %>
+	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
+</h1>
+
+<% @types.each do |type| %>
+	<% @resources_with_type = @resources.where(:type_id => type.id) %>
+	<% if !@resources_with_type.empty? %>
+		<h2>
+			<%= pluralize_without_count(@resources_with_type.size, type.name.capitalize) %>
+			<%= link_to("+", {:action => 'new', :type_id => type.id}, :class => 'action new symb') %>
+		</h2>
+		<ul class="resources_with_type" id="<%= type %>">
+			<% @resources_with_type.each do |resource| %>
+				<li>
+					<%= resource.position %> &nbsp;
+					<strong><%= resource.name %></strong>
+					<%= link_to("Edit", {:action => 'edit', :id => resource.id}, :class => 'action edit') %> &nbsp;
+					<%= link_to("Delete", {:action => 'delete', :id => resource.id}, :class => 'action delete') %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+<% end %>

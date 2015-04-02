@@ -1,0 +1,23 @@
+<%= f.label(:name) %>
+<%= f.text_field(:name) %>
+
+<%= f.label(:date) %>
+<div class="date_select">
+	<%= f.date_select(:date, {include_blank: 'Select'}) %>
+</div>
+
+<%= f.label(:summary) %>
+<%= f.text_area(:summary) %>
+
+<div class="image_container">
+	<% @event.event_images.each do |event_image| %>
+		<%= image_tag event_image.image.url(:medium) %>
+	<% end %>
+</div>
+
+<%= f.fields_for :event_images do |builder| %>
+	<%# if builder.object.new_record? %>
+		<%= builder.label(:image) %>
+		<%= builder.file_field(:image) %>
+	<%# end %>
+<% end %>
