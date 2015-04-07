@@ -12,6 +12,11 @@
 <%= f.label(:image) %>
 <%= f.file_field(:image) %>
 
+<%= render(:controller => 'application', :partial => 'video_player', :locals => {:v => @work.motion}) %>
+
+<%= f.label(:motion) %>
+<%= f.file_field(:motion) %>
+
 <%= f.label(:caption) %>
 <%= f.text_area(:caption) %>
 

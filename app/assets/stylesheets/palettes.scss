@@ -1,0 +1,40 @@
+form input {
+	text-transform:uppercase;
+}
+
+$block: 300px;
+
+#palettes {
+	width: 100%;
+	position: relative;
+	.palette {
+		width: $block;
+		margin-bottom: 40px;
+		border: 1px solid rgba(255,255,255,0.3);
+		.name {
+			padding: 10px;
+			display: block;
+		}
+		.swatch {
+			border-top: 1px solid rgba(255,255,255,0.3);
+			border-bottom: 1px solid rgba(255,255,255,0.3);
+			float: left;
+			input.color {
+				font-size: $block/4 - 10;
+				width: $block - 10;
+				height: $block/4;
+				float: left;
+				border: 0;
+				padding: 0px 0px 0px 10px;
+				margin: 0;
+			}
+		}
+		.actions {
+			display: table;
+			margin: auto;
+			a.action {
+				margin: 5px;
+			}
+		}
+	}
+}

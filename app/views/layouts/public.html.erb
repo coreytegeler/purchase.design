@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
   <meta charset="UTF-16">
 </head>
-<body class="public">
+<body class="public" id="<%= params[:controller].parameterize %>_controller">
 	<% if !flash[:notice].blank? %>
 		<div class="notice <%= flash[:type] %>">
 			<%= flash[:notice] %>
@@ -24,7 +24,7 @@
 		<main>
 			<%= render 'public/top_bar' %>
 			<section id="page_content">
-				<%= yield %>
+				<%#= yield %>
 			</section>
 		</main>
 	</div>

@@ -1,0 +1,80 @@
+$palettes: (
+	(#fff, #000),
+	(#c20000, #fff)
+);
+
+$paletteIndex: random(length($palettes));
+
+$palette: nth($palettes, $paletteIndex);
+
+$primary: nth($palette, 1);
+$secondary: nth($palette, 2);
+
+
+body {
+	background: $primary;
+	color: $secondary;
+	z-index: $paletteIndex;
+}
+#border {
+	border-color: $secondary;
+}
+#top_bar {
+	background: $primary;
+}
+#top_bar header {
+}
+#top_bar header a#logo {
+	height: 110px;
+  	width: 110px;
+  	background-repeat: no-repeat;
+  	background-size: 90px;
+  	background-position: center;
+  	display: block;
+}
+#top_bar header #logo {
+
+}
+#top_bar nav {
+
+}
+#top_bar nav ul {
+	padding: 0;
+}
+#top_bar nav ul li {
+
+}
+#top_bar nav ul li a {
+	color: $secondary;
+}
+#top_bar footer {
+
+}
+h1#page_title {
+	/*float: right;*/
+}
+.indexed {
+	display: table;
+	margin-bottom: 20px;
+}
+.indexed:last-child {
+	margin: 0;
+}
+.indexed .row {
+	border-top: 1px solid $secondary;
+	padding: 5px 0;
+}
+.indexed .cell {
+	display: table-cell;	
+}
+.indexed .index {
+	padding-right: 10px;
+}
+.indexed .name {
+	font-weight: bold;
+}
+.indexed .name a {
+	color: $secondary;
+	list-style: none;
+	text-decoration: none;
+}

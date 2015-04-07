@@ -14,7 +14,7 @@
 	<nav>
 		<div class="right">
 			<ul id="nav_links">
-				<li class="nav_link"><%= link_to("Admins", :controller => "admins", :action => "admin") %></li>
+				<li class="nav_link"><%= link_to("Admins", :controller => "admins") %></li>
 				<li class="nav_link"><%= link_to("Mission", {:controller => 'public', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= link_to("Work", {:controller => 'works', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= link_to("Faculty", {:controller => 'faculty', :action => 'admin'}) %></li>
@@ -22,6 +22,7 @@
 				<li class="nav_link"><%= link_to("Community", {:controller => 'community', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= link_to("Resources", {:controller => 'resources', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= link_to("Apply", {:controller => 'apply', :action => 'admin'}) %></li>
+				<li class="nav_link"><%= link_to("Palettes", {:controller => 'palettes', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= link_to("Logout", {:controller => 'access', :action => 'logout'}) %></li>
 			</ul>
 		</div>

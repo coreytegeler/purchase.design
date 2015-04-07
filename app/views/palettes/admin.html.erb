@@ -1,0 +1,21 @@
+<h1 id="page_title">
+	Palettes
+	<%= link_to("+", {:controller => 'palettes', :action => 'new'}, :class => 'action new symb') %>
+</h1>
+		
+<section id="paletteContainer">
+
+	<div class="palette">
+		<%= form_for(@new_palette, :url => {:id => @new_palette.id}, :html => { :id => @new_palette.name.parameterize, :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:palette => @new_palette, :f => f}) %>
+		<% end %>
+	</div>
+
+	<% @palettes.each do |palette| %>
+		<div class="palette">
+			<%= form_for(palette, :url => {:id => palette.id}, :html => { :id => palette.name.parameterize, :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:palette => palette, :f => f}) %>
+			<% end %>
+		</div>
+	<% end %>
+</section>

@@ -21,7 +21,7 @@ class WorksController < ApplicationController
     if @work.save
       flash[:notice] = "#{@work.name} was created!"
       flash[:type] = 'good'
-      redirect_to(:controller => 'students', :action => 'admin')
+      redirect_to(:action => 'admin')
     else
       @count = Work.count + 1
       render('new')
@@ -38,7 +38,7 @@ class WorksController < ApplicationController
     if @work.update_attributes(work_params)
       flash[:notice] = "#{@work.name} was updated!"
       flash[:type] = 'good'
-      redirect_to(:controller => 'students', :action => 'admin')
+      redirect_to(:action => 'admin')
     else
       @count = Work.count
       render('new')
@@ -54,13 +54,13 @@ class WorksController < ApplicationController
     work = Work.find(params[:id]).destroy
     flash[:notice] = "#{work.name} was deleted!"
     flash[:type] = 'good'
-    redirect_to(:controller => 'students', :action => 'admin')
+    redirect_to(:action => 'admin')
   end
 
   private 
 
     def work_params
-      params.require(:work).permit(:name, :image, :designer, :year, :caption, :position, :visible)
+      params.require(:work).permit(:name, :image, :motion, :designer, :year, :caption, :position, :visible)
     end
 
 end

@@ -1,0 +1,10 @@
+<h1>
+	<%= link_to("\u2B05", {:controller => 'palettes', :action => 'admin'}, :class => 'back-link symb') %>
+	Are you sure you want to delete <u><%= @palette.name %></u>?
+</h1>
+<%= form_for(:palette, :url => {:action => 'destroy', :id => @palette.id}) do |f| %>
+	<%= submit_tag("YES") %>
+<% end %>
+<ul>
+	<li><%= @palette.name %></li>
+</ul>

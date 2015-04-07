@@ -1,0 +1,20 @@
+<h1 id="page_title">Palettes</h1>
+
+<section id="palettes">
+	<div>
+		<%= link_to("Add new palette", {:controller => 'palettes', :action => 'new'}, :class => 'action new symb') %>
+	</div>
+	</br>
+	<% @palettes.each do |palette| %>
+		<div class="palette">
+			<h3 class="name"><%= palette.name %></h3>
+
+			<div class="swatch">
+				<div class="color" id="primary" style="background-color:<%= palette.primary_color %>"></div>
+				<div class="color" id="secondary" style="background-color:<%= palette.secondary_color %>"></div>
+			</div>
+			<%= link_to("Edit", {:controller => 'palettes', :action => 'edit', :id => palette.id}, :class => 'action edit') %> &nbsp;
+			<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :class => 'action delete') %>
+		</div>
+	<% end %>
+</section>

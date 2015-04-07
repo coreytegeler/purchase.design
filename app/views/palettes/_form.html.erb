@@ -1,0 +1,18 @@
+<% if palette.name %>
+	<% @form_id = palette.name.parameterize %>
+<% else %>
+	<% @form_id = palette.id.to_s %>
+<% end %>
+
+<h3 class="name"><%= palette.name %></h3>
+
+<div class="swatch">
+	<input type="text" class="color" value="<%= palette.primary_color %>" name="<%= palette %>" style="color: <%= palette.secondary_color %>; background-color: <%= palette.primary_color %>"/>
+	<input type="text" class="color" value="<%= palette.secondary_color %>" name="<%= palette %>" style="color: <%= palette.primary_color %>; background-color: <%= palette.secondary_color %>"/>
+</div>
+<div class="actions">
+	<%= submit_tag("Save") %>
+	<%#= link_to('Submit', "#", :onclick => "$('#" + palette.name.parameterize + "').submit()", :class => "action submit") %>
+	<%= link_to("Preview", {:controller => 'public', :action => 'index', :palette => palette.position}, :class => 'action preview') %>
+	<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :class => 'action delete') %>
+</div>

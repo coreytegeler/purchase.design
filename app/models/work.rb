@@ -19,4 +19,11 @@ class Work < ActiveRecord::Base
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
 
+    has_attached_file :motion, :styles => {
+            :medium => { :geometry => "640x480", :format => 'mp4'},
+            :thumb => {:geometry => "100x100#", :format => 'jpg', :time => 10}
+        }, :processors => [:ffmpeg]
+
+    validates_attachment_content_type :motion, content_type: /\Avideo\/.*\Z/ 
+
 end

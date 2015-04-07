@@ -25,7 +25,17 @@ gem 'layout_by_action'
 
 gem "paperclip", "~> 4.2"
 
+gem 'paperclip-ffmpeg', '~> 1.0.0'
+
 gem 'rmagick', '~> 2.13.4'
+
+gem 'sass-rails'
+
+gem 'uglifier'
+
+gem 'coffee-rails'
+
+gem 'masonry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

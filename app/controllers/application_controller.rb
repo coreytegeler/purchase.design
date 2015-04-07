@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def confirm_logged_in
     unless session[:admin_id]
       flash[:notice] = "You are not logged in"
-      redirect_to(:action => 'login')
+      redirect_to(:controller => 'access', :action => 'login')
       return false
     else
       return true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402154951) do
+ActiveRecord::Schema.define(version: 20150407171546) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
@@ -93,6 +93,15 @@ ActiveRecord::Schema.define(version: 20150402154951) do
 
   add_index "groups", ["slug"], name: "index_groups_on_slug", using: :btree
 
+  create_table "palettes", force: :cascade do |t|
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "name",            limit: 255
+    t.string   "primary_color",   limit: 255
+    t.string   "secondary_color", limit: 255
+    t.integer  "position",        limit: 4
+  end
+
   create_table "people", force: :cascade do |t|
     t.integer  "group_id",   limit: 4
     t.string   "first_name", limit: 255
@@ -158,17 +167,26 @@ ActiveRecord::Schema.define(version: 20150402154951) do
     t.boolean "visible", limit: 1,     default: false
   end
 
+  create_table "visitors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "works", force: :cascade do |t|
-    t.string   "name",               limit: 255
-    t.string   "designer",           limit: 255
+    t.string   "name",                limit: 255
+    t.string   "designer",            limit: 255
     t.date     "year"
-    t.text     "caption",            limit: 65535
-    t.integer  "position",           limit: 4
-    t.boolean  "visible",            limit: 1,     default: false
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
+    t.text     "caption",             limit: 65535
+    t.integer  "position",            limit: 4
+    t.boolean  "visible",             limit: 1,     default: false
+    t.string   "image_file_name",     limit: 255
+    t.string   "image_content_type",  limit: 255
+    t.integer  "image_file_size",     limit: 4
     t.datetime "image_updated_at"
+    t.string   "motion_file_name",    limit: 255
+    t.string   "motion_content_type", limit: 255
+    t.integer  "motion_file_size",    limit: 4
+    t.datetime "motion_updated_at"
   end
 
 end
