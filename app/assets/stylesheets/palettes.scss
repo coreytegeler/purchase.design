@@ -20,7 +20,7 @@ $block: 300px;
 			border-bottom: 1px solid rgba(255,255,255,0.3);
 			float: left;
 			input.color {
-				font-size: $block/4 - 10;
+				font-size: $block/4 - 15;
 				width: $block - 10;
 				height: $block/4;
 				float: left;
@@ -35,6 +35,20 @@ $block: 300px;
 			a.action {
 				margin: 5px;
 			}
+		}
+		input[type="submit"] {
+			height: auto;
+			width: auto;
+			padding: 0;
+			border: none;
+			font-size: 18px;
+			font-weight: normal;
+			text-transform: none;
+			display: table;
+			float: left;
+			text-decoration: none;
+			opacity: 0.8;
+			margin: 5px;
 		}
 	}
 }

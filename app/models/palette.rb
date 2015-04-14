@@ -1,6 +1,6 @@
 class Palette < ActiveRecord::Base
 
-	scope :sorted, lambda {order("palettes.position ASC")}
+	scope :sorted, lambda {order("palettes.position DESC")}
 	acts_as_list scope: [:position]
 
 	before_validation :create_position

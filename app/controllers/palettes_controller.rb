@@ -11,6 +11,8 @@ class PalettesController < ApplicationController
     @palettes = Palette.sorted
     @new_palette = Palette.new
     @new_palette.name = "New palette"
+    @new_palette.primary_color = "#"
+    @new_palette.secondary_color = "#"
   end
 
   def new
@@ -39,6 +41,9 @@ class PalettesController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
+      flash[:notice] = "#{@palette.name} was not updated!"
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
       render('new')
     end
   end
@@ -52,7 +57,7 @@ class PalettesController < ApplicationController
     palette = Palette.find(params[:id]).destroy
     flash[:notice] = "#{palette.name} was deleted!"
     flash[:type] = 'good'
-    redirect_to(:action => 'index')
+    redirect_to(:action => 'admin')
   end
 
   private
