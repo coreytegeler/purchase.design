@@ -1,4 +1,4 @@
-<section class="masonry" id="paletteContainer">
+<section class="masonry" id="palettes">
 
 	<div class="palette block">
 		<%= form_for(@new_palette, :url => {:action => 'create', :id => @new_palette.id}, :html => { :id => @new_palette.name.parameterize, :method => :post}) do |f| %>
@@ -13,4 +13,5 @@
 			<% end %>
 		</div>
 	<% end %>
+	
 </section>

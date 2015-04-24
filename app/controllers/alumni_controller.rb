@@ -1,7 +1,7 @@
 class AlumniController < ApplicationController
 
   layout_by_action "access", [:index] => "public"
-  before_action :confirm_logged_in, :except => [:index]
+  before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
     @alumni = Alumnus.sorted

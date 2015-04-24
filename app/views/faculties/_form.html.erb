@@ -1,51 +1,18 @@
-<%= f.label(:name) %>
-<%= f.text_field(:name) %>
-
-<%= f.label(:title) %>
-<%= f.text_field(:title) %>
-
-<%= f.label(:email) %>
-<%= f.text_field(:email) %>
-
-<%= f.label(:summary) %>
-<%= f.text_area(:summary) %>
-
-<% if @faculty.image.exists? %>
-	<%= image_tag @faculty.image.url(:thumb) %>
-</br>
+<% if !faculty %>
+	<% faculty = @new_faculty %>
 <% end %>
+<% index = faculty.position.to_s %>
 
-<%= f.label(:image) %>
-<%= f.file_field(:image) %>
+<h3 class="name">
+	<%= f.text_field(:name) %>
+</h3>
 
-
-<% @past = 1972 %>
-<% @present = Time.now.year %>
-
-<%= f.label(:first_year) %>
-<%= f.select(:first_year, @past..@present, {include_blank: 'Select'}) %>
-
-<div class="table">
-	<div class="row">
-		<div class="cell"><label>Alma Mater</label></div>
-		<div class="cell"><label>Degree</label></div>
-		<div class="cell"><label>Year</label></div>
-	</div>
-	<%= f.fields_for :alma_maters do |am| %>
-		<div class="row">
-		  	<div class="cell"><%= am.text_field :college %></div>
-		  	<div class="cell"><%= am.text_field :degree %></div>
-		  	<div class="cell"><%= am.text_field :year %></div>
-		  	<%#= am.link_to_remove "Remove" %>
-		</div>
-	<% end %>
+<div>
+	
 </div>
+<div class="actions">
 
-
-
-<%= f.label(:position) %>
-<%= f.select(:position, 1..@count, :selected => @faculty.position) %>
-
-<%= f.label(:visible) %>
-<%= f.check_box(:visible, :checked => true) %>
-
+	<%= link_to('Save', "#", :onclick => "$('#" + faculty.name.parameterize + "').submit()", :class => "action submit") %>
+	<%= link_to("Preview", {:controller => 'public', :action => 'index', :faculty => faculty.id}, :class => 'action preview') %>
+	<%= link_to("Delete", {:controller => 'facultys', :action => 'delete', :id => faculty.id}, :class => 'action delete') %>
+</div>

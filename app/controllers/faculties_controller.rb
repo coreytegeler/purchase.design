@@ -1,51 +1,51 @@
 class FacultiesController < ApplicationController
 
   layout_by_action "access", [:index] => "public"
-  before_action :confirm_logged_in, :except => [:index]
+  before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
     @faculties = Faculty.sorted
   end
 
   def admin
-    @faculties = Faculty.sorted
+    @faculties = Faculty.sorted.reverse_order
+    @new_faculty = Faculty.new
+    @new_faculty.position = Faculty.all.count + 1
+    @new_faculty.name = 'New faculty member'
   end
 
-  def edit
-    @faculty = Faculty.find(params[:id])
-    @count = Faculty.count
-    @faculty.alma_maters.build
-  end
-
-  def new
-    @faculty = Faculty.new
-    @count = Faculty.count + 1
-    @faculty.position = @count
-    @faculty.alma_maters.build
-  end
-
-  def create
+    def create
     @faculty = Faculty.new(faculty_params)
     if @faculty.save
-      flash[:notice] = "#{@faculty.name} was created!"
+      update_positions
+      flash[:notice] = "Faculty was created!"
       flash[:type] = 'good'
-      redirect_to(:controller => 'faculties', :action => 'admin')
+      redirect_to(:action => 'admin')
     else
-      @count = Faculty.count + 1
-      @faculty.position = @count
-      render('new')
+      flash[:notice] = "Faculty was not created!"
+      p @faculty.errors.full_messages
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+      @new_faculty = Faculty.new
+      @new_faculty.position = Faculty.all.count + 1
+      @new_faculty.name = 'New faculty member'
     end
   end
 
   def update
     @faculty = Faculty.find(params[:id])
     if @faculty.update_attributes(faculty_params)
-      flash[:notice] = "#{@faculty.name} was updated!"
+      update_positions
+      flash[:notice] = "Faculty was updated!"
       flash[:type] = 'good'
-      redirect_to(:action => 'admin', :faculty => @faculty)
+      redirect_to(:action => 'admin')
     else
-      @count = Faculty.count
-      render('new')
+      flash[:notice] = "Faculty was not updated!"
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+      @new_faculty = Faculty.new
+      @new_faculty.position = Faculty.all.count + 1
+      @new_faculty.name = 'New faculty member'
     end
   end
 
@@ -54,16 +54,23 @@ class FacultiesController < ApplicationController
   end
 
   def destroy
-    faculty = Faculty.find(params[:id]).destroy
-    flash[:notice] = "#{faculty.name} was deleted!"
+    @faculty = Faculty.find(params[:id]).destroy
+    update_positions
+    flash[:notice] = "Faculty was deleted!"
     flash[:type] = 'good'
-    redirect_to(:action => 'admin', :faculty => @faculty)
+    redirect_to(:action => 'admin')
   end
 
   private 
 
     def faculty_params
       params.require(:faculty).permit(:name, :position, :email, :title, :summary, :first_year, :last_year, :current, :visible, alma_maters_attributes: [:id, :college, :degree, :year, :faculty_id, :_destroy])
+    end
+
+    def update_positions
+      Faculty.sorted.reverse_order.each_with_index do |f, i|
+          f.update_attribute(:position, i+1)
+      end
     end
 
 end

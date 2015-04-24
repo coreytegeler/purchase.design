@@ -5,10 +5,16 @@ $(function() {
 	$(window).on('hashchange', function() {
 		fillSvgs();
 	});
+	$('.masonry').masonry({
+		itemSelector: '.block',
+		columnWidth: 280,
+		gutterWidth: 40
+	});
 });
 
 $(window).resize(function() {
 	size();
+	$('.masonry').masonry('reload');
 });
 
 function fillSvgs() {
@@ -36,7 +42,7 @@ function size() {
 }
 
 function setUpSide() {
-	$('#buttons .button').click(function(){
+	$('#buttons .button.method').click(function(){
 		var method = $(this).attr('id');
 		$.ajax({
 			type: "POST",
@@ -47,5 +53,22 @@ function setUpSide() {
 			error: function(xhr, status, error) {
 			}
     	});
+    });
+
+	$('#buttons .button.swap').click(function() {
+		var id = $(this).attr('id');
+		$('.swapper .block').each(function() {
+			$(this).children('.text').each(function() {
+    			var hidden = $(this).hasClass('hidden');
+    			var show = $(this).hasClass(id);
+    			if(show) {
+    				$(this).removeClass('hidden');
+    			} else if (!hidden) {
+    				$(this).addClass('hidden');
+    			}
+    		});
+		});
+		$('.masonry').masonry('reload');
 	});
+	
 }

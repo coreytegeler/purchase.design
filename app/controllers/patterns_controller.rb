@@ -1,7 +1,7 @@
 class PatternsController < ApplicationController
 
   layout 'access'
-  before_action :confirm_logged_in
+  before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
     @patterns = Pattern.sorted
@@ -68,9 +68,9 @@ class PatternsController < ApplicationController
     end
 
     def update_positions
-      Pattern.sorted.reverse_order.each_with_index do |l, i|
-          l.update_attribute(:position, i+1)
-          l.update_attribute(:name, name + l.position.to_s)
+      Pattern.sorted.reverse_order.each_with_index do |p, i|
+          p.update_attribute(:position, i+1)
+          p.update_attribute(:name, name + p.position.to_s)
       end
     end
 

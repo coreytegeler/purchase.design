@@ -1,19 +1,20 @@
-<h1 id="page_title">Faculty</h1>
-<section class="clear" id="faculty">
-	<div class="block">
-		<% @faculties.each_with_index do |faculty, index| %>
-			<div class="faculty" style="bottom: <%= @shift %>px; left: <%= @shift %>px;">
-				<h3><%= faculty.name %></h3>
-				<p><%= faculty.summary %></p>
-				<% faculty.alma_maters.each do |am| %>
-					<ul>
-						<li><%= am.degree %></li>
-						<li><%= am.college %></li>
-						<li><%= am.year %></li>
-					</ul>
-				<% end %>
-				<p><%= mail_to faculty.email %></p>
+<section class="masonry swapper" id="faculties">
+	<% @faculties.each do |faculty| %>
+		<div class="faculty block">
+			<div class="text name">
+				<%= faculty.name %>
 			</div>
-		<% end %>
-	</div>
+			<div class="text alma_mater hidden">
+				<% faculty.alma_maters.each do |am| %>
+					<%= am %>
+				<% end %>
+			</div>
+			<div class="text email hidden">
+				<%= mail_to(faculty.email) %>
+			</div>
+			<div class="text title hidden">
+				<%= faculty.title %>
+			</div>
+		</div>
+	<% end %>
 </section>

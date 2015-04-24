@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
   layout_by_action "access", [:index, :show] => "public"
-  before_action :confirm_logged_in, :except => [:index]
+  before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
     @resources = Resource.sorted

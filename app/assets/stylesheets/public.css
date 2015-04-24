@@ -50,7 +50,7 @@ body {
 /*******SIDE BAR*******/
 /**********************/
 aside#side_bar {
-	position: fixed;
+	position: absolute;
 	z-index: 10;
 	top: 9px;
 	left: 9px;
@@ -221,32 +221,28 @@ aside#side_bar #tools #style_control .button#next_pattern {
   	width: -moz-calc(100% - 163px);
   	width: -webkit-calc(100% - 163px);
 }
-h1#page_title {
-	
+
+.swapper .block {
+	font-size: 65px;
+	line-height: 70px;
+	font-weight: 700;
+	padding-bottom: 40px;
+	width: 280px;
+	word-wrap: break-word;
+	overflow: hidden;
 }
-.indexed {
-	display: table;
-	margin-bottom: 20px;
+.swapper .block .email, .swapper .block .website {
+	font-size: 45px;
+	line-height: 46px;
 }
-.indexed:last-child {
-	margin: 0;
-}
-.indexed .row {
-	padding: 5px 0;
-}
-.indexed .cell {
-	display: table-cell;	
-}
-.indexed .index {
-	padding-right: 10px;
-}
-.indexed .name {
-	font-weight: bold;
-}
-.indexed .name a {
-	list-style: none;
+.swapper .block .email a, .swapper .block .website a {
 	text-decoration: none;
 }
+.swapper .hidden {
+	display: none;
+}
+
+
 #hiddenPalette {
 	display:none;
 }

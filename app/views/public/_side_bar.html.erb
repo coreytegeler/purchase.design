@@ -11,27 +11,30 @@
 				
 				<% case params[:controller] %>
 				<% when 'works' %>
-					<div class="button" id="next_work">
-						<div class="secondary_fill">
-							<%= inline_svg('icons/next_arrow.svg', false) %>
-						</div>
-						<%= render 'public/tooltip', :text => "Show me more work!" %>
-					</div>
+					<%= render 'works/tools' %>
+				<% when 'faculties' %>
+					<%= render 'faculties/tools' %>
+				<% when 'alumni' %>
+					<%#= render 'alumni/tools' %>
+				<% when 'resources' %>
+					<%#= render 'resources/tools' %>
+				<% when 'apply' %>
+					<%#= render 'apply/tools' %>
 				<% end %>
 
-				<div class="button" id="clear">
-					
+				<div class="button method" id="clear">
+					<%#= inline_svg(@clear, true) %>
 				</div>
 
-				<div class="button" id="next_gradient">
+				<div class="button method" id="next_gradient">
 					<%= inline_svg(@next_gradient, true) %>
 				</div>
 
-				<div class="button" id="next_pattern" style="background-image:url(<%= @next_pattern %>)">
+				<div class="button method" id="next_pattern" style="background-image:url(<%= @next_pattern %>)">
 			
 				</div>
 				
-				<div class="button" id="next_logo">
+				<div class="button method" id="next_logo">
 					<div class="swap_arrow secondary_fill">
 						<%= inline_svg('icons/swap_arrow.svg', false) %>
 					</div>
@@ -43,7 +46,7 @@
 					</div>
 					<%= render 'public/tooltip', :text => "Next logo please!" %>
 				</div>
-				<div class="button" id="next_palette">
+				<div class="button method" id="next_palette">
 					<div class="swatch primary" <%= color('bg', @next_p) %>></div>
 					<div class="swatch secondary" <%= color('border', @next_s) %>></div>
 					<%= render 'public/tooltip', :text => "Gimme these colors!" %>

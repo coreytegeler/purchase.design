@@ -15,19 +15,17 @@
 			<%= flash[:notice].html_safe %>
 		</div>
 	<% end %>
-	<div id="border" <%= color('border', @s) %>>
-		<main>
-			<%= render 'public/top_bar' %>
-			<div id="side_bar_wrap">
-				<%= render 'public/side_bar' %>
-			</div>
+	<main>
+		<%= render 'public/top_bar' %>
+		<%= render 'public/side_bar' %>
+		<div id="border" <%= color('border', @s) %>>
 			<section id="page_content">
 				<%= yield %>
 			</section>
-		</main>
-		<div id="gradient" style="background-image: url(<%= @gradient %>)">
-		<div id="pattern" style="background-image: url(<%= @pattern %>)">
-	</div>
+			<div id="gradient" style="background-image: url(<%= @gradient %>)">
+			<div id="pattern" style="background-image: url(<%= @pattern %>)">
+		</div>
+	</main>
 	<div id="hiddenPalette" data-primary="<%= @p %>" data-secondary="<%= @s %>"></div>
 </body>
 </html>

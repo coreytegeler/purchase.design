@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'model/resources'
 
-  root "public#index"
+  root "works#index"
 
   get 'show/:slug', :to => 'public#show'
   get 'admin', :to => 'access#index'

@@ -1,7 +1,7 @@
 class PalettesController < ApplicationController
 
   layout 'access'
-  before_action :confirm_logged_in
+  before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
     @palettes = Palette.sorted

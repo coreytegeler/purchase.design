@@ -17,7 +17,7 @@ body {
 	display: table;
 }
 a {
-	color: white;
+	color: inherit;
 }
 h1 {
 	display: inline-block;
@@ -47,7 +47,7 @@ li {
 /********TOP BAR********/
 /***********************/
 #top_bar {
-	position: fixed;
+	position: absolute;
   	top: 9px;
   	left: 9px;
   	height: 105px;
