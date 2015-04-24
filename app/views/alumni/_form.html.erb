@@ -6,8 +6,8 @@
 <%= f.label(:year) %>
 <%= f.select(:year, @past..@present, {include_blank: 'Select'}) %>
 
-<%= f.label(:caption) %>
-<%= f.text_area(:caption) %>
+<%= f.label("Website") %>
+<%= f.text_field(:url) %>
 
 <%= f.label(:position) %>
 <%= f.select(:position, 1..@count) %>

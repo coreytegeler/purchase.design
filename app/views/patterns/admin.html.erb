@@ -1,0 +1,14 @@
+<section class="masonry" id="patternContainer">
+	<div class="block pattern">
+		<%= form_for(@new_pattern, :url => {:action => 'create', :id => @new_pattern.id}, :html => { :id => @new_pattern.name.parameterize, :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:pattern => @new_pattern, :f => f}) %>
+		<% end %>
+	</div>
+	<% @patterns.each_with_index do |pattern, i| %>
+		<div class="block pattern">
+			<%= form_for(pattern, :url => {:action => 'update', :id => pattern.id}, :html => { :id => pattern.name.parameterize, :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:pattern => pattern, :f => f}) %>
+			<% end %>
+		</div>
+	<% end %>
+</section>

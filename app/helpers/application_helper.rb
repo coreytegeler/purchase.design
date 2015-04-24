@@ -49,4 +49,13 @@ module ApplicationHelper
 	  end
 	end
 
+	def inline_svg(file, in_db)
+		if in_db == true
+        	Paperclip.io_adapters.for(file).read.html_safe
+        else
+  			svg = File.open("app/assets/images/#{file}", "rb")
+  			raw svg.read
+        end
+    end
+
 end

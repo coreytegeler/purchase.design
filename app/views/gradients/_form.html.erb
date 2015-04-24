@@ -1,0 +1,20 @@
+<% if !gradient %>
+	<% gradient = @new_gradient %>
+<% end %>
+<h3 class="name"><%= gradient.name %></h3>
+
+<div class="full file" style="background-image:url(<%= gradient.file %>)">
+	<% if !gradient.file.exists? %>
+		<div class="drop">
+			<%= f.file_field(:file) %>
+		</div>
+	<% end %>
+</div>
+
+<div class="actions">
+	<% if gradient.position == @gradients.count+1 %>
+		<%= link_to('Save', "#", :onclick => "$('#" + gradient.name.parameterize + "').submit()", :class => "action submit") %>
+	<% else %>
+		<%= link_to("Delete", {:controller => 'gradients', :action => 'delete', :id => gradient.id}, :class => 'action delete') %>
+	<% end %>
+</div>

@@ -11,4 +11,14 @@ class Alumnus < ActiveRecord::Base
 
 	acts_as_list scope: [:position]
 
+	before_validation :format_url
+
+	private
+
+	def format_url
+		unless self.url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]
+    		self.url = "http://#{self.url}"
+  		end
+	end
+
 end

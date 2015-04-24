@@ -3,7 +3,7 @@ class PublicController < ApplicationController
 	layout 'public'
 
 	def index
-
+		
 	end
 
 	def show 
@@ -12,6 +12,6 @@ class PublicController < ApplicationController
 
 	def admin?
     	session[:admin_id]
-  	end
+  end
 
 end

@@ -1,0 +1,10 @@
+<h1>
+	<%= link_to("\u2B05", {:controller => 'gradients', :action => 'admin'}, :class => 'back-link symb') %>
+	Are you sure you want to delete <u><%= @gradient.name %></u>?
+</h1>
+<%= form_for(:gradient, :url => {:action => 'destroy', :id => @gradient.id}) do |f| %>
+	<%= submit_tag("YES") %>
+<% end %>
+<ul>
+	<li><%= @gradient.name %></li>
+</ul>

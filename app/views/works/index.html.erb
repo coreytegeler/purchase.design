@@ -1,16 +1,13 @@
-<h1 id="page_title">Work</h1>
-<section class="clear" id="works">
-	<div class="block">
-		<div class="stack">
-			<% @works.each_with_index do |work, index| %>
-				<% @shift = 5 * index %>
-				<div class="work" style="bottom: <%= @shift %>px; left: <%= @shift %>px;">
-					<h3><%= work.name %></h3>
+<div class="horz_center">
+	<section class="vert_center" id="works">
+		<div id="stack">
+			<% @works.each do |work| %>
+				<div class="work" <%= color('bg', @p, 'border', @s) %>>
 					<div class="image_wrapper">
-						<%= image_tag work.image.url(:medium) %>
+						<%= image_tag work.image.url(:small) %>
 					</div>
 				</div>
 			<% end %>
 		</div>
-	</div>
-</section>
+	</section>
+</div>

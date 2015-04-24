@@ -1,33 +1,19 @@
-<%= f.label(:name) %>
-<%= f.text_field(:name) %>
+<h3 class="name"><%= work.name %></h3>
 
-<%= f.label(:designer) %>
-<%= f.text_field(:designer) %>
+<div class="file">
+	<% if work.image.exists? %>
+		<div class="image" style="background-image:url('<%= work.image.url(:small) %>')"></div>
+	<% else %>
+		<div class="drop">
+			<%= f.file_field(:image) %>
+		</div>
+	<% end %>
+</div>
 
-<% if @work.image.exists? %>
-	<%= image_tag @work.image.url(:thumb) %>
-</br>
-<% end %>
-
-<%= f.label(:image) %>
-<%= f.file_field(:image) %>
-
-<%= render(:controller => 'application', :partial => 'video_player', :locals => {:v => @work.motion}) %>
-
-<%= f.label(:motion) %>
-<%= f.file_field(:motion) %>
-
-<%= f.label(:caption) %>
-<%= f.text_area(:caption) %>
-
-<%= f.label(:year) %>
-<% @present = Time.now.year %>
-<% @past = 1972 %>
-<%= f.select(:year, @past..@present, {include_blank: 'Select'}) %>
-
-<%= f.label(:position) %>
-<%= f.select(:position, 1..@count) %>
-
-<%= f.label(:visible) %>
-<%= f.check_box(:visible, :checked => true) %>
-
+<div class="actions">
+	<% if work.position == @works.count+1 %>
+		<%= link_to('Save', "#", :onclick => "$('#" + work.name.parameterize + "').submit()", :class => "action submit") %>
+	<% else %>
+		<%= link_to("Delete", {:controller => 'works', :action => 'delete', :id => work.id}, :class => 'action delete') %>
+	<% end %>
+</div>

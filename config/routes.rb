@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   get 'work/:action', :to => 'works#action'
   post 'work/:action', :to => 'works#action'
 
+  post "next_palette", :to => "application#next_palette"
+  post "next_logo", :to => "application#next_logo"
+  post "next_gradient", :to => "application#next_gradient"
+  post "next_pattern", :to => "application#next_pattern"
+  post "clear", :to => "application#clear"
+
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.

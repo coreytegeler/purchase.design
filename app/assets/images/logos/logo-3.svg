@@ -3,29 +3,19 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="110px" height="110px" viewBox="0 0 110 110" enable-background="new 0 0 110 110" xml:space="preserve">
-<g>
-	<g>
-		<defs>
-			<rect id="SVGID_1_" x="24.146" width="61.709" height="110"/>
-		</defs>
-		<clipPath id="SVGID_2_">
-			<use xlink:href="#SVGID_1_"  overflow="visible"/>
-		</clipPath>
-		<rect x="24.146" y="0.001" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.414"/>
-		<rect x="24.146" y="16.098" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.415"/>
-		<rect x="24.146" y="32.196" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.415"/>
-		<rect x="24.146" y="48.293" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.414"/>
-		<rect x="24.146" y="64.391" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.415"/>
-		<rect x="40.244" y="64.391" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.415"/>
-		<rect x="56.341" y="64.391" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.415"/>
-		<rect x="72.439" y="48.293" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.415" height="13.414"/>
-		<rect x="72.439" y="32.196" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.415" height="13.415"/>
-		<rect x="40.244" y="16.098" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.415"/>
-		<rect x="72.439" y="16.098" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.415" height="13.415"/>
-		<rect x="56.341" y="0.001" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.414"/>
-		<rect x="72.439" y="0.001" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.415" height="13.414"/>
-		<rect x="24.146" y="80.488" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.414"/>
-		<rect x="24.146" y="96.585" clip-path="url(#SVGID_2_)" fill="#231F20" width="13.414" height="13.415"/>
-	</g>
-</g>
+<rect x="24.146" y="0.001" width="13.414" height="13.414"/>
+<rect x="24.146" y="16.098" width="13.414" height="13.415"/>
+<rect x="24.146" y="32.196" width="13.414" height="13.415"/>
+<rect x="24.146" y="48.293" width="13.414" height="13.414"/>
+<rect x="24.146" y="64.391" width="13.414" height="13.416"/>
+<rect x="40.244" y="64.391" width="13.414" height="13.416"/>
+<rect x="56.341" y="64.391" width="13.414" height="13.416"/>
+<rect x="72.439" y="48.293" width="13.414" height="13.414"/>
+<rect x="72.439" y="32.196" width="13.414" height="13.415"/>
+<rect x="40.244" y="16.098" width="13.414" height="13.415"/>
+<rect x="72.439" y="16.098" width="13.414" height="13.415"/>
+<rect x="56.341" y="0.001" width="13.414" height="13.414"/>
+<rect x="72.439" y="0.001" width="13.414" height="13.414"/>
+<rect x="24.146" y="80.488" width="13.414" height="13.414"/>
+<rect x="24.146" y="96.585" width="13.414" height="13.415"/>
 </svg>

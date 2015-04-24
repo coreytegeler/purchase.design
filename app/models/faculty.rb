@@ -21,14 +21,11 @@ class Faculty < ActiveRecord::Base
 
   	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   	
-  	validates_presence_of :name, :title
-  	validates_format_of :email, :with => VALID_EMAIL_REGEX
-	validates_confirmation_of :email
+  	# validates_presence_of :name, :title
+  	# validates_format_of :email, :with => VALID_EMAIL_REGEX
+	# validates_confirmation_of :email
 
-	has_many :alma_maters, 
-	         :dependent => :destroy
-	accepts_nested_attributes_for :alma_maters,
-								  :reject_if => lambda { |t| t['alma_mater'].blank? }, 
-								  :allow_destroy => true
+	has_many :alma_maters, :dependent => :destroy
+	accepts_nested_attributes_for :alma_maters, reject_if: proc { |attributes| attributes['name'].blank? }, :allow_destroy => true
 
 end

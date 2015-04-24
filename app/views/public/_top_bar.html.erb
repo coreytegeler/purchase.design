@@ -1,12 +1,7 @@
-<div id="top_bar">
-	<header>
-		<% @logo = "background-image: url(" + random_logo + ")" %>
-		<%= link_to( "", {:controller => 'public', :action => 'index'}, {:id => 'logo', :style => @logo}) %>
-	</header>
+<div id="top_bar" <%= color('color', @s) %>>
 	<nav>
-		<div class="right">
-			<ul id="nav_links">
-				<li class="nav_link"><%= link_to("Mission", {:controller => 'public', :action => 'index'}) %></li>
+		<div id="nav_wrapper">
+			<ul id="nav_links" <%= color('bg', @p, 'border', @s) %>>
 				<li class="nav_link"><%= link_to("Work", {:controller => 'work', :action => 'index'}) %></li>
 				<li class="nav_link"><%= link_to("Faculty", {:controller => 'faculty', :action => 'index'}) %></li>
 				<li class="nav_link"><%= link_to("Alumni", {:controller => 'alumni', :action => 'index'}) %></li>

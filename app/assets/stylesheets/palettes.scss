@@ -1,54 +1,42 @@
 form input {
 	text-transform:uppercase;
 }
-
-$block: 300px;
-
 #palettes {
 	width: 100%;
 	position: relative;
-	.palette {
-		width: $block;
-		margin-bottom: 40px;
-		border: 1px solid rgba(255,255,255,0.3);
-		.name {
-			padding: 10px;
-			display: block;
-		}
-		.swatch {
-			border-top: 1px solid rgba(255,255,255,0.3);
-			border-bottom: 1px solid rgba(255,255,255,0.3);
-			float: left;
-			input.color {
-				font-size: $block/4 - 15;
-				width: $block - 10;
-				height: $block/4;
-				float: left;
-				border: 0;
-				padding: 0px 0px 0px 10px;
-				margin: 0;
-			}
-		}
-		.actions {
-			display: table;
-			margin: auto;
-			a.action {
-				margin: 5px;
-			}
-		}
-		input[type="submit"] {
-			height: auto;
-			width: auto;
-			padding: 0;
-			border: none;
-			font-size: 18px;
-			font-weight: normal;
-			text-transform: none;
-			display: table;
-			float: left;
-			text-decoration: none;
-			opacity: 0.8;
-			margin: 5px;
-		}
-	}
+}
+#palettes .palette.block {
+	width: 280px;
+	height: auto !important;
+	margin-bottom: 40px;
+	border: 1px solid rgba(255,255,255,0.3);
+}
+#palettes .palette.block .swatch {
+	border-top: 1px solid rgba(255,255,255,0.3);
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+	float: left;
+}
+#palettes .palette.block .swatch input.color {
+	font-size: 55px;
+	width: 270px;
+	height: 70px;
+	float: left;
+	border: 0;
+	padding: 0px 0px 0px 10px;
+	margin: 0;
+}
+#palettes .palette.block .swatch input[type="submit"].color {
+	height: auto;
+	width: auto;
+	margin: 0;
+	padding: 5px;
+	background: none;
+	border: none;
+	font-size: 18px;
+	line-height: 15px;
+	font-weight: normal;
+	text-transform: none;
+	display: table;
+	float: left;
+	opacity: 0.8;
 }

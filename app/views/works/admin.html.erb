@@ -1,18 +1,14 @@
-<h1>
-	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
-	<%= pluralize(@works.size, "Work") %>
-</h1>
-<ul id="works">
-	<% @works.each do |work| %>
-		<li>
-			<%= work.position %> &nbsp;
-			<strong><%= work.name %></strong>
-			by <%= work.designer %>
-			<%#= work.visible ? 'Visible' : 'Invisible' %>
-			<%#= work.person.name %>
-			<%= link_to("Show", {:action => 'show', :id => work.id}, :class => 'action show') %> &nbsp;
-			<%= link_to("Edit", {:action => 'edit', :id => work.id}, :class => 'action edit') %> &nbsp;
-			<%= link_to("Delete", {:action => 'delete', :id => work.id}, :class => 'action delete') %>
-		</li>
+<section class="masonry" id="workContainer">
+	<div class="block work">
+		<%= form_for(@new_work, :url => {:action => 'create', :id => @new_work.id}, :html => { :id => @new_work.name.parameterize, :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:work => @new_work, :f => f}) %>
+		<% end %>
+	</div>
+	<% @works.each_with_index do |work, i| %>
+		<div class="block work">
+			<%= form_for(work, :url => {:action => 'update', :id => work.id}, :html => { :id => work.name.parameterize, :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:work => work, :f => f}) %>
+			<% end %>
+		</div>
 	<% end %>
-</ul>
+</section>

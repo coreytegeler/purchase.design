@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407171546) do
+ActiveRecord::Schema.define(version: 20150424015723) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 20150407171546) do
   create_table "alumni", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.date     "year"
-    t.text     "caption",    limit: 65535
     t.integer  "position",   limit: 4
-    t.boolean  "visible",    limit: 1,     default: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.boolean  "visible",    limit: 1,   default: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "url",        limit: 255
   end
 
   create_table "apply", force: :cascade do |t|
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(version: 20150407171546) do
     t.string   "website",            limit: 255
   end
 
+  create_table "gradients", force: :cascade do |t|
+    t.string   "file_file_name",    limit: 255
+    t.string   "file_content_type", limit: 255
+    t.integer  "file_file_size",    limit: 4
+    t.datetime "file_updated_at"
+    t.integer  "position",          limit: 4
+    t.string   "name",              limit: 255
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "slug",       limit: 255
@@ -93,6 +102,15 @@ ActiveRecord::Schema.define(version: 20150407171546) do
 
   add_index "groups", ["slug"], name: "index_groups_on_slug", using: :btree
 
+  create_table "logos", force: :cascade do |t|
+    t.string   "file_file_name",    limit: 255
+    t.string   "file_content_type", limit: 255
+    t.integer  "file_file_size",    limit: 4
+    t.datetime "file_updated_at"
+    t.integer  "position",          limit: 4
+    t.string   "name",              limit: 255
+  end
+
   create_table "palettes", force: :cascade do |t|
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -100,6 +118,15 @@ ActiveRecord::Schema.define(version: 20150407171546) do
     t.string   "primary_color",   limit: 255
     t.string   "secondary_color", limit: 255
     t.integer  "position",        limit: 4
+  end
+
+  create_table "patterns", force: :cascade do |t|
+    t.string   "tile_file_name",    limit: 255
+    t.string   "tile_content_type", limit: 255
+    t.integer  "tile_file_size",    limit: 4
+    t.datetime "tile_updated_at"
+    t.integer  "position",          limit: 4
+    t.string   "name",              limit: 255
   end
 
   create_table "people", force: :cascade do |t|
@@ -187,6 +214,9 @@ ActiveRecord::Schema.define(version: 20150407171546) do
     t.string   "motion_content_type", limit: 255
     t.integer  "motion_file_size",    limit: 4
     t.datetime "motion_updated_at"
+    t.string   "orientation",         limit: 255
+    t.integer  "width",               limit: 4
+    t.integer  "height",              limit: 4
   end
 
 end

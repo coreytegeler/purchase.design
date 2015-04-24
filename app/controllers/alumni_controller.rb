@@ -59,7 +59,7 @@ class AlumniController < ApplicationController
   private 
 
     def alumnus_params
-      params.require(:alumnus).permit(:name, :year, :caption, :position, :visible)
+      params.require(:alumnus).permit(:name, :year, :url, :position, :visible)
     end
 
 end

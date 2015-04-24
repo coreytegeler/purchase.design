@@ -10,7 +10,8 @@ class PalettesController < ApplicationController
   def admin
     @palettes = Palette.sorted
     @new_palette = Palette.new
-    @new_palette.name = "New palette"
+    @new_palette.position = Palette.all.count+1
+    @new_palette.name = name + @new_palette.position.to_s
     @new_palette.primary_color = "#"
     @new_palette.secondary_color = "#"
   end
@@ -22,29 +23,38 @@ class PalettesController < ApplicationController
   def create
     @palette = Palette.new(palette_params)
     if @palette.save
-      flash[:notice] = "#{@palette.name} was created!"
+      update_positions
+      flash[:notice] = "Palette was created!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      render('new')
+      flash[:notice] = "Palette was not created!"
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+      @new_palette = Palette.new
+      @new_palette.position = Palette.all.count + 1
+      @new_palette.name = name + @new_palette.position.to_s
+      @new_palette.primary_color = "#"
+      @new_palette.secondary_color = "#"
     end
-  end
-
-  def edit
-    #@palette = Palette.find(params[:id])
   end
 
   def update
     @palette = Palette.find(params[:id])
     if @palette.update_attributes(palette_params)
-      flash[:notice] = "#{@palette.name} was updated!"
+      update_positions
+      flash[:notice] = "Palette was updated!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "#{@palette.name} was not updated!"
+      flash[:notice] = "Palette was not updated!"
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
-      render('new')
+      @new_palette = Palette.new
+      @new_palette.position = Palette.all.count+1
+      @new_palette.name = name + @new_palette.position.to_s
+      @new_palette.primary_color = "#"
+      @new_palette.secondary_color = "#"
     end
   end
 
@@ -53,9 +63,9 @@ class PalettesController < ApplicationController
   end
 
   def destroy
-    #don't need an instance variable since it is not being called elsewhere
-    palette = Palette.find(params[:id]).destroy
-    flash[:notice] = "#{palette.name} was deleted!"
+    @palette = Palette.find(params[:id]).destroy
+    update_positions
+    flash[:notice] = "Palette was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
   end
@@ -66,6 +76,17 @@ class PalettesController < ApplicationController
       # raises an error if :palette is not present
       # allows listed attributes to be mass-assigned
       params.require(:palette).permit(:name, :primary_color, :secondary_color, :position)
+    end
+
+    def update_positions
+      Palette.sorted.reverse_order.each_with_index do |p, i|
+          p.update_attribute(:position, i+1)
+          p.update_attribute(:name, name + p.position.to_s)
+      end
+    end
+
+    def name
+      "Palete No. "
     end
 
 end

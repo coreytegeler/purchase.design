@@ -1,0 +1,22 @@
+<% if !logo %>
+	<% logo = @new_logo %>
+<% end %>
+<h3 class="name"><%= logo.name %></h3>
+
+<div class="file">
+	<% if logo.file.exists? %>
+		<%= inline_svg(logo.file, true) %>
+	<% else %>
+		<div class="drop">
+			<%= f.file_field(:file) %>
+		</div>
+	<% end %>
+</div>
+
+<div class="actions">
+	<% if logo.position == @logos.count+1 %>
+		<%= link_to('Save', "#", :onclick => "$('#" + logo.name.parameterize + "').submit()", :class => "action submit") %>
+	<% else %>
+		<%= link_to("Delete", {:controller => 'logos', :action => 'delete', :id => logo.id}, :class => 'action delete') %>
+	<% end %>
+</div>

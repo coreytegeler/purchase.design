@@ -1,0 +1,22 @@
+<% if !pattern %>
+	<% pattern = @new_pattern %>
+<% end %>
+<h3 class="name"><%= pattern.name %></h3>
+
+<div class="full file">
+	<% if pattern.tile.exists? %>
+		<div class="image" style="background-image:url('<%= pattern.tile.url(:small) %>')"></div>
+	<% else %>
+		<div class="drop">
+			<%= f.file_field(:tile) %>
+		</div>
+	<% end %>
+</div>
+
+<div class="actions">
+	<% if pattern.position == @patterns.count+1 %>
+		<%= link_to('Save', "#", :onclick => "$('#" + pattern.name.parameterize + "').submit()", :class => "action submit") %>
+	<% else %>
+		<%= link_to("Delete", {:controller => 'patterns', :action => 'delete', :id => pattern.id}, :class => 'action delete') %>
+	<% end %>
+</div>

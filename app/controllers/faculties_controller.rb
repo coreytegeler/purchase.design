@@ -14,13 +14,14 @@ class FacultiesController < ApplicationController
   def edit
     @faculty = Faculty.find(params[:id])
     @count = Faculty.count
+    @faculty.alma_maters.build
   end
 
   def new
     @faculty = Faculty.new
     @count = Faculty.count + 1
     @faculty.position = @count
-    3.times{ @faculty.alma_maters.build }
+    @faculty.alma_maters.build
   end
 
   def create
@@ -62,7 +63,7 @@ class FacultiesController < ApplicationController
   private 
 
     def faculty_params
-      params.require(:faculty).permit(:name, :position, :email, :title, :summary, :first_year, :last_year, :current, :visible, alma_maters_attributes: [:college, :degree, :year, :faculty_id])
+      params.require(:faculty).permit(:name, :position, :email, :title, :summary, :first_year, :last_year, :current, :visible, alma_maters_attributes: [:id, :college, :degree, :year, :faculty_id, :_destroy])
     end
 
 end

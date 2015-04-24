@@ -1,6 +1,7 @@
 <% if !palette %>
 	<% palette = @new_palette %>
 <% end %>
+<% index = palette.position.to_s %>
 
 <h3 class="name"><%= palette.name %></h3>
 
@@ -9,7 +10,8 @@
 	<%= f.text_field(:secondary_color, :class => "color", :style => "background-color: " + palette.secondary_color.to_s + "; color: " + palette.primary_color.to_s) %>
 </div>
 <div class="actions">
-	<%= submit_tag("Update") %>
-	<%= link_to("Preview", {:controller => 'public', :action => 'index', :id => palette.id}, :class => 'action preview') %>
+
+	<%= link_to('Save', "#", :onclick => "$('#" + palette.name.parameterize + "').submit()", :class => "action submit") %>
+	<%= link_to("Preview", {:controller => 'public', :action => 'index', :palette => palette.id}, :class => 'action preview') %>
 	<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :class => 'action delete') %>
 </div>

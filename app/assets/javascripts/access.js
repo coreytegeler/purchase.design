@@ -1,2 +1,11 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(function(){
+	$('.masonry').masonry({
+		itemSelector: '.block',
+		columnWidth: 280,
+		gutterWidth: 40
+	});
+	
+	$('#border').css({
+		height:h() - 163
+	});
+});
