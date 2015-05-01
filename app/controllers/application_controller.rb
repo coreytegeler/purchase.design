@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
   # include ActionView::Helpers::UrlHelper
   protect_from_forgery with: :exception
 
-  before_filter :select_palette, only: [:index]
-  before_filter :select_logo, only: [:index]
-  before_filter :select_gradient, only: [:index]
-  before_filter :select_pattern, only: [:index]
+  # before_filter :select_palette, only: [:index]
+  # before_filter :select_logo, only: [:index]
+  # before_filter :select_gradient, only: [:index]
+  # before_filter :select_pattern, only: [:index]
 
   def index 
   	@groups = Group.sorted
@@ -104,7 +104,9 @@ class ApplicationController < ActionController::Base
         if session[:logo].nil? || logos.where(:position => session[:logo]).first.nil?
           random = rand(1..logos.length)
           logo = logos.where(:position => random).first
+
           session[:logo] = logo.position
+
         end
 
         current_logo_pos = session[:logo]
