@@ -79,7 +79,7 @@ class PalettesController < ApplicationController
     end
 
     def update_positions
-      Palette.sorted.reverse_order.each_with_index do |p, i|
+      Palette.old_to_new.each_with_index do |p, i|
           p.update_attribute(:position, i+1)
           p.update_attribute(:name, name + p.position.to_s)
       end

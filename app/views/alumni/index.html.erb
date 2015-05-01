@@ -1,11 +1,12 @@
-<h1 id="page_title">Alumni</h1>
-<section id="alumni">
-	<% 10.times do |i| %>
-		<% @alumni.each do |alumnus| %>
-			<div class="block alumnus">
-				<%= link_to alumnus.name, alumnus.url, {:style => 'color:'+@s, :class=> "name", :target => '_blank'} %>
-				<%= link_to alumnus.url, alumnus.url, {:style => 'color:'+@s, :class=> "url", :target => '_blank'} %>
+<section class="masonry swapper" id="alumni">
+	<% @alumni.each do |alumnus| %>
+		<div class="alumnus block">
+			<div class="text name">
+				<%= alumnus.name %>
 			</div>
-		<% end %>
+			<div class="text website hidden">
+				<%= link_to alumnus.url, alumnus.url, :target => '_blank' %>
+			</div>
+		</div>
 	<% end %>
 </section>

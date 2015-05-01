@@ -1,7 +1,8 @@
 class Pattern < ActiveRecord::Base
 
 	scope :sorted, lambda {order("patterns.position ASC")}
-	scope :newest_first, lambda {order("patterns.created_at ASC")}
+	scope :new_to_old, lambda {order("patterns.created_at DESC")}
+	scope :old_to_new, lambda {order("patterns.created_at ASC")}
 
 	acts_as_list scope: [:position]
 

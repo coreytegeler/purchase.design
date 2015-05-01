@@ -47,9 +47,13 @@ class ApplicationController < ActionController::Base
     find_next_pattern
   end
 
-  def clear
-    session[:no_pattern] = true
+  def clear_gradient
     session[:no_gradient] = true
+    redirect_to(:controller => 'public', :action => 'index')
+  end
+
+  def clear_pattern
+    session[:no_pattern] = true
     redirect_to(:controller => 'public', :action => 'index')
   end
 
@@ -135,8 +139,10 @@ class ApplicationController < ActionController::Base
 
         if session[:no_gradient] != true
           @gradient = gradients.where(:position => current_gradient_pos).first.file
+          @gradient_state = 'on'
         else
           @gradient = nil
+          @gradient_state = 'off'
         end
 
         if session[:next_gradient].nil?
@@ -167,8 +173,10 @@ class ApplicationController < ActionController::Base
 
         if session[:no_pattern] != true
           @pattern = patterns.where(:position => current_pattern_pos).first.tile
+          @pattern_state = 'on'
         else
           @pattern = nil
+          @pattern_state = 'off'
         end
 
         if session[:next_pattern].nil?
@@ -176,7 +184,6 @@ class ApplicationController < ActionController::Base
         end
 
         @next_pattern = patterns.where(:position => session[:next_pattern]).first.tile
-
       end
 
       def find_next_pattern

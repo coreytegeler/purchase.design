@@ -1,0 +1,40 @@
+/*****************/
+/******ADMIN******/
+/*****************/
+.admin #faculties .block form .name input {
+	width: calc(100% - 60px);
+	float: left;
+}
+.admin #faculties .block form .name select {
+	width: 50px;
+	float: left;
+	text-align: right;
+	border-left: 1px solid rgba(255,255,255,0.3) !important;
+	text-indent: 5px;
+}
+.admin #faculties .block form.new_faculty .name select {
+	display: none !important;
+}
+.block .alma_mater input {
+	float: left;
+	font-size: 18px !important;
+	line-height: 20px;
+}
+.block .alma_mater input.college {
+	border-right: 1px solid rgba(255,255,255,0.3) !important;
+	width: calc(60% - 11px);
+	width: -moz-calc(60% - 11px);
+	width: -webkit-calc(60% - 11px);
+}
+.block .alma_mater input.degree {
+	width: calc(40% - 10px);
+	width: -moz-calc(40% - 10px);
+	width: -webkit-calc(40% - 10px);
+}
+/******************/
+/******PUBLIC******/
+/******************/
+.swapper .block .alma_maters {
+	font-size: 30px;
+	line-height: 34px;
+}

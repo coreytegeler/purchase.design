@@ -1,0 +1,43 @@
+<% if !post %>
+	<% post = @new_post %>
+<% end %>
+
+<div class="row title">
+		<%= f.text_field(:title, :placeholder => "Title") %>
+</div>
+<div class="row category">
+	<%= f.select(:category, options_for_select(@categories), {include_blank: 'Category'}) %>
+</div>
+<div class="row date">
+	<span>Start</span>
+	<%= f.date_select(:start_date, order: [:month, :day, :year]) %>
+</div>
+<div class="row date">
+	<span>End</span>
+	<%= f.date_select(:end_date, order: [:month, :day, :year]) %>
+</div>
+
+
+<div class="images">
+	<%= f.fields_for :post_images do |pi| %>
+	<% if pi.object.image.exists? %>
+		<% image = pi.object.image.url(:medium) %>
+		<div class="image drop" style="background-image:url(<%= image %>)">
+	<% else %>
+		<div class="image drop">
+	<% end %>
+			<%= pi.file_field(:image) %>
+		</div>
+	<% end %>
+</div>
+
+<div class="row body">
+	<%= f.text_area(:body, :placeholder => 'What do you have to say about this?') %>
+</div>
+
+<div class="actions">
+	<%= link_to('Save', "#", :onclick => "$('#" + post.position.to_s + "').submit()", :class => "action submit") %>
+	<% if post.id? %>
+		<%= link_to("Delete", {:controller => 'posts', :action => 'delete', :id => post.id}, :class => 'action delete') %>
+	<% end %>
+</div>

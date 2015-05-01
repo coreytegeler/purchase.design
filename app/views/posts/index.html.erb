@@ -1,0 +1,17 @@
+<section id="posts">
+	<% @posts.each do |post| %>
+		<div class="post row">
+			<div class="horz_center">
+				<div class="stack">
+					<% post.post_images.each do |pi| %>
+						<div class="image" <%= color('bg', @p, 'border', @s) %>>
+							<div class="image_wrapper">
+								<%= image_tag pi.image.url(:thumb) %>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</section>

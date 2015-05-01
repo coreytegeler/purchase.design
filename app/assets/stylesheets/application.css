@@ -1,5 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Mono);
-
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 /***************/
 /*DEFAULT STUFF*/
 /***************/
@@ -8,13 +7,14 @@ html {
 	height: 100%;
 }
 body {
-	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-family: Helvetica, 'Arial', sans-serif;
 	font-size: 24px;
 	margin: 0;
 	position: relative;
 	height: 100%;
 	width: 100%;
 	display: table;
+	overflow: hidden;
 }
 a {
 	color: inherit;
@@ -48,20 +48,14 @@ li {
 /***********************/
 #top_bar {
 	position: absolute;
-  	top: 9px;
-  	left: 9px;
-  	height: 105px;
-  	width: calc(100% - 18px);
-	width: -moz-calc(100% - 18px);
-	width: -webkit-calc(100% - 18px);
+  	top: 44px;
   	display: block;
   	z-index: 10;
 }
 #top_bar nav {
 	display: table;
 	height: 100%;
-	position: absolute;
-	top: 0;
+	
 }
 #top_bar nav #nav_wrapper {
 	height: 100%;
@@ -69,8 +63,7 @@ li {
 }
 #top_bar nav #nav_wrapper ul#nav_links {
 	display: table;
-	margin: 35px;
-	border: 1px solid;
+	/*border: 1px solid;*/
 	padding: 5px;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link {
@@ -87,7 +80,7 @@ li {
 	font-size: 17px;
 	padding-bottom: 2px;
 }
-#top_bar nav #nav_wrapper ul#nav_links li.nav_link a.selected,
+#top_bar nav #nav_wrapper ul#nav_links li.nav_link a.active,
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a:hover {
 	border-bottom: 2px solid;
 }

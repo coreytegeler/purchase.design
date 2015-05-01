@@ -1,8 +1,0 @@
-<h1>
-	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
-	New student
-</h1>
-<%= form_for(:student, :url => {:action => 'create', :id => @student.id}) do |f| %>
-	<%= render(:partial => "form", :locals => {:f => f}) %>
-	<%= submit_tag("Create") %>
-<% end %>

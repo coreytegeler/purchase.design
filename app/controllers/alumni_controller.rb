@@ -8,40 +8,41 @@ class AlumniController < ApplicationController
   end
 
   def admin
-    @alumni = Alumnus.sorted
-  end
-
-  def new
-    @alumnus = Alumnus.new
-    @count = Alumnus.count + 1
+    @alumni = Alumnus.sorted.reverse_order
+    @new_alumnus = Alumnus.new
+    @new_alumnus.position = Alumnus.all.count + 1
   end
 
   def create
     @alumnus = Alumnus.new(alumnus_params)
     if @alumnus.save
-      flash[:notice] = "#{@alumnus.name} was created!"
+      update_positions
+      flash[:notice] = "Alumnus was created!"
       flash[:type] = 'good'
-      redirect_to(:controller => 'alumni', :action => 'admin')
+      redirect_to(:action => 'admin')
     else
-      @count = Alumnus.count + 1
-      render('new')
+      flash[:notice] = "Alumnus was not created!"
+      p @alumnus.errors.full_messages
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+      @new_alumnus = Alumnus.new
+      @new_alumnus.position = Alumnus.all.count + 1
     end
-  end
-
-  def edit
-    @alumnus = Alumnus.find(params[:id])
-    @count = Alumnus.count
   end
 
   def update
     @alumnus = Alumnus.find(params[:id])
     if @alumnus.update_attributes(alumnus_params)
-      flash[:notice] = "#{@alumnus.name} was updated!"
+      update_positions
+      flash[:notice] = "Alumnus was updated!"
       flash[:type] = 'good'
-      redirect_to(:controller => 'alumni', :action => 'admin')
+      redirect_to(:action => 'admin')
     else
-      @count = Alumnus.count
-      render('new')
+      flash[:notice] = "Alumnus was not updated!"
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+      @new_alumnus = Alumnus.new
+      @new_alumnus.position = Alumnus.all.count + 1
     end
   end
 
@@ -50,16 +51,23 @@ class AlumniController < ApplicationController
   end
 
   def destroy
-    alumnus = Alumnus.find(params[:id]).destroy
-    flash[:notice] = "#{alumnus.name} was deleted!"
+    @alumnus = Alumnus.find(params[:id]).destroy
+    update_positions
+    flash[:notice] = "Alumnus was deleted!"
     flash[:type] = 'good'
-    redirect_to(:controller => 'alumni', :action => 'admin')
+    redirect_to(:action => 'admin')
   end
 
   private 
 
     def alumnus_params
-      params.require(:alumnus).permit(:name, :year, :url, :position, :visible)
+      params.require(:alumnus).permit(:name, :url, :position, :id)
+    end
+
+    def update_positions
+      Alumnus.sorted.reverse_order.each_with_index do |f, i|
+          f.update_attribute(:position, i+1)
+      end
     end
 
 end

@@ -1,28 +1,29 @@
-<%= f.label(:name) %>
-<%= f.text_field(:name) %>
+<% if !resource %>
+	<% resource = @new_resource %>
+<% end %>
 
-<%= f.label(:link) %>
-<%= f.text_field(:link) %>
+<div class="row name">
+		<%= f.text_field(:name, :placeholder => "Name") %>
+</div>
+<div class="row email">
+	<%= f.text_field(:link, :placeholder => "Link") %>
+</div>
 
-<%= f.label(:caption) %>
-<%= f.text_area(:caption) %>
-
-<%= f.label(:type_id) %>
-<%= f.select(:type_id, @types.map {|t| [t.name, t.id]}, :selected => params[:type_id], include_blank: 'Select') %>
-
-<div class="upload_field">
-	<% if @resource.image.exists? %>
-		<%= image_tag @resource.image.url(:thumb) %>
-	</br>
+<div class="file">
+	<% if resource.image.exists? %>
+		<div class="drop image" style="background-image: url(<%= resource.image.url(:small) %>)">
+			<%= f.file_field(:image) %>
+		</div>
+	<% else %>
+		<div class="drop">
+			<%= f.file_field(:image) %>
+		</div>
 	<% end %>
 </div>
 
-<%= f.label(:image) %>
-<%= f.file_field(:image) %>
-
-<%= f.label(:position) %>
-<%= f.select(:position, 1..@count) %>
-
-<%= f.label(:visible) %>
-<%= f.check_box(:visible, :checked => true) %>
-
+<div class="actions">
+	<%= link_to('Save', "#", :onclick => "$('#" + resource.position.to_s + "').submit()", :class => "action submit") %>
+	<% if resource.id? %>
+		<%= link_to("Delete", {:controller => 'resources', :action => 'delete', :id => resource.id}, :class => 'action delete') %>
+	<% end %>
+</div>

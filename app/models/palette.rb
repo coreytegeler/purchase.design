@@ -1,7 +1,8 @@
 class Palette < ActiveRecord::Base
 
 	scope :sorted, lambda {order("palettes.position DESC")}
-	scope :newest_first, lambda {order("palettes.created_at ASC")}
+	scope :new_to_old, lambda {order("palettes.created_at DESC")}
+	scope :old_to_new, lambda {order("palettes.created_at ASC")}
 
 	acts_as_list scope: [:position]
 

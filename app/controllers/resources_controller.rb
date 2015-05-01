@@ -1,51 +1,51 @@
 class ResourcesController < ApplicationController
 
-  layout_by_action "access", [:index, :show] => "public"
+  layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
-    @resources = Resource.sorted
-    @types = ResourceType.sorted
+    @resources = Resource.a_to_z
   end
 
   def admin
-    @resources = Resource.sorted
-    @types = ResourceType.sorted
-  end
-
-  def new
-    @resource = Resource.new
-    @count = Resource.count + 1
-    @types = ResourceType.sorted
+    @resources = Resource.new_to_old
+    @categories = array_of_categories
+    @new_resource = Resource.new
+    @new_resource.position = Resource.all.count + 1
   end
 
   def create
     @resource = Resource.new(resource_params)
     if @resource.save
-      flash[:notice] = "#{@resource.name} was created!"
+      update_positions
+      flash[:notice] = "Resource was created!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      @count = Resource.count + 1
-      render('new')
+      flash[:notice] = "Resource was not created!"
+      p @resource.errors.full_messages
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+      @categories = array_of_categories
+      @new_resource = Resource.new
+      @new_resource.position = Resource.all.count + 1
     end
-  end
-
-  def edit
-    @resource = Resource.find(params[:id])
-    @count = Resource.count
-    @types = ResourceType.sorted
   end
 
   def update
     @resource = Resource.find(params[:id])
     if @resource.update_attributes(resource_params)
-      flash[:notice] = "#{@resource.name} was updated!"
+      update_positions
+      flash[:notice] = "Resource was updated!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      @count = Resource.count
-      render('new')
+      flash[:notice] = "Resource was not updated!"
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+      @categories = array_of_categories
+      @new_resource = Resource.new
+      @new_resource.position = Resource.all.count + 1
     end
   end
 
@@ -54,8 +54,9 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    resource = Resource.find(params[:id]).destroy
-    flash[:notice] = "#{resource.name} was deleted!"
+    @resource = Resource.find(params[:id]).destroy
+    update_positions
+    flash[:notice] = "Resource was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
   end
@@ -63,11 +64,17 @@ class ResourcesController < ApplicationController
   private 
 
     def resource_params
-      params.require(:resource).permit(:name, :link, :type_id, :caption, :position, :visible)
+      params.require(:resource).permit(:name, :link, :category, :position, :image, :id)
     end
 
-    def resource_types
-      
+    def update_positions
+      Resource.sorted.reverse_order.each_with_index do |f, i|
+          f.update_attribute(:position, i+1)
+      end
+    end
+
+    def array_of_categories
+      ['blog', 'video', 'podcast', 'misc']
     end
 
 end

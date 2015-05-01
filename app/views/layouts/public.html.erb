@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Purchase College Graphic Design Dept. | <%= @page_title || '' %></title>
-  <%= stylesheet_link_tag "application", params[:controller], :media => "all", 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag "public", :media => "all", 'data-turbolinks-track' => true if !home? %>
-  <%= javascript_include_tag "application", params[:controller], 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "public", 'data-turbolinks-track' => true if !home? %>
-  <%= csrf_meta_tags %>
-  <meta charset="UTF-16">
+	<title>Purchase College Graphic Design Dept. | <%= @page_title || '' %></title>
+	<%= stylesheet_link_tag "application", params[:controller], :media => "all", 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag "animate", :media => "all", 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag "public", :media => "all", 'data-turbolinks-track' => true if !home? %>
+	<%= javascript_include_tag "application", params[:controller], 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag "public", 'data-turbolinks-track' => true if !home? %>
+	<%= csrf_meta_tags %>
+	<meta charset="UTF-16">
+	<meta name="description" content="">
+	<meta name="keywords" content="Purchase College, SUNY, State University of New York, Visual Arts, Art+Design, art, design, graphic design, graphic design department, BFA, graphic design BFA, bachelors of fine arts, university, education">
+	<meta name="author" content="">
 </head>
 <body class="public" id="<%= params[:controller].parameterize %>_controller" <%= color('bg', @p, 'text', @s) %>>
+	<div id="gradient" style="background-image: url(<%= @gradient %>)"></div>
+	<div id="pattern" style="background-image: url(<%= @pattern %>)"></div>
 	<% if !flash[:notice].blank? %>
 		<div class="notice <%= flash[:type] %>">
 			<%= flash[:notice].html_safe %>
 		</div>
 	<% end %>
 	<main>
+		<%= render 'public/about' %>
 		<%= render 'public/top_bar' %>
 		<%= render 'public/side_bar' %>
 		<div id="border" <%= color('border', @s) %>>
 			<section id="page_content">
 				<%= yield %>
 			</section>
-			<div id="gradient" style="background-image: url(<%= @gradient %>)">
-			<div id="pattern" style="background-image: url(<%= @pattern %>)">
+			
 		</div>
 	</main>
 	<div id="hiddenPalette" data-primary="<%= @p %>" data-secondary="<%= @s %>"></div>

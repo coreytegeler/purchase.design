@@ -3,8 +3,8 @@ class Work < ActiveRecord::Base
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
 	scope :sorted, lambda {order("works.position ASC")}
-	scope :newest_first, lambda {order("works.created_at ASC")}
-	scope :oldest_first, lambda {order("works.created_at DESC")}
+	scope :new_to_old, lambda {order("works.created_at DESC")}
+	scope :old_to_new, lambda {order("works.created_at ASC")}
 	scope :search, lambda {|query|
 		where(["name LIKE ?", "%#{query}%"])
 	}

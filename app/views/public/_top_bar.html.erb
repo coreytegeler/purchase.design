@@ -1,13 +1,13 @@
 <div id="top_bar" <%= color('color', @s) %>>
 	<nav>
 		<div id="nav_wrapper">
-			<ul id="nav_links" <%= color('bg', @p, 'border', @s) %>>
-				<li class="nav_link"><%= link_to("Work", {:controller => 'work', :action => 'index'}) %></li>
-				<li class="nav_link"><%= link_to("Faculty", {:controller => 'faculty', :action => 'index'}) %></li>
-				<li class="nav_link"><%= link_to("Alumni", {:controller => 'alumni', :action => 'index'}) %></li>
-				<li class="nav_link"><%= link_to("Community", {:controller => 'community', :action => 'index'}) %></li>
-				<li class="nav_link"><%= link_to("Resources", {:controller => 'resources', :action => 'index'}) %></li>
-				<li class="nav_link"><%= link_to("Apply", {:controller => 'apply', :action => 'index'}) %></li>
+			<ul id="nav_links" <%= color('border', @s) %>>
+				<li class="nav_link"><%= active_link_to("Work", {:controller => 'work', :action => 'index'}) %></li>
+				<li class="nav_link"><%= active_link_to("Faculty", {:controller => 'faculty', :action => 'index'}) %></li>
+				<li class="nav_link"><%= active_link_to("Alumni", {:controller => 'alumni', :action => 'index'}) %></li>
+				<li class="nav_link"><%= active_link_to("Weblog", {:controller => 'weblog', :action => 'index'}) %></li>
+				<li class="nav_link"><%= active_link_to("Resources", {:controller => 'resources', :action => 'index'}) %></li>
+				<li class="nav_link"><%= active_link_to("Apply", {:controller => 'apply', :action => 'index'}) %></li>
 			</ul>
 		</div>
 	</nav>

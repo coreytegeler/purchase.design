@@ -1,15 +1,29 @@
 $(function() {
+	$('main').addClass('fadeIn');
 	fillSvgs();
 	setUpSide();
 	size();
 	$(window).on('hashchange', function() {
 		fillSvgs();
 	});
+	var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
+	console.log(blockWidth);
 	$('.masonry').masonry({
 		itemSelector: '.block',
-		columnWidth: 280,
-		gutterWidth: 40
+		columnWidth: blockWidth,
+		gutterWidth: 40,
+		isFitWidth: true
 	});
+	$('#logo').click(function() {
+		$('body').toggleClass('about');
+	});
+});
+
+$(document).on('page:load', function() {
+        $('main').addClass('fadeIn');
+});
+$(document).on('page:fetch', function() {
+        $('main').addClass('fadeOut');
 });
 
 $(window).resize(function() {
@@ -21,28 +35,34 @@ function fillSvgs() {
 	$primary = $('#hiddenPalette').attr('data-primary');
 	$secondary = $('#hiddenPalette').attr('data-secondary');
 	$('.secondary_fill').each(function() {
-		$(this).children('svg').css({fill:$secondary});
-		$(this).children('svg').children('path').css({fill:$secondary});
-		$(this).children('svg').children('path').css({fill:$secondary});
+		fill($(this).children(), $secondary);
 	});
 	$('.primary_fill').each(function() {
-		$(this).children('svg').css({fill:$primary});
-		$(this).children('svg').children('path').css({fill:$primary});
-		$(this).children('svg').children('path').css({fill:$primary});
+		fill($(this).children(), $primary);
 	});
 }
 
 function size() {
-	$('aside#side_bar').css({
-		height:h() - 18
+	$border = $('#border');
+	var paddingTop = parseInt($border.css('paddingTop'));
+	var paddingBottom = parseInt($border.css('paddingBottom'));
+	var border = parseInt($border.css('borderWidth'))*2;
+	var notice = $('.notice').innerHeight();
+
+	var padding = paddingTop + paddingBottom + border + notice;
+	$border.css({
+		height:h() - padding
 	});
-	$('#border').css({
-		height:h() - 163
+
+	$sideBar = $('#side_bar');
+	var padding = border + notice;
+	$sideBar.css({
+		height:h() - border - notice
 	});
 }
 
 function setUpSide() {
-	$('#buttons .button.method').click(function(){
+	$('.method').click(function(){
 		var method = $(this).attr('id');
 		$.ajax({
 			type: "POST",
@@ -53,12 +73,21 @@ function setUpSide() {
 			error: function(xhr, status, error) {
 			}
     	});
+
+		// if(method == 'next_gradient' || method == 'next_pattern') {
+		// 	$(this).addClass('in_use');
+		// }
     });
+
+    // $('.clear').click(function(){
+    // 	var parent = $(this).parent('.button').attr('id');
+    // 	$(parent).removeClass('in_use');
+    // });
 
 	$('#buttons .button.swap').click(function() {
 		var id = $(this).attr('id');
 		$('.swapper .block').each(function() {
-			$(this).children('.text').each(function() {
+			$(this).children('div').each(function() {
     			var hidden = $(this).hasClass('hidden');
     			var show = $(this).hasClass(id);
     			if(show) {

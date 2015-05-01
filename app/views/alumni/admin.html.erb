@@ -1,16 +1,17 @@
-<h1>
-	<%= link_to("+", {:action => 'new'}, :class => 'action new symb') %>
-	<%= pluralize(@alumni.size, "Alumnus") %>
-</h1>
-<ul id="alumni">
+<section class="masonry big" id="alumni">
+
+	<div class="alumnus block">
+		<%= form_for(@new_alumnus, :url => {:action => 'create', :id => @new_alumnus.id}, :html => { :id => @new_alumnus.position.to_s, :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:alumnus => @new_alumnus, :f => f}) %>
+		<% end %>
+	</div>
+
 	<% @alumni.each do |alumnus| %>
-		<li>
-			<%= alumnus.position %> &nbsp;
-			<strong><%= alumnus.name %></strong>
-			by <%= alumnus.year %>
-			<%= link_to("Show", {:action => 'show', :id => alumnus.id}, :class => 'action show') %> &nbsp;
-			<%= link_to("Edit", {:action => 'edit', :id => alumnus.id}, :class => 'action edit') %> &nbsp;
-			<%= link_to("Delete", {:action => 'delete', :id => alumnus.id}, :class => 'action delete') %>
-		</li>
+		<div class="alumnus block">
+			<%= form_for(alumnus, :url => {:action => 'update', :id => alumnus.id}, :html => { :id => alumnus.position.to_s, :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:alumnus => alumnus, :f => f}) %>
+			<% end %>
+		</div>
 	<% end %>
-</ul>
+	
+</section>

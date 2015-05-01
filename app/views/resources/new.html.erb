@@ -1,8 +1,0 @@
-<h1>
-	<%= link_to("\u2B05", {:action => 'admin'}, :class => 'back-link symb') %>
-	New resource
-</h1>
-<%= form_for(:resource, :url => {:action => 'create'}) do |f| %>
-	<%= render(:partial => 'form', :locals => {:f => f}) %>
-	<%= submit_tag("Create") %>
-<% end %>

@@ -1,0 +1,96 @@
+.block form select {
+	width: 100%;
+}
+.block form .date {
+	display: none;
+}
+.block form .date span {
+	opacity: 0.7;
+	font-weight: 700;
+	padding: 10px;
+	float: left;
+	width: 60px;
+}
+.block form .date select {
+	border-left: 1px solid rgba(255,255,255,0.3);
+	float: left;
+}
+.block form .date select:nth-child(2) {
+	width: 220px;
+}
+.block form .date select:nth-child(3) {
+	width: 55px;
+}
+.block form .date select:nth-child(4) {
+	width: 90px;
+}
+.block form .images {
+	width: 100%;
+	height: auto;
+	border-top: none;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+	display: table;
+}
+.block form .images .image {
+	width: 224px !important;
+	height: 224px !important;
+	float: left;
+}
+.block form .images .drop  {
+	width: 202px !important;
+	height: 202px !important;
+	margin: 10px;
+}
+.block form .images .drop .file  {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+
+
+
+
+section#posts {
+	display: table;
+	width: 100%;
+}
+section#posts .post {
+
+}
+section#posts .post .image_holder {
+	width: 100px;
+	float:left;
+}
+section#posts .post .image_holder img {
+	width: 100%;
+}
+
+.block {
+	
+}
+.stack {
+	position: relative;
+	display: table;
+	margin: auto;
+	cursor: pointer;
+}
+.stack .image {
+	position: absolute;
+	opacity: 0;
+	bottom: 0;
+	left: 0;
+	transition: transform 200ms ease-in-out;
+	-moz-transition: -moz-transform 200ms ease-in-out;
+	-webkit-transition: -webkit-transform 200ms ease-in-out;
+}
+.stack .image.loaded {
+	opacity: 1;
+}
+.stack .image .image_wrapper {
+	overflow: hidden;
+	border: 2px solid;
+	background-color: rgba(255,255,255,0.2);
+}
+.stack .image .image_wrapper img {
+	vertical-align: bottom;
+}

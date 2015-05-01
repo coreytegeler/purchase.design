@@ -8,11 +8,17 @@ body {
 /***************/
 /*ADMIN MODULES*/
 /***************/
+#top_bar {
+	right: 44px;
+  	width: calc(100% - 88px);
+	width: -moz-calc(100% - 88px);
+	width: -webkit-calc(100% - 88px);
+}
 #admin_bar {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	width: calc(100% - 98px);
 	height: 50px;
 	display: table;
 	background: black;
@@ -39,42 +45,79 @@ aside#admin_panel header h1 {
 }
 #top_bar nav #nav_wrapper ul#nav_links {
 	background: black;
+	border: 1px solid rgba(255,255,255,0.3);
 }
 /************/
 /*USER FORMS*/
 /************/
-label {
-	font-size: 35px;
-	font-weight: 700;
-	color:white;
+.block {
+	width: 278px;
+	margin-bottom: 40px;
+	border: 1px solid rgba(255,255,255,0.3);
 }
-input[type=submit], input[type=password], input[type=text], textarea, select {
+.block .row {
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+	display: table;
+	width: 100%;
+}
+.small .block {
+	width: 278px;
+}
+.small .block input, .small .block select {
 	font-size: 35px;
-	font-weight: 700;
-	color:white;
-	background: black;
-	border:white 5px solid;
+}
+.big .block {
+	width: 448px;
+}
+.big .block input, .big .block select {
+	font-size: 25px;
+}
+.block .name {
+	padding: 0;
 	display: block;
-	margin: 10px 0;
-	padding: 10px;
-	width: 400px;
+	text-align: center;
+	overflow: hidden;
 }
-input[type=password], input[type=text] {
-	width: 410px;
+.block h2 {
+	font-size: 20px;
+	line-height: 20px;
+	padding: 10px;
+	margin: 0;
+	opacity: 0.7;
+}
+.block input[type=submit], .block input[type=password], .block input[type=text], .block textarea, .block select {
+	width: 100%;
+	font-weight: 700;
+	color:white;
+	background: transparent;
+	border: none;
+	margin: 0;
+	width: calc(100% - 10px);
+	width: -moz-calc(100% - 10px);
+	width: -webkit-calc(100% - 10px);
+	padding: 10px 0 10px 10px;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	resize: none;
+}
+.block input[type=password], .block input[type=text] {
 	padding: 10px 0px 10px 10px;
 }
-input[type=submit], select {
+.block input[type=submit], .block select {
 	cursor: pointer;
 	width: auto;
 }
-input[type=submit] {
+.block input[type=submit] {
 	margin: 40px 0;
 }
-input[type=checkbox] {
+.block input[type=checkbox] {
 	display: block;
 	padding: 10px;
 }
-input[type=file] {
+.block input[type=file] {
 	display: block;
 	font-size: 25px;
 	font-weight: 700;
@@ -82,18 +125,12 @@ input[type=file] {
 	color: transparent;
 	width: 100%;
 }
-.block {
-	width: 278px;
-	margin-bottom: 40px;
-	border: 1px solid rgba(255,255,255,0.3);
-}
-.block .name {
-	padding: 10px;
-	display: block;
-	text-align: center;
+.block select {
+	opacity: 0.7;
+	text-transform: capitalize;
 }
 .block form .file {
-	width: 278px;
+	width: 100%;
 	height: 278px;
 	border-bottom: 1px solid rgba(255,255,255,0.3);
 	border-top: 1px solid rgba(255,255,255,0.3);
@@ -110,21 +147,26 @@ input[type=file] {
 	padding: 0;
 }
 .block form .file .image {
-	width: 228px;
-  	height: 228px;
+	width: calc(100% - 50px);
+  	height: calc(100% - 50px);
 	margin: 25px;
 	background-position: center;
 	background-size: contain; 
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat;*/
 }
 .block form .drop {
-	width: 228px;
+	width: calc(100% - 50px);
   	height: 228px;
-  	margin: 23px;
+  	margin: 25px auto;
 	border: 1px dashed rgba(255,255,255,0.3);
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .block form .drop input[type=file] {
 	padding: 0;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
@@ -144,47 +186,10 @@ input[type=file] {
 .block form .actions a.action:hover {
 	opacity: 0.9;
 }
-select {
-	background-image: url(http://findicons.com/files/icons/2315/default_icon/128/arrow_down_inv.png);
-	background-size: 30px;
-	background-position: left center;
-	background-repeat: no-repeat;
-	padding-left:30px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border-radius: 0;
-}
-.date_select {
-	display: table;
-  	width: 100%;
-}
-.date_select select {
-	float: left;
-	margin-right: 10px;
-}
-textarea {
+.block textarea {
 	height: 200px;
-}
-.table {
-	display: table;
-}
-.table .row {
-	display: table-row;
-}
-.table .column {
-
-}
-.table .cell {
-	display: table-cell;
-	padding-right: 10px;
-}
-.table .cell input {
-	width: 300px;
-	float: left;
-}
-.table .cell select {
-	float: left;
+	font-size: 20px;
+	line-height: 25px;
 }
 .field_with_errors, .field_with_errors select, .field_with_errors input {
 	border-color: red;

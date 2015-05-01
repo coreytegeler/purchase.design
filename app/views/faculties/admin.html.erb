@@ -1,14 +1,14 @@
-<section class="masonry" id="faculties">
+<section class="masonry big" id="faculties">
 
 	<div class="faculty block">
-		<%= form_for(@new_faculty, :url => {:action => 'create', :id => @new_faculty.id}, :html => { :id => @new_faculty.name.parameterize, :method => :post}) do |f| %>
+		<%= form_for(@new_faculty, :url => {:action => 'create', :id => @new_faculty.id}, :html => { :id => @new_faculty.position.to_s, :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:faculty => @new_faculty, :f => f}) %>
 		<% end %>
 	</div>
 
 	<% @faculties.each do |faculty| %>
 		<div class="faculty block">
-			<%= form_for(faculty, :url => {:action => 'update', :id => faculty.id}, :html => { :id => faculty.name.parameterize, :method => :post}) do |f| %>
+			<%= form_for(faculty, :url => {:action => 'update', :id => faculty.id}, :html => { :id => faculty.position.to_s, :method => :post}) do |f| %>
 				<%= render(:partial => "form", :locals => {:faculty => faculty, :f => f}) %>
 			<% end %>
 		</div>

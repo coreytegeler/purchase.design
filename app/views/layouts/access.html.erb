@@ -15,17 +15,16 @@
       <%= flash[:notice].html_safe %>
     </div>
   <% end %>
-  <%= render 'access/top_bar' %>
-  <div id="border">
-    <% if @form_object %>
-    	<%= error_messages_for(@form_object) %>
-    <% end %>
-
-    <main>
+  <main>
+    <%= render 'access/top_bar' %>
+    <div id="border">
+      <% if @form_object %>
+      	<%= error_messages_for(@form_object) %>
+      <% end %>
       <section id="page_content">
       	<%= yield %>
       </section>
-    </main>
-  </div>
+    </div>
+  </main>
 </body>
 </html>

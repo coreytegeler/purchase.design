@@ -1,23 +1,15 @@
-<h1 id="page_title">Resources</h1>
-<section class="clear" id="resources">
-	<% @types.each do |type| %>
-	<% @resources_with_type = @resources.where(:type_id => type.id) %>
-	<% if !@resources_with_type.empty? %>
-		<h2>
-			<%= pluralize_without_count(@resources_with_type.size, type.name.capitalize) %>
-		</h2>
-		<div class="resources_with_type indexed" id="<%= type %>">
-			<% @resources_with_type.each_with_index do |resource, index| %>
-				<div class="row">
-					<div class="cell index">
-						<%= index %>.
-					</div>
-					<div class="cell name">
-						<%= link_to(resource.name, resource.link, {:class => '', :target => '_blank'}) %>
-					</div>
-				</div>
-			<% end %>
+<section class="masonry swapper" id="resources">
+	<% @resources.each do |resource| %>
+		<div class="resource block">
+			<div class="text title">
+				<%= link_to resource.name, resource.link, :target => '_blank' %>
+			</div>
+			<div class="text website hidden">
+				<%= link_to resource.link, resource.link, :target => '_blank' %>
+			</div>
+			<div class="image hidden">
+				<%= link_to image_tag(resource.image(:medium)), resource.link %>
+			</div>
 		</div>
 	<% end %>
-<% end %>
 </section>

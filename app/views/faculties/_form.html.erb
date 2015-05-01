@@ -1,18 +1,26 @@
 <% if !faculty %>
 	<% faculty = @new_faculty %>
 <% end %>
-<% index = faculty.position.to_s %>
 
-<h3 class="name">
-	<%= f.text_field(:name) %>
-</h3>
-
-<div>
-	
+<div class="row name">
+	<%= f.text_field(:name, :placeholder => "Name") %>
+	<%= f.select(:position, 1..@faculties.size, :selected => faculty.position) %>
 </div>
+<div class="row email">
+	<%= f.text_field(:email, :placeholder => "E-mail") %>
+</div>
+<div class="row title">
+	<%= f.text_field(:title, :placeholder => "Job title") %>
+</div>
+<%= f.fields_for :alma_maters do |am| %>
+	<div class="row alma_mater">
+		<%= am.text_field(:college, {:placeholder => "College", :class => 'college'}) %>
+		<%= am.text_field(:degree, {:placeholder => "Degree", :class => 'degree'}) %>
+	</div>
+<% end %>
 <div class="actions">
-
-	<%= link_to('Save', "#", :onclick => "$('#" + faculty.name.parameterize + "').submit()", :class => "action submit") %>
-	<%= link_to("Preview", {:controller => 'public', :action => 'index', :faculty => faculty.id}, :class => 'action preview') %>
-	<%= link_to("Delete", {:controller => 'facultys', :action => 'delete', :id => faculty.id}, :class => 'action delete') %>
+	<%= link_to('Save', "#", :onclick => "$('#" + faculty.position.to_s + "').submit()", :class => "action submit") %>
+	<% if faculty.id? %>
+		<%= link_to("Delete", {:controller => 'faculties', :action => 'delete', :id => faculty.id}, :class => 'action delete') %>
+	<% end %>
 </div>

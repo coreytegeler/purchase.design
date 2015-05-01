@@ -5,7 +5,7 @@
 
 <div class="full file">
 	<% if pattern.tile.exists? %>
-		<div class="image" style="background-image:url('<%= pattern.tile.url(:small) %>')"></div>
+		<div class="image" style="background-image:url('<%= pattern.tile.url(:original) %>')"></div>
 	<% else %>
 		<div class="drop">
 			<%= f.file_field(:tile) %>

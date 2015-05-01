@@ -1,7 +1,7 @@
 <h1>
 	<%= link_to("\u2B05", {:action => 'admin'}, :class => 'back-link symb') %>
-	Are you sure you want to delete <u><%= @alumnus.name %></u>?
+	Are you sure you want to delete <u><%= @resource.name %></u>?
 </h1>
-<%= form_for(:alumnus, :url => {:action => 'destroy', :id => @alumnus.id}) do |f| %>
+<%= form_for(:resource, :url => {:action => 'destroy', :id => @resource.id}) do |f| %>
 	<%= submit_tag("YES") %>
 <% end %>

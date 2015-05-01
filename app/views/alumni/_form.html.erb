@@ -1,17 +1,18 @@
-<%= f.label(:name) %>
-<%= f.text_field(:name) %>
+<% if !alumnus %>
+	<% alumnus = @new_alumnus %>
+<% end %>
 
-<% @present = Time.now.year %>
-<% @past = 1972 %>
-<%= f.label(:year) %>
-<%= f.select(:year, @past..@present, {include_blank: 'Select'}) %>
+<div class="row name">
+		<%= f.text_field(:name, :placeholder => "Name") %>
+</div>
+<div class="row website">
+	<%= f.text_field(:url, :placeholder => "Website") %>
+</div>
+<div>
+	
+</div>
+<div class="actions">
 
-<%= f.label("Website") %>
-<%= f.text_field(:url) %>
-
-<%= f.label(:position) %>
-<%= f.select(:position, 1..@count) %>
-
-<%= f.label(:visible) %>
-<%= f.check_box(:visible, :checked => true) %>
-
+	<%= link_to('Save', "#", :onclick => "$('#" + alumnus.position.to_s + "').submit()", :class => "action submit") %>
+	<%= link_to("Delete", {:controller => 'alumni', :action => 'delete', :id => alumnus.id}, :class => 'action delete') %>
+</div>
