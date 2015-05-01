@@ -25,7 +25,7 @@ class CreateSchema < ActiveRecord::Migration
 			t.string   "name",       limit: 255
 			t.date     "year"
 			t.integer  "position",   limit: 4
-			t.boolean  "visible",    limit: 1,   default: false
+			t.boolean  "visible",    default: false
 			t.datetime "created_at",                             null: false
 			t.datetime "updated_at",                             null: false
 			t.string   "url",        limit: 255
@@ -33,7 +33,7 @@ class CreateSchema < ActiveRecord::Migration
 
 		create_table "apply", force: :cascade do |t|
 			t.text    "summary", limit: 65535
-			t.boolean "visible", limit: 1,     default: false
+			t.boolean "visible", default: false
 		end
 
 		create_table "event_images", force: :cascade do |t|
@@ -51,8 +51,8 @@ class CreateSchema < ActiveRecord::Migration
 			t.text     "summary",            limit: 65535
 			t.date     "first_year"
 			t.date     "last_year"
-			t.boolean  "current",            limit: 1,     default: true
-			t.boolean  "visible",            limit: 1,     default: false
+			t.boolean  "current",            default: true
+			t.boolean  "visible",            default: false
 			t.integer  "position",           limit: 4
 			t.string   "image_file_name",    limit: 255
 			t.string   "image_content_type", limit: 255
@@ -128,7 +128,7 @@ class CreateSchema < ActiveRecord::Migration
 		create_table "resource_types", force: :cascade do |t|
 			t.string  "name",     limit: 255
 			t.integer "position", limit: 4
-			t.boolean "visible",  limit: 1,   default: false
+			t.boolean "visible",  default: false
 		end
 
 		create_table "resources", force: :cascade do |t|
@@ -137,7 +137,7 @@ class CreateSchema < ActiveRecord::Migration
 			t.string   "category",           limit: 255
 			t.text     "caption",            limit: 65535
 			t.integer  "position",           limit: 4
-			t.boolean  "visible",            limit: 1,     default: false
+			t.boolean  "visible",            default: false
 			t.integer  "type_id",            limit: 4
 			t.string   "image_file_name",    limit: 255
 			t.string   "image_content_type", limit: 255
@@ -153,7 +153,7 @@ class CreateSchema < ActiveRecord::Migration
 			t.date     "year"
 			t.text     "caption",             limit: 65535
 			t.integer  "position",            limit: 4
-			t.boolean  "visible",             limit: 1,     default: false
+			t.boolean  "visible",             default: false
 			t.string   "image_file_name",     limit: 255
 			t.string   "image_content_type",  limit: 255
 			t.integer  "image_file_size",     limit: 4
