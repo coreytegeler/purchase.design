@@ -1,19 +1,20 @@
-$(function(){
-	var columnWidth = $('.masonry .block:first-child').width();
+$(initAccess);
+$(document).on('page:load', init);
 
+var initAccess = function() {
+	size();
+
+	var columnWidth = $('.masonry .block:first-child').width();
+	
 	$('.masonry').masonry({
 		itemSelector: '.block',
 		columnWidth: columnWidth,
-		gutterWidth: 40
-		// isFitWidth: true
+		gutterWidth: 40,
+		isFitWidth: true
 	});
 
 	$(window).resize(function() {
 		$('.masonry').masonry('reload');
-	});
-	
-	$('#border').css({
-		height:h() - 163
 	});
 
 	$('select').change(function(e) {
@@ -23,4 +24,17 @@ $(function(){
 			$(this).css({'opacity':1});
 		}
 	});
-});
+}
+
+function size() {
+	$border = $('#border');
+	var paddingTop = parseInt($border.css('paddingTop'));
+	var paddingBottom = parseInt($border.css('paddingBottom'));
+	var border = parseInt($border.css('borderWidth'))*2;
+	var notice = $('.notice').innerHeight();
+
+	var padding = paddingTop + paddingBottom + border + notice;
+	$border.css({
+		height:h() - padding
+	});
+}

@@ -1,15 +1,7 @@
 class AccessController < ApplicationController
 
   layout 'access'
-  before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout, :admin]
-
-  def index
-
-  end
-
-  def login
-
-  end
+  before_action :confirm_logged_in, :except => [:index, :login, :attempt_login, :logout, :admin]
 
   def attempt_login 
   	if params[:email].present? && params[:password].present?
@@ -36,7 +28,7 @@ class AccessController < ApplicationController
     session[:email] = nil
   	flash[:notice] = "Bye bye"
   	flash[:type] = "good"
-  	redirect_to(:controller => 'public')
+  	redirect_to(:action => 'index')
   end
 
   def admin?

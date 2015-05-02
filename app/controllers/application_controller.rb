@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
-  # include ActionView::Helpers::UrlHelper
+
   protect_from_forgery with: :exception
 
-  # before_filter :select_palette, only: [:index]
-  # before_filter :select_logo, only: [:index]
-  # before_filter :select_gradient, only: [:index]
-  # before_filter :select_pattern, only: [:index]
+  before_filter :select_palette, only: [:index]
+  before_filter :select_logo, only: [:index]
+  before_filter :select_gradient, only: [:index]
+  before_filter :select_pattern, only: [:index]
 
   def index 
-  	@groups = Group.sorted
+  	
   end
 
   def logged_in?
@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
 
   def confirm_logged_in
     unless session[:admin_id]
-      flash[:notice] = "You are not logged in"
+      flash[:type] = "bad"
+      flash[:notice] = "You are not logged in. Which is okay, but if you would like to edit the site you must log in."
       redirect_to(:controller => 'access', :action => 'login')
       return false
     else
@@ -104,9 +105,7 @@ class ApplicationController < ActionController::Base
         if session[:logo].nil? || logos.where(:position => session[:logo]).first.nil?
           random = rand(1..logos.length)
           logo = logos.where(:position => random).first
-
           session[:logo] = logo.position
-
         end
 
         current_logo_pos = session[:logo]

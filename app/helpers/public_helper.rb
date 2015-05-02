@@ -38,12 +38,7 @@ module PublicHelper
         
     end
 
-    def home? 
-        case params[:controller]
-        when 'public'
-            return true
-        else
-            return false
-        end
+    def public?
+        params[:controller] == 'public'
     end
 end

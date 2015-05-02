@@ -1,4 +1,4 @@
-$(function() {
+var initPublic = function() {
 	$('main').addClass('fadeIn');
 	fillSvgs();
 	setUpSide();
@@ -17,15 +17,15 @@ $(function() {
 	$('#logo').click(function() {
 		$('body').toggleClass('about');
 	});
-});
+}
 
-$(document).on('page:load', function() {
-        $('main').addClass('fadeIn');
-});
+
+$(initPublic);
+$(document).on('page:load', initPublic);
+
 $(document).on('page:fetch', function() {
-        $('main').addClass('fadeOut');
+    $('main').addClass('fadeOut');
 });
-
 $(window).resize(function() {
 	size();
 	$('.masonry').masonry('reload');

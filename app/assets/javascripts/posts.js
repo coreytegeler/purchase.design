@@ -1,4 +1,4 @@
-$(function() {
+var initPosts = function() {
 	$('select#post_category').change(function(e) {
 		var id = $(this).parent('.row').parent('form').attr('id');
 		if($(this).val() === 'event') {
@@ -21,7 +21,6 @@ $(function() {
 	var stackSize = max + ($('.image_wrapper').length * 4);
 	$('.public .stack').css({height: stackSize, width: stackSize});
 
-
 	$('.public .stack').click(function(event) {
 		$top = $('.image:last-child');
 		$top.insertBefore('.image:first-child');
@@ -29,4 +28,7 @@ $(function() {
 			$(w).css({y: -gap*i, x: gap*i});
 		});
 	});
-});
+}
+
+$(initPosts);
+$(document).on('page:load', initPosts);

@@ -55,11 +55,6 @@ aside#admin_panel header h1 {
 	margin-bottom: 40px;
 	border: 1px solid rgba(255,255,255,0.3);
 }
-.block .row {
-	border-bottom: 1px solid rgba(255,255,255,0.3);
-	display: table;
-	width: 100%;
-}
 .small .block {
 	width: 278px;
 }
@@ -68,6 +63,23 @@ aside#admin_panel header h1 {
 }
 .big .block {
 	width: 448px;
+}
+.block .row {
+	display: table;
+	width: 100%;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.block .row .half {
+	float: left;
+}
+.block .row .half:first-child {
+	border-right: 1px solid rgba(255,255,255,0.3);
+	width: calc(50% - 1px);
+	width: -moz-calc(50% - 1px);
+	width: -webkit-calc(50% - 1px);
+}
+.block .row .half:last-child {
+	width: 50%;
 }
 .big .block input, .big .block select {
 	font-size: 25px;
@@ -197,3 +209,40 @@ aside#admin_panel header h1 {
 .field_with_errors label {
 	color: red;
 }
+#login {
+	display: table-cell;
+	vertical-align: middle;
+}
+#login h1 {
+	text-align: center;
+	width: 100%;
+	/*max-width: 900px;*/
+	margin: auto;
+	display: table;
+}
+#login form {
+	display: table;
+	margin: 20px auto;
+}
+#login input {
+	width: 400px;
+	font-size: 35px;
+	font-weight: 700;
+	color:white;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.3);
+	margin: 10px;
+	padding: 10px 0 10px 10px;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	resize: none;
+	display: block;
+	float: none;
+}
+#login input[type="submit"] {
+	width: 410px;
+ 	padding: 10px 0;
+ }

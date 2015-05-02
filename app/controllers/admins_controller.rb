@@ -1,45 +1,45 @@
 class AdminsController < ApplicationController
 
-  layout 'access'
-  before_action :confirm_logged_in, :except => [:index, :admin]
-
+  layout "access"
+  before_action :confirm_logged_in
   def index
     @admins = Admin.sorted
   end
 
-  def show
-    @admin = Admin.find(params[:id])
-    @full_name = @admin.first_name + ' ' + @admin.last_name
-  end
-
-  def new
-    @admin = Admin.new
+  def admin
+    @admins = Admin.sorted
+    @new_admin = Admin.new
+    @new_admin.position = Admin.all.count + 1
   end
 
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      flash[:notice] = "#{@admin.first_name} was created!"
+      update_positions
+      flash[:notice] = "Admin was created!"
       flash[:type] = 'good'
-      redirect_to(:action => 'index')
+      redirect_to(:action => 'admin')
     else
-      render('new')
+      flash[:notice] = "Admin was not created!"
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
     end
-  end
-
-  def edit
-    @admin = Admin.find(params[:id])
   end
 
   def update
     @admin = Admin.find(params[:id])
+    if @admin.alma_maters.first
+      @admin.alma_maters.first.admin_id = @admin.id
+    end
     if @admin.update_attributes(admin_params)
-      @admin.full_name = @admin.first_name + " " +@admin.last_name
-      flash[:notice] = "#{@admin.first_name} was updated!"
+      update_positions
+      flash[:notice] = "Admin was updated!"
       flash[:type] = 'good'
-      redirect_to(:action => 'index')
+      redirect_to(:action => 'admin')
     else
-      render('new')
+      flash[:notice] = "Admin was not created!"
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
     end
   end
 
@@ -48,27 +48,23 @@ class AdminsController < ApplicationController
   end
 
   def destroy
-    #don't need an instance variable since it is not being called elsewhere
-    admin = Admin.find(params[:id]).destroy
-    flash[:notice] = "#{@admin.first_name} was deleted!"
+    @admin = Admin.find(params[:id]).destroy
+    update_positions
+    flash[:notice] = "Admin was deleted!"
     flash[:type] = 'good'
-    redirect_to(:action => 'index')
-  end
-
-  def admin?
-    session[:admin_id]
+    redirect_to(:action => 'admin')
   end
 
   private 
 
-    def create_full_name
-      self.full_name(:first_name)
+    def admin_params
+      params.require(:admin).permit(:first_name, :last_name, :position, :email, :password)
     end
 
-    def admin_params
-      # raises an error if :admin is not present
-      # allows listed attributes to be mass-assigned
-      params.require(:admin).permit(:first_name, :last_name, :full_name, :password, :email)
+    def update_positions
+      Admin.sorted.each_with_index do |a, i|
+          a.update_attribute(:position, i+1)
+      end
     end
 
 end

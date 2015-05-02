@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   root "works#index"
 
   get 'show/:slug', :to => 'public#show'
+  
   get 'admin', :to => 'access#index'
+  get 'admins', :to => 'admins#admin'
+  get 'cms', :to => 'access#index'
   get 'login', :to => 'access#login'
 
   get 'faculty', :to => 'faculties#index'

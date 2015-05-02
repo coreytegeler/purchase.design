@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('page:load', function() {
 	var max = 400;
 	var stackHeight;
 	var stackWidth;

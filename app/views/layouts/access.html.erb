@@ -3,10 +3,12 @@
 <head>
   <title>Purchase College Graphic Design Dept. | <%= @page_title || '' %></title>
   <%= stylesheet_link_tag "application", params[:controller], :media => "all", 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag "access", :media => "all", 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "access", :media => "all", 'data-turbolinks-track' => true if !access? %>
   <%= javascript_include_tag "application", params[:controller], 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "access", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "access", 'data-turbolinks-track' => true if !access? %>
+
   <%= csrf_meta_tags %>
+
   <meta charset="UTF-16">
 </head>
 <body class="admin" id="<%= params[:controller].parameterize %>">

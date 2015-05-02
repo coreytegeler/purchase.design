@@ -9,7 +9,7 @@ class Admin < ActiveRecord::Base
 	scope :sorted, lambda {order("admins.first_name ASC")}
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-	FORBIDDEN_USERNAMES = ['admin','root']
+	FORBIDDEN_EMAIL = ['admin','root']
 
 	validates_presence_of :first_name
 	validates_presence_of :last_name
@@ -20,7 +20,7 @@ class Admin < ActiveRecord::Base
 	validate :email_is_allowed
 
 	def email_is_allowed
-		if FORBIDDEN_USERNAMES.include?(email)
+		if FORBIDDEN_EMAIL.include?(email)
 			errors.add(:email, "has been restricted from use.")
 		end
 	end

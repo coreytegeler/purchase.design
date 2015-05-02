@@ -1,22 +1,29 @@
-<% @form_object = @admin %>
-<% @new = !@admin.persisted? %>
-
-<%= f.label(:first_name) %>
-<%= f.text_field(:first_name) %>
-
-<%= f.label(:last_name) %>
-<%= f.text_field(:last_name) %>
-
-<%= f.label(:email) %>
-<%= f.text_field(:email) %>
-
-<% if @new %>
-	<%= f.label('Confirm email') %>
-	<%= f.text_field(:email_confirmation) %>
+<% if !admin %>
+	<% admin = @new_admin %>
 <% end %>
-
-<%= f.label(:password) %>
-<%= f.password_field(:password) %>
-
-<%= f.label(:password_confirmation) %>
-<%= f.password_field(:password_confirmation) %>
+<div class="row name">
+	<div class="half first_name">
+		<%= f.text_field(:first_name, :placeholder => "First name") %>
+	</div>
+	<div class="half last_name">
+		<%= f.text_field(:last_name, :placeholder => "Last name") %>
+	</div>
+</div>
+<div class="row email">
+	<%= f.text_field(:email, :placeholder => "Email") %>
+</div>
+<div class="row confirm_email">
+	<%= f.text_field(:email_confirmation, :placeholder => "Confrim email") %>
+</div>
+<div class="row password">
+	<%= f.password_field(:password, :placeholder => "Password") %>
+</div>
+<div class="row confirm_password">
+	<%= f.password_field(:password_confirmation, :placeholder => "Confirm password") %>
+</div>
+<div class="actions">
+	<%= link_to('Save', "#", :onclick => "$('#" + admin.position.to_s + "').submit()", :class => "action submit") %>
+	<% if admin.id? %>
+		<%= link_to("Delete", {:controller => 'admins', :action => 'delete', :id => admin.id}, :class => 'action delete') %>
+	<% end %>
+</div>

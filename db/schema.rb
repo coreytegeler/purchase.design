@@ -11,19 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501211157) do
+ActiveRecord::Schema.define(version: 20150502021529) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
     t.string   "last_name",       limit: 255
     t.string   "email",           limit: 255
-    t.string   "full_name",       limit: 25
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "password_digest", limit: 255
+    t.integer  "position",        limit: 4
   end
-
-  add_index "admins", ["full_name"], name: "index_admins_on_full_name", using: :btree
 
   create_table "alma_maters", force: :cascade do |t|
     t.string   "college",    limit: 255

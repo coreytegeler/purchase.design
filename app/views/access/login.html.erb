@@ -1,15 +1,18 @@
-<% @page_title = 'Admin login' %>
+<section id="login">
+	<% @page_title = 'Admin login' %>
 
-<h1>Are you supposed to be here? Prove it.</h1>
+	<h1>Are you allowed to do that?</h1>
 
-<%= form_tag(:action => 'attempt_login') do %>
+	<%= form_tag(:action => 'attempt_login') do %>
 
-	<%= label_tag(:email) %>
-	<%= text_field_tag(:email) %>
+		<%= text_field_tag(:email, nil, :placeholder => "Email") %>
 
-	<%= label_tag(:password) %>
-	<%= password_field_tag(:password) %>
+		<%= password_field_tag(:password, nil, :placeholder => "password") %>
 
-	<%= submit_tag("Login") %>
+		<%= submit_tag("Login") %>
 
-<% end %>
+	<% end %>
+
+	<h1>Prove it.</h1>
+
+</section>
