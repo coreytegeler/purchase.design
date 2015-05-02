@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  # before_filter :select_palette, only: [:index]
-  # before_filter :select_logo, only: [:index]
-  # before_filter :select_gradient, only: [:index]
-  # before_filter :select_pattern, only: [:index]
+  before_filter :select_palette, only: [:index]
+  before_filter :select_logo, only: [:index]
+  before_filter :select_gradient, only: [:index]
+  before_filter :select_pattern, only: [:index]
 
   def index 
   	

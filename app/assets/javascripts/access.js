@@ -1,5 +1,5 @@
 $(initAccess);
-$(document).on('page:load', init);
+$(document).on('page:load', initAccess);
 
 var initAccess = function() {
 	size();
