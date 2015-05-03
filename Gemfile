@@ -15,7 +15,7 @@ gem 'acts_as_list'
 
 gem 'layout_by_action'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem "paperclip", "~> 4.2"
 gem 'paperclip-ffmpeg', '~> 1.0.0'
 gem 'rmagick', '~> 2.13.4'

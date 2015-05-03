@@ -3,12 +3,14 @@
 <% end %>
 <h3 class="name"><%= gradient.name %></h3>
 
-<div class="full file" style="background-image:url(<%= gradient.file %>)">
-	<% if !gradient.file.exists? %>
-		<div class="drop">
-			<%= f.file_field(:file) %>
-		</div>
+<div class="file">
+	<% if gradient.file.exists? %>
+		<% @upload_img = gradient.file.to_s %>
 	<% end %>
+
+	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
+		<%= f.file_field(:image) %>
+	</div>
 </div>
 
 <div class="actions">

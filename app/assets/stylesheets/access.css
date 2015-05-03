@@ -90,6 +90,9 @@ aside#admin_panel header h1 {
 	text-align: center;
 	overflow: hidden;
 }
+.block h3.name {
+	padding: 5px 0;
+}
 .block h2 {
 	font-size: 20px;
 	line-height: 20px;
