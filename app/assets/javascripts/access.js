@@ -32,7 +32,6 @@ function size() {
 	var paddingBottom = parseInt($border.css('paddingBottom'));
 	var border = parseInt($border.css('borderWidth'))*2;
 	var notice = $('.notice').innerHeight();
-
 	var padding = paddingTop + paddingBottom + border + notice;
 	$border.css({
 		height:h() - padding

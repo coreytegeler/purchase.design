@@ -36,6 +36,7 @@ gem 'active_link_to'
 gem 'indefinite_article'
 
 gem 'rails_12factor', group: :production
+gem 'aws-sdk'
 
 ruby "2.2.0"
 
