@@ -7,7 +7,9 @@ class Logo < ActiveRecord::Base
 
 	before_validation :create_name
 
-	has_attached_file :file
+	has_attached_file :file,
+				      :storage => :s3,
+  					  :bucket => 'purchase-design',
 	do_not_validate_attachment_file_type :file
 
 	private
