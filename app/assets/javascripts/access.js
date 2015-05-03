@@ -1,9 +1,6 @@
-$(initAccess);
-$(document).on('page:load', initAccess);
-
 var initAccess = function() {
 	size();
-
+	console.log('!');
 	var columnWidth = $('.masonry .block:first-child').width();
 	
 	$('.masonry').masonry({
@@ -37,3 +34,6 @@ function size() {
 		height:h() - padding
 	});
 }
+
+$(initAccess);
+$(document).on('page:load', initAccess);

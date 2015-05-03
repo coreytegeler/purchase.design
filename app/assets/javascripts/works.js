@@ -1,4 +1,4 @@
-$(document).on('page:load', function() {
+var initWorks = function() {
 	var max = 400;
 	var stackHeight;
 	var stackWidth;
@@ -19,4 +19,8 @@ $(document).on('page:load', function() {
 			$(w).css({y: -gap*i, x: gap*i});
 		});
 	});
-});
+
+}
+
+$(initWorks);
+$(document).on('page:load', initWorks);

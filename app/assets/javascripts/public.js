@@ -19,18 +19,6 @@ var initPublic = function() {
 	});
 }
 
-
-$(initPublic);
-$(document).on('page:load', initPublic);
-
-$(document).on('page:fetch', function() {
-    $('main').addClass('fadeOut');
-});
-$(window).resize(function() {
-	size();
-	$('.masonry').masonry('reload');
-});
-
 function fillSvgs() {
 	$primary = $('#hiddenPalette').attr('data-primary');
 	$secondary = $('#hiddenPalette').attr('data-secondary');
@@ -101,3 +89,15 @@ function setUpSide() {
 	});
 	
 }
+
+
+$(initPublic);
+$(document).on('page:load', initPublic);
+
+$(document).on('page:fetch', function() {
+    $('main').addClass('fadeOut');
+});
+$(window).resize(function() {
+	size();
+	$('.masonry').masonry('reload');
+});
