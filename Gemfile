@@ -15,9 +15,11 @@ gem 'acts_as_list'
 
 gem 'layout_by_action'
 
+gem 'aws-sdk'
 gem "paperclip", "~> 4.2"
 gem 'paperclip-ffmpeg', '~> 1.0.0'
 gem 'rmagick', '~> 2.13.4'
+#gem 's3_direct_upload'
 
 gem 'sass-rails'
 
@@ -28,15 +30,14 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'masonry-rails'
 
-gem 'simple_form'
-gem 'nested_form'
+#gem 'simple_form'
+#gem 'nested_form'
 
 gem 'active_link_to'
 
 gem 'indefinite_article'
 
 gem 'rails_12factor', group: :production
-gem 'aws-sdk'
 
 ruby "2.2.0"
 
