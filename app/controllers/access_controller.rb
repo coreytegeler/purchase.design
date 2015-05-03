@@ -35,4 +35,5 @@ class AccessController < ApplicationController
     session[:admin_id]
   end
 
+
 end

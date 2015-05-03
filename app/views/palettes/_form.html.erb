@@ -10,8 +10,10 @@
 	<%= f.text_field(:secondary_color, :class => "color", :style => "background-color: " + palette.secondary_color.to_s + "; color: " + palette.primary_color.to_s) %>
 </div>
 <div class="actions">
-
-	<%= link_to('Save', "#", :onclick => "$('#" + palette.name.parameterize + "').submit()", :class => "action submit") %>
-	<%= link_to("Preview", {:controller => 'public', :action => 'index', :palette => palette.id}, :class => 'action preview') %>
-	<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :class => 'action delete') %>
+	<% if palette.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + palette.position.to_s + "').submit()", :class => "action submit") %>
+		<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + palette.position.to_s + "').submit()", :class => "action submit") %>
+	<% end %>
 </div>

@@ -6,10 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :select_logo, only: [:index]
   before_filter :select_gradient, only: [:index]
   before_filter :select_pattern, only: [:index]
-
-  def index 
-  	
-  end
+  before_filter :get_upload_icon, :only => [:admin]
 
   def logged_in?
   	!!session[:admin_id]
@@ -24,6 +21,10 @@ class ApplicationController < ActionController::Base
     else
       return true
     end
+  end
+
+  def get_upload_icon
+    @upload_img = view_context.image_path('upload.svg')
   end
 
   def next_palette

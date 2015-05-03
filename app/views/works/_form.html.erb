@@ -1,19 +1,20 @@
 <h3 class="name"><%= work.name %></h3>
 
 <div class="file">
-	<% if work.image.exists? %>
-		<div class="image" style="background-image:url('<%= work.image.url(:small) %>')"></div>
-	<% else %>
-		<div class="drop">
-			<%= f.file_field(:image) %>
-		</div>
+	<% if work.persisted? %>
+		<% @upload_img = work.image.url(:small).to_s %>
 	<% end %>
+
+	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
+		<%= f.file_field(:image) %>
+	</div>
 </div>
 
 <div class="actions">
-	<% if work.position == @works.count+1 %>
-		<%= link_to('Save', "#", :onclick => "$('#" + work.name.parameterize + "').submit()", :class => "action submit") %>
-	<% else %>
+	<% if work.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'works', :action => 'delete', :id => work.id}, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

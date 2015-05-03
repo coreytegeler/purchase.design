@@ -3,20 +3,21 @@
 <% end %>
 <h3 class="name"><%= pattern.name %></h3>
 
-<div class="full file">
-	<% if pattern.tile.exists? %>
-		<div class="image" style="background-image:url('<%= pattern.tile.url(:original) %>')"></div>
-	<% else %>
-		<div class="drop">
-			<%= f.file_field(:tile) %>
-		</div>
+<div class="file">
+	<% if pattern.persisted? %>
+		<% @upload_img = pattern.tile.url(:original) %>
 	<% end %>
+
+	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
+		<%= f.file_field(:tile) %>
+	</div>
 </div>
 
 <div class="actions">
-	<% if pattern.position == @patterns.count+1 %>
-		<%= link_to('Save', "#", :onclick => "$('#" + pattern.name.parameterize + "').submit()", :class => "action submit") %>
-	<% else %>
+	<% if pattern.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + pattern.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'patterns', :action => 'delete', :id => pattern.id}, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + pattern.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

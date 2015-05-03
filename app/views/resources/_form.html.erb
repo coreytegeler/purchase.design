@@ -5,25 +5,25 @@
 <div class="row name">
 		<%= f.text_field(:name, :placeholder => "Name") %>
 </div>
-<div class="row email">
+<div class="row link">
 	<%= f.text_field(:link, :placeholder => "Link") %>
 </div>
 
 <div class="file">
-	<% if resource.image.exists? %>
-		<div class="drop image" style="background-image: url(<%= resource.image.url(:small) %>)">
-			<%= f.file_field(:image) %>
-		</div>
-	<% else %>
-		<div class="drop">
-			<%= f.file_field(:image) %>
-		</div>
+	<% if resource.persisted? %>
+		<% @upload_img = resource.image.url(:original) %>
 	<% end %>
+
+	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
+		<%= f.file_field(:image) %>
+	</div>
 </div>
 
 <div class="actions">
-	<%= link_to('Save', "#", :onclick => "$('#" + resource.position.to_s + "').submit()", :class => "action submit") %>
-	<% if resource.id? %>
+	<% if resource.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + resource.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'resources', :action => 'delete', :id => resource.id}, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + resource.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

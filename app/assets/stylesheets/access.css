@@ -162,18 +162,15 @@ aside#admin_panel header h1 {
 	padding: 0;
 }
 .block form .file .image {
-	width: calc(100% - 50px);
-  	height: calc(100% - 50px);
-	margin: 25px;
+	width: 100%;
+  	height: 100%;
 	background-position: center;
 	background-size: contain; 
 	/*background-repeat: no-repeat;*/
 }
 .block form .drop {
-	width: calc(100% - 50px);
-  	height: 228px;
-  	margin: 25px auto;
-	border: 1px dashed rgba(255,255,255,0.3);
+	width: 100%;
+  	height: 100%;
 	position: relative;
 	background-position: center;
 	background-size: cover;
@@ -182,9 +179,13 @@ aside#admin_panel header h1 {
 .block form .drop input[type=file] {
 	padding: 0;
 	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
+	cursor: pointer;
 }
 .block form .actions {
 	display: table;

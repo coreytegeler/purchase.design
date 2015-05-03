@@ -4,19 +4,20 @@
 <h3 class="name"><%= gradient.name %></h3>
 
 <div class="file">
-	<% if gradient.file.exists? %>
-		<% @upload_img = gradient.file.to_s %>
+	<% if gradient.persisted? %>
+		<% @upload_img = gradient.file %>
 	<% end %>
 
 	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
-		<%= f.file_field(:image) %>
+		<%= f.file_field(:file) %>
 	</div>
 </div>
 
 <div class="actions">
-	<% if gradient.position == @gradients.count+1 %>
-		<%= link_to('Save', "#", :onclick => "$('#" + gradient.name.parameterize + "').submit()", :class => "action submit") %>
-	<% else %>
+	<% if gradient.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + gradient.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'gradients', :action => 'delete', :id => gradient.id}, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + gradient.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

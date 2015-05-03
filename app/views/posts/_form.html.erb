@@ -36,8 +36,10 @@
 </div>
 
 <div class="actions">
-	<%= link_to('Save', "#", :onclick => "$('#" + post.position.to_s + "').submit()", :class => "action submit") %>
-	<% if post.id? %>
+	<% if post.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + post.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'posts', :action => 'delete', :id => post.id}, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + post.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>
