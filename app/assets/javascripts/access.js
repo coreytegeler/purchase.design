@@ -1,6 +1,5 @@
 var initAccess = function() {
 	size();
-	console.log('!');
 	var columnWidth = $('.masonry .block:first-child').width();
 	
 	$('.masonry').masonry({
@@ -21,6 +20,7 @@ var initAccess = function() {
 			$(this).css({'opacity':1});
 		}
 	});
+	imagePreview();
 }
 
 function size() {
@@ -32,6 +32,23 @@ function size() {
 	var padding = paddingTop + paddingBottom + border + notice;
 	$border.css({
 		height:h() - padding
+	});
+}
+
+function imagePreview() {
+	$('input[type="file"]').each(function() {
+		$(this).on('change', function(event) {
+			var input = $(this);
+		    var files = event.target.files;
+		    var image = files[0]
+		    var reader = new FileReader();
+		    reader.onload = function(file) {
+		      img = file.target.result;
+		      console.log(img);
+		      $(input).parent('.drop').css({'background-image':'url('+img+')'});
+		    }
+		    reader.readAsDataURL(image);
+		});
 	});
 }
 

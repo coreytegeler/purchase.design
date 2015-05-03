@@ -19,7 +19,6 @@ gem 'aws-sdk'
 gem "paperclip", "~> 4.2"
 gem 'paperclip-ffmpeg', '~> 1.0.0'
 gem 'rmagick', '~> 2.13.4'
-#gem 's3_direct_upload'
 
 gem 'sass-rails'
 
@@ -29,9 +28,6 @@ gem 'turbolinks'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'masonry-rails'
-
-#gem 'simple_form'
-#gem 'nested_form'
 
 gem 'active_link_to'
 
