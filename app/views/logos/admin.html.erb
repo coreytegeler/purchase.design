@@ -1,12 +1,12 @@
 <section class="masonry" id="logoContainer">
 	<div class="block logo">
-		<%= form_for(@new_logo, :url => {:action => 'create', :id => @new_logo.id}, :html => { :id => @new_logo.name.parameterize, :method => :post}) do |f| %>
+		<%= form_for(@new_logo, :url => {:action => 'create', :id => @new_logo.id}, :html => { :id => @new_logo.position.to_s, :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:logo => @new_logo, :f => f}) %>
 		<% end %>
 	</div>
 	<% @logos.each_with_index do |logo, i| %>
 		<div class="block logo">
-			<%= form_for(logo, :url => {:action => 'update', :id => logo.id}, :html => { :id => logo.name.parameterize, :method => :post}) do |f| %>
+			<%= form_for(logo, :url => {:action => 'update', :id => logo.id}, :html => { :id => logo.position.to_s, :method => :post}) do |f| %>
 				<%= render(:partial => "form", :locals => {:logo => logo, :f => f}) %>
 			<% end %>
 		</div>

@@ -45,7 +45,7 @@ function imagePreview() {
 		    reader.onload = function(file) {
 		      img = file.target.result;
 		      console.log(img);
-		      $(input).parent('.drop').css({'background-image':'url('+img+')'});
+		      $(input).parent('.drop').addClass('dropped').css({'background-image':'url('+img+')'});
 		    }
 		    reader.readAsDataURL(image);
 		});
