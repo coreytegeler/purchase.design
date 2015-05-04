@@ -17,7 +17,6 @@
 	<%= f.date_select(:end_date, order: [:month, :day, :year]) %>
 </div>
 
-
 <div class="images">
 	<%= f.fields_for :post_images do |pi| %>
 	<% if pi.object.image.exists? %>

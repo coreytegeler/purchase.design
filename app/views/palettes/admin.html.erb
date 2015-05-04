@@ -1,14 +1,14 @@
 <section class="masonry" id="palettes">
 
 	<div class="palette block">
-		<%= form_for(@new_palette, :url => {:action => 'create', :id => @new_palette.id}, :html => { :id => @new_palette.name.parameterize, :method => :post}) do |f| %>
+		<%= form_for(@new_palette, :url => {:action => 'create', :id => @new_palette.id}, :html => { :id => @new_palette.position.to_s, :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:palette => @new_palette, :f => f}) %>
 		<% end %>
 	</div>
 
 	<% @palettes.each do |palette| %>
 		<div class="palette block">
-			<%= form_for(palette, :url => {:action => 'update', :id => palette.id}, :html => { :id => palette.name.parameterize, :method => :post}) do |f| %>
+			<%= form_for(palette, :url => {:action => 'update', :id => palette.id}, :html => { :id => palette.position.to_s, :method => :post}) do |f| %>
 				<%= render(:partial => "form", :locals => {:palette => palette, :f => f}) %>
 			<% end %>
 		</div>
