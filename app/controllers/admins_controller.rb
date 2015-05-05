@@ -5,7 +5,7 @@ class AdminsController < ApplicationController
 
   def admin
     @admins = Admin.a_to_z
-    @admin_id = session[:admin_id]
+    @this_admin = Admin.find(session[:admin_id])
     @new_admin = Admin.new
     @new_admin.position = Admin.all.count + 1
   end

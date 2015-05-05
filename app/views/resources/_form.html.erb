@@ -8,9 +8,6 @@
 <div class="row link">
 	<%= f.text_field(:link, :placeholder => "Link") %>
 </div>
-<div class="row category">
-	<%= f.select :category, options_for_select(@categories, :selected => f.object.category), {include_blank: 'Category'} %>
-</div>
 <div class="file">
 	<% if resource.persisted? %>
 		<% @upload_img = resource.image.url(:original) %>

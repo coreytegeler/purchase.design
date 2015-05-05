@@ -78,11 +78,12 @@ li {
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a {
 	text-decoration: none;
 	font-size: 20px;
-	padding-bottom: 2px;
+	font-weight: 600;
+	padding-bottom: 3px;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a.active,
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a:hover {
-	border-bottom: 2px solid;
+	border-bottom: 3px solid;
 }
 /*****************/
 /*CONTENT SECTION*/

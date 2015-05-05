@@ -2,16 +2,23 @@
 
 	<div class="admin block">
 		<%= form_for(@new_admin, :url => {:action => 'create', :id => @new_admin.id}, :html => { :id => @new_admin.position.to_s, :method => :post}) do |f| %>
-			<%= render(:partial => "form", :locals => {:admin => @new_admin, :f => f}) %>
+			<%= render(:partial => "form", :locals => {:admin => @new_admin, :f => f, :access => true}) %>
+		<% end %>
+	</div>
+
+	<div class="admin block">
+		<%= form_for(@this_admin, :url => {:action => 'create', :id => @this_admin.id}, :html => { :id => @new_admin.position.to_s, :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:admin => @new_admin, :f => f, :access => true}) %>
 		<% end %>
 	</div>
 
 	<% @admins.each do |admin| %>
-		<div class="admin block">
-			<%= form_for(admin, :url => {:action => 'update', :id => admin.id}, :html => { :id => admin.position.to_s, :method => :post}) do |f| %>
-				<%= render(:partial => "form", :locals => {:admin => admin, :f => f}) %>
-			<% end %>
-		</div>
+		<% if admin.id != @this_admin.id %>
+			<div class="admin block">
+				<%= form_for(admin, :url => {:action => 'create', :id => admin.id}, :html => { :id => admin.position.to_s, :method => :post}) do |f| %>
+					<%= render(:partial => "form", :locals => {:admin => admin, :f => f, :access => false}) %>
+				<% end %>
+			</div>
+		<% end %>
 	<% end %>
-	
 </section>
