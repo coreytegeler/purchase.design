@@ -31,15 +31,16 @@ class Work < ActiveRecord::Base
     validate :get_dimensions, :unless => "errors.any?"
 
     private
-	def get_dimensions
-	  dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
-	  if dimensions.width > dimensions.height
-	  	self.orientation = 'landscape'
-	  elsif dimensions.width < dimensions.height
-	  	self.orientation = 'portrait'
-	  else
-	  	self.orientation = 'square'
-	  end
-	end
+		
+		def get_dimensions
+		  dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
+		  if dimensions.width > dimensions.height
+		  	self.orientation = 'landscape'
+		  elsif dimensions.width < dimensions.height
+		  	self.orientation = 'portrait'
+		  else
+		  	self.orientation = 'square'
+		  end
+		end
 
 end

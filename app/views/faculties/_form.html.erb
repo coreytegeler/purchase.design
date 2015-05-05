@@ -2,9 +2,9 @@
 	<% faculty = @new_faculty %>
 <% end %>
 
-<div class="row name">
+<div class="row name with_position">
 	<%= f.text_field(:name, :placeholder => "Name") %>
-	<%= f.select(:position, 1..@faculties.size, :selected => faculty.position) %>
+	<%= f.select :position, 1..@faculties.size, {:selected => faculty.position}, {:class => 'position'} %>
 </div>
 <div class="row email">
 	<%= f.text_field(:email, :placeholder => "E-mail") %>

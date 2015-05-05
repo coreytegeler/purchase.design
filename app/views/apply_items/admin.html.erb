@@ -1,0 +1,14 @@
+<section class="masonry big" id="applyItemContainer">
+	<div class="block apply_item">
+		<%= form_for(@new_apply_item, :url => {:action => 'create', :id => @new_apply_item.id}, :html => { :id => @new_apply_item.position.to_s, :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:apply_item => @new_apply_item, :f => f}) %>
+		<% end %>
+	</div>
+	<% @apply_items.each_with_index do |apply_item, i| %>
+		<div class="block apply_item">
+			<%= form_for(apply_item, :url => {:action => 'update', :id => apply_item.id}, :html => { :id => apply_item.position.to_s, :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:apply_item => apply_item, :f => f}) %>
+			<% end %>
+		</div>
+	<% end %>
+</section>

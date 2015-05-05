@@ -14,6 +14,8 @@ class Resource < ActiveRecord::Base
 
 	belongs_to :resource_type
 
+	validates_presence_of :name, :link, :category
+
 	has_attached_file :image, :styles => { 
 		:thumb => ["200x200"], 
 		:small => ["400x400>"], 

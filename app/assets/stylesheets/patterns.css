@@ -1,4 +1,4 @@
-.block:not(:first-child) .file .drop, .block:first-child .file .drop.dropped {
+.block:not(:first-child) .file .drop, .block:first-child form.has_file .file .drop {
 	background-color: white;
 }
 

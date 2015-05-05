@@ -2,12 +2,10 @@ class AdminsController < ApplicationController
 
   layout "access"
   before_action :confirm_logged_in
-  def index
-    @admins = Admin.sorted
-  end
 
   def admin
-    @admins = Admin.sorted
+    @admins = Admin.a_to_z
+    @admin_id = session[:admin_id]
     @new_admin = Admin.new
     @new_admin.position = Admin.all.count + 1
   end
@@ -15,7 +13,6 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      update_positions
       flash[:notice] = "Admin was created!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
@@ -28,11 +25,7 @@ class AdminsController < ApplicationController
 
   def update
     @admin = Admin.find(params[:id])
-    if @admin.alma_maters.first
-      @admin.alma_maters.first.admin_id = @admin.id
-    end
     if @admin.update_attributes(admin_params)
-      update_positions
       flash[:notice] = "Admin was updated!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
@@ -48,8 +41,7 @@ class AdminsController < ApplicationController
   end
 
   def destroy
-    @admin = Admin.find(params[:id]).destroy
-    update_positions
+    @admin = Admin.find(params[:id]).destro
     flash[:notice] = "Admin was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
@@ -58,13 +50,7 @@ class AdminsController < ApplicationController
   private 
 
     def admin_params
-      params.require(:admin).permit(:first_name, :last_name, :position, :email, :password)
-    end
-
-    def update_positions
-      Admin.sorted.each_with_index do |a, i|
-          a.update_attribute(:position, i+1)
-      end
+      params.require(:admin).permit(:first_name, :last_name, :email, :password)
     end
 
 end

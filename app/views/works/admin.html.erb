@@ -5,7 +5,7 @@
 		<% end %>
 	</div>
 	<% @works.each_with_index do |work, i| %>
-		<div class="block work">
+		<div class="block work upload">
 			<%= form_for(work, :url => {:action => 'update', :id => work.id}, :html => { :id => work.position.to_s, :method => :post}) do |f| %>
 				<%= render(:partial => "form", :locals => {:work => work, :f => f}) %>
 			<% end %>

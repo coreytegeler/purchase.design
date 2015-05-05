@@ -4,13 +4,13 @@ class AlumniController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
-    @alumni = Alumnus.sorted
+    @alumni = Alumnus.first_to_last
   end
 
   def admin
-    @alumni = Alumnus.sorted.reverse_order
+    @alumni = Alumnus.last_to_first
     @new_alumnus = Alumnus.new
-    @new_alumnus.position = Alumnus.all.count + 1
+    @new_alumnus.position = Alumnus.count + 1
   end
 
   def create
@@ -68,7 +68,7 @@ class AlumniController < ApplicationController
     end
 
     def update_positions
-      Alumnus.sorted.reverse_order.each_with_index do |f, i|
+      Alumnus.first_to_last.each_with_index do |f, i|
           f.update_attribute(:position, i+1)
       end
     end

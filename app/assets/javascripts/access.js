@@ -38,14 +38,15 @@ function size() {
 function imagePreview() {
 	$('input[type="file"]').each(function() {
 		$(this).on('change', function(event) {
+			var position = $(this).attr('data-position');
 			var input = $(this);
 		    var files = event.target.files;
 		    var image = files[0]
 		    var reader = new FileReader();
 		    reader.onload = function(file) {
 		      img = file.target.result;
-		      console.log(img);
-		      $(input).parent('.drop').addClass('dropped').css({'background-image':'url('+img+')'});
+		      $(input).parent('.drop').css({'background-image':'url('+img+')'});
+		      $('form#'+position).addClass('has_file');
 		    }
 		    reader.readAsDataURL(image);
 		});

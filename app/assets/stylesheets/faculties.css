@@ -1,20 +1,6 @@
 /*****************/
 /******ADMIN******/
 /*****************/
-.admin #faculties .block form .name input {
-	width: calc(100% - 60px);
-	float: left;
-}
-.admin #faculties .block form .name select {
-	width: 50px;
-	float: left;
-	text-align: right;
-	border-left: 1px solid rgba(255,255,255,0.3) !important;
-	text-indent: 5px;
-}
-.admin #faculties .block form.new_faculty .name select {
-	display: none !important;
-}
 .block .alma_mater input {
 	float: left;
 	font-size: 18px !important;

@@ -1,0 +1,20 @@
+<% if !apply_item %>
+	<% apply_item = @new_apply_item %>
+<% end %>
+
+<div class="row text">
+	<%= f.text_area :text, :rows => 3, :placeholder => "What do applicants need to do?" %>
+</div>
+<div class="row view">
+	<%= f.select :show_to, options_for_select(@show_to_options, :selected => f.object.show_to), include_blank: 'Type' %>	
+	<%= f.select :position, 1..@apply_items.size, {:selected => f.object.position}, {:class => 'position'} %>
+</div>
+
+<div class="actions">
+	<% if apply_item.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + apply_item.position.to_s + "').submit()", :class => "action submit") %>
+		<%= link_to("Delete", {:controller => 'apply_items', :action => 'delete', :id => apply_item.id}, :remote => true, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + apply_item.position.to_s + "').submit()", :class => "action submit") %>
+	<% end %>
+</div>

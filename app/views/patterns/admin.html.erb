@@ -5,7 +5,7 @@
 		<% end %>
 	</div>
 	<% @patterns.each_with_index do |pattern, i| %>
-		<div class="block pattern">
+		<div class="block pattern upload">
 			<%= form_for(pattern, :url => {:action => 'update', :id => pattern.id}, :html => { :id => pattern.position.to_s, :method => :post}) do |f| %>
 				<%= render(:partial => "form", :locals => {:pattern => pattern, :f => f}) %>
 			<% end %>

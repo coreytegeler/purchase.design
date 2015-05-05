@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get 'faculty/:action', :to => 'faculties#action'
   post 'faculty/:action', :to => 'faculties#action'
 
+  get 'apply', :to => 'apply_items#index'
+  get 'apply/:action', :to => 'apply_items#action'
+  post 'apply/:action', :to => 'apply_items#action'
+
   get 'work', :to => 'works#index'
   get 'work/:action', :to => 'works#action'
   post 'work/:action', :to => 'works#action'

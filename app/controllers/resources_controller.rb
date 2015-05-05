@@ -43,9 +43,6 @@ class ResourcesController < ApplicationController
       flash[:notice] = "Resource was not updated!"
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
-      @categories = array_of_categories
-      @new_resource = Resource.new
-      @new_resource.position = Resource.all.count + 1
     end
   end
 

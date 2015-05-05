@@ -6,7 +6,7 @@
 	<%= f.text_field(:title, :placeholder => "Title") %>
 </div>
 <div class="row category">
-	<%= f.select :category, options_for_select(@categories), {include_blank: 'Category'} %>
+	<%= f.select :category, options_for_select(@categories, :selected => f.object.category), {include_blank: 'Category'} %>
 </div>
 <div class="row date">
 	<span>Start</span>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="row body">
-	<%= f.text_area(:body, :placeholder => 'What do you have to say about this?') %>
+	<%= f.text_area(:body, :rows => 7, :placeholder => 'What do you have to say about this?') %>
 </div>
 
 <div class="actions">

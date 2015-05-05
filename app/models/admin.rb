@@ -1,5 +1,7 @@
 class Admin < ActiveRecord::Base
 
+	scope :a_to_z, lambda {order("admins.last_name ASC")}
+
 	has_and_belongs_to_many :groups
 	has_many :person_edits
 	has_many :people, :through => :person_edits

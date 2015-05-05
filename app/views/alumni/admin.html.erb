@@ -1,5 +1,4 @@
 <section class="masonry big" id="alumni">
-
 	<div class="alumnus block">
 		<%= form_for(@new_alumnus, :url => {:action => 'create', :id => @new_alumnus.id}, :html => { :id => @new_alumnus.position.to_s, :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:alumnus => @new_alumnus, :f => f}) %>
@@ -13,5 +12,4 @@
 			<% end %>
 		</div>
 	<% end %>
-	
 </section>

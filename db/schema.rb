@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504235541) do
+ActiveRecord::Schema.define(version: 20150505125547) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "dept_title", limit: 255
@@ -49,19 +49,10 @@ ActiveRecord::Schema.define(version: 20150504235541) do
     t.string   "url",        limit: 255
   end
 
-  create_table "apply", force: :cascade do |t|
-    t.text    "summary", limit: 65535
-    t.boolean "visible", limit: 1,     default: false
-  end
-
-  create_table "event_images", force: :cascade do |t|
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
-    t.datetime "image_updated_at"
-    t.integer  "event_id",           limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+  create_table "apply_items", force: :cascade do |t|
+    t.string  "text",     limit: 255
+    t.integer "position", limit: 4
+    t.text    "show_to",  limit: 65535
   end
 
   create_table "faculties", force: :cascade do |t|
@@ -142,12 +133,6 @@ ActiveRecord::Schema.define(version: 20150504235541) do
     t.datetime "updated_at"
     t.datetime "start_date"
     t.datetime "end_date"
-  end
-
-  create_table "resource_types", force: :cascade do |t|
-    t.string  "name",     limit: 255
-    t.integer "position", limit: 4
-    t.boolean "visible",  limit: 1,   default: false
   end
 
   create_table "resources", force: :cascade do |t|

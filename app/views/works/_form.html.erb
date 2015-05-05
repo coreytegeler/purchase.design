@@ -6,14 +6,14 @@
 	<% end %>
 
 	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
-		<%= f.file_field(:image) %>
+		<%= f.file_field(:image, :data => {:position => work.position}) %>
 	</div>
 </div>
 
 <div class="actions">
 	<% if work.persisted? %>
 		<%= link_to('Update', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
-		<%= link_to("Delete", {:controller => 'works', :action => 'delete', :id => work.id}, :class => 'action delete') %>
+		<%= link_to("Delete", {:controller => 'works', :action => 'delete', :id => work.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<%= link_to('Create', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

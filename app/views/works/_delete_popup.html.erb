@@ -1,14 +1,14 @@
 <div id="delete">
 	<div class="vert_center">
-		<div class="popup" style="background-image:url(<%= gradient.file %>)">
+		<div class="popup">
 			<div class="inner">
 				<div class="vert_center">
 					<h1>
-						Are you sure you want to delete this gradient?
+						Are you sure you want to delete this student's work?
 					</h1>
 
 					<div class="decision">
-						<%= form_for(:gradient, :url => {:action => 'destroy', :id => gradient.id}) do |f| %>
+						<%= form_for(:work, :url => {:action => 'destroy', :id => work.id}) do |f| %>
 							<%= submit_tag("YES") %>
 						<% end %>
 						<%= submit_tag("NO", :id => 'close', :onClick => "$('#delete').remove()") %>

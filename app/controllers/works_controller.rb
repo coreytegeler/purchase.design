@@ -24,9 +24,6 @@ class WorksController < ApplicationController
     else
       flash[:notice] = "Image was not uploaded!"
       flash[:type] = 'good'
-      @new_work = Work.new
-      @new_work.position = Work.count + 1
-      @new_work.name = name + @new_work.position.to_s
       redirect_to(:action => 'admin')
     end
   end
@@ -41,15 +38,15 @@ class WorksController < ApplicationController
     else
       flash[:notice] = "#{@work.name} was not updated!"
       flash[:type] = 'bad'
-      @new_work = Work.new
-      @new_work.position = Work.count + 1
-      @new_work.name = name + @new_work.position.to_s
       redirect_to(:action => 'admin')
     end
   end
 
   def delete
     @work = Work.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:work => @work} }
+    end
   end
 
   def destroy

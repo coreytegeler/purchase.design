@@ -70,9 +70,9 @@ class GradientsController < ApplicationController
     end
 
     def update_positions
-      Gradient.sorted.reverse_order.each_with_index do |l, i|
-          l.update_attribute(:position, i+1)
-          l.update_attribute(:name, name + l.position.to_s)
+      Gradient.sorted.each_with_index do |g, i|
+          g.update_attribute(:position, i+1)
+          g.update_attribute(:name, name + g.position.to_s)
       end
     end
 

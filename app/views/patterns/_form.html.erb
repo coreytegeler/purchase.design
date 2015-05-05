@@ -9,14 +9,14 @@
 	<% end %>
 
 	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
-		<%= f.file_field(:tile) %>
+		<%= f.file_field :tile, :data => {:position => pattern.position} %>
 	</div>
 </div>
 
 <div class="actions">
 	<% if pattern.persisted? %>
 		<%= link_to('Update', "#", :onclick => "$('#" + pattern.position.to_s + "').submit()", :class => "action submit") %>
-		<%= link_to("Delete", {:controller => 'logos', :action => 'delete', :id => logo.id}, :remote => true, :class => 'action delete') %>
+		<%= link_to("Delete", {:controller => 'patterns', :action => 'delete', :id => pattern.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<%= link_to('Create', "#", :onclick => "$('#" + pattern.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

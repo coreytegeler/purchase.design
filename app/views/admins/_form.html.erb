@@ -1,29 +1,46 @@
 <% if !admin %>
 	<% admin = @new_admin %>
 <% end %>
-<div class="row name">
-	<div class="half first_name">
-		<%= f.text_field(:first_name, :placeholder => "First name") %>
+<% if @admin_id == f.object.id || !admin.persisted? %>
+	<div class="row name">
+		<div class="half first_name">
+			<%= f.text_field(:first_name, :placeholder => "First name") %>
+		</div>
+		<div class="half last_name">
+			<%= f.text_field(:last_name, :placeholder => "Last name") %>
+		</div>
 	</div>
-	<div class="half last_name">
-		<%= f.text_field(:last_name, :placeholder => "Last name") %>
+	<div class="row email">
+		<%= f.text_field(:email, :placeholder => "Email") %>
 	</div>
-</div>
-<div class="row email">
-	<%= f.text_field(:email, :placeholder => "Email") %>
-</div>
-<div class="row confirm_email">
-	<%= f.text_field(:email_confirmation, :placeholder => "Confrim email") %>
-</div>
-<div class="row password">
-	<%= f.password_field(:password, :placeholder => "Password") %>
-</div>
-<div class="row confirm_password">
-	<%= f.password_field(:password_confirmation, :placeholder => "Confirm password") %>
-</div>
-<div class="actions">
-	<%= link_to('Save', "#", :onclick => "$('#" + admin.position.to_s + "').submit()", :class => "action submit") %>
-	<% if admin.id? %>
-		<%= link_to("Delete", {:controller => 'admins', :action => 'delete', :id => admin.id}, :class => 'action delete') %>
-	<% end %>
-</div>
+	<div class="row confirm_email">
+		<%= f.text_field(:email_confirmation, :placeholder => "Confrim email") %>
+	</div>
+	<div class="row password">
+		<%= f.password_field(:password, :placeholder => "Password") %>
+	</div>
+	<div class="row confirm_password">
+		<%= f.password_field(:password_confirmation, :placeholder => "Confirm password") %>
+	</div>
+	<div class="actions">
+		<%= link_to('Save', "#", :onclick => "$('#" + admin.position.to_s + "').submit()", :class => "action submit") %>
+		<% if admin.id? %>
+			<%= link_to("Delete", {:controller => 'admins', :action => 'delete', :id => admin.id}, :class => 'action delete') %>
+		<% end %>
+	</div>
+<% elsif admin.persisted? %>
+	<div class="row name">
+		<div class="half first_name">
+			<%= f.text_field(:first_name, :disabled => true, :placeholder => "First name") %>
+		</div>
+		<div class="half last_name">
+			<%= f.text_field(:last_name, :disabled => true, :placeholder => "Last name") %>
+		</div>
+	</div>
+	<div class="row email">
+		<%= f.text_field(:email, :disabled => true, :placeholder => "Email") %>
+	</div>
+	<div class="tip horz_center">
+		Only <%= admin.first_name %> can edit this. You are not <%= admin.first_name %>.
+	</div>
+<% end %>
