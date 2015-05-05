@@ -76,8 +76,8 @@ aside#side_bar header #logo svg {
 }
 aside#side_bar #tools {
 	position: absolute;
-	bottom: 25px;
-	left: 25px;
+	bottom: 45px;
+	left: 45px;
 	/*border: 1px solid;*/
 }
 aside#side_bar #tools #style_control {
@@ -237,7 +237,7 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /*CONTENT SECTION*/
 /*****************/
 #border {
-	padding-left: 130px;
+	padding-left: 165px; /*from 130px*/
 	width: calc(100% - 188px);
   	width: -moz-calc(100% - 188px);
   	width: -webkit-calc(100% - 188px);
@@ -246,16 +246,16 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 	margin: auto;
 }
 .swapper .block {
-	font-size: 60px;
-	line-height: 65px;
+	font-size: 55px;
+	line-height: 57px;
 	font-weight: 700;
 	padding-bottom: 40px;
-	width: 350px;
+	width: 335px;
 	word-wrap: break-word;
 	overflow: hidden;
 }
 .swapper .block .text.name {
-	word-spacing: 300px;
+	word-spacing: 335px;
 }
 .swapper .block .email, .swapper .block .website, .swapper .block .title {
 	font-size: 45px;
