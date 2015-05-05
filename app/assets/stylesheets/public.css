@@ -281,8 +281,9 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
   	top: 115px;
   	left: 25px;
   	background: black;
-  	width: calc(100% - 50px);
-  	height: calc(100% - 140px);
+  	width: calc(100% - 60px);
+  	height: calc(100% - 150px);
+  	border: solid white 5px;
   	z-index: 20;
   	display: none;
   	color: white;

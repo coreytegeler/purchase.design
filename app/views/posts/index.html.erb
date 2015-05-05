@@ -1,15 +1,26 @@
-<section id="posts">
+<section id="posts" class="masonry">
 	<% @posts.each do |post| %>
-		<div class="post row">
-			<div class="horz_center">
-				<div class="stack">
-					<% post.post_images.each do |pi| %>
-						<div class="image" <%= color('bg', @p, 'border', @s) %>>
-							<div class="image_wrapper">
-								<%= image_tag pi.image.url(:thumb) %>
-							</div>
+		<div class="post row block">
+			<div class="stack">
+				<% post.post_images.each do |pi| %>
+					<div class="image" <%= color('bg', @p, 'border', @s) %>>
+						<div class="image_wrapper">
+							<%= image_tag pi.image.url(:small) %>
 						</div>
-					<% end %>
+					</div>
+				<% end %>
+			</div>
+			<div class="text">
+				<h1 class="title">
+					<%= post.title %>
+				</h1>
+
+				<div class="date">
+					<%= post.created_at.to_date.to_formatted_s(:long_ordinal)  %>
+				</div>
+
+				<div class="body">
+					<%= post.body %>
 				</div>
 			</div>
 		</div>

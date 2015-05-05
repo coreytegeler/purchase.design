@@ -9,7 +9,9 @@ class FacultiesController < ApplicationController
 
   def admin
     @faculties = Faculty.sorted
-    @faculties.each do |f| f.alma_maters.new end
+    @faculties.each do |f|
+      f.alma_maters.new
+    end
     @new_faculty = Faculty.new
     @new_faculty.position = Faculty.all.count + 1
     @new_faculty.alma_maters.new
@@ -26,7 +28,7 @@ class FacultiesController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Faculty was not created!"
+      flash[:notice] = "Faculty was not created! #{@faculty.errors.full_messages}"
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -43,7 +45,7 @@ class FacultiesController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Faculty was not created!"
+      flash[:notice] = "Faculty was not created! #{@faculty.errors.full_messages}"
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end

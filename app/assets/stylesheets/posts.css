@@ -1,80 +1,72 @@
-.block form select {
+.admin .block form select {
 	width: 100%;
 }
-.block form .date {
+.admin .block form .date {
 	display: none;
 }
-.block form .date span {
+.admin .block form .date span {
 	opacity: 0.7;
 	font-weight: 700;
 	padding: 10px;
 	float: left;
 	width: 60px;
 }
-.block form .date select {
+.admin .block form .date select {
 	border-left: 1px solid rgba(255,255,255,0.3);
 	float: left;
 }
-.block form .date select:nth-child(2) {
+.admin .block form .date select:nth-child(2) {
 	width: 220px;
 }
-.block form .date select:nth-child(3) {
+.admin .block form .date select:nth-child(3) {
 	width: 55px;
 }
-.block form .date select:nth-child(4) {
+.admin .block form .date select:nth-child(4) {
 	width: 90px;
 }
-.block form .images {
+.admin .block form .images {
 	width: 100%;
 	height: auto;
 	border-top: none;
 	border-bottom: 1px solid rgba(255,255,255,0.3);
 	display: table;
 }
-.block form .images .image {
+.admin .block form .images .image {
 	width: 224px !important;
 	height: 224px !important;
 	float: left;
 }
-.block form .images .drop  {
+.admin .block form .images .drop  {
 	width: 202px !important;
 	height: 202px !important;
 	margin: 10px;
+	position: relative;
 }
-.block form .images .drop .file  {
+.admin .block form .images .drop .file  {
 	width: 100% !important;
 	height: 100% !important;
 }
 
-
-
-
-
-section#posts {
-	display: table;
+.admin .block form .images .drop .remove svg {
 	width: 100%;
+	height: 100%;
 }
-section#posts .post {
-
-}
-section#posts .post .image_holder {
-	width: 100px;
-	float:left;
-}
-section#posts .post .image_holder img {
+.public #posts {
 	width: 100%;
+	position: relative;
 }
-
-.block {
-	
+.public #posts .post {
+	margin-bottom: 100px;
+	clear: both;
+	display: block;
 }
-.stack {
+.public #posts .post .stack {
 	position: relative;
 	display: table;
-	margin: auto;
 	cursor: pointer;
+	float: left;
 }
-.stack .image {
+.public #posts .post .stack .image {
 	position: absolute;
 	opacity: 0;
 	bottom: 0;
@@ -83,14 +75,35 @@ section#posts .post .image_holder img {
 	-moz-transition: -moz-transform 200ms ease-in-out;
 	-webkit-transition: -webkit-transform 200ms ease-in-out;
 }
-.stack .image.loaded {
+.public #posts .post .stack .image.loaded {
 	opacity: 1;
 }
-.stack .image .image_wrapper {
+.public #posts .post .stack .image .image_wrapper {
 	overflow: hidden;
 	border: 2px solid;
 	background-color: rgba(255,255,255,0.2);
 }
-.stack .image .image_wrapper img {
+.public #posts .post .stack .image .image_wrapper img {
 	vertical-align: bottom;
+}
+.public #posts .post .text {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+.public #posts .post .text .title {
+	font-size: 55px;
+	padding: 20px 0 0 0;
+	margin: 0;
+	display: block;
+}
+.public #posts .post .text .date {
+	font-size: 15px;
+	padding: 5px 0;
+}
+.public #posts .post .text .body {
+	font-size: 18px;
+	line-height: 22px;
+	display: block;
+	width: 100%;
 }

@@ -35,12 +35,12 @@ class PostsController < ApplicationController
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
       @categories = array_of_categories
-      @new_post = Post.new
     end
   end
 
   def update
     @post = Post.find(params[:id])
+
     if @post.update_attributes(post_params)
       update_positions
       flash[:notice] = "Post was updated!"
@@ -51,7 +51,6 @@ class PostsController < ApplicationController
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
       @categories = array_of_categories
-      @new_post = Post.new
     end
   end
 
@@ -70,7 +69,7 @@ class PostsController < ApplicationController
   private 
 
     def post_params
-      params.require(:post).permit(:title, :position, :body, :category, :start_date, :end_date, post_images_attributes: [:post_id, :image, :position])
+      params.require(:post).permit(:title, :position, :body, :category, :start_date, :end_date, post_images_attributes: [:id, :image, :position, :_destroy])
     end
 
     def update_positions

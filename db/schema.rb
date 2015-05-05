@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502021529) do
+ActiveRecord::Schema.define(version: 20150504235541) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.string "dept_title", limit: 255
+    t.text   "dept_body",  limit: 65535
+    t.string "site_title", limit: 255
+    t.text   "site_body",  limit: 65535
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string   "first_name",      limit: 255
@@ -123,6 +130,7 @@ ActiveRecord::Schema.define(version: 20150502021529) do
     t.integer  "position",           limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "remove",             limit: 1
   end
 
   create_table "posts", force: :cascade do |t|

@@ -70,14 +70,14 @@ li {
 	float: left;
 	padding: 5px;
 	margin: 0 15px 0 0;
-	font-size: 17px;
+	font-size: 20px;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link:last-child {
 	margin-right: 0;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a {
 	text-decoration: none;
-	font-size: 17px;
+	font-size: 20px;
 	padding-bottom: 2px;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a.active,

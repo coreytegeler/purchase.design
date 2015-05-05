@@ -3,17 +3,11 @@ var initPublic = function() {
 	fillSvgs();
 	setUpSide();
 	size();
+
 	$(window).on('hashchange', function() {
 		fillSvgs();
 	});
-	var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
-	console.log(blockWidth);
-	$('.masonry').masonry({
-		itemSelector: '.block',
-		columnWidth: blockWidth,
-		gutterWidth: 40,
-		isFitWidth: true
-	});
+
 	$('#logo').click(function() {
 		$('body').toggleClass('about');
 	});
@@ -47,6 +41,17 @@ function size() {
 	$sideBar.css({
 		height:h() - border - notice
 	});
+
+	if( $('.masonry .block').length ) {
+		var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
+		console.log(blockWidth);
+		$('.masonry').masonry({
+			itemSelector: '.block',
+			columnWidth: blockWidth,
+			gutterWidth: 40,
+			isFitWidth: true
+		});
+	}
 }
 
 function setUpSide() {
@@ -56,21 +61,12 @@ function setUpSide() {
 			type: "POST",
 			url: method,
 			success: function(result) {
-				window.location.reload();
+				window.location.reload();	
 			},
 			error: function(xhr, status, error) {
 			}
     	});
-
-		// if(method == 'next_gradient' || method == 'next_pattern') {
-		// 	$(this).addClass('in_use');
-		// }
     });
-
-    // $('.clear').click(function(){
-    // 	var parent = $(this).parent('.button').attr('id');
-    // 	$(parent).removeClass('in_use');
-    // });
 
 	$('#buttons .button.swap').click(function() {
 		var id = $(this).attr('id');
@@ -93,11 +89,9 @@ function setUpSide() {
 
 $(initPublic);
 $(document).on('page:load', initPublic);
-
 $(document).on('page:fetch', function() {
     $('main').addClass('fadeOut');
 });
 $(window).resize(function() {
 	size();
-	$('.masonry').masonry('reload');
 });

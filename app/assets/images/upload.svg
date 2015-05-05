@@ -3,46 +3,33 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+<rect x="10.563" y="90.817" opacity="0.3" fill="#FFFFFF" width="6.755" height="20.574"/>
+<rect x="10.563" y="139.713" opacity="0.3" fill="#FFFFFF" width="6.755" height="20.574"/>
+<rect x="10.563" y="187.546" opacity="0.3" fill="#FFFFFF" width="6.755" height="21.638"/>
+<rect x="188.078" y="11.094" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.756"/>
+<rect x="139.182" y="11.094" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.756"/>
+<rect x="90.285" y="11.094" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.756"/>
+<rect x="282.682" y="188.609" opacity="0.3" fill="#FFFFFF" width="6.756" height="20.574"/>
+<rect x="282.682" y="139.713" opacity="0.3" fill="#FFFFFF" width="6.756" height="20.574"/>
 <g opacity="0.3">
-	<g>
-		<rect x="15" y="92" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="25"/>
-		<rect x="15" y="138" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="25"/>
-		<rect x="15" y="183" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="26"/>
-	</g>
-	<g>
-		<rect x="182" y="17" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="26" height="12"/>
-		<rect x="136" y="17" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="26" height="12"/>
-		<rect x="90" y="17" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="26" height="12"/>
-	</g>
-	<g>
-		<rect x="271" y="184" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="25"/>
-		<rect x="271" y="138" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="25"/>
-		<rect x="271" y="92" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="26"/>
-	</g>
-	<g>
-		<rect x="90" y="272" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="26" height="12"/>
-		<rect x="136" y="272" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="26" height="12"/>
-		<rect x="182" y="272" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="26" height="12"/>
-	</g>
-	<g>
-		<rect x="14" y="53" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="20"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="14,17 14,37 26,37 26,29 34,29 34,17 		"/>
-		<rect x="50" y="17" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="20" height="12"/>
-	</g>
-	<g>
-		<rect x="227" y="16" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="20" height="12"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="283,16 263,16 263,28 271,28 271,36 283,36 		"/>
-		<rect x="271" y="52" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="20"/>
-	</g>
-	<g>
-		<rect x="272" y="228" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="20"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="284,284 284,264 272,264 272,272 264,272 264,284 		"/>
-		<rect x="228" y="272" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="20" height="12"/>
-	</g>
-	<g>
-		<rect x="51" y="273" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="20" height="12"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="15,285 35,285 35,273 27,273 27,265 15,265 		"/>
-		<rect x="15" y="229" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12" height="20"/>
-	</g>
+	<rect x="282.682" y="90.817" fill="#FFFFFF" width="6.756" height="21.637"/>
 </g>
+<rect x="90.285" y="282.15" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.755"/>
+<rect x="139.182" y="282.15" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.755"/>
+<rect x="188.078" y="282.15" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.755"/>
+<rect x="9.5" y="49.361" opacity="0.3" fill="#FFFFFF" width="6.755" height="15.259"/>
+<polygon opacity="0.3" fill="#FFFFFF" points="9.5,26.354 9.5,11.094 24.759,11.094 24.759,17.85 16.255,17.85 16.255,26.354 "/>
+<rect x="47.767" y="11.094" opacity="0.3" fill="#FFFFFF" width="15.259" height="6.756"/>
+<rect x="235.911" y="10.031" opacity="0.3" fill="#FFFFFF" width="15.259" height="6.756"/>
+<polygon opacity="0.3" fill="#FFFFFF" points="282.682,25.291 282.682,16.787 274.178,16.787 274.178,10.031 289.438,10.031 
+	289.438,25.291 "/>
+<rect x="282.682" y="48.298" opacity="0.3" fill="#FFFFFF" width="6.756" height="15.259"/>
+<rect x="283.744" y="235.38" opacity="0.3" fill="#FFFFFF" width="6.756" height="15.259"/>
+<polygon opacity="0.3" fill="#FFFFFF" points="275.241,288.905 275.241,282.15 283.744,282.15 283.744,273.646 290.5,273.646 
+	290.5,288.905 "/>
+<rect x="236.974" y="282.15" opacity="0.3" fill="#FFFFFF" width="15.26" height="6.755"/>
+<rect x="48.83" y="283.213" opacity="0.3" fill="#FFFFFF" width="15.259" height="6.756"/>
+<polygon opacity="0.3" fill="#FFFFFF" points="10.563,289.969 10.563,274.709 17.318,274.709 17.318,283.213 25.822,283.213 
+	25.822,289.969 "/>
+<rect x="10.563" y="236.442" opacity="0.3" fill="#FFFFFF" width="6.755" height="15.26"/>
 </svg>

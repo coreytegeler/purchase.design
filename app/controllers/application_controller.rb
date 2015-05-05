@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
 
   protect_from_forgery with: :exception
 
@@ -122,10 +123,19 @@ class ApplicationController < ActionController::Base
       end
 
       def find_next_logo
-        logos = Logo.all
         current_pos = session[:logo]
-        next_pos = next_check(current_pos, logos)
+        next_pos = next_check(current_pos, Logo.all)
         session[:next_logo] = next_pos
+
+        # @new_logo = Logo.where(:position => current_pos).first.file
+        # @new_logo_svg = inline_svg(@new_logo, true).to_s.html_safe
+        # @next_logo = Logo.where(:position => current_pos).first.file
+        # @next_logo_svg = inline_svg(@next_logo, true).to_s.html_safe
+
+        # respond_to do |format|
+        #   format.js
+        # end
+        
         redirect_to(:controller => 'public', :action => 'index')
       end
 
@@ -202,6 +212,17 @@ class ApplicationController < ActionController::Base
         else
           1
         end
+      end
+
+      def create_instance_vars
+        @logo = Logo.where(:position => session[:logo]).first.file
+        @next_logo = Logo.where(:position => session[:next_logo]).first.file
+        @p = session[:palette].first
+        @s = session[:palette].second
+        @next_p = session[:next_palette].first
+        @next_s = session[:next_palette].second
+        @gradient = Gradient.where(:position => session[:gradient]).first.file
+        @next_gradient = Gradient.where(:position => session[:next_gradient]).first.file
       end
          
 end

@@ -13,6 +13,6 @@ class PostImage < ActiveRecord::Base
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
 
-    validates_presence_of :image, :post_id
+    validates_presence_of :image
 
 end

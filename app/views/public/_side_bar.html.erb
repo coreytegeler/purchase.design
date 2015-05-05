@@ -1,66 +1,64 @@
-<aside id="side_bar">
-	<header>
-		<div id="logo" class="secondary_fill">
-			<%= inline_svg(@logo, true) %>
-		</div>
+<header>
+	<div id="logo" class="secondary_fill">
+		<%= inline_svg(@logo, true) %>
+	</div>
 
-	</header>
-	<div id="tools" <%= color('border', @s) %>>
-		<div id="style_control">
-			<div id="buttons">
-				<% case params[:controller] %>
-				<% when 'works' %>
-					<%= render 'works/tools' %>
-				<% when 'faculties' %>
-					<%= render 'faculties/tools' %>
-				<% when 'alumni' %>
-					<%= render 'alumni/tools' %>
-				<% when 'resources' %>
-					<%= render 'resources/tools' %>
-				<% when 'apply' %>
-					<%#= render 'apply/tools' %>
-				<% end %>
+</header>
+<div id="tools" <%= color('border', @s) %>>
+	<div id="style_control">
+		<div id="buttons">
+			<% case params[:controller] %>
+			<% when 'works' %>
+				<%= render 'works/tools' %>
+			<% when 'faculties' %>
+				<%= render 'faculties/tools' %>
+			<% when 'alumni' %>
+				<%= render 'alumni/tools' %>
+			<% when 'resources' %>
+				<%= render 'resources/tools' %>
+			<% when 'apply' %>
+				<%#= render 'apply/tools' %>
+			<% end %>
 
-				<div class="button <%= @gradient_state %>">
-					<div class="method" id="next_gradient"  <%= color('bg', @p) %>>
-						<%= inline_svg(@next_gradient, true) %>
-					</div>
-					<%= render 'public/tooltip', :text => "Select gradient" %>
-					<div class="clear method secondary_fill" id="clear_gradient">
-						<%= inline_svg('clear.svg', false) %>
-					</div>
+			<div class="button <%= @gradient_state %>">
+				<div class="method" id="next_gradient"  <%= color('bg', @p) %>>
+					<%= inline_svg(@next_gradient, true) %>
 				</div>
+				<%= render 'public/tooltip', :text => "Select gradient" %>
+				<div class="clear method secondary_fill" id="clear_gradient">
+					<%= inline_svg('clear.svg', false) %>
+				</div>
+			</div>
 
-				<div class="button <%= @pattern_state %>">
-					<div class="method"  id="next_pattern" style="background-image:url(<%= @next_pattern %>)"></div>
-					<%= render 'public/tooltip', :text => "Select pattern" %>
-					<div class="clear method secondary_fill" id="clear_pattern">
-						<%= inline_svg('clear.svg', false) %>
+			<div class="button <%= @pattern_state %>">
+				<div class="method"  id="next_pattern" style="background-image:url(<%= @next_pattern %>)"></div>
+				<%= render 'public/tooltip', :text => "Select pattern" %>
+				<div class="clear method secondary_fill" id="clear_pattern">
+					<%= inline_svg('clear.svg', false) %>
+				</div>
+			</div>
+			
+			<div class="button">
+				<div class="method" id="next_logo">
+					<div class="swap_arrow secondary_fill">
+						<%= inline_svg('swap_arrow.svg', false) %>
+					</div>
+					<div class="swatch next secondary_fill">
+						<%= inline_svg(@next_logo, true) %>
+					</div>
+					<div class="swatch current secondary_fill">
+						<%= inline_svg(@logo, true) %>
 					</div>
 				</div>
-				
-				<div class="button">
-					<div class="method" id="next_logo">
-						<div class="swap_arrow secondary_fill">
-							<%= inline_svg('swap_arrow.svg', false) %>
-						</div>
-						<div class="swatch next secondary_fill">
-							<%= inline_svg(@next_logo, true) %>
-						</div>
-						<div class="swatch current secondary_fill">
-							<%= inline_svg(@logo, true) %>
-						</div>
-					</div>
-					<%= render 'public/tooltip', :text => "Next logo please!" %>
+				<%= render 'public/tooltip', :text => "Next logo please!" %>
+			</div>
+			<div class="button">
+				<div class="method" id="next_palette">
+					<div class="swatch primary" <%= color('bg', @next_p) %>></div>
+					<div class="swatch secondary" <%= color('border', @next_s) %>></div>
 				</div>
-				<div class="button">
-					<div class="method" id="next_palette">
-						<div class="swatch primary" <%= color('bg', @next_p) %>></div>
-						<div class="swatch secondary" <%= color('border', @next_s) %>></div>
-					</div>
-					<%= render 'public/tooltip', :text => "Gimme these colors!" %>
-				</div>
+				<%= render 'public/tooltip', :text => "Gimme these colors!" %>
 			</div>
 		</div>
 	</div>
-</aside>
+</div>

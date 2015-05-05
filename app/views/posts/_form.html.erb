@@ -3,10 +3,10 @@
 <% end %>
 
 <div class="row title">
-		<%= f.text_field(:title, :placeholder => "Title") %>
+	<%= f.text_field(:title, :placeholder => "Title") %>
 </div>
 <div class="row category">
-	<%= f.select(:category, options_for_select(@categories), {include_blank: 'Category'}) %>
+	<%= f.select :category, options_for_select(@categories), {include_blank: 'Category'} %>
 </div>
 <div class="row date">
 	<span>Start</span>
@@ -19,14 +19,18 @@
 
 <div class="images">
 	<%= f.fields_for :post_images do |pi| %>
-	<% if pi.object.image.exists? %>
-		<% image = pi.object.image.url(:medium) %>
-		<div class="image drop" style="background-image:url(<%= image %>)">
-	<% else %>
-		<div class="image drop">
-	<% end %>
-			<%= pi.file_field(:image) %>
-		</div>
+		<% if pi.object.image.exists? %>
+			<% image = pi.object.image.url(:medium) %>
+			<div class="image drop" style="background-image:url(<%= image %>)">
+				<div class="destroy">
+					<%= pi.check_box(:_destroy) %>
+					<%= pi.label(:_destroy, '&nbsp;'.html_safe) %>
+				</div>
+		<% else %>
+			<div class="image drop" style="background-image:url(<%= @upload_img %>)">
+		<% end %>
+				<%= pi.file_field(:image) %>
+			</div>
 	<% end %>
 </div>
 

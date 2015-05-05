@@ -8,24 +8,33 @@ var initPosts = function() {
 		}
 	});
 
+	$('.remove').each(function(){
+		fill(this, '#fff');
+	});
 
-	var max = 300;
+
+	var max = 400;
 	var stackHeight;
 	var stackWidth;
 	var gap = 4;
-	$('.public .image').each(function(i, w) {
-		$(w).imagesLoaded(function() {
-			$(w).addClass('loaded').css({y: -gap*i, x: gap*i});
-		});
-	});
-	var stackSize = max + ($('.image_wrapper').length * 4);
-	$('.public .stack').css({height: stackSize, width: stackSize});
 
-	$('.public .stack').click(function(event) {
-		$top = $('.image:last-child');
-		$top.insertBefore('.image:first-child');
-		$('.image').each(function(i, w) {
-			$(w).css({y: -gap*i, x: gap*i});
+	$('.post').each(function(i, post) {
+		stack = $(post).children('.stack');
+		$(stack).children('.image').each(function(i, img) {
+			$(img).imagesLoaded(function() {
+				$(img).addClass('loaded').css({y: -gap*i, x: gap*i});
+			});
+		});
+		var stackSize = max + ($(this).children('.image').children('.image_wrapper').length * 4);
+		$(stack).css({height: stackSize, width: stackSize});
+		$(post).css({width: stackSize + 100});
+	});
+
+	$('.public .stack').click(function() {
+		$top = $(this).children('.image:last-child');
+		$top.insertBefore($(this).children('.image:first-child'));
+		$(this).children('.image').each(function(i, img) {
+			$(img).css({y: -gap*i, x: gap*i});
 		});
 	});
 }

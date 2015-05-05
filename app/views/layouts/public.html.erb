@@ -24,7 +24,9 @@
 	<main>
 		<%= render 'public/about' %>
 		<%= render 'public/top_bar' %>
-		<%= render 'public/side_bar' %>
+		<aside id="side_bar">
+			<%= render 'public/side_bar' %>
+		</aside>
 		<div id="border" <%= color('border', @s) %>>
 			<section id="page_content">
 				<%= yield %>
