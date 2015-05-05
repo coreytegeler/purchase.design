@@ -70,20 +70,20 @@ li {
 	float: left;
 	padding: 5px;
 	margin: 0 15px 0 0;
-	font-size: 20px;
+	font-size: 17px;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link:last-child {
 	margin-right: 0;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a {
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 17px;
 	font-weight: 600;
 	padding-bottom: 3px;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a.active,
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a:hover {
-	border-bottom: 3px solid;
+	border-bottom: 2px solid;
 }
 /*****************/
 /*CONTENT SECTION*/

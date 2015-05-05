@@ -40,14 +40,8 @@
 			
 			<div class="button">
 				<div class="method" id="next_logo">
-					<div class="swap_arrow secondary_fill">
-						<%= inline_svg('swap_arrow.svg', false) %>
-					</div>
 					<div class="swatch next secondary_fill">
 						<%= inline_svg(@next_logo, true) %>
-					</div>
-					<div class="swatch current secondary_fill">
-						<%= inline_svg(@logo, true) %>
 					</div>
 				</div>
 				<%= render 'public/tooltip', :text => "Next logo please!" %>

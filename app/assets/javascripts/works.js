@@ -1,5 +1,5 @@
 var initWorks = function() {
-	var max = 400;
+	var max = 450;
 	var stackHeight;
 	var stackWidth;
 	var gap = 4;
@@ -10,7 +10,7 @@ var initWorks = function() {
 	});
 	var stackSize = max + ($('.image_wrapper').length * 4);
 	$('.public #stack').css({height: stackSize, width: stackSize});
-
+	
 
 	$('.public #stack').click(function(event) {
 		$top = $('.work:last-child');

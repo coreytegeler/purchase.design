@@ -14,7 +14,7 @@ class Work < ActiveRecord::Base
 	has_attached_file :image, :styles => { 
 		:thumb => ["200x200"],
 		:small => ["400x400"],
-		:medium => ["600x600>"], 
+		:medium => ["600x600>"], # 450!
 		:large => ["1200x1200>"] }, 
 		:default_url => "/images/:style/missing.png"
 		

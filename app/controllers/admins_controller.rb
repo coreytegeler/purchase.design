@@ -26,7 +26,7 @@ class AdminsController < ApplicationController
   def update
     @admin = Admin.find(params[:id])
     if @admin.update_attributes(admin_params)
-      flash[:notice] = "Admin was updated!"
+      flash[:notice] = "Admin was updated! #{@admin.errors.full_messages}"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else

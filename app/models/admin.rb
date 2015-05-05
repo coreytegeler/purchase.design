@@ -19,11 +19,5 @@ class Admin < ActiveRecord::Base
 	validates_uniqueness_of :email
 	validates_format_of :email, :with => VALID_EMAIL_REGEX
 	validates_confirmation_of :email
-	validate :email_is_allowed
-
-	def email_is_allowed
-		if FORBIDDEN_EMAIL.include?(email)
-			errors.add(:email, "has been restricted from use.")
-		end
-	end
+	
 end
