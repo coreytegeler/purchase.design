@@ -11,6 +11,7 @@
 </div>
 <div class="actions">
 	<% if palette.persisted? %>
+		<%= link_to("Preview", {:controller => 'public', :action => 'index', :palette => palette.id}, :class => 'action preview') %>
 		<%= link_to('Update', "#", :onclick => "$('#" + palette.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
