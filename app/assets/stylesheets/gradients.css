@@ -3,3 +3,13 @@ form .file {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+#delete .popup {
+	background-size: cover !important;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#delete .popup input[type="submit"] {
+	background: black;
+}

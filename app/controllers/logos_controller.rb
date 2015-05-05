@@ -50,6 +50,9 @@ class LogosController < ApplicationController
 
   def delete
     @logo = Logo.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:logo => @logo} }
+    end
   end
 
   def destroy

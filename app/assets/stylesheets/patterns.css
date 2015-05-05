@@ -1,3 +1,22 @@
 .block:not(:first-child) .file .drop, .block:first-child .file .drop.dropped {
 	background-color: white;
 }
+
+#delete .popup {
+	background-position: center;
+	background-repeat: repeat;
+	color: black;
+	text-shadow:
+	   	-5px -5px 0 white,  
+	    5px -5px 0 white,
+	    -5px 5px 0 white,
+	    5px 5px 0 white,
+	    0 5px 0 white,
+	    0 -5px 0 white,
+	    5px 0px 0 white,
+	    -5px 0px 0 white;
+	background-color: white !important;
+}
+#delete .popup input[type="submit"] {
+	background: black;
+}

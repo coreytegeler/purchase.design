@@ -60,6 +60,9 @@ class PalettesController < ApplicationController
 
   def delete
     @palette = Palette.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:palette => @palette} }
+    end
   end
 
   def destroy

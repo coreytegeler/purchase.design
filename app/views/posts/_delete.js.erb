@@ -1,0 +1,2 @@
+console.log('<%= @post.id %>');
+$('body').append("<%= escape_javascript render(:partial => 'posts/delete_popup', :locals => { :post => @post }) %>");

@@ -273,9 +273,6 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /*****************/
 /******ABOUT******/
 /*****************/
-.about #page_content {
-	opacity: 0;
-}
 #about {
 	position: absolute;
   	top: 115px;
@@ -285,14 +282,17 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
   	height: calc(100% - 150px);
   	border: solid white 5px;
   	z-index: 20;
-  	display: none;
+  	display: block;
   	color: white;
   	overflow: scroll;
+	display: none;
+}
+.about #page_content {
+	opacity: 0;
 }
 .about #about {
 	display: block;
 }
-
 #about .inner {
 	padding: 40px;
 }

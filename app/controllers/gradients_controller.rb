@@ -50,6 +50,9 @@ class GradientsController < ApplicationController
 
   def delete
     @gradient = Gradient.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:gradient => @gradient} }
+    end
   end
 
   def destroy

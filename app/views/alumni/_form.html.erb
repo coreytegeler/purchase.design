@@ -14,7 +14,7 @@
 <div class="actions">
 	<% if alumnus.persisted? %>
 		<%= link_to('Update', "#", :onclick => "$('#" + alumnus.position.to_s + "').submit()", :class => "action submit") %>
-		<%= link_to("Delete", {:controller => 'alumni', :action => 'delete', :id => alumnus.id}, :class => 'action delete') %>
+		<%= link_to("Delete", {:controller => 'alumni', :action => 'delete', :id => alumnus.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<%= link_to('Create', "#", :onclick => "$('#" + alumnus.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

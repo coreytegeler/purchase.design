@@ -53,6 +53,9 @@ class FacultiesController < ApplicationController
 
   def delete
     @faculty = Faculty.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:faculty => @faculty} }
+    end
   end
 
   def destroy

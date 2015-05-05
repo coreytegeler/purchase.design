@@ -56,6 +56,9 @@ class PostsController < ApplicationController
 
   def delete
     @post = Post.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:post => @post} }
+    end
   end
 
   def destroy

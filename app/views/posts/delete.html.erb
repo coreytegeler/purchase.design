@@ -1,7 +1,0 @@
-<h1>
-	<%= link_to("\u2B05", {:action => 'index'}, :class => 'back-link symb') %>
-	Are you sure you want to delete <u><%= @post.title %></u>?
-</h1>
-<%= form_for(:post, :url => {:action => 'destroy', :id => @post.id}) do |f| %>
-	<%= submit_tag("YES") %>
-<% end %>

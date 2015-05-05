@@ -1,0 +1,20 @@
+<div id="delete">
+	<div class="vert_center">
+		<div class="popup">
+			<div class="inner">
+				<div class="vert_center">
+					<h1>
+						Are you sure you want to delete <%= alumnus.name %>?
+					</h1>
+
+					<div class="decision">
+						<%= form_for(:alumnus, :url => {:action => 'destroy', :id => alumnus.id}) do |f| %>
+							<%= submit_tag("YES") %>
+						<% end %>
+						<%= submit_tag("NO", :id => 'close', :onClick => "$('#delete').remove()") %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

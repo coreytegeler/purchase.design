@@ -22,7 +22,7 @@
 <div class="actions">
 	<% if resource.persisted? %>
 		<%= link_to('Update', "#", :onclick => "$('#" + resource.position.to_s + "').submit()", :class => "action submit") %>
-		<%= link_to("Delete", {:controller => 'resources', :action => 'delete', :id => resource.id}, :class => 'action delete') %>
+		<%= link_to("Delete", {:controller => 'resources', :action => 'delete', :id => resource.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<%= link_to('Create', "#", :onclick => "$('#" + resource.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

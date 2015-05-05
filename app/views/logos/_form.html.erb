@@ -17,7 +17,7 @@
 <div class="actions">
 	<% if logo.persisted? %>
 		<%= link_to('Update', "#", :onclick => "$('#" + logo.position.to_s + "').submit()", :class => "action submit") %>
-		<%= link_to("Delete", {:controller => 'logos', :action => 'delete', :id => logo.id}, :class => 'action delete') %>
+		<%= link_to("Delete", {:controller => 'logos', :action => 'delete', :id => logo.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<%= link_to('Create', "#", :onclick => "$('#" + logo.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

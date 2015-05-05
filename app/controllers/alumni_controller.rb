@@ -48,6 +48,9 @@ class AlumniController < ApplicationController
 
   def delete
     @alumnus = Alumnus.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:alumnus => @alumnus} }
+    end
   end
 
   def destroy

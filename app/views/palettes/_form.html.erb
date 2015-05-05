@@ -12,7 +12,7 @@
 <div class="actions">
 	<% if palette.persisted? %>
 		<%= link_to('Update', "#", :onclick => "$('#" + palette.position.to_s + "').submit()", :class => "action submit") %>
-		<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :class => 'action delete') %>
+		<%= link_to("Delete", {:controller => 'palettes', :action => 'delete', :id => palette.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<%= link_to('Create', "#", :onclick => "$('#" + palette.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

@@ -51,6 +51,9 @@ class ResourcesController < ApplicationController
 
   def delete
     @resource = Resource.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:resource => @resource} }
+    end
   end
 
   def destroy

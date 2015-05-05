@@ -51,6 +51,9 @@ class PatternsController < ApplicationController
 
   def delete
     @pattern = Pattern.find(params[:id])
+      respond_to do |format|
+      format.js { render partial: 'delete', :locals => {:pattern => @pattern} }
+    end
   end
 
   def destroy

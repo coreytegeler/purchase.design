@@ -1,0 +1,2 @@
+console.log('<%= @resource.id %>');
+$('body').append("<%= escape_javascript render(:partial => 'resources/delete_popup', :locals => { :resource => @resource }) %>");
