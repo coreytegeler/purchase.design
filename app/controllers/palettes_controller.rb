@@ -89,7 +89,7 @@ class PalettesController < ApplicationController
     end
 
     def name
-      "Palete No. "
+      "Palette No. "
     end
 
 end
