@@ -64,7 +64,7 @@ class ResourcesController < ApplicationController
   private 
 
     def resource_params
-      params.require(:resource).permit(:name, :link, :category, :position, :image, :id)
+      params.require(:resource).permit(:name, :link, :position, :image)
     end
 
     def update_positions
