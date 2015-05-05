@@ -12,9 +12,8 @@ class Work < ActiveRecord::Base
 	acts_as_list scope: [:position]
 
 	has_attached_file :image, :styles => { 
-		:thumb => ["200x200"],
-		:small => ["400x400"],
-		:medium => ["600x600>"], # 450!
+		:small => ["300x300"],
+		:medium => ["450x450"],
 		:large => ["1200x1200>"] }, 
 		:default_url => "/images/:style/missing.png"
 		
@@ -28,19 +27,19 @@ class Work < ActiveRecord::Base
 
     validates_attachment_content_type :motion, content_type: /\Avideo\/.*\Z/ 
 
-    validate :get_dimensions, :unless => "errors.any?"
+    # validate :get_dimensions, :unless => "errors.any?"
 
-    private
+  #   private
 		
-		def get_dimensions
-		  dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
-		  if dimensions.width > dimensions.height
-		  	self.orientation = 'landscape'
-		  elsif dimensions.width < dimensions.height
-		  	self.orientation = 'portrait'
-		  else
-		  	self.orientation = 'square'
-		  end
-		end
+		# def get_dimensions
+		#   dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
+		#   if dimensions.width > dimensions.height
+		#   	self.orientation = 'landscape'
+		#   elsif dimensions.width < dimensions.height
+		#   	self.orientation = 'portrait'
+		#   else
+		#   	self.orientation = 'square'
+		#   end
+		# end
 
 end

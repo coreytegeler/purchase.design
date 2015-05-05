@@ -22,7 +22,6 @@
 		</div>
 	<% end %>
 	<main>
-		<%= render 'public/about' %>
 		<%= render 'public/top_bar' %>
 		<aside id="side_bar">
 			<%= render 'public/side_bar' %>
@@ -31,7 +30,7 @@
 			<section id="page_content">
 				<%= yield %>
 			</section>
-			
+			<%= render 'public/about' %>
 		</div>
 	</main>
 	<div id="hiddenPalette" data-primary="<%= @p %>" data-secondary="<%= @s %>"></div>

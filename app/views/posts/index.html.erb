@@ -18,7 +18,9 @@
 				<div class="date">
 					<%= post.created_at.to_date.to_formatted_s(:long_ordinal)  %>
 				</div>
-
+				<div class="category">
+					<%= post.category %>
+				</div>
 				<div class="body">
 					<%= post.body %>
 				</div>

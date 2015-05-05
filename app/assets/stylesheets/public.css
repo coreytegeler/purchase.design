@@ -168,15 +168,15 @@ aside#side_bar #tools #style_control .button.on .clear {
 	display: block;
 }
 aside#side_bar #tools #style_control .button .method#next_palette .swatch {
-	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4), inset 0px 0px 2px 0px rgba(0,0,0,0.4);
 	position: absolute;
 }
 aside#side_bar #tools #style_control .button .method#next_palette .swatch.primary {
 	bottom: 0;
 	left: 0;
 	z-index: 1;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 }
 aside#side_bar #tools #style_control .button .method#next_palette .swatch.secondary {
 	top: 0px;
@@ -184,27 +184,8 @@ aside#side_bar #tools #style_control .button .method#next_palette .swatch.second
 	z-index: 2;
 	height: 20px;
 	width: 20px;
-	border: 10px solid;
+	border: 5px solid;
 }
-aside#side_bar #tools #style_control .button .method#next_logo .swatch {
-	background: transparent !important;
-	position: absolute;
-}
-/*aside#side_bar #tools #style_control .button .method#next_logo .swatch.next {
-	height: 45px;
-	width: 45px;
-	top: 0;
-	right: 0;
-	z-index: 2;
-}
-aside#side_bar #tools #style_control .button .method#next_logo .swatch.current {
-	height: 20px;
-	width: 20px;
-	opacity: 0.6;
-	bottom: 0;
-	left: 0;
-	z-index: 1;
-}*/
 aside#side_bar #tools #style_control .button .method#next_logo .swatch svg {
 	width: 100%;
 	height: 100%;
@@ -237,10 +218,11 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /*CONTENT SECTION*/
 /*****************/
 #border {
-	padding-left: 165px; /*from 130px*/
-	width: calc(100% - 188px);
-  	width: -moz-calc(100% - 188px);
-  	width: -webkit-calc(100% - 188px);
+	padding-left: 166px;
+	width: calc(100% - 223px);
+  	width: -moz-calc(100% - 223px);
+  	width: -webkit-calc(100% - 223px);
+  	position: relative;
 }
 .masonry {
 	margin: auto;
@@ -274,12 +256,12 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /******ABOUT******/
 /*****************/
 #about {
-	position: absolute;
-  	top: 115px;
+	position: fixed;
+  	top: 135px;
   	left: 25px;
   	background: black;
   	width: calc(100% - 60px);
-  	height: calc(100% - 150px);
+  	height: calc(100% - 170px);
   	border: solid white 5px;
   	z-index: 20;
   	display: block;
@@ -298,23 +280,15 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 }
 #about .half {
 	float: left;
-}
-#about .left.half {
-	width: calc(60% - 20px);
-	width: -moz-calc(60% - 20px);
-	width: -webkit-calc(60% - 20px);
-	margin-right: 20px;
-}
-#about .right.half {
-	width: 40%;
+	width: 50%;
 }
 #about .module {
-	margin-bottom: 20px;
+	margin: 20px;
 	border: 1px solid rgba(255,255,255,0.3);
 }
 #about .block {
 	display: table;
-	width: 100%;
+	/*width: 100%;*/
 	width: calc(100% - 20px);
 	width: -moz-calc(100% - 20px);
 	width: -webkit-calc(100% - 20px);

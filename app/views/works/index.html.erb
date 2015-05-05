@@ -4,7 +4,7 @@
 			<% @works.each do |work| %>
 				<div class="work" <%= color('bg', @p, 'border', @s) %>>
 					<div class="image_wrapper">
-						<%= image_tag work.image.url(:small) %>
+						<%= image_tag work.image.url(:medium) %>
 					</div>
 				</div>
 			<% end %>
