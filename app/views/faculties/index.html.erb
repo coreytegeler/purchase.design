@@ -2,10 +2,15 @@
 	<% @faculties.each do |faculty| %>
 		<div class="faculty block">
 			<div class="text name">
-				<%= faculty.name %>
+				<div class="row">
+					<%= faculty.first_name %>
+				</div>
+				<div class="row">
+					<%= faculty.last_name %>
+				</div>
 			</div>
 			<div class="text alma_maters hidden">
-				<%= faculty.name + " received " %> 
+				<%= faculty.first_name.to_s + ' received ' %> 
 				<% faculty.alma_maters.new_to_old.each_with_index do |am, index| %>
 					<%= am.degree.indefinitize + ' from ' + am.college + sentencize(faculty.alma_maters.size, index) %>
 				<% end %>

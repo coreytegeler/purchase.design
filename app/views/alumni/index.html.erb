@@ -2,7 +2,12 @@
 	<% @alumni.each do |alumnus| %>
 		<div class="alumnus block">
 			<div class="text name">
-				<%= alumnus.name %>
+				<div class="row">
+					<%= alumnus.first_name %>
+				</div>
+				<div class="row">
+					<%= alumnus.last_name %>
+				</div>
 			</div>
 			<div class="text website hidden">
 				<%= link_to alumnus.url, alumnus.url, :target => '_blank' %>

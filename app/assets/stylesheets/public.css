@@ -239,6 +239,15 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 .swapper .block .text.name {
 	word-spacing: 335px;
 }
+.swapper .block .text .row {
+	width: 100%;
+	display: block;
+	/*line-height: 56px;*/
+	/*margin-bottom: 15px;*/
+}
+.swapper .block .text .row:last-child {
+	margin: 0;
+}
 .swapper .block .email, .swapper .block .website, .swapper .block .title {
 	font-size: 45px;
 	line-height: 46px;
