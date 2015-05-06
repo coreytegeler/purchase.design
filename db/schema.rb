@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506001924) do
+ActiveRecord::Schema.define(version: 20150506004034) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "dept_title", limit: 255
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20150506001924) do
   end
 
   create_table "alumni", force: :cascade do |t|
-    t.string   "name",       limit: 255
     t.date     "year"
     t.integer  "position",   limit: 4
     t.boolean  "visible",    limit: 1,   default: false
