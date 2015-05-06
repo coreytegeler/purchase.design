@@ -12,7 +12,7 @@ class Alumnus < ActiveRecord::Base
 
 	acts_as_list scope: [:position]
 
-	validates_presence_of :first_name, :last_name, :link
+	validates_presence_of :first_name, :last_name, :url
 	before_validation :format_url
 
 	private
