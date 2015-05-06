@@ -4,10 +4,18 @@
 
 <div class="row name with_position">
 	<%= f.text_field(:name, :placeholder => "Name") %>
-	<%= f.select :position, 1..@alumni.size, {:selected => alumnus.position}, {:class => 'position'} %>
 </div>
-<div class="row website">
+<div class="row name">
+	<div class="half first_name">
+		<%= f.text_field(:first_name, :placeholder => "First name") %>
+	</div>
+	<div class="half last_name">
+		<%= f.text_field(:last_name, :placeholder => "Last name") %>
+	</div>
+</div>
+<div class="row website with_position">
 	<%= f.text_field(:url, :placeholder => "Website") %>
+	<%= f.select :position, 1..@alumni.size, {:selected => alumnus.position}, {:class => 'position'} %>
 </div>
 <div>
 	

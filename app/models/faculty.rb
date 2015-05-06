@@ -25,7 +25,7 @@ class Faculty < ActiveRecord::Base
 
   	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   	
-  	validates_presence_of :name, :title
+  	validates_presence_of :first_name, :last_name
   	validates_format_of :email, :with => VALID_EMAIL_REGEX
 	validates_confirmation_of :email
 	validates_associated :alma_maters

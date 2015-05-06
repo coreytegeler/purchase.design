@@ -2,15 +2,21 @@
 	<% faculty = @new_faculty %>
 <% end %>
 
-<div class="row name with_position">
-	<%= f.text_field(:name, :placeholder => "Name") %>
-	<%= f.select :position, 1..@faculties.size, {:selected => faculty.position}, {:class => 'position'} %>
+
+<div class="row name">
+		<%= f.text_field(:name, :placeholder => "First name") %>
 </div>
-<div class="row email">
+<div class="row name">
+	<div class="half first_name">
+		<%= f.text_field(:first_name, :placeholder => "First name") %>
+	</div>
+	<div class="half last_name">
+		<%= f.text_field(:last_name, :placeholder => "Last name") %>
+	</div>
+</div>
+<div class="row email with_position">
 	<%= f.text_field(:email, :placeholder => "E-mail") %>
-</div>
-<div class="row title">
-	<%= f.text_field(:title, :placeholder => "Job title") %>
+	<%= f.select :position, 1..@faculties.size, {:selected => faculty.position}, {:class => 'position'} %>
 </div>
 <%= f.fields_for :alma_maters do |am| %>
 	<div class="row alma_mater">

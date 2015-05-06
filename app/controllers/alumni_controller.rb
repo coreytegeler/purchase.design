@@ -64,7 +64,7 @@ class AlumniController < ApplicationController
   private 
 
     def alumnus_params
-      params.require(:alumnus).permit(:name, :url, :position, :id)
+      params.require(:alumnus).permit(:name, :first_name, :last_name, :url, :position, :id)
     end
 
     def update_positions
