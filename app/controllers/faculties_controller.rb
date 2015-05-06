@@ -69,7 +69,7 @@ class FacultiesController < ApplicationController
   private 
 
     def faculty_params
-      params.require(:faculty).permit(:name, :first_name, :last_name, :position, :email, :title, alma_maters_attributes: [:id, :faculty_id, :college, :degree])
+      params.require(:faculty).permit(:first_name, :last_name, :position, :email, :title, alma_maters_attributes: [:id, :faculty_id, :college, :degree])
     end
 
     def update_positions
