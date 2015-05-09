@@ -1,7 +1,7 @@
 <section class="masonry swapper" id="faculties">
 	<% @faculties.each do |faculty| %>
 		<div class="faculty block">
-			<div class="text name">
+			<div class="swappee text name">
 				<div class="row">
 					<%= faculty.first_name %>
 				</div>
@@ -9,16 +9,16 @@
 					<%= faculty.last_name %>
 				</div>
 			</div>
-			<div class="text alma_maters hidden">
+			<div class="swappee text alma_maters hidden">
 				<%= faculty.first_name.to_s + ' received ' %> 
 				<% faculty.alma_maters.new_to_old.each_with_index do |am, index| %>
 					<%= am.degree.indefinitize + ' from ' + am.college + sentencize(faculty.alma_maters.size, index) %>
 				<% end %>
 			</div>
-			<div class="text email hidden">
+			<div class="swappee text email hidden">
 				<%= mail_to(faculty.email) %>
 			</div>
-			<div class="text title hidden">
+			<div class="swappee text title hidden">
 				<%= faculty.title %>
 			</div>
 		</div>

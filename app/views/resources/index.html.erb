@@ -1,13 +1,13 @@
 <section class="masonry swapper" id="resources">
 	<% @resources.each do |resource| %>
 		<div class="resource block">
-			<div class="text title">
+			<div class="swappee text title">
 				<%= link_to resource.name, resource.link, :target => '_blank' %>
 			</div>
-			<div class="text website hidden">
+			<div class="swappee text website hidden">
 				<%= link_to resource.link, resource.link, :target => '_blank' %>
 			</div>
-			<div class="image hidden">
+			<div class="swappee image hidden">
 				<%= link_to image_tag(resource.image(:medium)), resource.link %>
 			</div>
 		</div>

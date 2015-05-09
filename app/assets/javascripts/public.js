@@ -83,7 +83,7 @@ function setUpSide() {
 	$('#buttons .button.swap').click(function() {
 		var id = $(this).attr('id');
 		$('.swapper .block').each(function() {
-			$(this).children('div').each(function() {
+			$(this).children('.swappee').each(function() {
     			var hidden = $(this).hasClass('hidden');
     			var show = $(this).hasClass(id);
     			if(show) {

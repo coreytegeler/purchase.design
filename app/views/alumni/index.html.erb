@@ -1,7 +1,7 @@
 <section class="masonry swapper" id="alumni">
 	<% @alumni.each do |alumnus| %>
 		<div class="alumnus block">
-			<div class="text name">
+			<div class="swappee text name">
 				<div class="row">
 					<%= link_to alumnus.first_name, alumnus.url, :target => '_blank' %>
 				</div>
@@ -9,7 +9,7 @@
 					<%= link_to alumnus.last_name, alumnus.url, :target => '_blank' %>
 				</div>
 			</div>
-			<div class="text website hidden">
+			<div class="swappee text website hidden">
 				<%= link_to alumnus.url, alumnus.url, :target => '_blank' %>
 			</div>
 		</div>
