@@ -78,7 +78,6 @@ aside#side_bar #tools {
 	position: absolute;
 	bottom: 45px;
 	left: 45px;
-	/*border: 1px solid;*/
 }
 aside#side_bar #tools #style_control {
 	width: 100%;
@@ -182,9 +181,9 @@ aside#side_bar #tools #style_control .button .method#next_palette .swatch.second
 	top: 0px;
 	right: 0px;
 	z-index: 2;
-	height: 20px;
-	width: 20px;
-	border: 5px solid;
+	height: 18px;
+	width: 18px;
+	border: 6px solid;
 }
 aside#side_bar #tools #style_control .button .method#next_logo .swatch svg {
 	width: 100%;
@@ -234,7 +233,6 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 	margin-bottom: 40px;
 	width: 335px;
 	word-wrap: break-word;
-	overflow: hidden;
 }
 .swapper .block .text .row {
 	width: 100%;
@@ -247,14 +245,11 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 	font-size: 45px;
 	line-height: 46px;
 }
-.swapper .block a {
+.swapper .block a, .swapper .block .row a:hover {
 	text-decoration: none;
 	hyphens: none;
 }
-.swapper .block:hover {
-	cursor: pointer;
-}
-.swapper .block:hover {
+.swapper .block .row.hover a, .swapper .block a:hover {
 	text-decoration: underline;
 }
 .swapper .hidden {

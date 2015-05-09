@@ -3,10 +3,10 @@
 		<div class="alumnus block">
 			<div class="text name">
 				<div class="row">
-					<%= alumnus.first_name %>
+					<%= link_to alumnus.first_name, alumnus.url, :target => '_blank' %>
 				</div>
 				<div class="row">
-					<%= alumnus.last_name %>
+					<%= link_to alumnus.last_name, alumnus.url, :target => '_blank' %>
 				</div>
 			</div>
 			<div class="text website hidden">

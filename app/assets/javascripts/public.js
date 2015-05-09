@@ -11,6 +11,18 @@ var initPublic = function() {
 	$('#logo').click(function() {
 		$('body').toggleClass('about');
 	});
+
+	$('.swapper .block .row a').hover(function() {
+		$(this).parent('.row').addClass('hover');
+		$(this).parent('.row').siblings('.row').each(function(i, r) {
+			$(this).addClass('hover');
+		});
+	}, function() {
+		$(this).parent('.row').removeClass('hover');
+		$(this).parent('.row').siblings('.row').each(function(i, r) {
+			$(this).removeClass('hover');
+		});
+	});
 }
 
 function fillSvgs() {

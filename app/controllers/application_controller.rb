@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :select_logo, only: [:index]
   before_filter :select_gradient, only: [:index]
   before_filter :select_pattern, only: [:index]
-  before_filter :get_upload_icon, :only => [:admin]
+  before_filter :get_upload_icon, only: [:admin]
 
   def logged_in?
   	!!session[:admin_id]
@@ -149,7 +149,7 @@ class ApplicationController < ActionController::Base
 
         current_gradient_pos = session[:gradient]
 
-        if session[:no_gradient] != true
+        if session[:no_gradient] == false
           @gradient = gradients.where(:position => current_gradient_pos).first.file
           @gradient_state = 'on'
         else
@@ -183,7 +183,7 @@ class ApplicationController < ActionController::Base
 
         current_pattern_pos = session[:pattern]
 
-        if session[:no_pattern] != true
+        if session[:no_pattern] == true
           @pattern = patterns.where(:position => current_pattern_pos).first.tile
           @pattern_state = 'on'
         else
