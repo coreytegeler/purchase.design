@@ -54,7 +54,7 @@ function size() {
 		height:h() - border - notice
 	});
 
-	if( $('.masonry .block').length ) {
+	if( $('.masonry').length ) {
 		var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
 		console.log(blockWidth);
 		$('.masonry').masonry({

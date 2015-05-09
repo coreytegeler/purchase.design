@@ -3,12 +3,17 @@
 <% end %>
 
 <div class="row text">
-	<%= f.text_area :text, :rows => 3, :placeholder => "What do applicants need to do?" %>
+	<h3 class="name">
+		Requirement No. <%= apply_item.position %>
+	</h3>
 </div>
-<div class="row view">
-	<%= f.select :show_to, options_for_select(@show_to_options, :selected => f.object.show_to), include_blank: 'Type' %>	
-	<%= f.select :position, 1..@apply_items.size, {:selected => f.object.position}, {:class => 'position'} %>
+<div class="row text">
+	<%= f.text_area :parent, :rows => 3, :placeholder => "Put application requirement here." %>
 </div>
+<div class="row text">
+	<%= f.text_area :student, :rows => 3, :placeholder => "Put application \"requirement\" here." %>
+</div>
+
 
 <div class="actions">
 	<% if apply_item.persisted? %>

@@ -1,6 +1,6 @@
 class ApplyItemsController < ApplicationController
 
-  layout 'access'
+  layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
@@ -64,7 +64,7 @@ class ApplyItemsController < ApplicationController
   private
 
     def apply_item_params
-      params.require(:apply_item).permit(:text, :show_to, :position)
+      params.require(:apply_item).permit(:student, :parent, :position)
     end
 
     def update_positions

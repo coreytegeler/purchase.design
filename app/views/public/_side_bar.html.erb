@@ -1,5 +1,5 @@
 <header>
-	<div id="logo" class="secondary_fill">
+	<div id="logo" class="secondary_fill" <%= color('bg', @p) %>>
 		<%= inline_svg(@logo, true) %>
 	</div>
 
@@ -14,8 +14,8 @@
 				<%= render 'alumni/tools' %>
 			<% when 'resources' %>
 				<%= render 'resources/tools' %>
-			<% when 'apply' %>
-				<%= render 'apply/tools' %>
+			<% when 'apply_items' %>
+				<%= render 'apply_items/tools' %>
 			<% end %>
 
 			<div class="button <%= @gradient_state %>">

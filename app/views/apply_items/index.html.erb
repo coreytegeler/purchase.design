@@ -1,0 +1,15 @@
+<section class="swapper masonry" id="apply">
+	<% @apply_items.each do |item| %>
+		<div class="apply_item block">
+			<div class="box">
+				<%= inline_svg('check', false) %>
+			</div>
+			<div class="text parent">
+				<%= item.parent %>
+			</div>
+			<div class="text student hidden">
+				<%= item.student %>
+			</div>
+		</div>
+	<% end %>
+</section>

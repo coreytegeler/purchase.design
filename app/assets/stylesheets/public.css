@@ -61,6 +61,10 @@ aside#side_bar header {
 	width: 135px;
 	height: 135px;
 	display: table;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 12;
 }
 aside#side_bar header #logo {
 	height: 85px;
@@ -223,9 +227,6 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
   	width: -webkit-calc(100% - 223px);
   	position: relative;
 }
-.masonry {
-	margin: auto;
-}
 .swapper .block {
 	font-size: 55px;
 	line-height: 57px;
@@ -253,7 +254,7 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 	text-decoration: underline;
 }
 .swapper .hidden {
-	display: none;
+	display: none !important;
 }
 
 

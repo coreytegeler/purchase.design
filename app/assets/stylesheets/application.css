@@ -107,6 +107,10 @@ main {
 	width: 100%;
 	display: table;
 }
+.masonry {
+	display: table;
+	margin: auto;
+}
 #content {
 	padding: 0 30px 0 150px
 }
