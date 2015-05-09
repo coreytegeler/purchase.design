@@ -53,7 +53,7 @@ module ApplicationHelper
 		if in_db == true
         	Paperclip.io_adapters.for(file).read.html_safe
         else
-  			svg = File.open("app/assets/images/#{file}", "rb")
+  			svg = File.open("app/assets/images/#{file}.svg", "rb")
   			raw svg.read
         end
     end

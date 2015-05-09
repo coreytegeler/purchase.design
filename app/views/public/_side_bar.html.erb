@@ -17,7 +17,7 @@
 			<% when 'resources' %>
 				<%= render 'resources/tools' %>
 			<% when 'apply' %>
-				<%#= render 'apply/tools' %>
+				<%= render 'apply/tools' %>
 			<% end %>
 
 			<div class="button <%= @gradient_state %>">
@@ -26,7 +26,7 @@
 				</div>
 				<%= render 'public/tooltip', :text => "Select gradient" %>
 				<div class="clear method secondary_fill" id="clear_gradient">
-					<%= inline_svg('clear.svg', false) %>
+					<%= inline_svg('clear', false) %>
 				</div>
 			</div>
 
@@ -34,7 +34,7 @@
 				<div class="method"  id="next_pattern" style="background-image:url(<%= @next_pattern %>)"></div>
 				<%= render 'public/tooltip', :text => "Select pattern" %>
 				<div class="clear method secondary_fill" id="clear_pattern">
-					<%= inline_svg('clear.svg', false) %>
+					<%= inline_svg('clear', false) %>
 				</div>
 			</div>
 			
