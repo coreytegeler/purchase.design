@@ -59,7 +59,6 @@ class ApplicationController < ActionController::Base
   def next_pattern
     session[:no_pattern] = false
     session[:pattern] = session[:next_pattern]
-
     find_next_pattern
   end
 
@@ -196,7 +195,7 @@ class ApplicationController < ActionController::Base
 
         current_pattern_pos = session[:pattern]
 
-        if session[:no_pattern] == true
+        if session[:no_pattern] == false
           @pattern = patterns.where(:position => current_pattern_pos).first.tile
           @pattern_state = 'on'
         else
@@ -236,6 +235,8 @@ class ApplicationController < ActionController::Base
         @next_s = session[:next_palette].second
         @gradient = Gradient.where(:position => session[:gradient]).first.file
         @next_gradient = Gradient.where(:position => session[:next_gradient]).first.file
+        @pattern = Pattern.where(:position => session[:pattern]).first.file
+        @next_pattern = Pattern.where(:position => session[:next_pattern]).first.file
       end
          
 end
