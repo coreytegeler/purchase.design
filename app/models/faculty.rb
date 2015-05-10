@@ -15,14 +15,6 @@ class Faculty < ActiveRecord::Base
 	has_many :alma_maters
 	accepts_nested_attributes_for :alma_maters, reject_if: proc { |attributes| attributes['college'].blank? }, :allow_destroy => true
 
-	has_attached_file :image, :styles => { 
-					  :thumb => ["200x200"], 
-					  :medium => ["600x600>"], 
-					  :large => ["1200x1200>"] }, 
-					  :default_url => "/images/:style/missing.png"
-  	validates_attachment_content_type :image, 
-  content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
-
   	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   	
   	validates_presence_of :first_name, :last_name

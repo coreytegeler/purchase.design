@@ -15,7 +15,7 @@ class Work < ActiveRecord::Base
 		:small => ["300x300"],
 		:medium => ["450x450"],
 		:large => ["1200x1200>"] }, 
-		:default_url => "/images/:style/missing.png"
+		:default_url => "image.svg"
 		
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
