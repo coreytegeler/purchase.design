@@ -1,11 +1,11 @@
 <section class="masonry" id="gradientContainer">
-	<div class="block gradient">
+	<div class="block gradient upload">
 		<%= form_for(@new_gradient, :url => {:action => 'create', :id => @new_gradient.id}, :html => { :id => @new_gradient.position.to_s, :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:gradient => @new_gradient, :f => f}) %>
 		<% end %>
 	</div>
 	<% @gradients.each_with_index do |gradient, i| %>
-		<div class="block gradient">
+		<div class="block gradient upload">
 			<%= form_for(gradient, :url => {:action => 'update', :id => gradient.id}, :html => { :id => gradient.position.to_s, :method => :post}) do |f| %>
 				<%= render(:partial => "form", :locals => {:gradient => gradient, :f => f}) %>
 			<% end %>

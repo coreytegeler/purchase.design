@@ -14,8 +14,17 @@
 	<%= f.text_field(:url, :placeholder => "Website") %>
 	<%= f.select :position, 1..@alumni.size, {:selected => alumnus.position}, {:class => 'position'} %>
 </div>
-<div>
-	
+
+<div class="row">
+	<div class="file">
+		<% if alumnus.persisted? && alumnus.image.exists? %>
+			<% @upload_img = alumnus.image %>
+		<% end %>
+
+		<div class="drop image" style="background-image:url(<%= @upload_img %>)">
+			<%= f.file_field(:image, :data => {:position => alumnus.position}) %>
+		</div>
+	</div>
 </div>
 <div class="actions">
 	<% if alumnus.persisted? %>

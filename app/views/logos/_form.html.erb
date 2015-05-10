@@ -10,7 +10,7 @@
 		<% else %>
 			<div class="drop image" style="background-image:url(<%= @upload_img %>)">
 		<% end %>
-		<%= f.file_field(:file) %>
+		<%= f.file_field(:file, :data => {:position => logo.position}) %>
 	</div>
 </div>
 
@@ -19,6 +19,9 @@
 		<%= link_to('Update', "#", :onclick => "$('#" + logo.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'logos', :action => 'delete', :id => logo.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
+		<div class="tip">
+			Drop file here.
+		</div>	
 		<%= link_to('Create', "#", :onclick => "$('#" + logo.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

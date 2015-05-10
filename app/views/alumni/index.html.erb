@@ -12,6 +12,9 @@
 			<div class="swappee text website hidden">
 				<%= link_to alumnus.url, alumnus.url, :target => '_blank' %>
 			</div>
+			<div class="swappee image hidden">
+				<%= link_to image_tag(alumnus.image(:medium)), alumnus.url %>
+			</div>
 		</div>
 	<% end %>
 </section>

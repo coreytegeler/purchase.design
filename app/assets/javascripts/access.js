@@ -46,6 +46,7 @@ function imagePreview() {
 		    reader.onload = function(file) {
 		      img = file.target.result;
 		      $(input).parent('.drop').css({'background-image':'url('+img+')'});
+		      console.log(position);
 		      $('form#'+position).addClass('has_file');
 		    }
 		    reader.readAsDataURL(image);

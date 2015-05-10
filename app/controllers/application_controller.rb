@@ -8,14 +8,14 @@ class ApplicationController < ActionController::Base
   before_filter :select_gradient, only: [:index]
   before_filter :select_pattern, only: [:index]
   before_filter :get_upload_icon, only: [:admin]
-  before_filter :get_return_to, only: [:logout, :login]
+  before_filter :get_last_page, only: [:logout, :login]
 
   def logged_in?
   	!!session[:admin_id]
   end
 
   def confirm_logged_in
-    get_return_to
+    get_last_page
     unless session[:admin_id]
       flash[:type] = "bad"
       flash[:notice] = "Did you think we'd let you do that without logging in first?"
@@ -26,8 +26,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def get_return_to
-    session[:return_to] ||= request.referer
+  def get_last_page
+    session[:last_page] ||= request.referer
+  end
+
+  def go_back
+    if !session[:last_page].nil?
+      redirect_to session.delete(:last_page)
+    end
   end
 
   def get_upload_icon

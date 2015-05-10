@@ -15,6 +15,9 @@
 		<%= link_to('Update', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'works', :action => 'delete', :id => work.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
+		<div class="tip">
+			Drop file here.
+		</div>	
 		<%= link_to('Create', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

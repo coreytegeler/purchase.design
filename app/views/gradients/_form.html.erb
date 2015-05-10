@@ -9,7 +9,7 @@
 	<% end %>
 
 	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
-		<%= f.file_field(:file) %>
+		<%= f.file_field(:file, :data => {:position => gradient.position}) %>
 	</div>
 </div>
 
@@ -18,6 +18,9 @@
 		<%= link_to('Update', "#", :onclick => "$('#" + gradient.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'gradients', :action => 'delete', :id => gradient.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
+		<div class="tip">
+			Drop file here.
+		</div>	
 		<%= link_to('Create', "#", :onclick => "$('#" + gradient.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

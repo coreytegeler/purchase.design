@@ -3,7 +3,7 @@ class AccessController < ApplicationController
   layout 'access'
   before_action :confirm_logged_in, :except => [:index, :login, :attempt_login, :logout, :admin]
 
-  def attempt_login 
+  def attempt_login
   	if params[:email].present? && params[:password].present?
   		found_user = Admin.where(:email => params[:email]).first
   		if found_user
@@ -15,7 +15,7 @@ class AccessController < ApplicationController
       session[:email] = authorized_user.email
   		flash[:notice] = "Hey #{authorized_user.first_name}."
   		flash[:type] = "good"
-  		redirect_to session.delete(:return_to)
+  		go_back
   	else
   		flash[:notice] = "Nope, sorry, that's not gonna work."
   		flash[:type] = "bad"
@@ -33,7 +33,7 @@ class AccessController < ApplicationController
     session[:email] = nil
   	flash[:notice] = "Bye bye, #{admin.first_name}."
   	flash[:type] = "bad"
-  	redirect_to session.delete(:return_to)
+  	go_back
   end
 
   def admin?

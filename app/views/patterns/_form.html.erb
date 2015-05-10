@@ -18,6 +18,9 @@
 		<%= link_to('Update', "#", :onclick => "$('#" + pattern.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'patterns', :action => 'delete', :id => pattern.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
+		<div class="tip">
+			Drop file here.
+		</div>	
 		<%= link_to('Create', "#", :onclick => "$('#" + pattern.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>
 </div>

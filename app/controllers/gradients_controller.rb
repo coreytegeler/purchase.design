@@ -66,7 +66,7 @@ class GradientsController < ApplicationController
   private
 
     def gradient_params
-      params.require(:gradient).permit(:file, :name, :position)
+      params.require(:gradient).permit(:file, :name, :position, :id)
     end
 
     def update_positions
