@@ -1,6 +1,6 @@
 <section class="masonry" id="workContainer">
 	<div class="block work upload">
-		<%= form_for(@new_work, :url => {:action => 'create', :id => @new_work.id}, :html => { :id => @new_work.position.to_s, :data => {:media => @new_work.media_type}, :method => :post}) do |f| %>
+		<%= form_for(@new_work, :url => {:action => 'create', :id => @new_work.id}, :html => { :id => @new_work.position.to_s, :data => {:media => 'image'}, :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:work => @new_work, :f => f}) %>
 		<% end %>
 	</div>
