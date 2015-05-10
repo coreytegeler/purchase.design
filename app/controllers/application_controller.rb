@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def confirm_logged_in
     unless session[:admin_id]
       flash[:type] = "bad"
-      flash[:notice] = "You are not logged in. Which is okay, but if you would like to edit the site you must log in."
+      flash[:notice] = "Did you think we'd let you do that without logging in first?"
       redirect_to(:controller => 'access', :action => 'login')
       return false
     else
@@ -47,6 +47,7 @@ class ApplicationController < ActionController::Base
   def next_pattern
     session[:no_pattern] = false
     session[:pattern] = session[:next_pattern]
+
     find_next_pattern
   end
 
@@ -66,7 +67,7 @@ class ApplicationController < ActionController::Base
         palettes = Palette.sorted
         if !params[:palette].nil?
           palette = palettes.where(:id => params[:palette]).first
-          flash[:notice] = back_link(palette.name)
+          flash[:notice] = "This is #{palette.name}, do you want to try <a href='/palettes/admin'>another one</a>?"
           flash[:type] = 'neutral'
           session[:palette] = [palette.primary_color, palette.secondary_color, palette.position]
         elsif session[:palette].nil?
