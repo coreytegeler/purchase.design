@@ -1,12 +1,12 @@
 <section class="masonry" id="workContainer">
 	<div class="block work upload">
-		<%= form_for(@new_work, :url => {:action => 'create', :id => @new_work.id}, :html => { :id => @new_work.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_work, :url => {:action => 'create', :id => @new_work.id}, :html => { :id => @new_work.position.to_s, :data => {:media => @new_work.media_type}, :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:work => @new_work, :f => f}) %>
 		<% end %>
 	</div>
 	<% @works.each_with_index do |work, i| %>
 		<div class="block work upload">
-			<%= form_for(work, :url => {:action => 'update', :id => work.id}, :html => { :id => work.position.to_s, :method => :post}) do |f| %>
+			<%= form_for(work, :url => {:action => 'update', :id => work.id}, :html => { :id => work.position.to_s, :data => {:media => work.media_type}, :method => :post}) do |f| %>
 				<%= render(:partial => "form", :locals => {:work => work, :f => f}) %>
 			<% end %>
 		</div>

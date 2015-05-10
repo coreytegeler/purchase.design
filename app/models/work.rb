@@ -2,7 +2,7 @@ class Work < ActiveRecord::Base
 
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
-	scope :sorted, lambda {order("works.position ASC")}
+	scope :sorted, lambda {order("works.position DESC")}
 	scope :new_to_old, lambda {order("works.created_at DESC")}
 	scope :old_to_new, lambda {order("works.created_at ASC")}
 	scope :search, lambda {|query|
@@ -20,16 +20,18 @@ class Work < ActiveRecord::Base
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
 
-    has_attached_file :motion, :styles => {
+    has_attached_file :video, :styles => {
             :medium => { :geometry => "640x480", :format => 'mp4'},
             :thumb => {:geometry => "100x100#", :format => 'jpg', :time => 10}
         }, :processors => [:ffmpeg]
 
-    validates_attachment_content_type :motion, content_type: /\Avideo\/.*\Z/ 
+    validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/ 
 
-    # validate :get_dimensions, :unless => "errors.any?"
+    validate :content_type
 
-  #   private
+  #   validate :get_dimensions, :unless => "errors.any?"
+
+	   private
 		
 		# def get_dimensions
 		#   dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
@@ -41,5 +43,17 @@ class Work < ActiveRecord::Base
 		#   	self.orientation = 'square'
 		#   end
 		# end
+
+		def content_type
+		  if image.blank? and video.blank?
+		   #one at least must be filled in, add a custom error message
+		   return false
+		  elsif !image.blank? and !video.blank?
+		   #both can't be filled in, add custom error message
+		   return false
+		  else
+		   return true
+		  end
+		end
 
 end

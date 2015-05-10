@@ -1,7 +1,7 @@
 <section class="masonry big" id="faculties">
 
 	<div class="faculty block">
-		<%= form_for(@new_faculty, :url => {:action => 'create', :id => @new_faculty.id}, :html => { :id => @new_faculty.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_faculty, :url => {:action => 'create', :id => @new_faculty.id}, :html => { :id => @new_faculty.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:faculty => @new_faculty, :f => f}) %>
 		<% end %>
 	</div>

@@ -2,13 +2,29 @@
 
 <div class="file">
 	<% if work.persisted? %>
-		<% @upload_img = work.image.url(:small).to_s %>
+		<% bg_img = work.image.url(:small).to_s %>
+	<% else %>
+		<% bg_img = @upload_img %>
 	<% end %>
+	
+	<div class="drop video" style="background-image:url(<%= @upload_img %>)">
+		<%= f.file_field(:video, :data => {:position => work.position}) %>
+		<% if work.video.exists? %>
+			<%= render(:partial => "application/player", :locals => {:video => work.video.url(:medium)}) %>
+		<% end %>
+	</div>
 
-	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
+	<div class="drop image" style="background-image:url(<%= bg_img %>)">
 		<%= f.file_field(:image, :data => {:position => work.position}) %>
 	</div>
 </div>
+
+<% if !work.persisted? %>
+	<div class="row media_type">
+		<%= f.label :media_type, "Type:" %>
+		<%= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
+	</div>
+<% end %>
 
 <div class="actions">
 	<% if work.persisted? %>

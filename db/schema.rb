@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510185701) do
+ActiveRecord::Schema.define(version: 20150510204404) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "dept_title", limit: 255
@@ -158,25 +158,26 @@ ActiveRecord::Schema.define(version: 20150510185701) do
   end
 
   create_table "works", force: :cascade do |t|
-    t.string   "name",                limit: 255
-    t.string   "designer",            limit: 255
+    t.string   "name",               limit: 255
+    t.string   "designer",           limit: 255
     t.date     "year"
-    t.text     "caption",             limit: 65535
-    t.integer  "position",            limit: 4
-    t.boolean  "visible",             limit: 1,     default: false
-    t.string   "image_file_name",     limit: 255
-    t.string   "image_content_type",  limit: 255
-    t.integer  "image_file_size",     limit: 4
+    t.text     "caption",            limit: 65535
+    t.integer  "position",           limit: 4
+    t.boolean  "visible",            limit: 1,     default: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.string   "motion_file_name",    limit: 255
-    t.string   "motion_content_type", limit: 255
-    t.integer  "motion_file_size",    limit: 4
-    t.datetime "motion_updated_at"
-    t.string   "orientation",         limit: 255
-    t.integer  "width",               limit: 4
-    t.integer  "height",              limit: 4
+    t.string   "orientation",        limit: 255
+    t.integer  "width",              limit: 4
+    t.integer  "height",             limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "video_file_name",    limit: 255
+    t.string   "video_content_type", limit: 255
+    t.integer  "video_file_size",    limit: 4
+    t.datetime "video_updated_at"
+    t.string   "media_type",         limit: 255
   end
 
 end

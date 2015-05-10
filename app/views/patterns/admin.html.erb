@@ -1,6 +1,6 @@
 <section class="masonry" id="patternContainer">
 	<div class="block pattern upload">
-		<%= form_for(@new_pattern, :url => {:action => 'create', :id => @new_pattern.id}, :html => { :id => @new_pattern.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_pattern, :url => {:action => 'create', :id => @new_pattern.id}, :html => { :id => @new_pattern.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:pattern => @new_pattern, :f => f}) %>
 		<% end %>
 	</div>

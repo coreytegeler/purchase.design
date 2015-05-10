@@ -2,9 +2,13 @@
 	<section class="vert_center" id="works">
 		<div id="stack">
 			<% @works.each do |work| %>
-				<div class="work" <%= color('bg', @p, 'border', @s) %>>
-					<div class="image_wrapper">
-						<%= image_tag work.image.url(:medium) %>
+				<div class="work <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
+					<div class="media_wrapper">
+						<% if work.media_type == 'image' %>
+							<%= image_tag work.image.url(:medium) %>
+						<% else %>
+							<%= render(:partial => "application/player", :locals => {:video => work.video.url(:medium)}) %>
+						<% end %>
 					</div>
 				</div>
 			<% end %>

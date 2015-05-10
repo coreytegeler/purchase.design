@@ -1,7 +1,7 @@
 <section class="masonry" id="palettes">
 
 	<div class="palette block">
-		<%= form_for(@new_palette, :url => {:action => 'create', :id => @new_palette.id}, :html => { :id => @new_palette.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_palette, :url => {:action => 'create', :id => @new_palette.id}, :html => { :id => @new_palette.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:palette => @new_palette, :f => f}) %>
 		<% end %>
 	</div>

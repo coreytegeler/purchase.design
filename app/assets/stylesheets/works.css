@@ -1,3 +1,17 @@
+.admin form .file .drop {
+	display: none;
+}
+.admin form[data-media="image"] .file .drop.image, .admin form[data-media="video"] .file .drop.video {
+	display: block;
+	overflow: hidden;
+}
+.admin form[data-media="video"] .file .drop.video video {
+	height: 100%;
+	width: auto;
+}
+.admin form select {
+	font-size: 27px;
+}
 section#works {
 	display: table;
 	width: 100%;
@@ -5,14 +19,9 @@ section#works {
 section#works .work {
 
 }
-section#works .work .image_holder {
-	width: 100px;
-	float:left;
+section#works .work .media_wrapper video {
+	vertical-align: bottom;
 }
-section#works .work .image_holder img {
-	width: 100%;
-}
-
 .block {
 	
 }
@@ -34,15 +43,15 @@ section#works .work .image_holder img {
 #stack .work.loaded {
 	opacity: 1;
 }
-#stack .work .image_wrapper {
+#stack .work .media_wrapper {
 	overflow: hidden;
 	border: 2px solid;
 	background-color: rgba(255,255,255,0.2);
 }
-#stack .work .image_wrapper img {
+#stack .work .media_wrapper img {
 	vertical-align: bottom;
 }
-#stack .work:last-child .image_wrapper img {
+#stack .work:last-child .media_wrapper img {
 }
 #stack .work h3 {
 	display: none;

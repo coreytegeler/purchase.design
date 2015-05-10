@@ -1,6 +1,6 @@
 <section class="masonry big" id="applyItemContainer">
 	<div class="block apply_item">
-		<%= form_for(@new_apply_item, :url => {:action => 'create', :id => @new_apply_item.id}, :html => { :id => @new_apply_item.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_apply_item, :url => {:action => 'create', :id => @new_apply_item.id}, :html => { :id => @new_apply_item.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:apply_item => @new_apply_item, :f => f}) %>
 		<% end %>
 	</div>

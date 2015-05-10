@@ -1,7 +1,7 @@
 <section class="masonry big" id="admins">
 
 	<div class="admin block">
-		<%= form_for(@new_admin, :url => {:action => 'create', :id => @new_admin.id}, :html => { :id => @new_admin.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_admin, :url => {:action => 'create', :id => @new_admin.id}, :html => { :id => @new_admin.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:admin => @new_admin, :f => f, :access => true}) %>
 		<% end %>
 	</div>

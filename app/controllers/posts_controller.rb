@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       f.post_images.new
       f.position = f.position + 1
     end
-    @categories = array_of_categories
+    @categories = ['event', 'alumni', 'faculty', 'student']
     @new_post = Post.new(:position => 1)
     @new_post.post_images.new(:position => 1)
     @post_images = PostImage.sorted
@@ -34,7 +34,6 @@ class PostsController < ApplicationController
       p @post.errors.full_messages
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
-      @categories = array_of_categories
     end
   end
 
@@ -50,7 +49,6 @@ class PostsController < ApplicationController
       flash[:notice] = "Post was not updated! #{@post.errors.full_messages}"
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
-      @categories = array_of_categories
     end
   end
 
@@ -79,10 +77,6 @@ class PostsController < ApplicationController
       Post.sorted.new_to_old.each_with_index do |f, i|
           f.update_attribute(:position, i+1)
       end
-    end
-
-    def array_of_categories
-      ['event', 'alumni', 'faculty', 'student']
     end
 
 end

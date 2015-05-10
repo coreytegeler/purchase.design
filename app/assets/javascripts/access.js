@@ -47,7 +47,7 @@ function imagePreview() {
 		      img = file.target.result;
 		      $(input).parent('.drop').css({'background-image':'url('+img+')'});
 		      console.log(position);
-		      $('form#'+position).addClass('has_file');
+		      $('form#'+position).addClass('can_save');
 		    }
 		    reader.readAsDataURL(image);
 		});

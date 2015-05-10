@@ -12,6 +12,8 @@ class WorksController < ApplicationController
     @new_work = Work.new
     @new_work.position = Work.count + 1
     @new_work.name = name + @new_work.position.to_s
+    @new_work.media_type = "image"
+    @media_types = ["image", "video"]
   end
 
   def create
@@ -60,18 +62,18 @@ class WorksController < ApplicationController
   private 
 
     def work_params
-      params.require(:work).permit(:name, :image, :position, :visible)
+      params.require(:work).permit(:name, :image, :video, :media_type, :position, :visible)
     end
 
     def update_positions
-      Work.sorted.reverse_order.each_with_index do |w, i|
+      Work.sorted.each_with_index do |w, i|
           w.update_attribute(:position, i+1)
           w.update_attribute(:name, name + w.position.to_s)
       end
     end
 
     def name
-      "Image No. "
+      "Work No. "
     end
 
 end

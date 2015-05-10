@@ -1,6 +1,6 @@
 <section class="masonry" id="gradientContainer">
 	<div class="block gradient upload">
-		<%= form_for(@new_gradient, :url => {:action => 'create', :id => @new_gradient.id}, :html => { :id => @new_gradient.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_gradient, :url => {:action => 'create', :id => @new_gradient.id}, :html => { :id => @new_gradient.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:gradient => @new_gradient, :f => f}) %>
 		<% end %>
 	</div>

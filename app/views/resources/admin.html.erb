@@ -1,7 +1,7 @@
 <section class="masonry big" id="resources">
 
 	<div class="resource block">
-		<%= form_for(@new_resource, :url => {:action => 'create', :id => @new_resource.id}, :html => { :id => @new_resource.position.to_s, :method => :post}) do |f| %>
+		<%= form_for(@new_resource, :url => {:action => 'create', :id => @new_resource.id}, :html => { :id => @new_resource.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:resource => @new_resource, :f => f}) %>
 		<% end %>
 	</div>
