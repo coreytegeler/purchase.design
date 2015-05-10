@@ -13,22 +13,27 @@ class AccessController < ApplicationController
   	if authorized_user
   		session[:admin_id] = authorized_user.id
       session[:email] = authorized_user.email
-  		flash[:notice] = "You're in!"
+  		flash[:notice] = "Hey #{authorized_user.first_name}."
   		flash[:type] = "good"
-  		redirect_to(:action => 'index')
+  		redirect_to session.delete(:return_to)
   	else
-  		flash[:notice] = "Wrong login info!"
+  		flash[:notice] = "Nope, sorry, that's not gonna work."
   		flash[:type] = "bad"
   		redirect_to(:action => 'login')
   	end
   end
 
+  def login
+    @admin = Admin.where(:id => session[:admin_id]).first
+  end
+
   def logout
+    admin = Admin.where(:id => session[:admin_id]).first
     session[:admin_id] = nil
     session[:email] = nil
-  	flash[:notice] = "Bye bye"
-  	flash[:type] = "good"
-  	redirect_to(:action => 'index')
+  	flash[:notice] = "Bye bye, #{admin.first_name}."
+  	flash[:type] = "bad"
+  	redirect_to session.delete(:return_to)
   end
 
   def admin?
