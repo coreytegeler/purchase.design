@@ -101,6 +101,10 @@
 	font-size: 15px;
 	padding: 5px 0;
 }
+.public #posts .post .text .category {
+	font-size: 15px;
+	padding: 5px 0;
+}
 .public #posts .post .text .body {
 	font-size: 18px;
 	line-height: 22px;

@@ -171,7 +171,7 @@ aside#side_bar #tools #style_control .button.on .clear {
 	display: block;
 }
 aside#side_bar #tools #style_control .button .method#next_palette .swatch {
-	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4), inset 0px 0px 2px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4);
 	position: absolute;
 }
 aside#side_bar #tools #style_control .button .method#next_palette .swatch.primary {
@@ -188,6 +188,7 @@ aside#side_bar #tools #style_control .button .method#next_palette .swatch.second
 	height: 18px;
 	width: 18px;
 	border: 6px solid;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4), inset 0px 0px 2px 0px rgba(0,0,0,0.4);
 }
 aside#side_bar #tools #style_control .button .method#next_logo .swatch svg {
 	width: 100%;
