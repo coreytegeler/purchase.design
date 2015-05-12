@@ -2,10 +2,6 @@
 	font-size: 40px;
 	line-height: 44px;
 }*/
-.public #resources .image img {
-	width: 100%;
-	vertical-align: bottom;
-}
 .admin .block form .file {
 	border-top: none;
 }

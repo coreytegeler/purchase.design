@@ -9,8 +9,11 @@
 	height: 100%;
 	width: auto;
 }
-.admin form select {
+.admin form select, .admin form input {
 	font-size: 27px;
+}
+.admin form input {
+	border-top: solid 1px rgba(255,255,255,0.3) !important;
 }
 section#works {
 	display: table;

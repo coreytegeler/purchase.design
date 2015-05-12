@@ -257,7 +257,10 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 .swapper .hidden {
 	display: none !important;
 }
-
+.swapper .block .image img {
+	width: 100%;
+	vertical-align: bottom;
+}
 
 /*****************/
 /******ABOUT******/
