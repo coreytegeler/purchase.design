@@ -25,4 +25,14 @@ class Resource < ActiveRecord::Base
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
 
+  	before_validation :format_url
+
+	private
+
+	def format_url
+		unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
+    		self.link = "http://#{self.link}"
+  		end
+	end
+
 end

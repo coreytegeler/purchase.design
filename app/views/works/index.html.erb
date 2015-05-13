@@ -1,6 +1,6 @@
 <div class="horz_center">
 	<section class="vert_center" id="works">
-		<div id="stack">
+		<div id="stack" class="static">
 			<% @works.each do |work| %>
 				<div class="work <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
 					<div class="media_wrapper">

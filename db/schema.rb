@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510204404) do
+ActiveRecord::Schema.define(version: 20150513193304) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "dept_title", limit: 255
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150510204404) do
     t.integer  "faculty_id", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link",       limit: 255
   end
 
   create_table "alumni", force: :cascade do |t|

@@ -6,7 +6,7 @@
 	font-size: 18px !important;
 	line-height: 20px;
 }
-.block .alma_mater input.college {
+.block .alma_mater input.link {
 	border-right: 1px solid rgba(255,255,255,0.3) !important;
 	width: calc(60% - 11px);
 	width: -moz-calc(60% - 11px);

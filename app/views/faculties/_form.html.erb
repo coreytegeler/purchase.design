@@ -16,9 +16,13 @@
 </div>
 <%= f.fields_for :alma_maters do |am| %>
 	<div class="row alma_mater">
-		<%= am.text_field(:college, {:placeholder => "College", :class => 'college'}) %>
+		<%= am.text_field(:college, {:placeholder => "School", :class => 'school'}) %>
+	</div>
+	<div class="row alma_mater">
+		<%= am.text_field(:link, {:placeholder => "Link", :class => 'link'}) %>
 		<%= am.text_field(:degree, {:placeholder => "Degree", :class => 'degree'}) %>
 	</div>
+	
 <% end %>
 <div class="actions">
 	<% if faculty.persisted? %>
