@@ -29,7 +29,7 @@ class Work < ActiveRecord::Base
 
     validate :content_type
 
-  #   validate :get_dimensions, :unless => "errors.any?"
+    # validate :get_dimensions, :unless => "errors.any?"
 
 	   private
 		

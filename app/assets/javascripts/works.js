@@ -1,16 +1,30 @@
 var initWorks = function() {
 	if($('body').is('.public')) {
-		var max = 450;
+		var maxWidth = 602;
+		var maxHeight = 456;
 		var stackHeight;
 		var stackWidth;
-		var gap = 6;
-		$('.public .work').each(function(i, w) {
-			$(w).imagesLoaded(function() {
+		var gap = 5;
+
+		$('#stack').ready(function() {
+			$('#stack .work').each(function(i, w) {
 				$(w).addClass('loaded').css({y: -gap*i, x: gap*i});
+				var width = $(w).outerWidth();
+				var height = $(w).outerHeight();
+				// if(width > maxWidth) {
+				// 	maxWidth = width;
+				// }
+				// if(height > maxHeight) {
+				// 	maxHeight = height;
+				// }
 			});
 		});
-		var stackSize = max + ($('.image_wrapper').length * gap);
-		$('.public #stack').css({height: stackSize, width: stackSize});
+
+		$('#stack').ready(function() {
+			var gaps = ($('.media_wrapper').length * gap - gap);
+			$('.public #stack').css({height: maxHeight + gaps, width: maxWidth + gaps});
+		});
+
 		$('.public #stack').click(function(event) {
 			$top = $('.work:last-child');
 			$top.insertBefore('.work:first-child');

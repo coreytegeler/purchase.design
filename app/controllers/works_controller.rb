@@ -19,12 +19,12 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
     if @work.save
       update_positions
-      flash[:notice] = "Image was uploaded!"
+      flash[:notice] = "#{@work.name} was uploaded!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Image was not uploaded!"
-      flash[:type] = 'good'
+      flash[:notice] = "#{@work.name} was not uploaded!"
+      flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
   end
