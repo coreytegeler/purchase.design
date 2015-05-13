@@ -17,14 +17,14 @@
 				<h1 class="title">
 					<%= post.title %>
 				</h1>
-				<div class="event_date">
 					<% if !post.start_date.nil? %>
-						<%= post.start_date.to_date.to_formatted_s(:long_ordinal)  %>
-						<% if !post.end_date.nil? %>
-							&nbsp;&mdash;&nbsp;<%= post.end_date.to_date.to_formatted_s(:long_ordinal)  %>
-						<% end %>
+						<div class="event_date">
+							<%= post.start_date.to_date.to_formatted_s(:long_ordinal)  %>
+							<% if !post.end_date.nil? %>
+								&nbsp;&mdash;&nbsp;<%= post.end_date.to_date.to_formatted_s(:long_ordinal)  %>
+							<% end %>
+						</div>
 					<% end %>
-				</div>
 				<div class="body">
 					<%= post.body.html_safe %>
 				</div>

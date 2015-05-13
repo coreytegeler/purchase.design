@@ -99,7 +99,9 @@ li {
 }
 main {
 	height: 100%;
-	position: relative;
+	width: 100%;
+	display: block;
+	position: absolute;
 }
 #page_content {
 	height: 100%;

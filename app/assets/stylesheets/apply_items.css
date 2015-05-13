@@ -34,7 +34,5 @@
 	display: block;
 }
 .public .swapper#apply .block .text {
-	font-size: 30px;
-  	line-height: 34px;
   	display: table;
 }

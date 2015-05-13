@@ -18,16 +18,11 @@ main {
 #pattern {
 	background-repeat: repeat;
 }
-#border {
-}
 /***********************/
 /********TOP BAR********/
 /***********************/
 #top_bar {
 	right: 44px;
-  	width: calc(100% - 88px);
-	width: -moz-calc(100% - 88px);
-	width: -webkit-calc(100% - 88px);
 }
 #top_bar nav {
 	float: right;
@@ -156,7 +151,7 @@ aside#side_bar #tools #style_control .button .tooltip .border .inner .text {
 aside#side_bar #tools #style_control .button .clear {
 	display: none;
 	position: absolute;
-	top:-8px;
+	top: -8px;
 	right: -8px;
 	width: 16px;
 	height: 16px;
@@ -222,15 +217,18 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /*CONTENT SECTION*/
 /*****************/
 #border {
+	position: absolute;
+	top: 0;
+	left: 0;
 	padding-left: 166px;
 	width: calc(100% - 223px);
   	width: -moz-calc(100% - 223px);
   	width: -webkit-calc(100% - 223px);
-  	position: relative;
+  	height: calc(100% - 218px);
+  	height: -moz-calc(100% - 218px);
+  	height: -webkit-calc(100% - 218px);
 }
 .swapper .block {
-	font-size: 55px;
-	line-height: 57px;
 	font-weight: 700;
 	margin-bottom: 40px;
 	width: 335px;
@@ -243,9 +241,20 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 .swapper .block .text .row:last-child {
 	margin: 0;
 }
-.swapper .block .email, .swapper .block .website, .swapper .block .title {
+.swapper .block .small {
+	font-size: 30px;
+  	line-height: 34px;
+}
+.swapper .block .small a {
+	text-decoration: underline;
+}
+.swapper .block .medium {
 	font-size: 45px;
-	line-height: 46px;
+  	line-height: 46px;
+}
+.swapper .block .large {
+	font-size: 55px;
+	line-height: 57px;
 }
 .swapper .block a, .swapper .block .row a:hover {
 	text-decoration: none;
@@ -319,15 +328,23 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 	text-align: center;
 	margin: 20px;
 	cursor: pointer;
-	width: calc(100% - 44px);
-	width: -moz-calc(100% - 44px);
-	width: -webkit-calc(100% - 44px);
+	width: calc(100% - 64px);
+	width: -moz-calc(100% - 64px);
+	width: -webkit-calc(100% - 64px);
 	padding: 0;
-}
-#about .block.button .pattern {
 	padding: 10px;
-	text-align: center;
+	position: relative;
+}
+#about .block.button .pattern, #about .block.button .gradient {
 	background-position: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#about .block.button .gradient {
+	background-size: cover;
 }
 #about .block.body, #about .block.list {
 	font-size: 18px;
