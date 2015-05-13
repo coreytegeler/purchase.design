@@ -5,17 +5,6 @@
 <div class="row title">
 	<%= f.text_field(:title, :placeholder => "Title") %>
 </div>
-<div class="row category">
-	<%= f.select :category, options_for_select(@categories, :selected => f.object.category), {include_blank: 'Category'} %>
-</div>
-<div class="row date">
-	<span>Start</span>
-	<%= f.date_select(:start_date, order: [:month, :day, :year]) %>
-</div>
-<div class="row date">
-	<span>End</span>
-	<%= f.date_select(:end_date, order: [:month, :day, :year]) %>
-</div>
 
 <div class="images">
 	<%= f.fields_for :post_images do |pi| %>
@@ -36,6 +25,21 @@
 
 <div class="row body">
 	<%= f.text_area(:body, :rows => 7, :placeholder => 'What do you have to say about this?') %>
+</div>
+
+<div class="row">
+	<div class="tip">
+		Start and End dates are only needed for events.
+	</div>
+</div>
+
+<div class="row date">
+	<span>Start</span>
+	<%= f.date_select(:start_date, order: [:month, :day, :year], :include_blank => true) %>
+</div>
+<div class="row date">
+	<span>End</span>
+	<%= f.date_select(:end_date, order: [:month, :day, :year], :include_blank => true) %>
 </div>
 
 <div class="actions">

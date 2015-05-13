@@ -1,12 +1,4 @@
 var initPosts = function() {
-	$('select#post_category').change(function(e) {
-		var id = $(this).parent('.row').parent('form').attr('id');
-		if($(this).val() === 'event') {
-			$('form#' + id + ' .date').css({'display':'table'});
-		} else {
-			$('form#' + id + ' .date').css({'display':'none'});
-		}
-	});
 
 	$('.remove').each(function(){
 		fill(this, '#fff');

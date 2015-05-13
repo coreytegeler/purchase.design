@@ -1,9 +1,6 @@
 .admin .block form select {
 	width: 100%;
 }
-.admin .block form .date {
-	display: none;
-}
 .admin .block form .date span {
 	opacity: 0.7;
 	font-weight: 700;
@@ -95,17 +92,17 @@
 .public #posts .post .text .title {
 	font-size: 55px;
 	line-height: 58px;
-	padding: 5px 0 10px 0;
+	padding: 0px 0 10px 0;
 	margin: 0;
 	display: block;
 }
-.public #posts .post .text .date {
-	font-size: 16px;
-	padding: 20px 0 0 0;
+.public #posts .post .text .post_date {
+	font-size: 13px;
+	padding: 15px 0;
 }
-.public #posts .post .text .event-date {
-	font-size: 32px;
-  	padding: 0px 0 15px 0;
+.public #posts .post .text .event_date {
+	font-size: 22px;
+  	padding: 0 0 15px 0;
   	font-weight: 800;
 }
 .public #posts .post .text .category {
@@ -114,7 +111,7 @@
 }
 .public #posts .post .text .body {
 	font-size: 18px;
-	line-height: 22px;
+	line-height: 24px;
 	display: block;
 	width: 100%;
 }

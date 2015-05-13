@@ -11,11 +11,19 @@
 				<% end %>
 			</div>
 			<div class="text">
+				<div class="post_date">
+					<%= post.created_at.to_date.to_formatted_s(:long_ordinal)  %>
+				</div>
 				<h1 class="title">
 					<%= post.title %>
 				</h1>
-				<div class="date">
-					<%= post.created_at.to_date.to_formatted_s(:long_ordinal)  %>
+				<div class="event_date">
+					<% if !post.start_date.nil? %>
+						<%= post.start_date.to_date.to_formatted_s(:long_ordinal)  %>
+						<% if !post.end_date.nil? %>
+							&nbsp;&mdash;&nbsp;<%= post.end_date.to_date.to_formatted_s(:long_ordinal)  %>
+						<% end %>
+					<% end %>
 				</div>
 				<div class="body">
 					<%= post.body.html_safe %>
