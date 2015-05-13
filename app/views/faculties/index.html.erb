@@ -3,10 +3,10 @@
 		<div class="faculty block">
 			<div class="swappee text name">
 				<div class="row">
-					<%= faculty.first_name %>
+					<%= mail_to(faculty.email, faculty.first_name) %>
 				</div>
 				<div class="row">
-					<%= faculty.last_name %>
+					<%= mail_to(faculty.email, faculty.last_name) %>
 				</div>
 			</div>
 			<div class="swappee text alma_maters hidden">
@@ -17,9 +17,6 @@
 			</div>
 			<div class="swappee text email hidden">
 				<%= mail_to(faculty.email) %>
-			</div>
-			<div class="swappee text title hidden">
-				<%= faculty.title %>
 			</div>
 		</div>
 	<% end %>
