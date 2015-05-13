@@ -5,10 +5,10 @@
 				<%= inline_svg('check', false) %>
 			</div>
 			<div class="text swappee parent">
-				<%= item.parent %>
+				<%= item.parent.html_safe %>
 			</div>
 			<div class="text swappee student hidden">
-				<%= item.student %>
+				<%= item.student.html_safe %>
 			</div>
 		</div>
 	<% end %>
