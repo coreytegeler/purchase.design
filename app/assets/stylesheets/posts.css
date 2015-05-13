@@ -89,17 +89,24 @@
 .public #posts .post .text {
 	display: block;
 	width: 100%;
+	max-width: 500px;
 	clear: both;
 }
 .public #posts .post .text .title {
 	font-size: 55px;
-	padding: 20px 0 0 0;
+	line-height: 58px;
+	padding: 5px 0 10px 0;
 	margin: 0;
 	display: block;
 }
 .public #posts .post .text .date {
-	font-size: 15px;
-	padding: 5px 0;
+	font-size: 16px;
+	padding: 20px 0 0 0;
+}
+.public #posts .post .text .event-date {
+	font-size: 32px;
+  	padding: 0px 0 15px 0;
+  	font-weight: 800;
 }
 .public #posts .post .text .category {
 	font-size: 15px;

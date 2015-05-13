@@ -266,30 +266,34 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /******ABOUT******/
 /*****************/
 #about {
-	position: fixed;
+	position: absolute;
   	top: 135px;
-  	left: 25px;
+  	left: 0px;
   	background: black;
-  	width: calc(100% - 60px);
-  	height: calc(100% - 170px);
-  	border: solid white 5px;
+  	width: 100%;
+  	height: calc(100% - 135px);
   	z-index: 20;
   	display: block;
   	color: white;
   	overflow: scroll;
 	display: none;
 }
-.about #page_content {
-	opacity: 0;
-}
 .about #about {
 	display: block;
 }
 #about .inner {
+	max-width: 1400px;
+	margin: auto;
 	padding: 40px;
+	display: table;
 }
 #about .half {
 	float: left;
+}
+#about .half.left {
+	width: 50%
+}
+#about .half.right {
 	width: 50%;
 }
 #about .module {
@@ -311,15 +315,34 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 	font-weight: 700;
 }
 #about .block.button {
+	border: 3px solid;
 	text-align: center;
+	margin: 20px;
 	cursor: pointer;
+	width: calc(100% - 44px);
+	width: -moz-calc(100% - 44px);
+	width: -webkit-calc(100% - 44px);
+	padding: 0;
+}
+#about .block.button .pattern {
+	padding: 10px;
+	text-align: center;
+	background-position: center;
 }
 #about .block.body, #about .block.list {
 	font-size: 18px;
 	line-height: 25px;
 }
-#about .block.body {
-	text-align: justify;
+#about .block.body p {
+	margin: 0 0 15px 0;
+}
+#about .block.body ul {
+	margin: 15px;
+}
+
+#about .block.body ul li {
+	list-style: disc;
+	padding-left: 0;
 }
 #about .block.list {
 	padding: 0;

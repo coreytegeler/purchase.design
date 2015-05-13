@@ -48,7 +48,7 @@ section#works .work .media_wrapper video {
 }
 #stack .work .media_wrapper {
 	overflow: hidden;
-	border: 2px solid;
+	border: 3px solid;
 	background-color: rgba(255,255,255,0.2);
 }
 #stack .work .media_wrapper img {

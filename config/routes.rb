@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   get 'work/:action', :to => 'works#action'
   post 'work/:action', :to => 'works#action'
 
-  get 'weblog', :to => 'posts#index'
-  get 'weblog/:action', :to => 'posts#action'
-  post 'weblog/:action', :to => 'posts#action'
+  get 'news', :to => 'posts#index'
+  get 'news/:action', :to => 'posts#action'
+  post 'news/:action', :to => 'posts#action'
 
   post "next_palette", :to => "application#next_palette"
   post "next_logo", :to => "application#next_logo"

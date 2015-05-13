@@ -3,13 +3,13 @@ var initWorks = function() {
 		var max = 450;
 		var stackHeight;
 		var stackWidth;
-		var gap = 4;
+		var gap = 6;
 		$('.public .work').each(function(i, w) {
 			$(w).imagesLoaded(function() {
 				$(w).addClass('loaded').css({y: -gap*i, x: gap*i});
 			});
 		});
-		var stackSize = max + ($('.image_wrapper').length * 4);
+		var stackSize = max + ($('.image_wrapper').length * gap);
 		$('.public #stack').css({height: stackSize, width: stackSize});
 		$('.public #stack').click(function(event) {
 			$top = $('.work:last-child');
