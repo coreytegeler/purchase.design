@@ -275,12 +275,16 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /******ABOUT******/
 /*****************/
 #about {
-	position: absolute;
+	position: fixed;
   	top: 135px;
-  	left: 0px;
+  	left: 9px;
   	background: black;
-  	width: 100%;
-  	height: calc(100% - 135px);
+  	width: calc(100% - 17px);
+  	width: -moz-calc(100% - 17px);
+  	width: -webkit-calc(100% - 17px);
+  	height: calc(100% - 144px);
+  	height: -moz-calc(100% - 144px);
+  	height: -webkit-calc(100% - 144px);
   	z-index: 20;
   	display: block;
   	color: white;
@@ -289,6 +293,9 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 }
 .about #about {
 	display: block;
+}
+.about .page_content {
+	display: none;
 }
 #about .inner {
 	max-width: 1400px;

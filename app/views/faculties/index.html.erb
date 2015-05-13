@@ -14,8 +14,7 @@
 				<% faculty.alma_maters.new_to_old.each_with_index do |am, index| %>
 					<%= am.degree.indefinitize %>
 					from
-					<%= link_to(am.college, am.link, :target => '_blank').html_safe %>
-					<%= sentencize(faculty.alma_maters.size, index) %>
+					<%= link_to(am.college, am.link, :target => '_blank').html_safe + sentencize(faculty.alma_maters.size, index) %>
 				<% end %>
 			</div>
 			<div class="swappee medium text email hidden">
