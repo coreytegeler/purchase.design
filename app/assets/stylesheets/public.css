@@ -47,7 +47,7 @@ main {
 /**********************/
 aside#side_bar {
 	position: absolute;
-	z-index: 10;
+	z-index: 19;
 	top: 9px;
 	left: 9px;
 	width: 135px;
@@ -59,7 +59,6 @@ aside#side_bar header {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 12;
 }
 aside#side_bar header #logo {
 	height: 85px;
@@ -274,30 +273,41 @@ aside#side_bar #tools #style_control .button .method#next_pattern {
 /*****************/
 /******ABOUT******/
 /*****************/
-#about {
-	position: fixed;
-  	top: 135px;
-  	left: 9px;
-  	background: black;
-  	width: calc(100% - 17px);
-  	width: -moz-calc(100% - 17px);
-  	width: -webkit-calc(100% - 17px);
-  	height: calc(100% - 144px);
-  	height: -moz-calc(100% - 144px);
-  	height: -webkit-calc(100% - 144px);
-  	z-index: 20;
-  	display: block;
-  	color: white;
-  	overflow: scroll;
-	display: none;
-}
 .about #about {
 	display: block;
 }
 .about .page_content {
 	display: none;
 }
-#about .inner {
+#about {
+	position: fixed;
+  	top: 9px;
+  	left: 9px;
+  	width: calc(100% - 17px);
+  	width: -moz-calc(100% - 17px);
+  	width: -webkit-calc(100% - 17px);
+  	height: calc(100% - 17px);
+  	height: -moz-calc(100% - 17px);
+  	height: -webkit-calc(100% - 17px);
+  	z-index: 19;
+  	display: block;
+	display: none;
+}
+#about .buffer {
+	height: 135px;
+	width: 100%;
+	display: block;
+	cursor: pointer;
+}
+#about .content {
+	background: black;
+	color: white;
+	height: calc(100% - 135px);
+  	height: -moz-calc(100% - 135px);
+  	height: -webkit-calc(100% - 135px);
+  	overflow: scroll;
+}
+#about .content .inner {
 	max-width: 1400px;
 	margin: auto;
 	padding: 40px;

@@ -12,6 +12,10 @@ var initPublic = function() {
 		$('body').toggleClass('about');
 	});
 
+	$('#about .buffer').click(function() {
+		$('body').removeClass('about');
+	});
+
 	$('.swapper .block .row a').hover(function() {
 		$(this).parent('.row').addClass('hover');
 		$(this).parent('.row').siblings('.row').each(function(i, r) {
@@ -56,7 +60,6 @@ function size() {
 
 	if( $('.masonry').length ) {
 		var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
-		console.log(blockWidth);
 		$('.masonry').masonry({
 			itemSelector: '.block',
 			columnWidth: blockWidth,
