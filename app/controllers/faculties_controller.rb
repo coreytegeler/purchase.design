@@ -4,11 +4,11 @@ class FacultiesController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
-    @faculties = Faculty.sorted
+    @faculties = Faculty.a_to_z
   end
 
   def admin
-    @faculties = Faculty.sorted
+    @faculties = Faculty.a_to_z
     @faculties.each do |f|
       f.alma_maters.new
     end
@@ -73,7 +73,7 @@ class FacultiesController < ApplicationController
     end
 
     def update_positions
-      Faculty.sorted.each_with_index do |f, i|
+      Faculty.first_to_last.each_with_index do |f, i|
           f.update_attribute(:position, i+1)
       end
     end

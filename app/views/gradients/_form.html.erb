@@ -1,9 +1,12 @@
 <% if !gradient %>
 	<% gradient = @new_gradient %>
 <% end %>
-<h3 class="name"><%= gradient.name %></h3>
 
-<div class="file">
+<div class="row position">
+	<%= f.select :position, 1..@gradients.size, {:selected => gradient.position}, {:class => 'position'} %>
+</div>
+
+<div class="row file">
 	<% if gradient.persisted? %>
 		<% @upload_img = gradient.file %>
 	<% end %>

@@ -1,9 +1,12 @@
 <% if !logo %>
 	<% logo = @new_logo %>
 <% end %>
-<h3 class="name"><%= logo.name %></h3>
 
-<div class="file">
+<div class="row position">
+	<%= f.select :position, 1..@logos.size, {:selected => logo.position}, {:class => 'position'} %>
+</div>
+
+<div class="row file">
 		<% if logo.file.exists? %>
 			<div class="drop">
 			<%= inline_svg(logo.file, true) %>

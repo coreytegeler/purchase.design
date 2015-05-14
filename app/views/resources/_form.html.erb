@@ -8,7 +8,7 @@
 <div class="row link">
 	<%= f.text_field(:link, :placeholder => "Link") %>
 </div>
-<div class="file">
+<div class="row file">
 	<% if resource.persisted? %>
 		<% @upload_img = resource.image.url(:original) %>
 	<% end %>

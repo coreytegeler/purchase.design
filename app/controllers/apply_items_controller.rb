@@ -4,11 +4,11 @@ class ApplyItemsController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
-    @apply_items = ApplyItem.sorted
+    @apply_items = ApplyItem.first_to_last
   end
 
   def admin
-    @apply_items = ApplyItem.sorted.reverse_order
+    @apply_items = ApplyItem.first_to_last
     @show_to_options = ['parent', 'student']
     @new_apply_item = ApplyItem.new
     @new_apply_item.position = ApplyItem.count + 1
@@ -17,7 +17,6 @@ class ApplyItemsController < ApplicationController
   def create
     @apply_item = ApplyItem.new(apply_item_params)
     if @apply_item.save
-      update_positions
       flash[:type] = 'good'
       flash[:notice] = "Application requirement was created!"
       redirect_to(:action => 'admin')
@@ -33,7 +32,6 @@ class ApplyItemsController < ApplicationController
   def update
     @apply_item = ApplyItem.find(params[:id])
     if @apply_item.update_attributes(apply_item_params)
-      update_positions
       flash[:type] = 'good'
       flash[:notice] = "Application requirement was updated!"
       redirect_to(:action => 'admin')
@@ -54,8 +52,7 @@ class ApplyItemsController < ApplicationController
   end
 
   def destroy
-    @apply_item = ApplyItem.find(params[:id]).destroy
-    update_positions
+    @apply_item = ApplyItem.find(params[:id]).destro
     flash[:type] = 'good'
     flash[:notice] = "Application requirement was deleted!"
     redirect_to(:action => 'admin')
@@ -65,12 +62,6 @@ class ApplyItemsController < ApplicationController
 
     def apply_item_params
       params.require(:apply_item).permit(:student, :parent, :position)
-    end
-
-    def update_positions
-      ApplyItem.sorted.each_with_index do |ai, i|
-          ai.update_attribute(:position, i+1)
-      end
     end
 
 end

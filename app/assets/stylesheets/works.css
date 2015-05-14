@@ -13,9 +13,6 @@
 .admin form select, .admin form input {
 	font-size: 27px;
 }
-.admin form .row.designer {
-	border-top: solid 1px rgba(255,255,255,0.3) !important;
-}
 section#works {
 	display: table;
 	width: 100%;

@@ -1,9 +1,12 @@
 <% if !pattern %>
 	<% pattern = @new_pattern %>
 <% end %>
-<h3 class="name"><%= pattern.name %></h3>
 
-<div class="file">
+<div class="row position">
+	<%= f.select :position, 1..@patterns.size, {:selected => pattern.position}, {:class => 'position'} %>
+</div>
+
+<div class="row file">
 	<% if pattern.persisted? %>
 		<% @upload_img = pattern.tile.url(:original) %>
 	<% end %>

@@ -2,10 +2,8 @@
 	<% apply_item = @new_apply_item %>
 <% end %>
 
-<div class="row text">
-	<h3 class="name">
-		Requirement No. <%= apply_item.position %>
-	</h3>
+<div class="row position">
+	<%= f.select :position, 1..@apply_items.size, {:selected => apply_item.position}, {:class => 'position'} %>
 </div>
 <div class="row text">
 	<%= f.text_area :parent, :rows => 3, :placeholder => "Put application requirement here." %>

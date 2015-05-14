@@ -2,10 +2,8 @@ class Faculty < ActiveRecord::Base
 
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
-	scope :sorted, lambda {order("faculties.position ASC")}
-	scope :a_to_z, lambda {order("faculties.name ASC")}
-	scope :new_to_old, lambda {order("faculties.created_at DESC")}
-	scope :old_to_new, lambda {order("faculties.created_at ASC")}
+	scope :first_to_last, lambda {order("faculties.position ASC")}
+	scope :a_to_z, lambda {order("faculties.last_name ASC")}
 	scope :search, lambda {|query|
 		where(["name LIKE ?", "%#{query}%"])
 	}

@@ -1,7 +1,6 @@
 class Gradient < ActiveRecord::Base
 
-	scope :sorted, lambda {order("gradients.position ASC")}
-	scope :newest_first, lambda {order("gradients.created_at ASC")}
+	scope :first_to_last, lambda {order("gradients.position ASC")}
 
 	acts_as_list scope: [:position]
 
@@ -10,11 +9,6 @@ class Gradient < ActiveRecord::Base
 	has_attached_file :file
 	do_not_validate_attachment_file_type :file
 
-	private
+	acts_as_list :order => :position
 
-		def create_name
-			if name.blank?
-				self.name = "Gradient No." + " #{position}"
-			end
-		end
 end

@@ -254,10 +254,15 @@ aside#admin_panel header h1 {
 .field_with_errors label {
 	color: red;
 }
+.block:first-child form select.position, .block:first-child form .row.position {
+	display: none !important;
+}
 .block form .position select.position {
 	display: table;
 	margin: auto;
 	padding: 10px 50px;
+	border: none;
+	font-size: 27px;
 }
 .block form .with_position input[type="text"] {
 	width: calc(100% - 60px);

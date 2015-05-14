@@ -1,16 +1,14 @@
 class Palette < ActiveRecord::Base
 
-	scope :sorted, lambda {order("palettes.position ASC")}
-	scope :new_to_old, lambda {order("palettes.created_at DESC")}
-	scope :old_to_new, lambda {order("palettes.created_at ASC")}
-
-	acts_as_list scope: [:position]
+	scope :first_to_last, lambda {order("palettes.position ASC")}
 
 	before_validation :create_name
 	before_validation :add_hash_symbol
 
 	validates :primary_color, :hex_color => true
 	validates :secondary_color, :hex_color => true
+
+	acts_as_list :order => :position
 
 	private
 
