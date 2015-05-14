@@ -8,7 +8,7 @@ class AlumniController < ApplicationController
   end
 
   def admin
-    @alumni = Alumnus.last_to_first
+    @alumni = Alumnus.first_to_last
     @new_alumnus = Alumnus.new
     @new_alumnus.position = Alumnus.count + 1
   end

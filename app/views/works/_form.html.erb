@@ -9,16 +9,20 @@
 <% end %>
 <div class="row file">
 	<% if work.persisted? %>
-		<% bg_img = work.image.url(:small).to_s %>
+		<% if work.media_type == 'image' %>
+			<% bg_img = work.image.url(:small).to_s %>
+		<% else %>
+			<% bg_img = work.video.url(:thumb).to_s %>
+		<% end %>
 	<% else %>
 		<% bg_img = @upload_img %>
 	<% end %>
 	
 	<div class="drop video" style="background-image:url(<%= @upload_img %>)">
 		<%= f.file_field(:video, :data => {:position => work.position}) %>
-		<% if work.video.exists? %>
-			<%= render(:partial => "application/player", :locals => {:video => work.video.url(:medium)}) %>
-		<% end %>
+		<%# if work.video.exists? %>
+			<%#= render(:partial => "application/player", :locals => {:video => work.video.url(:medium)}) %>
+		<%# end %>
 	</div>
 
 	<div class="drop image" style="background-image:url(<%= bg_img %>)">

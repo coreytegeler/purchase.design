@@ -2,7 +2,8 @@
 	<section class="vert_center" id="works">
 		<div id="stack" class="static">
 			<% @works.each do |work| %>
-				<div class="work <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
+				<div id="<%= work.position %>" class="work <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
+					<div class="mousepad"></div>
 					<div class="media_wrapper">
 						<% if work.media_type == 'image' %>
 							<%= image_tag work.image.url(:medium) %>
@@ -10,6 +11,11 @@
 							<%= render(:partial => "application/player", :locals => {:video => work.video.url(:medium)}) %>
 						<% end %>
 					</div>
+
+					<div id="<%= work.position %>" class="designer small" <%= color('color', @s, 'bg', @p, 'border', @s) %>>
+						<%= work.designer %>
+					</div>
+
 				</div>
 			<% end %>
 		</div>

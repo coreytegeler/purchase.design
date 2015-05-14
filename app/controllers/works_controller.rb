@@ -57,7 +57,7 @@ class WorksController < ApplicationController
   private 
 
     def work_params
-      params.require(:work).permit(:image, :video, :media_type, :position, :visible)
+      params.require(:work).permit(:image, :video, :designer, :media_type, :position, :visible)
     end
 
 end

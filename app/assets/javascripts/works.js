@@ -25,12 +25,12 @@ var initWorks = function() {
 			$('.public #stack').css({height: maxHeight + gaps, width: maxWidth + gaps});
 		});
 
-		$('.public #stack').click(function(event) {
+		$('#stack').click(function(event) {
 			$top = $('.work:last-child');
 			$top.insertBefore('.work:first-child');
 			$('.work').each(function(i, w) {
+				$(w).children('.designer').css({'display':'none'});
 				$(w).css({y: -gap*i, x: gap*i});
-
 				if($(w).is('.video')) {
 					if($(w).is(':last-child')) {
 						$(w).children('.media_wrapper').children('video')[0].play();
@@ -49,8 +49,36 @@ var initWorks = function() {
 				$(form).attr('data-media', 'image');
 			}
 		});
-
 	}
+
+	$('#stack .work .mousepad').mousemove(function(e) {
+		if($(this).parent('.work').is(':last-child')) {
+			var id = $(this).parent('.work').attr('id');
+			var tooltip = $('#stack .designer#'+id);
+			var top = e.offsetY;
+			var left = e.offsetX;
+			$(tooltip).css({
+				'top' : top,
+				'left' : left
+			});
+		}
+	}).mouseover(function(e) {
+		if($(this).parent('.work').is(':last-child')) {
+			var id = $(this).parent('.work').attr('id');
+			var tooltip = $('#stack .designer#'+id);
+			$(tooltip).css({
+				'display' : 'table'
+			});
+		}
+	}).mouseleave(function() {
+		if($(this).parent('.work').is(':last-child')) {
+			var id = $(this).parent('.work').attr('id');
+			var tooltip = $('#stack .designer#'+id);
+			$(tooltip).css({
+				'display' : 'none'
+			});
+		}
+	});
 }
 
 $(initWorks);
