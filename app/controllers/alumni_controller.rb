@@ -16,7 +16,6 @@ class AlumniController < ApplicationController
   def create
     @alumnus = Alumnus.new(alumnus_params)
     if @alumnus.save
-      update_positions
       flash[:notice] = "Alumnus was created!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
@@ -33,7 +32,6 @@ class AlumniController < ApplicationController
   def update
     @alumnus = Alumnus.find(params[:id])
     if @alumnus.update_attributes(alumnus_params)
-      update_positions
       flash[:notice] = "Alumnus was updated!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
@@ -55,7 +53,6 @@ class AlumniController < ApplicationController
 
   def destroy
     @alumnus = Alumnus.find(params[:id]).destroy
-    update_positions
     flash[:notice] = "Alumnus was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
@@ -65,12 +62,6 @@ class AlumniController < ApplicationController
 
     def alumnus_params
       params.require(:alumnus).permit(:first_name, :last_name, :url, :position, :image, :id)
-    end
-
-    def update_positions
-      Alumnus.first_to_last.each_with_index do |f, i|
-          f.update_attribute(:position, i+1)
-      end
     end
 
 end

@@ -41,7 +41,7 @@ var initWorks = function() {
 			});
 		});
 	} else {
-		$('select').change(function(e) {
+		$('select#work_media_type').change(function(e) {
 			var form = $(this).parent('.row').parent('form');
 			if($(this).val() === 'video') {
 				$(form).attr('data-media', 'video');

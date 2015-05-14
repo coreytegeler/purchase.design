@@ -10,9 +10,8 @@
 		<%= f.text_field(:last_name, :placeholder => "Last name") %>
 	</div>
 </div>
-<div class="row email with_position">
+<div class="row email">
 	<%= f.text_field(:email, :placeholder => "E-mail") %>
-	<%= f.select :position, 1..@faculties.size, {:selected => faculty.position}, {:class => 'position'} %>
 </div>
 <%= f.fields_for :alma_maters do |am| %>
 	<div class="row alma_mater">

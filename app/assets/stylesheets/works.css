@@ -1,5 +1,6 @@
 .admin form .file .drop {
 	display: none;
+	border: 0;
 }
 .admin form[data-media="image"] .file .drop.image, .admin form[data-media="video"] .file .drop.video {
 	display: block;
@@ -12,7 +13,7 @@
 .admin form select, .admin form input {
 	font-size: 27px;
 }
-.admin form input {
+.admin form .row.designer {
 	border-top: solid 1px rgba(255,255,255,0.3) !important;
 }
 section#works {

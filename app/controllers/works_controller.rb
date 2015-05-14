@@ -4,11 +4,11 @@ class WorksController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
-    @works = Work.sorted
+    @works = Work.first_to_last
   end
 
   def admin
-    @works = Work.sorted.reverse_order
+    @works = Work.last_to_first
     @new_work = Work.new
     @new_work.position = Work.count + 1
     @new_work.name = name + @new_work.position.to_s
@@ -18,7 +18,7 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
-      update_positions
+
       flash[:notice] = "#{@work.name} was uploaded!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
@@ -32,7 +32,7 @@ class WorksController < ApplicationController
   def update
     @work = Work.find(params[:id])
     if @work.update_attributes(work_params)
-      update_positions
+
       flash[:notice] = "#{@work.name} was updated!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
@@ -52,7 +52,6 @@ class WorksController < ApplicationController
 
   def destroy
     work = Work.find(params[:id]).destroy
-    update_positions
     flash[:notice] = "#{work.name} was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
@@ -61,13 +60,12 @@ class WorksController < ApplicationController
   private 
 
     def work_params
-      params.require(:work).permit(:name, :image, :video, :media_type, :position, :visible)
+      params.require(:work).permit(:image, :video, :media_type, :position, :visible)
     end
 
     def update_positions
-      Work.sorted.each_with_index do |w, i|
+      Work.first_to_last.each_with_index do |w, i|
           w.update_attribute(:position, i+1)
-          w.update_attribute(:name, name + w.position.to_s)
       end
     end
 

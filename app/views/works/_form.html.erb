@@ -1,4 +1,14 @@
-<h3 class="name"><%= work.name %></h3>
+<% if !work.persisted? %>
+	<div class="row media_type">
+		<%= f.label :media_type, "Type:" %>
+		<%= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
+	</div>
+<% else %>
+	<div class="row position">
+		<%= f.select :position, 1..@works.size, {:selected => work.position}, {:class => 'position'} %>
+	</div>
+<% end %>
+
 <div class="file">
 	<% if work.persisted? %>
 		<% bg_img = work.image.url(:small).to_s %>
@@ -20,12 +30,6 @@
 <div class="row designer">
 	<%= f.text_field(:designer, :placeholder => "Designer") %>
 </div>
-<% if !work.persisted? %>
-	<div class="row media_type">
-		<%= f.label :media_type, "Type:" %>
-		<%= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
-	</div>
-<% end %>
 
 <div class="actions">
 	<% if work.persisted? %>

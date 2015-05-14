@@ -3,7 +3,7 @@ class Alumnus < ActiveRecord::Base
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
 	scope :first_to_last, lambda {order("alumni.position ASC")}
-	scope :last_to_first, lambda {order("alumni.position ASC")}
+	scope :last_to_first, lambda {order("alumni.position DESC")}
 	scope :new_to_old, lambda {order("alumni.created_at DESC")}
 	scope :old_to_new, lambda {order("alumni.created_at ASC")}
 	scope :search, lambda {|query|
@@ -21,9 +21,18 @@ class Alumnus < ActiveRecord::Base
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
 	validates_presence_of :first_name, :last_name, :url
-	before_validation :format_url
 
-	private
+	acts_as_list :order => :position
+    validates_numericality_of :position, :only_integer => true , :allow_nil => false
+    before_validation :reposition, :format_url
+
+   private
+
+	def reposition
+		Alumnus.first_to_last.each_with_index do |id, position|
+			Alumnus.find(id).update_attribute(:position, position + 1)
+		end
+	end
 
 	def format_url
 		unless self.url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]

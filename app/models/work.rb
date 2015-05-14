@@ -1,15 +1,13 @@
 class Work < ActiveRecord::Base
-
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
-	scope :sorted, lambda {order("works.position DESC")}
+	scope :first_to_last, lambda {order("works.position ASC")}
+	scope :last_to_first, lambda {order("works.position DESC")}
 	scope :new_to_old, lambda {order("works.created_at DESC")}
 	scope :old_to_new, lambda {order("works.created_at ASC")}
 	scope :search, lambda {|query|
 		where(["name LIKE ?", "%#{query}%"])
 	}
-
-	acts_as_list scope: [:position]
 
 	has_attached_file :image, :styles => { 
 		:small => ["300x300"],
@@ -29,21 +27,19 @@ class Work < ActiveRecord::Base
 
     validate :content_type
 
-    # validate :get_dimensions, :unless => "errors.any?"
+    acts_as_list :order => :position
+    validates_numericality_of :position, :only_integer => true , :allow_nil => false
+
+    before_validation :reposition
 
 	   private
-		
-		# def get_dimensions
-		#   dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
-		#   if dimensions.width > dimensions.height
-		#   	self.orientation = 'landscape'
-		#   elsif dimensions.width < dimensions.height
-		#   	self.orientation = 'portrait'
-		#   else
-		#   	self.orientation = 'square'
-		#   end
-		# end
 
+		def reposition
+			Work.first_to_last.each_with_index do |id, position|
+				Work.find(id).update_attribute(:position, position + 1)
+			end
+		end
+		
 		def content_type
 		  if image.blank? and video.blank?
 		   #one at least must be filled in, add a custom error message

@@ -156,8 +156,8 @@ aside#admin_panel header h1 {
 .block form .file {
 	width: 100%;
 	height: 278px;
-	border-bottom: 1px solid rgba(255,255,255,0.3);
-	border-top: 1px solid rgba(255,255,255,0.3);
+	/*border-bottom: 1px solid rgba(255,255,255,0.3);
+	border-top: 1px solid rgba(255,255,255,0.3);*/
 }
 .block form .file svg {
 	width: 228px;
@@ -208,7 +208,7 @@ aside#admin_panel header h1 {
 	opacity: 0.8;
 	margin: 5px;
 }
-.block.upload form .actions a.action.submit {
+.block.upload:first-child form .actions a.action.submit {
 	display: none;
 }
 .block.upload form.can_save .actions a.action.submit {
@@ -253,6 +253,11 @@ aside#admin_panel header h1 {
 }
 .field_with_errors label {
 	color: red;
+}
+.block form .position select.position {
+	display: table;
+	margin: auto;
+	padding: 10px 50px;
 }
 .block form .with_position input[type="text"] {
 	width: calc(100% - 60px);
