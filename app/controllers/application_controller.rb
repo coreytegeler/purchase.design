@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
   private
 
       def select_palette
-        palettes = Palette.sorted
+        palettes = Palette.first_to_last
         if !params[:palette].nil?
           palette = palettes.where(:id => params[:palette]).first
           flash[:notice] = "This is #{palette.name}, do you want to try <a href='/palettes/admin'>another one</a>?"
@@ -115,7 +115,7 @@ class ApplicationController < ActionController::Base
       end
 
       def select_logo
-        logos = Logo.sorted
+        logos = Logo.first_to_last
         if session[:logo].nil? || logos.where(:position => session[:logo]).first.nil?
           random = rand(1..logos.length)
           logo = logos.where(:position => random).first
@@ -152,7 +152,7 @@ class ApplicationController < ActionController::Base
       end
 
       def select_gradient
-        gradients = Gradient.sorted
+        gradients = Gradient.first_to_last
         if session[:gradient].nil? || gradients.where(:position => session[:gradient]).first.nil?
           random = rand(1..gradients.length)
           gradient = gradients.where(:position => random).first
@@ -186,7 +186,7 @@ class ApplicationController < ActionController::Base
       end
 
       def select_pattern
-        patterns = Pattern.sorted
+        patterns = Pattern.first_to_last
         if session[:pattern].nil? || patterns.where(:position => session[:pattern]).first.nil?
           random = rand(1..patterns.length)
           pattern = patterns.where(:position => random).first
