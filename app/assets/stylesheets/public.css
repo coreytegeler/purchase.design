@@ -50,21 +50,21 @@ aside#side_bar {
 	z-index: 19;
 	top: 9px;
 	left: 9px;
-	width: 135px;
+	width: 150px;
 }
 aside#side_bar header {
-	width: 135px;
-	height: 135px;
+	width: 150px;
+	height: 150px;
 	display: table;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 aside#side_bar header #logo {
-	height: 85px;
-  	width: 85px;
+	height: 100px;
+  	width: 100px;
   	display: table;
-  	margin: 25px;
+  	margin: 35px 25px 25px 25px;
   	cursor: pointer;
 }
 aside#side_bar header #logo svg {
@@ -294,7 +294,7 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 	display: none;
 }
 #about .buffer {
-	height: 135px;
+	height: 170px;
 	width: 100%;
 	display: block;
 	cursor: pointer;
@@ -302,9 +302,9 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 #about .content {
 	background: black;
 	color: white;
-	height: calc(100% - 135px);
-  	height: -moz-calc(100% - 135px);
-  	height: -webkit-calc(100% - 135px);
+	height: calc(100% - 170px);
+  	height: -moz-calc(100% - 170px);
+  	height: -webkit-calc(100% - 170px);
   	overflow: scroll;
 }
 #about .content .inner {

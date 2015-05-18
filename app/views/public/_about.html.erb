@@ -8,7 +8,9 @@
 						The Graphic Design BFA Program
 					</div>
 					<div class="block body">
-						<%= About.first.text.html_safe %>
+						<% if !About.first.nil? %>
+							<%= About.first.text.html_safe %>
+						<% end %>
 					</div>
 				</div>
 			</div>

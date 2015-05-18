@@ -1,7 +1,13 @@
 <section id="aboutContainer">
 	<div class="block">
-		<%= form_for(@about, :url => {:action => 'create', :id => @about.id}, :html => { :id => 'about', :class => 'new', :method => :post}) do |f| %>
-			<%= render(:partial => "form", :locals => {:apply_item => @about, :f => f}) %>
+		<% if @about.persisted? %>
+			<%= form_for(@about, :url => {:action => 'update', :id => @about.id}, :html => { :id => 'about', :class => 'new', :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:f => f}) %>
+			<% end %>
+		<% else %>
+			<%= form_for(@about, :url => {:action => 'create', :id => @about.id}, :html => { :id => 'about', :class => 'new', :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:f => f}) %>
+			<% end %>
 		<% end %>
 	</div>
 </section>
