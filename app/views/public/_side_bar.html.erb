@@ -5,18 +5,20 @@
 
 </header>
 <div id="tools" <%= color('border', @s) %>>
-	<div id="style_control">
-		<div id="buttons">
-			<% case params[:controller] %>
-			<% when 'faculties' %>
-				<%= render 'faculties/tools' %>
-			<% when 'alumni' %>
-				<%= render 'alumni/tools' %>
-			<% when 'resources' %>
-				<%= render 'resources/tools' %>
-			<% when 'apply_items' %>
-				<%= render 'apply_items/tools' %>
-			<% end %>
+	<div id="buttons">
+		<div class="horz_center">
+			<div id="page_specific">
+				<% case params[:controller] %>
+				<% when 'faculties' %>
+					<%= render 'faculties/tools' %>
+				<% when 'alumni' %>
+					<%= render 'alumni/tools' %>
+				<% when 'resources' %>
+					<%= render 'resources/tools' %>
+				<% when 'apply_items' %>
+					<%= render 'apply_items/tools' %>
+				<% end %>
+			</div>
 
 			<div class="button <%= @gradient_state %>">
 				<div class="method" id="next_gradient"  <%= color('bg', @p) %>>

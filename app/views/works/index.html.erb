@@ -12,10 +12,11 @@
 						<% end %>
 					</div>
 
-					<div id="<%= work.position %>" class="designer small" <%= color('color', @s, 'bg', @p, 'border', @s) %>>
-						<%= work.designer %>
-					</div>
-
+					<% if !work.designer.empty? %>
+						<div id="<%= work.position %>" class="designer small" <%= color('color', @s, 'bg', @p, 'border', @s) %>>
+							<%= work.designer %>
+						</div>
+					<% end %>
 				</div>
 			<% end %>
 		</div>

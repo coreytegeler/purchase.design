@@ -9,14 +9,9 @@ var initWorks = function() {
 		$('#stack').ready(function() {
 			$('#stack .work').each(function(i, w) {
 				$(w).addClass('loaded').css({y: -gap*i, x: gap*i});
-				var width = $(w).outerWidth();
-				var height = $(w).outerHeight();
-				// if(width > maxWidth) {
-				// 	maxWidth = width;
-				// }
-				// if(height > maxHeight) {
-				// 	maxHeight = height;
-				// }
+				if(!$(w).children('.designer').length) {
+					$(w).children('.mousepad').css({'cursor':'pointer'});
+				}
 			});
 		});
 
@@ -55,8 +50,8 @@ var initWorks = function() {
 		if($(this).parent('.work').is(':last-child')) {
 			var id = $(this).parent('.work').attr('id');
 			var tooltip = $('#stack .designer#'+id);
-			var top = e.offsetY;
-			var left = e.offsetX;
+			var top = e.offsetY - $(tooltip).height()/2;
+			var left = e.offsetX - $(tooltip).width()/2;
 			$(tooltip).css({
 				'top' : top,
 				'left' : left
