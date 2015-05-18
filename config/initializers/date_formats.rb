@@ -1,1 +1,1 @@
-Time::DATE_FORMATS[:simple] = "%m.%d.%y"
+Date::DATE_FORMATS[:dotted] = "%m.%d.%Y"

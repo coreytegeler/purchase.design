@@ -1,0 +1,6 @@
+#aboutContainer .block {
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+	display: table;
+}

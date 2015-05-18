@@ -11,13 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518163731) do
+ActiveRecord::Schema.define(version: 20150518204648) do
 
   create_table "abouts", force: :cascade do |t|
-    t.string "dept_title", limit: 255
-    t.text   "dept_body",  limit: 65535
-    t.string "site_title", limit: 255
-    t.text   "site_body",  limit: 65535
+    t.text "text", limit: 65535
   end
 
   create_table "admins", force: :cascade do |t|
@@ -33,7 +30,6 @@ ActiveRecord::Schema.define(version: 20150518163731) do
   create_table "alma_maters", force: :cascade do |t|
     t.string   "college",    limit: 255
     t.string   "degree",     limit: 255
-    t.date     "year"
     t.integer  "faculty_id", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,7 +37,6 @@ ActiveRecord::Schema.define(version: 20150518163731) do
   end
 
   create_table "alumni", force: :cascade do |t|
-    t.date     "year"
     t.integer  "position",           limit: 4
     t.boolean  "visible",            limit: 1,   default: false
     t.datetime "created_at",                                     null: false
@@ -61,19 +56,12 @@ ActiveRecord::Schema.define(version: 20150518163731) do
   end
 
   create_table "faculties", force: :cascade do |t|
-    t.text     "summary",            limit: 65535
-    t.date     "first_year"
-    t.date     "last_year"
-    t.boolean  "current",            limit: 1,     default: true
-    t.boolean  "visible",            limit: 1,     default: false
     t.integer  "position",           limit: 4
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.string   "title",              limit: 255
     t.string   "email",              limit: 255
-    t.string   "website",            limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "first_name",         limit: 255
@@ -95,13 +83,11 @@ ActiveRecord::Schema.define(version: 20150518163731) do
     t.integer  "file_file_size",    limit: 4
     t.datetime "file_updated_at"
     t.integer  "position",          limit: 4
-    t.string   "name",              limit: 255
   end
 
   create_table "palettes", force: :cascade do |t|
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.string   "name",            limit: 255
     t.string   "primary_color",   limit: 255
     t.string   "secondary_color", limit: 255
     t.integer  "position",        limit: 4
@@ -113,7 +99,6 @@ ActiveRecord::Schema.define(version: 20150518163731) do
     t.integer  "tile_file_size",    limit: 4
     t.datetime "tile_updated_at"
     t.integer  "position",          limit: 4
-    t.string   "name",              limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -133,7 +118,6 @@ ActiveRecord::Schema.define(version: 20150518163731) do
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "body",       limit: 65535
-    t.string   "category",   limit: 255
     t.integer  "position",   limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -144,11 +128,7 @@ ActiveRecord::Schema.define(version: 20150518163731) do
   create_table "resources", force: :cascade do |t|
     t.string   "name",               limit: 255
     t.string   "link",               limit: 255
-    t.string   "category",           limit: 255
-    t.text     "caption",            limit: 65535
     t.integer  "position",           limit: 4
-    t.boolean  "visible",            limit: 1,     default: false
-    t.integer  "type_id",            limit: 4
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
@@ -158,19 +138,13 @@ ActiveRecord::Schema.define(version: 20150518163731) do
   end
 
   create_table "works", force: :cascade do |t|
-    t.string   "name",               limit: 255
     t.string   "designer",           limit: 255
     t.date     "year"
-    t.text     "caption",            limit: 65535
     t.integer  "position",           limit: 4
-    t.boolean  "visible",            limit: 1,     default: false
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.string   "orientation",        limit: 255
-    t.integer  "width",              limit: 4
-    t.integer  "height",             limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "video_file_name",    limit: 255

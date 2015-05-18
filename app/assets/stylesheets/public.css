@@ -240,18 +240,18 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 .swapper .block .text .row:last-child {
 	margin: 0;
 }
-.swapper .block .small {
+.small {
 	font-size: 30px;
   	line-height: 34px;
 }
-.swapper .block .small a {
+.small a {
 	text-decoration: underline;
 }
-.swapper .block .medium {
+.medium {
 	font-size: 45px;
   	line-height: 46px;
 }
-.swapper .block .large {
+.large {
 	font-size: 55px;
 	line-height: 57px;
 }
@@ -308,7 +308,7 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
   	overflow: scroll;
 }
 #about .content .inner {
-	max-width: 1400px;
+	max-width: 1200px;
 	margin: auto;
 	padding: 40px;
 	display: table;
@@ -317,14 +317,13 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 	float: left;
 }
 #about .half.left {
-	width: 50%
+	width: 60%
 }
 #about .half.right {
-	width: 50%;
+	width: 40%;
 }
 #about .module {
 	margin: 20px;
-	border: 1px solid rgba(255,255,255,0.3);
 }
 #about .block {
 	display: table;
@@ -335,9 +334,6 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 	padding: 10px;
 }
 #about .block.title {
-	border-bottom: 1px solid rgba(255,255,255,0.3);
-	font-size: 25px;
-	line-height: 29px;
 	font-weight: 700;
 }
 #about .block.button {
@@ -364,11 +360,15 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 	background-size: cover;
 }
 #about .block.body, #about .block.list {
-	font-size: 18px;
-	line-height: 25px;
+	font-size: 22px;
+	line-height: 28px;
 }
 #about .block.body p {
-	margin: 0 0 15px 0;
+	margin: 0;
+	text-indent: 50px;
+}
+#about .block.body p:first-child {
+	text-indent: 0;
 }
 #about .block.body ul {
 	margin: 15px;

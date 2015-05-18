@@ -10,41 +10,16 @@ body {
 /***************/
 #top_bar {
 	right: 44px;
-  	width: calc(100% - 88px);
-	width: -moz-calc(100% - 88px);
-	width: -webkit-calc(100% - 88px);
-}
-#admin_bar {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: calc(100% - 98px);
-	height: 50px;
-	display: table;
-}
-#admin_bar .inner {
-	padding: 5px 10px;
-	display: table-cell;
-	vertical-align: middle;
-}
-aside#admin_panel {
-	background: black;
-}
-aside#admin_panel header {
-	margin-top: 10px;
-}
-aside#admin_panel header h1 {
-	font-size: 20px;
 }
 #top_bar nav {
-	width: 100%;
+	float: right;
 }
-#top_bar nav #nav-wrapper {
-	float: left;
+#top_bar nav #nav_wrapper {
+	float: right;
 }
 #top_bar nav #nav_wrapper ul#nav_links {
 	background: black;
-	/*border: 1px solid rgba(255,255,255,0.3);*/
+	border: 1px solid rgba(255,255,255,0.3);
 }
 /************/
 /*USER FORMS*/
@@ -116,6 +91,12 @@ aside#admin_panel header h1 {
 	appearance: none;
 	border-radius: 0;
 	resize: none;
+}
+.block textarea {
+	padding: 10px;
+	width: calc(100% - 20px);
+	width: -moz-calc(100% - 20px);
+	width: -webkit-calc(100% - 20px);
 }
 .block select {
 	padding: 10px;

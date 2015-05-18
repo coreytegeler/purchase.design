@@ -1,0 +1,10 @@
+<div class="text">
+	<%= f.text_area :text, :rows => 20, :placeholder => "About this school" %>
+</div>
+<div class="actions">
+	<% if apply_item.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#about').submit()", :class => "action submit") %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#about').submit()", :class => "action submit") %>
+	<% end %>
+</div>

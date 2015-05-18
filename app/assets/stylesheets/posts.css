@@ -91,15 +91,15 @@
 }
 .public #posts .post .text .title {
 	font-size: 55px;
-	line-height: 58px;
+	line-height: 56px;
 	padding: 0px 0 10px 0;
 	margin: 0;
 	display: block;
 }
 .public #posts .post .text .post_date {
-	font-size: 18px;
-	line-height: 24px;
-	padding: 15px 0;
+	font-size: 15px;
+	line-height: 15px;
+	padding: 15px 0 9px 0;
 }
 .public #posts .post .text .event_date {
 	font-size: 22px;
@@ -111,8 +111,8 @@
 	padding: 5px 0;
 }
 .public #posts .post .text .body {
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 22px;
+	line-height: 28px;
 	display: block;
 	width: 100%;
 }

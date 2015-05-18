@@ -1,0 +1,7 @@
+<section id="aboutContainer">
+	<div class="block">
+		<%= form_for(@about, :url => {:action => 'create', :id => @about.id}, :html => { :id => 'about', :class => 'new', :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:apply_item => @about, :f => f}) %>
+		<% end %>
+	</div>
+</section>
