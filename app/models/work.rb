@@ -29,10 +29,8 @@ class Work < ActiveRecord::Base
 
 		def content_type
 		  if image.blank? and video.blank?
-		   #one at least must be filled in, add a custom error message
 		   return false
 		  elsif !image.blank? and !video.blank?
-		   #both can't be filled in, add custom error message
 		   return false
 		  else
 		   return true

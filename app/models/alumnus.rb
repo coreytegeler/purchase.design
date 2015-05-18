@@ -12,6 +12,8 @@ class Alumnus < ActiveRecord::Base
 
 	acts_as_list scope: [:position]
 
+	before_validation :reposition, :format_url
+
 	has_attached_file :image, :styles => { 
 		:small => ["300x300"],
 		:medium => ["450x450"],
@@ -23,8 +25,6 @@ class Alumnus < ActiveRecord::Base
 	validates_presence_of :first_name, :last_name, :url
 
 	acts_as_list :order => :position
-    validates_numericality_of :position, :only_integer => true , :allow_nil => false
-    before_validation :reposition, :format_url
 
    private
 

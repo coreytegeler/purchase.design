@@ -3,7 +3,11 @@
 <% end %>
 
 <div class="row position">
-	<%= f.select :position, 1..@alumni.size, {:selected => alumnus.position}, {:class => 'position'} %>
+	<% if alumnus.persisted? %>
+		<%= f.select :position, 1..@alumni.size, {:selected => alumnus.position}, {:class => 'position'} %>
+	<% else %>
+		<%= f.select :position, 1..@alumni.size, {:include_blank => "New"}, {:class => 'position'} %>
+	<% end %>
 </div>
 <div class="row name">
 	<div class="half first_name">
@@ -20,10 +24,11 @@
 <div class="row">
 	<div class="file">
 		<% if alumnus.persisted? && alumnus.image.exists? %>
-			<% @upload_img = alumnus.image %>
+			<% bg_img = alumnus.image %>
+		<% else %> 
+			<% bg_img = @upload_img %>
 		<% end %>
-
-		<div class="drop image" style="background-image:url(<%= @upload_img %>)">
+		<div class="drop image" style="background-image:url(<%= bg_img %>)">
 			<%= f.file_field(:image, :data => {:position => alumnus.position}) %>
 		</div>
 	</div>

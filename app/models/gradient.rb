@@ -7,7 +7,7 @@ class Gradient < ActiveRecord::Base
 	before_validation :create_name
 
 	has_attached_file :file
-	do_not_validate_attachment_file_type :file
+	validates_attachment_file_name :file, matches: [/svg\Z/]
 
 	acts_as_list :order => :position
 

@@ -16,7 +16,6 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
-
       flash[:notice] = "Work was uploaded!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')

@@ -9,8 +9,7 @@ class ApplyItemsController < ApplicationController
 
   def admin
     @apply_items = ApplyItem.first_to_last
-    @new_apply_item = ApplyItem.new
-    @new_apply_item.position = ApplyItem.count + 1
+    @new_apply_item = ApplyItem.new(:position => 0)
   end
 
   def create
@@ -23,8 +22,6 @@ class ApplyItemsController < ApplicationController
       flash[:notice] = "Application requirement was not created!"
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
-      @new_apply_item = ApplyItem.new
-      @new_apply_item.position = ApplyItem.count + 1
     end
   end
 
@@ -38,8 +35,6 @@ class ApplyItemsController < ApplicationController
       flash[:type] = 'bad'
       flash[:notice] = "Application requirement was not updated!"
       redirect_to(:action => 'admin')
-      @new_apply_item = ApplyItem.new
-      @new_apply_item.position = ApplyItem.count + 1
     end
   end
 

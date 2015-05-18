@@ -6,8 +6,7 @@ class AdminsController < ApplicationController
   def admin
     @admins = Admin.a_to_z
     @this_admin = Admin.find(session[:admin_id])
-    @new_admin = Admin.new
-    @new_admin.position = Admin.all.count + 1
+    @new_admin = Admin.new(:position => 0)
   end
 
   def create

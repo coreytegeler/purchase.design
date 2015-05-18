@@ -1,5 +1,9 @@
 <div class="row position">
-	<%= f.select :position, 1..@works.size, {:selected => work.position}, {:class => 'position'} %>
+	<% if work.persisted? %>
+		<%= f.select :position, 1..@works.size, {:selected => work.position}, {:class => 'position'} %>
+	<% else %>
+		<%= f.select :position, 1..@works.size, {:include_blank => "New"}, {:class => 'position'} %>
+	<% end %>
 </div>
 <% if !work.persisted? %>
 	<div class="row media_type">
@@ -36,7 +40,7 @@
 		<%= link_to("Delete", {:controller => 'works', :action => 'delete', :id => work.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<div class="tip">
-			Drop file here.
+			Drag &amp; drop your file above
 		</div>	
 		<%= link_to('Create', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

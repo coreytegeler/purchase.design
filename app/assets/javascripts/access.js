@@ -36,20 +36,19 @@ function size() {
 }
 
 function imagePreview() {
-	$('input[type="file"]').each(function() {
+	$('input[type="file"]:not(.no_bg)').each(function() {
 		$(this).on('change', function(event) {
 			var position = $(this).attr('data-position');
 			var input = $(this);
 		    var files = event.target.files;
-		    var image = files[0]
+		    var file = files[0]
 		    var reader = new FileReader();
 		    reader.onload = function(file) {
 		      img = file.target.result;
 		      $(input).parent('.drop').css({'background-image':'url('+img+')'});
-		      console.log(position);
 		      $('form#'+position).addClass('can_save');
 		    }
-		    reader.readAsDataURL(image);
+		    reader.readAsDataURL(file);
 		});
 	});
 }

@@ -5,13 +5,13 @@ class LogosController < ApplicationController
 
   def admin
     @logos = Logo.first_to_last
-    @new_logo = Logo.new(:position => 1)
+    @new_logo = Logo.new(:position => 0)
   end
 
   def create
     @logo = Logo.new(logo_params)
     if @logo.save
-      flash[:notice] = "Logo was created!"
+      flash[:notice] = "New logo was created!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
@@ -42,7 +42,7 @@ class LogosController < ApplicationController
   end
 
   def destroy
-    @logo = Logo.find(params[:id]).destro
+    @logo = Logo.find(params[:id]).destroy
     flash[:notice] = "Logo was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')

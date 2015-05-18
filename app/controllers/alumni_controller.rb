@@ -9,8 +9,7 @@ class AlumniController < ApplicationController
 
   def admin
     @alumni = Alumnus.first_to_last
-    @new_alumnus = Alumnus.new
-    @new_alumnus.position = Alumnus.count + 1
+    @new_alumnus = Alumnus.new(:position => 0)
   end
 
   def create
