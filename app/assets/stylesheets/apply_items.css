@@ -2,37 +2,37 @@
 	border-right: 1px solid rgba(255,255,255,0.3);
 }
 
-.public .swapper#apply {
+.public #apply {
 
 }
-.public .swapper#apply .block {
+.public #apply .block {
 	display: block;
 	clear: both;
 	padding-bottom: 40px;
 	width: 450px;
 }
-.public .swapper#apply .block .box {
+.public #apply .block .box {
 	display: inline-block;
 	float: left;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	border: 4px solid;
 	margin-right: 30px;
 	position: relative;
 	cursor: pointer;
 	margin-top: 7px;
 }
-.public .swapper#apply .block .box svg {
+.public #apply .block .box svg {
 	display: none;
 	position: absolute;
-	bottom: 1px;
-	left: 5px;
-	width: 60px;
-	height: 60px;
+	bottom: 0px;
+	left: 3px;
+	width: 45px;
+	height: 45px;
 }
-.public .swapper#apply .block .box.checked svg {
+.public #apply .block .box.checked svg {
 	display: block;
 }
-.public .swapper#apply .block .text {
+.public #apply .block .text {
   	display: table;
 }

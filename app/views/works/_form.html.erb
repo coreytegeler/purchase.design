@@ -20,9 +20,6 @@
 	
 	<div class="drop video" style="background-image:url(<%= @upload_img %>)">
 		<%= f.file_field(:video, :data => {:position => work.position}) %>
-		<%# if work.video.exists? %>
-			<%#= render(:partial => "application/player", :locals => {:video => work.video.url(:medium)}) %>
-		<%# end %>
 	</div>
 
 	<div class="drop image" style="background-image:url(<%= bg_img %>)">

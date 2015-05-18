@@ -2,7 +2,7 @@
 	<section class="vert_center" id="works">
 		<div id="stack" class="static">
 			<% @works.each do |work| %>
-				<div id="<%= work.position %>" class="work <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
+				<div data-position="<%= work.position %>" class="work <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
 					<div class="mousepad"></div>
 					<div class="media_wrapper">
 						<% if work.media_type == 'image' %>
@@ -13,7 +13,7 @@
 					</div>
 
 					<% if !work.designer.empty? %>
-						<div id="<%= work.position %>" class="designer small" <%= color('color', @s, 'bg', @p, 'border', @s) %>>
+						<div data-position="<%= work.position %>" class="designer small" <%= color('color', @s, 'bg', @p, 'border', @s) %>>
 							<%= work.designer %>
 						</div>
 					<% end %>

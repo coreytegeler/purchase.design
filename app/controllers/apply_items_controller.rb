@@ -9,7 +9,6 @@ class ApplyItemsController < ApplicationController
 
   def admin
     @apply_items = ApplyItem.first_to_last
-    @show_to_options = ['parent', 'student']
     @new_apply_item = ApplyItem.new
     @new_apply_item.position = ApplyItem.count + 1
   end
@@ -61,7 +60,7 @@ class ApplyItemsController < ApplicationController
   private
 
     def apply_item_params
-      params.require(:apply_item).permit(:student, :parent, :position)
+      params.require(:apply_item).permit(:text, :position)
     end
 
 end

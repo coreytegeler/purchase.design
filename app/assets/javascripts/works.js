@@ -1,5 +1,6 @@
 var initWorks = function() {
 	if($('body').is('.public')) {
+		//GET DYNAMIC NUMBERS
 		var maxWidth = 602;
 		var maxHeight = 456;
 		var stackHeight;
@@ -20,11 +21,18 @@ var initWorks = function() {
 			$('.public #stack').css({height: maxHeight + gaps, width: maxWidth + gaps});
 		});
 
-		$('#stack').click(function(event) {
-			$top = $('.work:last-child');
-			$top.insertBefore('.work:first-child');
+		$('#stack .work').click(function(e) {
+			var oldTop = $('.work:last-child');
+			var oldTopPosition = $(oldTop).data('position');
+			$(oldTop).insertBefore('.work:first-child');
+			var oldTooltip = $('.designer[data-position='+oldTopPosition+']');
+			$(oldTooltip).css({'display' : 'none'});
+
+			// var newTop = $('.work:last-child');
+			// var newTopPosition = $(newTop).data('position');
+			// var newTooltip = $('.designer#'+newTopPosition);
+
 			$('.work').each(function(i, w) {
-				$(w).children('.designer').css({'display':'none'});
 				$(w).css({y: -gap*i, x: gap*i});
 				if($(w).is('.video')) {
 					if($(w).is(':last-child')) {
@@ -34,6 +42,8 @@ var initWorks = function() {
 					}
 				}
 			});
+			
+			
 		});
 	} else {
 		$('select#work_media_type').change(function(e) {
@@ -48,8 +58,8 @@ var initWorks = function() {
 
 	$('#stack .work .mousepad').mousemove(function(e) {
 		if($(this).parent('.work').is(':last-child')) {
-			var id = $(this).parent('.work').attr('id');
-			var tooltip = $('#stack .designer#'+id);
+			var position = $(this).parent('.work').data('position');
+			var tooltip = $('#stack .designer[data-position='+position+']');
 			var top = e.offsetY - $(tooltip).height()/2;
 			var left = e.offsetX - $(tooltip).width()/2;
 			$(tooltip).css({
@@ -59,16 +69,20 @@ var initWorks = function() {
 		}
 	}).mouseover(function(e) {
 		if($(this).parent('.work').is(':last-child')) {
-			var id = $(this).parent('.work').attr('id');
-			var tooltip = $('#stack .designer#'+id);
+			var position = $(this).parent('.work').data('position');
+			var tooltip = $('#stack .designer[data-position='+position+']');
+			var top = e.offsetY - $(tooltip).height()/2;
+			var left = e.offsetX - $(tooltip).width()/2;
 			$(tooltip).css({
-				'display' : 'table'
+				'display' : 'table',
+				'top' : top,
+				'left' : left
 			});
 		}
 	}).mouseleave(function() {
 		if($(this).parent('.work').is(':last-child')) {
-			var id = $(this).parent('.work').attr('id');
-			var tooltip = $('#stack .designer#'+id);
+			var position = $(this).parent('.work').data('position');
+			var tooltip = $('#stack .designer[data-position='+position+']');
 			$(tooltip).css({
 				'display' : 'none'
 			});

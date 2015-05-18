@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513193304) do
+ActiveRecord::Schema.define(version: 20150518163731) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "dept_title", limit: 255
@@ -57,8 +57,7 @@ ActiveRecord::Schema.define(version: 20150513193304) do
 
   create_table "apply_items", force: :cascade do |t|
     t.integer "position", limit: 4
-    t.text    "student",  limit: 65535
-    t.text    "parent",   limit: 65535
+    t.text    "text",     limit: 65535
   end
 
   create_table "faculties", force: :cascade do |t|

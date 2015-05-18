@@ -6,10 +6,7 @@
 	<%= f.select :position, 1..@apply_items.size, {:selected => apply_item.position}, {:class => 'position'} %>
 </div>
 <div class="row text">
-	<%= f.text_area :parent, :rows => 3, :placeholder => "Put application requirement here." %>
-</div>
-<div class="row text">
-	<%= f.text_area :student, :rows => 3, :placeholder => "Put application \"requirement\" here." %>
+	<%= f.text_area :text, :rows => 3, :placeholder => "Put application \"requirement\" here." %>
 </div>
 
 

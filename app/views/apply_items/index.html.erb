@@ -1,14 +1,11 @@
-<section class="swapper masonry" id="apply">
+<section class="masonry" id="apply">
 	<% @apply_items.each do |item| %>
 		<div class="apply_item block">
 			<div class="box secondary_fill" <%= color('border', @s) %>>
 				<%= inline_svg('check', false) %>
 			</div>
-			<div class="text swappee small parent">
-				<%= item.parent.html_safe %>
-			</div>
-			<div class="text swappee small student hidden">
-				<%= item.student.html_safe %>
+			<div class="text small">
+				<%= item.text.html_safe %>
 			</div>
 		</div>
 	<% end %>
