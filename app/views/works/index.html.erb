@@ -12,7 +12,7 @@
 						<% end %>
 					</div>
 
-					<% if !work.designer.empty? %>
+					<% if !work.designer.nil? %>
 						<div data-position="<%= work.position %>" class="designer small" <%= color('color', @s, 'bg', @p, 'border', @s) %>>
 							<%= work.designer %>
 						</div>

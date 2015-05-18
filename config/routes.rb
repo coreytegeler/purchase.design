@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   get 'model/resources'
 
   root "works#index"
-
-  get 'show/:slug', :to => 'public#show'
   
   get 'admin', :to => 'access#index'
-  get 'admins', :to => 'admins#admin'
   get 'cms', :to => 'access#index'
+  get 'backend', :to => 'access#index'
+
   get 'login', :to => 'access#login'
+
+  get 'admins', :to => 'admins#admin'
 
   get 'faculty', :to => 'faculties#index'
   get 'faculty/:action', :to => 'faculties#action'
