@@ -40,7 +40,7 @@ class AdminsController < ApplicationController
   end
 
   def destroy
-    @admin = Admin.find(params[:id]).destro
+    @admin = Admin.find(params[:id]).destroy
     flash[:notice] = "Admin was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')

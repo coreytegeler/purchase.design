@@ -46,7 +46,7 @@ class ApplyItemsController < ApplicationController
   end
 
   def destroy
-    @apply_item = ApplyItem.find(params[:id]).destro
+    @apply_item = ApplyItem.find(params[:id]).destroy
     flash[:type] = 'good'
     flash[:notice] = "Application requirement was deleted!"
     redirect_to(:action => 'admin')
