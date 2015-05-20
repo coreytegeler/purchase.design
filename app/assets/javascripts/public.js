@@ -10,11 +10,15 @@ var initPublic = function() {
 
 	var aboutEase = 'cubic-bezier(0.750, 0.750, 0.285, 0.950)';
 	$('#logo').click(function() {
-		$('#about').css({'display':'block'}).transition({'y': '-100%' }, 400, aboutEase);
+		$('#about').css({'display':'block'}).transition({'y': '-100%' }, 400, aboutEase, function() {
+			$('#border').css({'overflow':'hidden'});
+		});
 	});
 
 	$('#about .buffer').click(function() {
-		$('#about').transition({'y':'0'}, 400, aboutEase).transition({'display':'none'});
+		$('#about').transition({'y':'0'}, 400, aboutEase).transition({'display':'none'}, function() {
+			$('#border').css({'overflow':'scroll'});
+		});
 	});
 
 	$('.swapper .block .row a').hover(function() {
