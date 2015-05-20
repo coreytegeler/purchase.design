@@ -21,14 +21,18 @@
 	<% else %>
 		<% bg_img = @upload_img %>
 	<% end %>
-	
-	<div class="drop video" style="background-image:url(<%= @upload_img %>)">
-		<%= f.file_field(:video, :data => {:position => work.position}) %>
-	</div>
+	<% if work.media_type == 'video' || work.media_type.nil? %>
+		<div class="drop video" style="background-image:url(<%= bg_img %>)">
+			<%= f.file_field(:video, :data => {:position => work.position}) %>
+		</div>
+	<% end %>
+	<% if work.media_type == 'image' || work.media_type.nil? %>
+		<div class="drop image" style="background-image:url(<%= bg_img %>)">
+			<%= f.file_field(:image, :data => {:position => work.position}) %>
+		</div>
+	<% end %>
 
-	<div class="drop image" style="background-image:url(<%= bg_img %>)">
-		<%= f.file_field(:image, :data => {:position => work.position}) %>
-	</div>
+
 </div>
 <div class="row designer">
 	<%= f.text_field(:designer, :placeholder => "Designer") %>

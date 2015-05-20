@@ -5,11 +5,18 @@ class Work < ActiveRecord::Base
 		where(["name LIKE ?", "%#{query}%"])
 	}
 
-	has_attached_file :image, :styles => { 
-		:small => ["300x300"],
-		:medium => ["450x450"],
-		:large => ["1200x1200>"] }, 
-		:default_url => "image.svg"
+	has_attached_file :image,
+	:styles => { 
+		:small =>  ['300x300'],
+		:medium => ['450x450'],
+		:large =>  ['1200x1200>']
+	},
+	# :convert_options => {
+	# 	:small =>  ['-set colorspace sRGB -strip'],
+	# 	:medium => ['-set colorspace sRGB -strip'],
+	# 	:large =>  ['-set colorspace sRGB -strip -sharpen 0x0.5']
+	# },
+	:default_url => "image.svg"
 		
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
@@ -21,20 +28,29 @@ class Work < ActiveRecord::Base
 
     validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/ 
 
+    before_validation :choose_content_type
     validate :content_type
 
     acts_as_list :order => :position
 
 	   private
 
+	    def choose_content_type
+	    	if self.media_type == 'image'
+	    		self.video = nil
+	    	else 
+	    		self.image = nil
+	    	end
+	    end
+
 		def content_type
-		  if image.blank? and video.blank?
-		   return false
-		  elsif !image.blank? and !video.blank?
-		   return false
-		  else
-		   return true
-		  end
+			if image.blank? and video.blank?
+				return false
+			elsif !image.blank? and !video.blank?
+				return false
+			else
+				return true
+			end
 		end
 
 end

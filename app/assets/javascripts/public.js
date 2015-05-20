@@ -8,12 +8,13 @@ var initPublic = function() {
 		fillSvgs();
 	});
 
+	var aboutEase = 'cubic-bezier(0.750, 0.750, 0.285, 0.950)';
 	$('#logo').click(function() {
-		$('body').toggleClass('about');
+		$('#about').css({'display':'block'}).transition({'y': '-100%' }, 400, aboutEase);
 	});
 
 	$('#about .buffer').click(function() {
-		$('body').removeClass('about');
+		$('#about').transition({'y':'0'}, 400, aboutEase).transition({'display':'none'});
 	});
 
 	$('.swapper .block .row a').hover(function() {

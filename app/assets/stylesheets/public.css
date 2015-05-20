@@ -273,25 +273,20 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 /*****************/
 /******ABOUT******/
 /*****************/
-.about #about {
-	display: block;
-}
-.about .page_content {
+.about #border .page_content {
 	display: none;
+}
+.about #border  {
+	overflow: hidden;
 }
 #about {
-	position: fixed;
-  	top: 9px;
-  	left: 9px;
-  	width: calc(100% - 17px);
-  	width: -moz-calc(100% - 17px);
-  	width: -webkit-calc(100% - 17px);
-  	height: calc(100% - 17px);
-  	height: -moz-calc(100% - 17px);
-  	height: -webkit-calc(100% - 17px);
+	position: absolute;
+  	top: 100%;
+  	left: 0px;
+  	height: 100%;
+  	width: 100%;
   	z-index: 19;
-  	display: block;
-	display: none;
+  	display: none;
 }
 #about .buffer {
 	height: 170px;

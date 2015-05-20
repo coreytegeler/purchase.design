@@ -15,10 +15,11 @@ class Alumnus < ActiveRecord::Base
 	before_validation :reposition, :format_url
 
 	has_attached_file :image, :styles => { 
-		:small => ["300x300"],
-		:medium => ["450x450"],
-		:large => ["1200x1200>"] }, 
-		:default_url => "image.svg"
+		:small =>  ['300x300'],
+		:medium => ['450x450'],
+		:large =>  ['1200x1200>']
+	}, 
+	:default_url => "image.svg"
 		
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/

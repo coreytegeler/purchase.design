@@ -4,7 +4,7 @@ class WorksController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def index
-    @works = Work.first_to_last
+    @works = Work.last_to_first
   end
 
   def admin

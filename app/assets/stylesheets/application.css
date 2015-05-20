@@ -99,8 +99,7 @@ li {
 	width: calc(100% - 98px);
 	width: -moz-calc(100% - 98px);
 	width: -webkit-calc(100% - 98px);
-	/*height: 100%;*/
-	padding: 160px 40px 40px 40px;
+	padding: 170px 40px 40px 40px;
 	border: 9px solid;
 	display: block;
 	overflow: scroll;

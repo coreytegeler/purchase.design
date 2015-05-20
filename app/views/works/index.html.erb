@@ -11,8 +11,7 @@
 							<%= render(:partial => "application/player", :locals => {:video => work.video.url(:medium)}) %>
 						<% end %>
 					</div>
-
-					<% if !work.designer.nil? %>
+					<% if !work.designer.nil? && !work.designer.blank? %>
 						<div data-position="<%= work.position %>" class="designer small" <%= color('color', @s, 'bg', @p, 'border', @s) %>>
 							<%= work.designer %>
 						</div>
