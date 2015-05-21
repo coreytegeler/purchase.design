@@ -52,7 +52,7 @@ class PatternsController < ApplicationController
   private
 
     def pattern_params
-      params.require(:pattern).permit(:image, :position)
+      params.require(:pattern).permit(:tile, :position)
     end
 
 end

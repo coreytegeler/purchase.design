@@ -243,6 +243,7 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 .small {
 	font-size: 30px;
   	line-height: 34px;
+  	font-weight: 700;
 }
 .small a {
 	text-decoration: underline;
@@ -250,10 +251,12 @@ aside#side_bar #tools #buttons .button .method#next_pattern {
 .medium {
 	font-size: 45px;
   	line-height: 46px;
+  	font-weight: 700;
 }
 .large {
 	font-size: 55px;
 	line-height: 57px;
+	font-weight: 700;
 }
 .swapper .block a, .swapper .block .row a:hover {
 	text-decoration: none;

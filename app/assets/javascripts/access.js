@@ -6,11 +6,8 @@ var initAccess = function() {
 		itemSelector: '.block',
 		columnWidth: columnWidth,
 		gutterWidth: 40,
-		isFitWidth: true
-	});
-
-	$(window).resize(function() {
-		$('.masonry').masonry('reload');
+		isFitWidth: true,
+		isResizable: true
 	});
 
 	$('select').change(function(e) {

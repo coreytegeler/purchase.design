@@ -11,10 +11,10 @@
 				<li class="nav_link"><%= link_to("News", {:controller => 'news', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= link_to("Resources", {:controller => 'resources', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= link_to("Apply", {:controller => 'apply', :action => 'admin'}) %></li>
-				<li class="nav_link"><%= link_to("Logos", {:controller => 'logos', :action => 'admin'}) %></li>
-				<li class="nav_link"><%= link_to("Palettes", {:controller => 'palettes', :action => 'admin'}) %></li>
-				<li class="nav_link"><%= link_to("Gradients", {:controller => 'gradients', :action => 'admin'}) %></li>
-				<li class="nav_link"><%= link_to("Patterns", {:controller => 'patterns', :action => 'admin'}) %></li>
+				<li class="nav_link"><%= link_to("Logos", {:controller => 'logos'}) %></li>
+				<li class="nav_link"><%= link_to("Palettes", {:controller => 'palettes'}) %></li>
+				<li class="nav_link"><%= link_to("Gradients", {:controller => 'gradients'}) %></li>
+				<li class="nav_link"><%= link_to("Patterns", {:controller => 'patterns'}) %></li>
 				<% if admin? %>
 					<li class="nav_link"><%= link_to("Admins", :controller => "admins") %></li>
 					<li class="nav_link"><%= link_to("Logout", {:controller => 'access', :action => 'logout'}) %></li>

@@ -11,6 +11,22 @@ Rails.application.routes.draw do
   get 'login', :to => 'access#login'
 
   get 'admins', :to => 'admins#admin'
+  get 'gradients', :to => 'gradients#admin'
+  get 'logos', :to => 'logos#admin'
+  get 'palettes', :to => 'palettes#admin'
+  get 'patterns', :to => 'patterns#admin'
+
+  get 'backend/abouts', :to => 'abouts#admin'
+  get 'backend/admins', :to => 'admins#admin'
+  get 'backend/alumni', :to => 'alumni#admin'
+  get 'backend/apply_items', :to => 'apply_items#admin'
+  get 'backend/faculties', :to => 'faculties#admin'
+  get 'backend/gradients', :to => 'gradients#admin'
+  get 'backend/logos', :to => 'logos#admin'
+  get 'backend/palettes', :to => 'palettes#admin'
+  get 'backend/posts', :to => 'posts#admin'
+  get 'backend/resources', :to => 'resources#admin'
+  get 'backend/works', :to => 'works#admin'
 
   get 'faculty', :to => 'faculties#index'
   get 'faculty/:action', :to => 'faculties#action'

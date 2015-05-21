@@ -4,9 +4,16 @@ var initPublic = function() {
 	setUpSide();
 	size();
 
-	$(window).on('hashchange', function() {
-		fillSvgs();
-	});
+	if( $('.masonry').length ) {
+		var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
+		$('.masonry').masonry({
+			itemSelector: '.block',
+			columnWidth: blockWidth,
+			gutterWidth: 40,
+			isFitWidth: true,
+			isResizable: true
+		});
+	}
 
 	var aboutEase = 'cubic-bezier(0.750, 0.750, 0.285, 0.950)';
 	$('#logo').click(function() {
@@ -32,6 +39,15 @@ var initPublic = function() {
 			$(this).removeClass('hover');
 		});
 	});
+
+	$(window).resize(function() {
+		size();
+	});
+
+	$(window).on('hashchange', function() {
+		fillSvgs();
+	});
+
 }
 
 function fillSvgs() {
@@ -61,17 +77,7 @@ function size() {
 	var padding = border + notice;
 	$sideBar.css({
 		height:h() - border - notice
-	});
-
-	if( $('.masonry').length ) {
-		var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
-		$('.masonry').masonry({
-			itemSelector: '.block',
-			columnWidth: blockWidth,
-			gutterWidth: 40,
-			isFitWidth: true
-		});
-	}
+	});	
 }
 
 function setUpSide() {
@@ -111,7 +117,4 @@ $(initPublic);
 $(document).on('page:load', initPublic);
 $(document).on('page:fetch', function() {
     $('main').addClass('fadeOut');
-});
-$(window).resize(function() {
-	size();
 });

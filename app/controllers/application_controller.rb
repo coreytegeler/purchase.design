@@ -196,7 +196,7 @@ class ApplicationController < ActionController::Base
         current_pattern_pos = session[:pattern]
 
         if session[:no_pattern] == false
-          @pattern = patterns.where(:position => current_pattern_pos).first.image
+          @pattern = patterns.where(:position => current_pattern_pos).first.tile
           @pattern_state = 'on'
         else
           @pattern = nil
@@ -207,7 +207,7 @@ class ApplicationController < ActionController::Base
           find_next_pattern
         end
 
-        @next_pattern = patterns.where(:position => session[:next_pattern]).first.image
+        @next_pattern = patterns.where(:position => session[:next_pattern]).first.tile
       end
 
       def find_next_pattern
@@ -225,18 +225,4 @@ class ApplicationController < ActionController::Base
           1
         end
       end
-
-      def create_instance_vars
-        @logo = Logo.where(:position => session[:logo]).first.file
-        @next_logo = Logo.where(:position => session[:next_logo]).first.file
-        @p = session[:palette].first
-        @s = session[:palette].second
-        @next_p = session[:next_palette].first
-        @next_s = session[:next_palette].second
-        @gradient = Gradient.where(:position => session[:gradient]).first.file
-        @next_gradient = Gradient.where(:position => session[:next_gradient]).first.file
-        @pattern = Pattern.where(:position => session[:pattern]).first.file
-        @next_pattern = Pattern.where(:position => session[:next_pattern]).first.file
-      end
-         
 end
