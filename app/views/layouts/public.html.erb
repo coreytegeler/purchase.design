@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
 <head>
 	<title>Purchase College Graphic Design Dept. | <%= @page_title || '' %></title>
 	<%= stylesheet_link_tag "application", params[:controller], :media => "all", 'data-turbolinks-track' => true %>
@@ -10,8 +10,9 @@
 	<%= csrf_meta_tags %>
 	<meta charset="UTF-16">
 	<meta name="description" content="">
-	<meta name="keywords" content="Purchase College, SUNY, State University of New York, Visual Arts, Art+Design, art, design, graphic design, graphic design department, BFA, graphic design BFA, bachelors of fine arts, university, education">
-	<meta name="author" content="">
+	<meta name="keywords" content="Purchase College, SUNY, State University of New York, Visual Arts, Art+Design, art, design, graphic design, graphic design department, BFA, graphic design BFA, bachelors of fine arts, university, college, education">
+	<meta name="google" content="notranslate">
+	<meta http-equiv="Content-Language" content="en">
 </head>
 <body class="public" id="<%= params[:controller].parameterize %>_controller" <%= color('bg', @p, 'text', @s, 'border', @s) %>>
 	<div id="gradient" style="background-image: url(<%= @gradient %>)"></div>
