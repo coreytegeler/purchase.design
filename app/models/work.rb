@@ -9,7 +9,7 @@ class Work < ActiveRecord::Base
 	:styles => { 
 		:small =>  ['300x300'],
 		:medium => ['450x450'],
-		:large =>  ['1200x1200\\>']
+		:large =>  ['800x800>']
 	},
 	:default_url => "image.svg"
 		
