@@ -3,7 +3,11 @@
 <% end %>
 
 <div class="row position">
-	<%= f.select :position, 1..@palettes.size, {:selected => palette.position}, {:class => 'position'} %>
+	<% if palette.persisted? %>
+		<%= f.select :position, 1..@palettes.size, {:selected => palette.position}, {:class => 'position'} %>
+	<% else %>
+		<%= f.select :position, 1..@palettes.size, {:include_blank => "New"}, {:class => 'position'} %>
+	<% end %>
 </div>
 
 <div class="swatch">

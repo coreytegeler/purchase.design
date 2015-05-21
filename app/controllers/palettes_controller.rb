@@ -6,7 +6,7 @@ class PalettesController < ApplicationController
 
   def admin
     @palettes = Palette.first_to_last
-    @new_palette = Palette.new(:position => 1)
+    @new_palette = Palette.new(:position => 0)
     @new_palette.primary_color = "#"
     @new_palette.secondary_color = "#"
   end

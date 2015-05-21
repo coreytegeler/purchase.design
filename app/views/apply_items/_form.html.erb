@@ -5,9 +5,9 @@
 <div class="row position">
 	<% if apply_item.persisted? %>
 		<%= f.select :position, 1..@apply_items.size, {:selected => apply_item.position}, {:class => 'position'} %>
-		<% else %>
-			<%= f.select :position, 1..@apply_items.size, {:include_blank => "New"}, {:class => 'position'} %>
-		<% end %>
+	<% else %>
+		<%= f.select :position, 1..@apply_items.size, {:include_blank => "New"}, {:class => 'position'} %>
+	<% end %>
 </div>
 <div class="row text">
 	<%= f.text_area :text, :rows => 2, :placeholder => "Put application \"requirement\" here." %>

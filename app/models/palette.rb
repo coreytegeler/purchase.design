@@ -13,11 +13,11 @@ class Palette < ActiveRecord::Base
 
 		def add_hash_symbol
 			if primary_color[0] != "#"
-				primary_color.insert(0, "#")
+				primary_color[0,0] = "#"
 			end
 
 			if secondary_color[0] != "#"
-				secondary_color.insert(0, "#")
+				secondary_color[0,0] = "#"
 			end
 		end
 
