@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
 
+  include AccessHelper
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -22,7 +23,7 @@ class ResourcesController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Resource was not created!"
+      flash[:notice] = errors_for(@resource)
       p @resource.errors.full_messages
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
@@ -40,7 +41,7 @@ class ResourcesController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Resource was not updated!"
+      flash[:notice] = errors_for(@resource)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end

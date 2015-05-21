@@ -1,5 +1,6 @@
 class ApplyItemsController < ApplicationController
 
+  include AccessHelper
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -19,7 +20,7 @@ class ApplyItemsController < ApplicationController
       flash[:notice] = "Application requirement was created!"
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Application requirement was not created!"
+      flash[:notice] = errors_for(@apply_item)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -33,7 +34,7 @@ class ApplyItemsController < ApplicationController
       redirect_to(:action => 'admin')
     else
       flash[:type] = 'bad'
-      flash[:notice] = "Application requirement was not updated!"
+      flash[:notice] = errors_for(@apply_item)
       redirect_to(:action => 'admin')
     end
   end

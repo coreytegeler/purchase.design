@@ -9,14 +9,16 @@
 					<%= mail_to(faculty.email, faculty.last_name) %>
 				</div>
 			</div>
-			<div class="swappee small text alma_maters hidden">
-				<%= faculty.first_name.to_s + ' received ' %> 
-				<% faculty.alma_maters.new_to_old.each_with_index do |am, index| %>
-					<%= am.degree.indefinitize %>
-					from
-					<%= link_to(am.college, am.link, :target => '_blank').html_safe + sentencize(faculty.alma_maters.size, index) %>
-				<% end %>
-			</div>
+			<% if !faculty.alma_maters.empty? %>
+				<div class="swappee small text alma_maters hidden">
+					<%= faculty.first_name.to_s + ' received ' %> 
+					<% faculty.alma_maters.new_to_old.each_with_index do |am, index| %>
+						<%= am.degree.indefinitize %>
+						from
+						<%= link_to(am.college, am.link, :target => '_blank').html_safe + sentencize(faculty.alma_maters.size, index) %>
+					<% end %>
+				</div>
+			<% end %>
 			<div class="swappee medium text email hidden">
 				<%= mail_to(faculty.email) %>
 			</div>

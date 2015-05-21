@@ -7,8 +7,8 @@ class Admin < ActiveRecord::Base
 	has_many :people, :through => :person_edits
 
 	has_secure_password
-
-	scope :sorted, lambda {order("admins.first_name ASC")}
+	validates :password, :presence =>true, :confirmation =>true
+  	validates_confirmation_of :password
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 	FORBIDDEN_EMAIL = ['admin','root']
@@ -18,6 +18,5 @@ class Admin < ActiveRecord::Base
 	validates_presence_of :email
 	validates_uniqueness_of :email
 	validates_format_of :email, :with => VALID_EMAIL_REGEX
-	validates_confirmation_of :email
 	
 end

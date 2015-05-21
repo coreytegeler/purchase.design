@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
 
   layout "access"
+  include AccessHelper
   before_action :confirm_logged_in
 
   def admin
@@ -16,7 +17,7 @@ class AdminsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Admin was not created!"
+      flash[:notice] = errors_for(@admin)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -25,11 +26,11 @@ class AdminsController < ApplicationController
   def update
     @admin = Admin.find(params[:id])
     if @admin.update_attributes(admin_params)
-      flash[:notice] = "Admin was updated! #{@admin.errors.full_messages}"
+      flash[:notice] = "Admin was updated!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Admin was not created!"
+      flash[:notice] = errors_for(@admin)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -49,7 +50,7 @@ class AdminsController < ApplicationController
   private 
 
     def admin_params
-      params.require(:admin).permit(:first_name, :last_name, :email, :password)
+      params.require(:admin).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 
 end

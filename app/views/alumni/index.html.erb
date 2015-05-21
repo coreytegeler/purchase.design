@@ -3,17 +3,17 @@
 		<div class="alumnus block">
 			<div class="swappee medium text name">
 				<div class="row">
-					<%= link_to alumnus.first_name, alumnus.url, :target => '_blank' %>
+					<%= link_to alumnus.first_name, alumnus.link, :target => '_blank' %>
 				</div>
 				<div class="row">
-					<%= link_to alumnus.last_name, alumnus.url, :target => '_blank' %>
+					<%= link_to alumnus.last_name, alumnus.link, :target => '_blank' %>
 				</div>
 			</div>
 			<div class="swappee medium text website hidden">
-				<%= link_to alumnus.url, alumnus.url, :target => '_blank' %>
+				<%= link_to alumnus.link, alumnus.link, :target => '_blank' %>
 			</div>
 			<div class="swappee image hidden">
-				<%= link_to image_tag(alumnus.image(:medium)), alumnus.url, :target => '_blank' %>
+				<%= link_to image_tag(alumnus.image(:medium)), alumnus.link, :target => '_blank' %>
 			</div>
 		</div>
 	<% end %>

@@ -1,5 +1,6 @@
 class AlumniController < ApplicationController
 
+  include AccessHelper
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -19,7 +20,7 @@ class AlumniController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Alumnus was not created!"
+      flash[:notice] = errors_for(@alumnus)
       p @alumnus.errors.full_messages
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
@@ -35,7 +36,7 @@ class AlumniController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Alumnus was not updated!"
+      flash[:notice] = errors_for(@alumnus)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
       @new_alumnus = Alumnus.new
@@ -60,7 +61,7 @@ class AlumniController < ApplicationController
   private 
 
     def alumnus_params
-      params.require(:alumnus).permit(:first_name, :last_name, :url, :position, :image, :id)
+      params.require(:alumnus).permit(:first_name, :last_name, :link, :position, :image, :id)
     end
 
 end

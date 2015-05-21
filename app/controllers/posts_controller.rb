@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  include AccessHelper
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -30,7 +31,7 @@ class PostsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Post was not created! #{@post.errors.full_messages}"
+      flash[:notice] = errors_for(@post)
       p @post.errors.full_messages
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Post was not updated! #{@post.errors.full_messages}"
+      flash[:notice] = errors_for(@post)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end

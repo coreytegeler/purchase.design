@@ -8,11 +8,11 @@
 
 <div class="row file">
 	<% if pattern.persisted? %>
-		<% @upload_img = pattern.tile.url(:original) %>
+		<% @upload_img = pattern.image.url(:original) %>
 	<% end %>
 
 	<div class="drop image" style="background-image:url(<%= @upload_img %>)">
-		<%= f.file_field :tile, :data => {:position => pattern.position} %>
+		<%= f.file_field :image, :data => {:position => pattern.position} %>
 	</div>
 </div>
 

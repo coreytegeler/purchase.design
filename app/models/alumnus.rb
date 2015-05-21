@@ -23,7 +23,7 @@ class Alumnus < ActiveRecord::Base
 		
   	validates_attachment_content_type :image, 
   content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
-	validates_presence_of :first_name, :last_name, :url
+	validates_presence_of :first_name, :last_name, :link, :image
 
 	acts_as_list :order => :position
 
@@ -36,9 +36,11 @@ class Alumnus < ActiveRecord::Base
 	end
 
 	def format_url
-		unless self.url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]
-    		self.url = "http://#{self.url}"
-  		end
+		if self.link.nil?
+			unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
+	    		self.link = "http://#{self.link}"
+	  		end
+	  	end
 	end
 
 end

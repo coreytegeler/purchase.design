@@ -4,8 +4,6 @@ class Gradient < ActiveRecord::Base
 
 	acts_as_list scope: [:position]
 
-	before_validation :create_name
-
 	has_attached_file :file
 	validates_attachment_file_name :file, matches: [/svg\Z/]
 

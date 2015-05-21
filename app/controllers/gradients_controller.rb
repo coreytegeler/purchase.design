@@ -1,5 +1,6 @@
 class GradientsController < ApplicationController
 
+  include AccessHelper
   layout 'access'
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -15,7 +16,7 @@ class GradientsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Gradient was not created!"
+      flash[:notice] = errors_for(@gradient)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -28,7 +29,7 @@ class GradientsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Gradient was not updated!"
+      flash[:notice] = errors_for(@gradient)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end

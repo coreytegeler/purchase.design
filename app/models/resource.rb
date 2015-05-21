@@ -31,9 +31,11 @@ class Resource < ActiveRecord::Base
 	private
 
 	def format_url
-		unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
-    		self.link = "http://#{self.link}"
-  		end
+		if self.link.nil?
+			unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
+	    		self.link = "http://#{self.link}"
+	  		end
+	  	end
 	end
 
 end

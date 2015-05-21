@@ -1,5 +1,6 @@
 class PatternsController < ApplicationController
 
+  include AccessHelper
   layout 'access'
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -15,7 +16,7 @@ class PatternsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Pattern was not created!"
+      flash[:notice] = errors_for(@pattern)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -28,7 +29,7 @@ class PatternsController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Pattern was not updated!"
+      flash[:notice] = errors_for(@pattern)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -51,7 +52,7 @@ class PatternsController < ApplicationController
   private
 
     def pattern_params
-      params.require(:pattern).permit(:tile, :position)
+      params.require(:pattern).permit(:image, :position)
     end
 
 end

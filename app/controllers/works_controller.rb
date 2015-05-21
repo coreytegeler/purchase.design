@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
 
+  include AccessHelper
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -20,7 +21,7 @@ class WorksController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Work was not uploaded!"
+      flash[:notice] = errors_for(@work)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -33,7 +34,7 @@ class WorksController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Work was not updated!"
+      flash[:notice] = errors_for(@work)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end

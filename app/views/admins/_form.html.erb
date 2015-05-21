@@ -4,20 +4,17 @@
 
 <div class="row name">
 	<div class="half first_name">
-		<%= f.text_field(:first_name, :placeholder => "First name") %>
+		<%= f.text_field(:first_name, :placeholder => "First name", :disabled => disabled) %>
 	</div>
 	<div class="half last_name">
-		<%= f.text_field(:last_name, :placeholder => "Last name") %>
+		<%= f.text_field(:last_name, :placeholder => "Last name", :disabled => disabled) %>
 	</div>
 </div>
 <div class="row email">
-	<%= f.text_field(:email, :placeholder => "Email") %>
+	<%= f.text_field(:email, :placeholder => "Email", :disabled => disabled) %>
 </div>
 
-<% if access %>
-	<div class="row confirm_email">
-		<%= f.text_field(:email_confirmation, :placeholder => "Confirm email") %>
-	</div>
+<% if !disabled %>
 	<div class="row password">
 		<%= f.password_field(:password, :placeholder => "Password") %>
 	</div>

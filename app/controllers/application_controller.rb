@@ -78,7 +78,7 @@ class ApplicationController < ActionController::Base
         palettes = Palette.first_to_last
         if !params[:palette].nil?
           palette = palettes.where(:id => params[:palette]).first
-          flash[:notice] = "This is #{palette.name}, do you want to try <a href='/palettes/admin'>another one</a>?"
+          flash[:notice] = "This is Palette ##{palette.position}, do you want to try <a href='/palettes/admin'>another one</a>?"
           flash[:type] = 'neutral'
           session[:palette] = [palette.primary_color, palette.secondary_color, palette.position]
         elsif session[:palette].nil?
@@ -196,7 +196,7 @@ class ApplicationController < ActionController::Base
         current_pattern_pos = session[:pattern]
 
         if session[:no_pattern] == false
-          @pattern = patterns.where(:position => current_pattern_pos).first.tile
+          @pattern = patterns.where(:position => current_pattern_pos).first.image
           @pattern_state = 'on'
         else
           @pattern = nil
@@ -207,7 +207,7 @@ class ApplicationController < ActionController::Base
           find_next_pattern
         end
 
-        @next_pattern = patterns.where(:position => session[:next_pattern]).first.tile
+        @next_pattern = patterns.where(:position => session[:next_pattern]).first.image
       end
 
       def find_next_pattern

@@ -1,5 +1,6 @@
 class FacultiesController < ApplicationController
 
+  include AccessHelper
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -28,7 +29,7 @@ class FacultiesController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Faculty was not created! #{@faculty.errors.full_messages}"
+      flash[:notice] = errors_for(@faculty)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end
@@ -45,7 +46,7 @@ class FacultiesController < ApplicationController
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
-      flash[:notice] = "Faculty was not created! #{@faculty.errors.full_messages}"
+      flash[:notice] = errors_for(@faculty)
       flash[:type] = 'bad'
       redirect_to(:action => 'admin')
     end

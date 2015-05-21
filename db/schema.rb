@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518204648) do
+ActiveRecord::Schema.define(version: 20150521135601) do
 
   create_table "abouts", force: :cascade do |t|
     t.text "text", limit: 65535
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150518204648) do
     t.boolean  "visible",            limit: 1,   default: false
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
-    t.string   "url",                limit: 255
+    t.string   "link",               limit: 255
     t.string   "first_name",         limit: 255
     t.string   "last_name",          limit: 255
     t.string   "image_file_name",    limit: 255
@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(version: 20150518204648) do
   end
 
   create_table "patterns", force: :cascade do |t|
-    t.string   "tile_file_name",    limit: 255
-    t.string   "tile_content_type", limit: 255
-    t.integer  "tile_file_size",    limit: 4
-    t.datetime "tile_updated_at"
-    t.integer  "position",          limit: 4
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.integer  "position",           limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -139,7 +139,6 @@ ActiveRecord::Schema.define(version: 20150518204648) do
 
   create_table "works", force: :cascade do |t|
     t.string   "designer",           limit: 255
-    t.date     "year"
     t.integer  "position",           limit: 4
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
