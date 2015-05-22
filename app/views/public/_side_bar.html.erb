@@ -1,8 +1,5 @@
-<header>
-	<div id="logo" class="secondary_fill">
-		<%= inline_svg(@logo, true) %>
-	</div>
-
+<header id="logo_wrapper">
+	<%= render 'public/logo', :logo => @logo %>
 </header>
 <div id="tools" <%= color('border', @s) %>>
 	<div id="buttons">
@@ -29,27 +26,20 @@
 			</div>
 
 			<div class="button <%= @pattern_state %>">
-				<div class="method"  id="next_pattern" style="background-image:url(<%= @next_pattern %>)"></div>
-				<%= render 'public/tooltip', :text => "Select pattern" %>
+				<div class="method"  id="next_pattern" style="background-image:url(<%= @next_pattern %>)">
+				</div>
 				<div class="clear method secondary_fill" id="clear_pattern">
 					<%= inline_svg('clear', false) %>
 				</div>
 			</div>
 			
-			<div class="button">
-				<div class="method" id="next_logo">
-					<div class="swatch next secondary_fill">
-						<%= inline_svg(@next_logo, true) %>
-					</div>
-				</div>
-				<%= render 'public/tooltip', :text => "Next logo please!" %>
-			</div>
+			<%= render 'public/buttons/logo', :next_logo => @next_logo %>
+
 			<div class="button">
 				<div class="method" id="next_palette">
 					<div class="swatch primary" <%= color('bg', @next_p) %>></div>
 					<div class="swatch secondary" <%= color('border', @next_s) %>></div>
 				</div>
-				<%= render 'public/tooltip', :text => "Gimme these colors!" %>
 			</div>
 		</div>
 	</div>

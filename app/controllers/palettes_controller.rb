@@ -14,7 +14,7 @@ class PalettesController < ApplicationController
   def create
     @palette = Palette.new(palette_params)
     if @palette.save
-      flash[:notice] = "Palette was created!"
+      flash[:notice] = "Palette was created! <a href='/?palette=#{@palette.id}'>Check it out!</a>"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
@@ -27,7 +27,7 @@ class PalettesController < ApplicationController
   def update
     @palette = Palette.find(params[:id])
     if @palette.update_attributes(palette_params)
-      flash[:notice] = "Palette was updated!"
+      flash[:notice] = "Palette was updated! <a href='/?palette=#{@palette.id}'>Check it out!</a>"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else

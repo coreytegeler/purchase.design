@@ -3,8 +3,13 @@
 <% end %>
 
 <div class="row position">
-	<%= f.select :position, 1..@logos.size, {:selected => logo.position}, {:class => 'position'} %>
+	<% if logo.persisted? %>
+		<%= f.select :position, 1..@logos.size, {:selected => logo.position}, {:class => 'position'} %>
+	<% else %>
+		<%= f.select :position, 1..@logos.size, {:include_blank => "New"}, {:class => 'position'} %>
+	<% end %>
 </div>
+
 
 <div class="row file">
 		<% if logo.file.exists? %>
@@ -19,6 +24,7 @@
 
 <div class="actions">
 	<% if logo.persisted? %>
+		<%= link_to("Preview", {:controller => 'public', :action => 'index', :logo => logo.id}, :class => 'action preview') %>
 		<%= link_to('Update', "#", :onclick => "$('#" + logo.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'logos', :action => 'delete', :id => logo.id}, :remote => true, :class => 'action delete') %>
 	<% else %>

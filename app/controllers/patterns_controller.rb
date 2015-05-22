@@ -6,7 +6,7 @@ class PatternsController < ApplicationController
 
   def admin
     @patterns = Pattern.first_to_last
-    @new_pattern = Pattern.new(:position => 1)
+    @new_pattern = Pattern.new(:position => 0)
   end
 
   def create

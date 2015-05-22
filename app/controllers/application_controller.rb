@@ -78,7 +78,7 @@ class ApplicationController < ActionController::Base
         palettes = Palette.first_to_last
         if !params[:palette].nil?
           palette = palettes.where(:id => params[:palette]).first
-          flash[:notice] = "This is Palette ##{palette.position}, do you want to try <a href='/palettes/admin'>another one</a>?"
+          flash[:notice] = "This is palette ##{palette.position}. <a href='/backend/palettes'>Go back?</a>"
           flash[:type] = 'neutral'
           session[:palette] = [palette.primary_color, palette.secondary_color, palette.position]
         elsif session[:palette].nil?
@@ -110,13 +110,15 @@ class ApplicationController < ActionController::Base
         redirect_to(:controller => 'public', :action => 'index')
       end
 
-      def back_link(name)
-        "This is #{name}, do you want to try <a href='/palettes/admin'>another one</a>?"
-      end
-
       def select_logo
+
         logos = Logo.first_to_last
-        if session[:logo].nil? || logos.where(:position => session[:logo]).first.nil?
+        if !params[:logo].nil?
+          logo = logos.where(:id => params[:logo]).first
+          flash[:notice] = "This is logo ##{logo.position}. <a href='/backend/logos'>Go back?</a>"
+          flash[:type] = 'neutral'
+          session[:logo] = [logo.position]
+        elsif session[:logo].nil? || logos.where(:position => session[:logo]).first.nil?
           random = rand(1..logos.length)
           logo = logos.where(:position => random).first
           session[:logo] = logo.position
@@ -135,25 +137,28 @@ class ApplicationController < ActionController::Base
       end
 
       def find_next_logo
-        current_pos = session[:logo]
-        next_pos = next_check(current_pos, Logo.all)
-        session[:next_logo] = next_pos
+        current_logo_pos = session[:logo]
+        next_logo_pos = next_check(current_logo_pos, Logo.all)
+        session[:next_logo] = next_logo_pos
 
-        # @new_logo = Logo.where(:position => current_pos).first.file
-        # @new_logo_svg = inline_svg(@new_logo, true).to_s.html_safe
-        # @next_logo = Logo.where(:position => current_pos).first.file
-        # @next_logo_svg = inline_svg(@next_logo, true).to_s.html_safe
-
-        # respond_to do |format|
-        #   format.js
-        # end
+        new_logo = Logo.where(:position => current_logo_pos).first.file
+        next_logo = Logo.where(:position => next_logo_pos).first.file
+        respond_to do |format|
+          format.js { render partial: 'next_logo', :locals => {:new_logo => new_logo, :next_logo => next_logo} }
+        end
         
-        redirect_to(:controller => 'public', :action => 'index')
       end
 
       def select_gradient
         gradients = Gradient.first_to_last
-        if session[:gradient].nil? || gradients.where(:position => session[:gradient]).first.nil?
+        if !params[:gradient].nil?
+          gradient = gradients.where(:id => params[:gradient]).first
+          flash[:notice] = "This is gradient ##{gradient.position}. <a href='/backend/gradients'>Go back?</a>"
+          flash[:type] = 'neutral'
+          session[:gradient] = gradient.position
+          session[:no_gradient] = false
+          find_next_gradient
+        elsif session[:gradient].nil? || gradients.where(:position => session[:gradient]).first.nil?
           random = rand(1..gradients.length)
           gradient = gradients.where(:position => random).first
           session[:gradient] = gradient.position
@@ -187,7 +192,14 @@ class ApplicationController < ActionController::Base
 
       def select_pattern
         patterns = Pattern.first_to_last
-        if session[:pattern].nil? || patterns.where(:position => session[:pattern]).first.nil?
+        if !params[:pattern].nil?
+          pattern = patterns.where(:id => params[:pattern]).first
+          flash[:notice] = "This is pattern ##{pattern.position}. <a href='/backend/patterns'>Go back?</a>"
+          flash[:type] = 'neutral'
+          session[:pattern] = pattern.position
+          session[:no_pattern] = false
+          find_next_pattern
+        elsif session[:pattern].nil? || patterns.where(:position => session[:pattern]).first.nil?
           random = rand(1..patterns.length)
           pattern = patterns.where(:position => random).first
           session[:pattern] = pattern.position

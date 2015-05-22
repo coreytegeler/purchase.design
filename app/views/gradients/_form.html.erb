@@ -3,7 +3,11 @@
 <% end %>
 
 <div class="row position">
-	<%= f.select :position, 1..@gradients.size, {:selected => gradient.position}, {:class => 'position'} %>
+	<% if gradient.persisted? %>
+		<%= f.select :position, 1..@gradients.size, {:selected => gradient.position}, {:class => 'position'} %>
+	<% else %>
+		<%= f.select :position, 1..@gradients.size, {:include_blank => "New"}, {:class => 'position'} %>
+	<% end %>
 </div>
 
 <div class="row file">
@@ -18,6 +22,7 @@
 
 <div class="actions">
 	<% if gradient.persisted? %>
+		<%= link_to("Preview", {:controller => 'public', :action => 'index', :gradient => gradient.id}, :class => 'action preview') %>
 		<%= link_to('Update', "#", :onclick => "$('#" + gradient.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'gradients', :action => 'delete', :id => gradient.id}, :remote => true, :class => 'action delete') %>
 	<% else %>

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'backend/gradients', :to => 'gradients#admin'
   get 'backend/logos', :to => 'logos#admin'
   get 'backend/palettes', :to => 'palettes#admin'
+  get 'backend/patterns', :to => 'patterns#admin'
   get 'backend/posts', :to => 'posts#admin'
   get 'backend/resources', :to => 'resources#admin'
   get 'backend/works', :to => 'works#admin'

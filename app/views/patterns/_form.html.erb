@@ -3,7 +3,11 @@
 <% end %>
 
 <div class="row position">
-	<%= f.select :position, 1..@patterns.size, {:selected => pattern.position}, {:class => 'position'} %>
+	<% if pattern.persisted? %>
+		<%= f.select :position, 1..@patterns.size, {:selected => pattern.position}, {:class => 'position'} %>
+	<% else %>
+		<%= f.select :position, 1..@patterns.size, {:include_blank => "New"}, {:class => 'position'} %>
+	<% end %>
 </div>
 
 <div class="row file">
@@ -18,6 +22,7 @@
 
 <div class="actions">
 	<% if pattern.persisted? %>
+		<%= link_to("Preview", {:controller => 'public', :action => 'index', :pattern => pattern.id}, :class => 'action preview') %>
 		<%= link_to('Update', "#", :onclick => "$('#" + pattern.position.to_s + "').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'patterns', :action => 'delete', :id => pattern.id}, :remote => true, :class => 'action delete') %>
 	<% else %>

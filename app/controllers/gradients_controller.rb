@@ -6,7 +6,7 @@ class GradientsController < ApplicationController
 
   def admin
     @gradients = Gradient.first_to_last
-    @new_gradient = Gradient.new(:position => 1)
+    @new_gradient = Gradient.new(:position => 0)
   end
 
   def create

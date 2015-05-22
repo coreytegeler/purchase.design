@@ -87,7 +87,7 @@ function setUpSide() {
 			type: "POST",
 			url: method,
 			success: function(result) {
-				window.location.reload();	
+				// window.location.reload();	
 			},
 			error: function(xhr, status, error) {
 			}
