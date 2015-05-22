@@ -14,29 +14,29 @@
 					<%= render 'resources/tools' %>
 				<% end %>
 			</div>
-
-			<div class="button <%= @gradient_state %>">
-				<div class="method" id="next_gradient"  <%= color('bg', @p) %>>
-					<%= inline_svg(@next_gradient, true) %>
+			
+			<div class="button" id="next_gradient">
+				<div class="method next" data-method="next_gradient" <%= color('bg', @p) %>>
+					<%= render 'public/buttons/gradient', :next_gradient => @next_gradient %>
 				</div>
-				<%= render 'public/tooltip', :text => "Select gradient" %>
-				<div class="clear method secondary_fill" id="clear_gradient">
+				<div class="clear method secondary_fill" data-method="clear_gradient">
 					<%= inline_svg('clear', false) %>
 				</div>
 			</div>
 
-			<div class="button <%= @pattern_state %>">
-				<div class="method"  id="next_pattern" style="background-image:url(<%= @next_pattern %>)">
+			<div class="button" id="next_pattern">
+				<div class="method next" data-method="next_pattern"  <%= color('bg', @p) %>>
+					<%= render 'public/buttons/pattern', :next_pattern => @next_pattern %>
 				</div>
-				<div class="clear method secondary_fill" id="clear_pattern">
+				<div class="clear method secondary_fill" data-method="clear_pattern">
 					<%= inline_svg('clear', false) %>
 				</div>
 			</div>
 			
 			<%= render 'public/buttons/logo', :next_logo => @next_logo %>
 
-			<div class="button">
-				<div class="method" id="next_palette">
+			<div class="button" id="next_palette">
+				<div class="method">
 					<div class="swatch primary" <%= color('bg', @next_p) %>></div>
 					<div class="swatch secondary" <%= color('border', @next_s) %>></div>
 				</div>

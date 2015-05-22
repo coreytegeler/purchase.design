@@ -82,7 +82,7 @@ function size() {
 
 function setUpSide() {
 	$('.method').click(function(){
-		var method = $(this).attr('id');
+		var method = $(this).attr('data-method');
 		$.ajax({
 			type: "POST",
 			url: method,

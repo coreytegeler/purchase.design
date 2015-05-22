@@ -8,14 +8,22 @@ main {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	display: none;
+}
+.gradient_on #gradient, .pattern_on #pattern {
+	display: block;
+}
+#gradient .background, #pattern .background {
 	background-position: center;
 	background-attachment: fixed;
+	height: 100%;
+	width: 100%;
 }
-#gradient {
+#gradient .background {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-#pattern {
+#pattern .background {
 	background-repeat: repeat;
 }
 /***********************/
@@ -161,21 +169,22 @@ aside#side_bar #tools #buttons .button .clear svg {
 	display: table;
 	vertical-align: bottom;
 }
-aside#side_bar #tools #buttons .button.on .clear {
+.gradient_on aside#side_bar #tools #buttons .button#next_gradient .clear,
+.pattern_on aside#side_bar #tools #buttons .button#next_pattern .clear {
 	display: block;
 }
-aside#side_bar #tools #buttons .button .method#next_palette .swatch {
+aside#side_bar #tools #buttons .button#next_palette .method .swatch {
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4);
 	position: absolute;
 }
-aside#side_bar #tools #buttons .button .method#next_palette .swatch.primary {
+aside#side_bar #tools #buttons .button#next_palette .method .swatch.primary {
 	bottom: 0;
 	left: 0;
 	z-index: 1;
 	height: 30px;
 	width: 30px;
 }
-aside#side_bar #tools #buttons .button .method#next_palette .swatch.secondary {
+aside#side_bar #tools #buttons .button#next_palette .method .swatch.secondary {
 	top: 0px;
 	right: 0px;
 	z-index: 2;
@@ -184,33 +193,24 @@ aside#side_bar #tools #buttons .button .method#next_palette .swatch.secondary {
 	border: 6px solid;
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4), inset 0px 0px 2px 0px rgba(0,0,0,0.4);
 }
-aside#side_bar #tools #buttons .button .method#next_logo .swatch svg {
+aside#side_bar #tools #buttons .button#next_logo .method .swatch svg {
 	width: 100%;
 	height: 100%;
 }
-aside#side_bar #tools #buttons .button .method#next_logo .swap_arrow {
-	display: table;
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	z-index: 3;
-	display: none;
-}
-aside#side_bar #tools #buttons .button .method#next_logo .swap_arrow svg {
-	width: 20px;
-	height: 20px;
-}
-aside#side_bar #tools #buttons .button .method#next_gradient {
+aside#side_bar #tools #buttons .button#next_gradient .method,
+aside#side_bar #tools #buttons .button#next_pattern .method {
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4);
 }
-aside#side_bar #tools #buttons .button .method#next_gradient svg {
+aside#side_bar #tools #buttons .button #next_gradient .method svg {
 	width: 100%;
 	height: 100%;
 }
-aside#side_bar #tools #buttons .button .method#next_pattern {
+aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	width: 100%;
+	height: 100%;
 }
 /*****************/
 /*CONTENT SECTION*/

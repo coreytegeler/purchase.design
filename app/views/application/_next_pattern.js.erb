@@ -1,0 +1,3 @@
+$('#pattern').html("<%= escape_javascript render(:partial => 'public/pattern_bg', :locals => { :pattern => new_pattern }) %>");
+$('#next_pattern .method.next').html("<%= escape_javascript render(:partial => 'public/buttons/pattern', :locals => { :next_pattern => next_pattern }) %>");
+$('body').addClass('pattern_on');

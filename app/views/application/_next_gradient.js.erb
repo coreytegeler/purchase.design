@@ -1,0 +1,3 @@
+$('#gradient').html("<%= escape_javascript render(:partial => 'public/gradient_bg', :locals => { :gradient => new_gradient }) %>");
+$('#next_gradient .method.next').html("<%= escape_javascript render(:partial => 'public/buttons/gradient', :locals => { :next_gradient => next_gradient }) %>");
+$('body').addClass('gradient_on');

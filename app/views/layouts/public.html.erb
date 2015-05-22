@@ -14,9 +14,13 @@
 	<meta name="google" content="notranslate">
 	<meta http-equiv="Content-Language" content="en">
 </head>
-<body class="public" id="<%= params[:controller].parameterize %>_controller" <%= color('bg', @p, 'text', @s, 'border', @s) %>>
-	<div id="gradient" style="background-image: url(<%= @gradient %>)"></div>
-	<div id="pattern" style="background-image: url(<%= @pattern %>)"></div>
+<body class="public <%= @gradient_state %> <%= @pattern_state %>" id="<%= params[:controller].parameterize %>_controller" <%= color('bg', @p, 'text', @s, 'border', @s) %>>
+	<div id="gradient">
+		<%= render 'public/gradient_bg', :gradient => @gradient %>
+	</div>
+	<div id="pattern">
+		<%= render 'public/pattern_bg', :pattern => @pattern %>
+	</div>
 	<% if !flash[:notice].blank? %>
 		<div class="notice <%= flash[:type] %>">
 			<%= flash[:notice].html_safe %>

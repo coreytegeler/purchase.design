@@ -64,12 +64,16 @@ class ApplicationController < ActionController::Base
 
   def clear_gradient
     session[:no_gradient] = true
-    redirect_to(:controller => 'public', :action => 'index')
+    respond_to do |format|
+      format.js { render partial: 'clear_gradient' }
+    end
   end
 
   def clear_pattern
     session[:no_pattern] = true
-    redirect_to(:controller => 'public', :action => 'index')
+    respond_to do |format|
+      format.js { render partial: 'clear_pattern' }
+    end
   end
 
   private
@@ -168,10 +172,10 @@ class ApplicationController < ActionController::Base
 
         if session[:no_gradient] == false
           @gradient = gradients.where(:position => current_gradient_pos).first.file
-          @gradient_state = 'on'
+          @gradient_state = 'gradient_on'
         else
           @gradient = nil
-          @gradient_state = 'off'
+          @gradient_state = ''
         end
 
         if session[:next_gradient].nil?
@@ -184,10 +188,14 @@ class ApplicationController < ActionController::Base
 
       def find_next_gradient
         gradients = Gradient.all
-        current_pos = session[:gradient]
-        next_pos = next_check(current_pos, gradients)
-        session[:next_gradient] = next_pos
-        redirect_to(:controller => 'public', :action => 'index')
+        current_gradient_pos = session[:gradient]
+        next_gradient_pos = next_check(current_gradient_pos, gradients)
+        session[:next_gradient] = next_gradient_pos
+        new_gradient = gradients.where(:position => current_gradient_pos).first.file
+        next_gradient = gradients.where(:position => next_gradient_pos).first.file
+        respond_to do |format|
+          format.js { render partial: 'next_gradient', :locals => {:new_gradient => new_gradient, :next_gradient => next_gradient} }
+        end
       end
 
       def select_pattern
@@ -209,10 +217,10 @@ class ApplicationController < ActionController::Base
 
         if session[:no_pattern] == false
           @pattern = patterns.where(:position => current_pattern_pos).first.tile
-          @pattern_state = 'on'
+          @pattern_state = 'pattern_on'
         else
           @pattern = nil
-          @pattern_state = 'off'
+          @pattern_state = ''
         end
 
         if session[:next_pattern].nil?
@@ -224,10 +232,14 @@ class ApplicationController < ActionController::Base
 
       def find_next_pattern
         patterns = Pattern.all
-        current_pos = session[:pattern]
-        next_pos = next_check(current_pos, patterns)
-        session[:next_pattern] = next_pos
-        redirect_to(:controller => 'public', :action => 'index')
+        current_pattern_pos = session[:pattern]
+        next_pattern_pos = next_check(current_pattern_pos, patterns)
+        session[:next_pattern] = next_pattern_pos
+        new_pattern = patterns.where(:position => current_pattern_pos).first.tile
+        next_pattern = patterns.where(:position => next_pattern_pos).first.tile
+        respond_to do |format|
+          format.js { render partial: 'next_pattern', :locals => {:new_pattern => new_pattern, :next_pattern => next_pattern} }
+        end
       end
 
       def next_check(i, q)
