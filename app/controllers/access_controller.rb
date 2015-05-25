@@ -23,6 +23,10 @@ class AccessController < ApplicationController
   	end
   end
 
+  def index
+    @admin = Admin.where(:id => session[:admin_id]).first
+  end
+
   def login
     @admin = Admin.where(:id => session[:admin_id]).first
   end

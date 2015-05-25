@@ -1,0 +1,21 @@
+<section id="login">
+	<div class="horz_center">
+		<div class="vert_center">
+			<% if admin? %>
+				<h1><%= @admin.first_name %>, you're already logged in.</h1>
+			<% else %>
+				<h1>Who are you?!</h1>
+
+				<%= form_tag(:action => 'attempt_login') do %>
+
+					<%= text_field_tag(:email, nil, :placeholder => "Email") %>
+
+					<%= password_field_tag(:password, nil, :placeholder => "password") %>
+
+					<%= submit_tag("Login") %>
+
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</section>

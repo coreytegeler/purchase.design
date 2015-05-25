@@ -1,7 +1,11 @@
 #aboutContainer .block {
 	width: 100%;
 	max-width: 800px;
-	margin: auto;
+	margin-right: auto;
+	margin-left: auto;
 	display: table;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+#aboutContainer .block textarea {
 	border-bottom: 1px solid rgba(255,255,255,0.3);
 }

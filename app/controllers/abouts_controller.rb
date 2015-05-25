@@ -1,7 +1,7 @@
 class AboutsController < ApplicationController
 
   layout "access"
-  before_action :confirm_logged_in
+  before_action :confirm_logged_in, :except => [:index, :admin]
 
   def admin
     if About.count < 1
