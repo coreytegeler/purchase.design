@@ -32,16 +32,16 @@
 	display: table;
 }
 .admin .block form .images .drop  {
-	width: 215px !important;
-	height: 215px !important;
+	width: 220px !important;
+	height: 220px !important;
 	margin: 10px;
 	position: relative;
+	float: left;
 }
 .admin .block form .images .drop .file  {
 	width: 100% !important;
 	height: 100% !important;
 }
-
 .admin .block form .images .drop .remove svg {
 	width: 100%;
 	height: 100%;
