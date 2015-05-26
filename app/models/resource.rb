@@ -1,14 +1,6 @@
 class Resource < ActiveRecord::Base
 
-	scope :visible, lambda {where(:visible => true)}
-	scope :invisible, lambda {where(:visible => false)}
-	scope :sorted, lambda {order("resources.position ASC")}
-	scope :new_to_old, lambda {order("resources.created_at DESC")}
-	scope :old_to_new, lambda {order("resources.created_at ASC")}
 	scope :a_to_z, lambda {order("resources.name ASC")}
-	scope :search, lambda {|query|
-		where(["name LIKE ?", "%#{query}%"])
-	}
 
 	acts_as_list scope: [:position]
 

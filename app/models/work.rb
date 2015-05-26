@@ -1,9 +1,7 @@
 class Work < ActiveRecord::Base
+	
 	scope :first_to_last, lambda {order("works.position ASC")}
 	scope :last_to_first, lambda {order("works.position DESC")}
-	scope :search, lambda {|query|
-		where(["name LIKE ?", "%#{query}%"])
-	}
 
 	has_attached_file :image,
 	:styles => { 

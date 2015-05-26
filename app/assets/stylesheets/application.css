@@ -86,7 +86,7 @@ li {
 	text-decoration: none;
 	font-size: 17px;
 	font-weight: 600;
-	padding-bottom: 3px;
+	padding-bottom: 1px;
 }
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a.active,
 #top_bar nav #nav_wrapper ul#nav_links li.nav_link a:hover {

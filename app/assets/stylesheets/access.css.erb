@@ -157,8 +157,11 @@ body {
   	height: 100%;
 	position: relative;
 	background-position: center;
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
+}
+.block:first-child form:not(.can_save) .drop {
+	background-size: 90% 90%;
 }
 .block form .drop input[type=file] {
 	padding: 0;

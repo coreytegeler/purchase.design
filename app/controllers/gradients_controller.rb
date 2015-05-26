@@ -11,6 +11,7 @@ class GradientsController < ApplicationController
 
   def create
     @gradient = Gradient.new(gradient_params)
+    @gradient.position = 1
     if @gradient.save
       flash[:notice] = "Gradient was created!"
       flash[:type] = 'good'

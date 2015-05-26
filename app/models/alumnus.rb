@@ -1,14 +1,6 @@
 class Alumnus < ActiveRecord::Base
 
-	scope :visible, lambda {where(:visible => true)}
-	scope :invisible, lambda {where(:visible => false)}
 	scope :first_to_last, lambda {order("alumni.position ASC")}
-	scope :last_to_first, lambda {order("alumni.position DESC")}
-	scope :new_to_old, lambda {order("alumni.created_at DESC")}
-	scope :old_to_new, lambda {order("alumni.created_at ASC")}
-	scope :search, lambda {|query|
-		where(["name LIKE ?", "%#{query}%"])
-	}
 
 	acts_as_list scope: [:position]
 

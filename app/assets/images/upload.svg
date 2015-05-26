@@ -3,33 +3,36 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-<rect x="10.563" y="90.817" opacity="0.3" fill="#FFFFFF" width="6.755" height="20.574"/>
-<rect x="10.563" y="139.713" opacity="0.3" fill="#FFFFFF" width="6.755" height="20.574"/>
-<rect x="10.563" y="187.546" opacity="0.3" fill="#FFFFFF" width="6.755" height="21.638"/>
-<rect x="188.078" y="11.094" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.756"/>
-<rect x="139.182" y="11.094" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.756"/>
-<rect x="90.285" y="11.094" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.756"/>
-<rect x="282.682" y="188.609" opacity="0.3" fill="#FFFFFF" width="6.756" height="20.574"/>
-<rect x="282.682" y="139.713" opacity="0.3" fill="#FFFFFF" width="6.756" height="20.574"/>
-<g opacity="0.3">
-	<rect x="282.682" y="90.817" fill="#FFFFFF" width="6.756" height="21.637"/>
+<g>
+	<rect y="86.576" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="22.048"/>
+	<rect y="138.976" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="22.049"/>
+	<rect y="190.236" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="23.188"/>
+	<rect x="190.807" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="23.188" height="7.24"/>
+	<rect x="138.407" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="23.187" height="7.24"/>
+	<rect x="86.005" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="23.188" height="7.24"/>
+	<rect x="292.761" y="191.376" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="22.05"/>
+	<rect x="292.761" y="138.976" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="22.049"/>
+	<g opacity="0.3">
+		<rect x="292.761" y="86.576" fill="#FFFFFF" width="7.239" height="23.188"/>
+	</g>
+	<rect x="86.005" y="292.762" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="23.188" height="7.238"/>
+	<rect x="138.407" y="292.762" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="23.187" height="7.238"/>
+	<rect x="190.807" y="292.762" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="23.188" height="7.238"/>
+	<rect y="42.148" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="16.353"/>
+	<polygon opacity="0.3" fill="#FFFFFF" enable-background="new    " points="0,16.354 0,0 16.352,0 16.352,7.24 7.239,7.24 
+		7.239,16.354 	"/>
+	<rect x="40.44" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="16.353" height="7.24"/>
+	<rect x="242.068" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="16.353" height="7.24"/>
+	<polygon opacity="0.3" fill="#FFFFFF" enable-background="new    " points="292.761,16.354 292.761,7.24 283.646,7.24 283.646,0 
+		300,0 300,16.354 	"/>
+	<rect x="292.761" y="41.009" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="16.353"/>
+	<rect x="292.76" y="241.499" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.24" height="16.353"/>
+	<polygon opacity="0.3" fill="#FFFFFF" enable-background="new    " points="283.646,300 283.646,292.762 292.76,292.762 
+		292.76,283.646 300,283.646 300,300 	"/>
+	<rect x="243.208" y="292.762" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="16.354" height="7.238"/>
+	<rect x="41.579" y="292.76" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="16.353" height="7.24"/>
+	<polygon opacity="0.3" fill="#FFFFFF" enable-background="new    " points="0,300 0,283.646 7.239,283.646 7.239,292.76 
+		16.353,292.76 16.353,300 	"/>
+	<rect y="242.637" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="7.239" height="16.354"/>
 </g>
-<rect x="90.285" y="282.15" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.755"/>
-<rect x="139.182" y="282.15" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.755"/>
-<rect x="188.078" y="282.15" opacity="0.3" fill="#FFFFFF" width="21.637" height="6.755"/>
-<rect x="9.5" y="49.361" opacity="0.3" fill="#FFFFFF" width="6.755" height="15.259"/>
-<polygon opacity="0.3" fill="#FFFFFF" points="9.5,26.354 9.5,11.094 24.759,11.094 24.759,17.85 16.255,17.85 16.255,26.354 "/>
-<rect x="47.767" y="11.094" opacity="0.3" fill="#FFFFFF" width="15.259" height="6.756"/>
-<rect x="235.911" y="10.031" opacity="0.3" fill="#FFFFFF" width="15.259" height="6.756"/>
-<polygon opacity="0.3" fill="#FFFFFF" points="282.682,25.291 282.682,16.787 274.178,16.787 274.178,10.031 289.438,10.031 
-	289.438,25.291 "/>
-<rect x="282.682" y="48.298" opacity="0.3" fill="#FFFFFF" width="6.756" height="15.259"/>
-<rect x="283.744" y="235.38" opacity="0.3" fill="#FFFFFF" width="6.756" height="15.259"/>
-<polygon opacity="0.3" fill="#FFFFFF" points="275.241,288.905 275.241,282.15 283.744,282.15 283.744,273.646 290.5,273.646 
-	290.5,288.905 "/>
-<rect x="236.974" y="282.15" opacity="0.3" fill="#FFFFFF" width="15.26" height="6.755"/>
-<rect x="48.83" y="283.213" opacity="0.3" fill="#FFFFFF" width="15.259" height="6.756"/>
-<polygon opacity="0.3" fill="#FFFFFF" points="10.563,289.969 10.563,274.709 17.318,274.709 17.318,283.213 25.822,283.213 
-	25.822,289.969 "/>
-<rect x="10.563" y="236.442" opacity="0.3" fill="#FFFFFF" width="6.755" height="15.26"/>
 </svg>

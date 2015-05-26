@@ -22,20 +22,18 @@
 	width: 90px;
 }
 .admin .block form .images {
-	width: 100%;
+	width: calc(100% - 20px);
+	width: -moz-calc(100% - 20px);
+	width: -webkit-calc(100% - 20px);
+	padding: 10px;
 	height: auto;
 	border-top: none;
 	border-bottom: 1px solid rgba(255,255,255,0.3);
 	display: table;
 }
-.admin .block form .images .image {
-	width: 224px !important;
-	height: 224px !important;
-	float: left;
-}
 .admin .block form .images .drop  {
-	width: 202px !important;
-	height: 202px !important;
+	width: 215px !important;
+	height: 215px !important;
 	margin: 10px;
 	position: relative;
 }

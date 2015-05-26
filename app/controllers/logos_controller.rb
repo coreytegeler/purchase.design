@@ -11,6 +11,7 @@ class LogosController < ApplicationController
 
   def create
     @logo = Logo.new(logo_params)
+    @logo.position = 1
     if @logo.save
       flash[:notice] = "New logo was created!"
       flash[:type] = 'good'

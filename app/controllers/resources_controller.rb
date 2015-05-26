@@ -9,7 +9,7 @@ class ResourcesController < ApplicationController
   end
 
   def admin
-    @resources = Resource.new_to_old
+    @resources = Resource.a_to_z
     @categories = array_of_categories
     @new_resource = Resource.new
     @new_resource.position = Resource.all.count + 1

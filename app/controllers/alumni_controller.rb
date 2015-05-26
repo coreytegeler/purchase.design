@@ -15,6 +15,7 @@ class AlumniController < ApplicationController
 
   def create
     @alumnus = Alumnus.new(alumnus_params)
+    @alumnus.position = 1
     if @alumnus.save
       flash[:notice] = "Alumnus was created!"
       flash[:type] = 'good'

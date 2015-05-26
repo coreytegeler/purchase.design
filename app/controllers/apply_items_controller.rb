@@ -15,6 +15,7 @@ class ApplyItemsController < ApplicationController
 
   def create
     @apply_item = ApplyItem.new(apply_item_params)
+    @apply_items.position = 1
     if @apply_item.save
       flash[:type] = 'good'
       flash[:notice] = "Application requirement was created!"

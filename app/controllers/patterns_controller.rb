@@ -11,6 +11,7 @@ class PatternsController < ApplicationController
 
   def create
     @pattern = Pattern.new(pattern_params)
+    @pattern.position = 1
     if @pattern.save
       flash[:notice] = "Pattern was created!"
       flash[:type] = 'good'

@@ -13,6 +13,7 @@ class PalettesController < ApplicationController
 
   def create
     @palette = Palette.new(palette_params)
+    @palette.position = 1
     if @palette.save
       flash[:notice] = "Palette was created! <a href='/?palette=#{@palette.id}'>Check it out!</a>"
       flash[:type] = 'good'

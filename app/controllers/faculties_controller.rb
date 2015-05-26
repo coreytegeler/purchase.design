@@ -20,6 +20,7 @@ class FacultiesController < ApplicationController
 
   def create
     @faculty = Faculty.new(faculty_params)
+    @faculty.position = 1
     if @faculty.alma_maters.first
       @faculty.alma_maters.first.faculty_id = @faculty.id
     end
