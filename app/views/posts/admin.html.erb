@@ -1,5 +1,9 @@
+<% if admin? %>
+	<div id="instructions">
+		HTML is allowed in body text. Only select Start and End dates for an event.
+	</div>
+<% end %>
 <section class="masonry big" id="posts">
-
 	<div class="post block">
 		<%= form_for(@new_post, :url => {:action => 'create', :id => @new_post.id}, :html => { :id => @new_post.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:post => @new_post, :f => f}) %>
@@ -13,5 +17,4 @@
 			<% end %>
 		</div>
 	<% end %>
-	
 </section>

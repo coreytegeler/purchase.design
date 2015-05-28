@@ -1,3 +1,8 @@
+<% if admin? %>
+	<div id="instructions">
+		Only SVGs are allowed. Create a square file of any size with the P contained against the edges. Simplify the vector as much as possible, no strokes.
+	</div>
+<% end %>
 <section class="masonry" id="logoContainer">
 	<div class="block logo upload">
 		<%= form_for(@new_logo, :url => {:action => 'create', :id => @new_logo.id}, :html => { :id => @new_logo.position.to_s, :class => 'new', :method => :post}) do |f| %>

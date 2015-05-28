@@ -1,3 +1,8 @@
+<% if admin? %>
+	<div id="instructions">
+		Only JPEGs, PNGs, GIFs are allowed. Patterns will be tiled at the actual size of the uploaded image.
+	</div>
+<% end %>
 <section class="masonry" id="patternContainer">
 	<div class="block pattern upload">
 		<%= form_for(@new_pattern, :url => {:action => 'create', :id => @new_pattern.id}, :html => { :id => @new_pattern.position.to_s, :class => 'new', :method => :post}) do |f| %>

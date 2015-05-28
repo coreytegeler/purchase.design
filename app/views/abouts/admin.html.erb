@@ -1,3 +1,8 @@
+<% if admin? %>
+	<div id="instructions">
+		HTML is allowed.
+	</div>
+<% end %>
 <section id="aboutContainer">
 	<div class="block">
 		<% if @about.persisted? %>

@@ -219,7 +219,7 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding-left: 166px;
+	padding: 170px 40px 40px 166px;
 	width: calc(100% - 223px);
   	width: -moz-calc(100% - 223px);
   	width: -webkit-calc(100% - 223px);

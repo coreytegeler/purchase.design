@@ -1,3 +1,8 @@
+<% if admin? %>
+	<div id="instructions">
+		Only JPEGs, PNGs, GIFs are allowed.
+	</div>
+<% end %>
 <section class="masonry" id="workContainer">
 	<div class="block work upload">
 		<%= form_for(@new_work, :url => {:action => 'create', :id => @new_work.id}, :html => { :id => @new_work.position.to_s, :data => {:media => 'image'}, :method => :post}) do |f| %>

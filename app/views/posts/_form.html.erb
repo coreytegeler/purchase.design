@@ -26,13 +26,6 @@
 <div class="row body">
 	<%= f.text_area(:body, :rows => 15, :placeholder => 'What do you have to say about this?') %>
 </div>
-
-<div class="row">
-	<div class="tip">
-		Start and End dates are only needed for events.
-	</div>
-</div>
-
 <div class="row date">
 	<span>Start</span>
 	<%= f.date_select(:start_date, order: [:month, :day, :year], :include_blank => true) %>

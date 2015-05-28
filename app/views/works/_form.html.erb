@@ -5,12 +5,12 @@
 		<%= f.select :position, 1..@works.size, {:include_blank => "New"}, {:class => 'position'} %>
 	<% end %>
 </div>
-<% if !work.persisted? %>
-	<div class="row media_type">
-		<%= f.label :media_type, "Type:" %>
-		<%= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
-	</div>
-<% end %>
+<%# if !work.persisted? %>
+	<!-- <div class="row media_type"> -->
+		<%#= f.label :media_type, "Type:" %>
+		<%#= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
+	<!-- </div> -->
+<%# end %>
 <div class="row file">
 	<% if work.persisted? %>
 		<% if work.media_type == 'image' %>
@@ -35,7 +35,7 @@
 
 </div>
 <div class="row designer">
-	<%= f.text_field(:designer, :placeholder => "Designer") %>
+	<%= f.text_field(:designer, :placeholder => "Who made this?") %>
 </div>
 
 <div class="actions">
@@ -44,7 +44,7 @@
 		<%= link_to("Delete", {:controller => 'works', :action => 'delete', :id => work.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
 		<div class="tip">
-			Drag &amp; drop your file above
+			Drop your file in the square
 		</div>	
 		<%= link_to('Create', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>
 	<% end %>

@@ -87,7 +87,9 @@ function setUpSide() {
 			type: "POST",
 			url: method,
 			success: function(result) {
-				// window.location.reload();	
+				if(method == 'next_palette') {
+					window.location.reload();	
+				}
 			},
 			error: function(xhr, status, error) {
 			}

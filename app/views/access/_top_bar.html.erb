@@ -3,7 +3,7 @@
 	<nav>
 		<div id="nav_wrapper">
 			<ul id="nav_links">
-				<li class="nav_link"><%= active_link_to("Home", "/") %></li>
+				<li class="nav_link"><%= link_to("Home", "/") %></li>
 				<li class="nav_link"><%= active_link_to("Work", {:controller => 'works', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= active_link_to("About", {:controller => 'about', :action => 'admin'}) %></li>
 				<li class="nav_link"><%= active_link_to("Faculty", {:controller => 'faculty', :action => 'admin'}) %></li>

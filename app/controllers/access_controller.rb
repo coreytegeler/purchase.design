@@ -35,7 +35,7 @@ class AccessController < ApplicationController
     admin = Admin.where(:id => session[:admin_id]).first
     session[:admin_id] = nil
     session[:email] = nil
-  	flash[:notice] = "Bye bye, #{admin.first_name}."
+  	flash[:notice] = "Bye bye."
   	flash[:type] = "bad"
   	go_back
   end
