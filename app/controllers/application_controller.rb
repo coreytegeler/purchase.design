@@ -90,32 +90,26 @@ class ApplicationController < ActionController::Base
           palette = palettes.where(:position => random).first
           session[:palette] = [palette.primary_color, palette.secondary_color, palette.position]
         end
-
         current_palette = session[:palette]
-
         @p = current_palette.first
         @s = current_palette.second
-
         if session[:next_palette].nil?
           find_next_palette
         end
-
         @next_p = session[:next_palette].first
         @next_s = session[:next_palette].second
-
       end
 
       def find_next_palette
         palettes = Palette.all
-        current_pos = session[:palette].last
-        next_pos = next_check(current_pos, palettes)
-        next_palette = palettes.where(:position => next_pos).first
+        current_palette_pos = session[:palette].last
+        next_palette_pos = next_check(current_palette_pos, palettes)
+        next_palette = palettes.where(:position => next_palette_pos).first
         session[:next_palette] = [next_palette.primary_color, next_palette.secondary_color, next_palette.position]  
         redirect_to(:controller => 'public', :action => 'index')
       end
 
       def select_logo
-
         logos = Logo.first_to_last
         if !params[:logo].nil?
           logo = logos.where(:id => params[:logo]).first
@@ -127,30 +121,24 @@ class ApplicationController < ActionController::Base
           logo = logos.where(:position => random).first
           session[:logo] = logo.position
         end
-
         current_logo_pos = session[:logo]
-
         @logo = logos.where(:position => current_logo_pos).first.file
-
         if session[:next_logo].nil?
           find_next_logo
         end
-
         @next_logo = logos.where(:position => session[:next_logo]).first.file
-
       end
 
       def find_next_logo
         current_logo_pos = session[:logo]
         next_logo_pos = next_check(current_logo_pos, Logo.all)
         session[:next_logo] = next_logo_pos
-
         new_logo = Logo.where(:position => current_logo_pos).first.file
         next_logo = Logo.where(:position => next_logo_pos).first.file
         respond_to do |format|
           format.js { render partial: 'next_logo', :locals => {:new_logo => new_logo, :next_logo => next_logo} }
+          format.html { redirect_to 'public' }
         end
-        
       end
 
       def select_gradient
@@ -195,6 +183,7 @@ class ApplicationController < ActionController::Base
         next_gradient = gradients.where(:position => next_gradient_pos).first.file
         respond_to do |format|
           format.js { render partial: 'next_gradient', :locals => {:new_gradient => new_gradient, :next_gradient => next_gradient} }
+          format.html { redirect_to 'public' }
         end
       end
 
@@ -239,14 +228,15 @@ class ApplicationController < ActionController::Base
         next_pattern = patterns.where(:position => next_pattern_pos).first.tile
         respond_to do |format|
           format.js { render partial: 'next_pattern', :locals => {:new_pattern => new_pattern, :next_pattern => next_pattern} }
+          format.html { redirect_to 'public' }
         end
       end
 
       def next_check(i, q)
-        if i != q.length
-          i + 1
-        else
+        if i == q.length
           1
+        else
+          i + 1
         end
       end
 end
