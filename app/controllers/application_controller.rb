@@ -137,7 +137,7 @@ class ApplicationController < ActionController::Base
         next_logo = Logo.where(:position => next_logo_pos).first.file
         respond_to do |format|
           format.js { render partial: 'next_logo', :locals => {:new_logo => new_logo, :next_logo => next_logo} }
-          format.html { redirect_to 'public' }
+          format.html { redirect_to '/' }
         end
       end
 
@@ -183,7 +183,7 @@ class ApplicationController < ActionController::Base
         next_gradient = gradients.where(:position => next_gradient_pos).first.file
         respond_to do |format|
           format.js { render partial: 'next_gradient', :locals => {:new_gradient => new_gradient, :next_gradient => next_gradient} }
-          format.html { redirect_to 'public' }
+          format.html { redirect_to '/' }
         end
       end
 
@@ -228,7 +228,7 @@ class ApplicationController < ActionController::Base
         next_pattern = patterns.where(:position => next_pattern_pos).first.tile
         respond_to do |format|
           format.js { render partial: 'next_pattern', :locals => {:new_pattern => new_pattern, :next_pattern => next_pattern} }
-          format.html { redirect_to 'public' }
+          format.html { redirect_to '/' }
         end
       end
 
