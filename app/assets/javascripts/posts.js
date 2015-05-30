@@ -4,22 +4,23 @@ var initPosts = function() {
 		fill(this, '#fff');
 	});
 
-
-	var max = 400;
-	var stackHeight;
-	var stackWidth;
+	var maxWidth = 400;
+	var maxHeight = 350;
 	var gap = 4;
 
 	$('.post').each(function(i, post) {
-		stack = $(post).children('.stack');
+		var stack = $(post).children('.stack');
+		var stackSize = $(stack).children('.image').length;
+		var gaps = stackSize * gap - gap;
+		var stackWidth = maxWidth + gaps + gap*2;
+		var stackHeight = maxHeight + gaps + gap*2;
 		$(stack).children('.image').each(function(i, img) {
 			$(img).imagesLoaded(function() {
 				$(img).addClass('loaded').css({y: -gap*i, x: gap*i});
 			});
 		});
-		var stackSize = max + ($(this).children('.image').children('.image_wrapper').length * 4);
-		$(stack).css({height: stackSize, width: stackSize});
-		$(post).css({width: stackSize + 100});
+		$(stack).css({width: stackWidth, height: stackHeight});
+		$(post).css({width: stackWidth + 100});
 	});
 
 	$('.public .stack').click(function() {

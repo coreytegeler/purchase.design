@@ -3,11 +3,11 @@ class PostImage < ActiveRecord::Base
     belongs_to :post
     scope :sorted, lambda {order("post_images.position ASC")}
 
-    has_attached_file :image, :styles => { 
+    has_attached_file :image,
+    :styles => { 
 		:small =>  ['300x300'],
-		:medium => ['450x450'],
-		:large =>  ['1200x1200>']
-	}, 
+		:medium => ['400x350']
+	},
 	:default_url => "image.svg"
 		
   	validates_attachment_content_type :image, 

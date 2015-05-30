@@ -5,7 +5,7 @@
 				<% post.post_images.each do |pi| %>
 					<div class="image" <%= color('bg', @p, 'border', @s) %>>
 						<div class="image_wrapper">
-							<%= image_tag pi.image.url(:small) %>
+							<%= image_tag pi.image.url(:medium) %>
 						</div>
 					</div>
 				<% end %>

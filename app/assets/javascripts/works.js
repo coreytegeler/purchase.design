@@ -3,12 +3,12 @@ var initWorks = function() {
 		$('#stack').ready(function() {
 			var maxWidth = 525;
 			var maxHeight = 450;
-			var stackHeight;
-			var stackWidth;
 			var gap = 5;
 			var stackSize = $('#stack .work').length;
 			var gaps = stackSize * gap - gap;
-			$('.public #stack').css({height: maxHeight + gaps + gap*2, width: maxWidth + gaps + gap*2});
+			var stackWidth = maxWidth + gaps + gap*2;
+			var stackHeight = maxHeight + gaps + gap*2;
+			$('.public #stack').css({height: stackHeight, width: stackWidth});
 			$('#stack .work').each(function(i, w) {
 				$(w).addClass('loaded').css({y: -gap*i, x: gap*i});
 				if(!$(w).children('.designer').length) {
