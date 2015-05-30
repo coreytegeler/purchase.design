@@ -237,6 +237,7 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 .swapper .block .image img {
 	width: 100%;
 	vertical-align: bottom;
+	box-shadow: 0px 0px 3px -2px rgba(0,0,0,0.4);
 }
 
 /*****************/
@@ -251,9 +252,13 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
   	z-index: 19;
   	display: block;
   	-webkit-transition: -webkit-transform 300ms cubic-bezier(0.750, 0.750, 0.285, 0.950);
+  	-moz-transition: -moz-transform 300ms cubic-bezier(0.750, 0.750, 0.285, 0.950);
+  	transition: transform 300ms cubic-bezier(0.750, 0.750, 0.285, 0.950);
 }
 #about.opened {
 	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
 }
 #about .buffer {
 	height: 170px;
