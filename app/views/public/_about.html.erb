@@ -1,11 +1,11 @@
 <div id="about" class="popup">
 	<div class="buffer"></div>
-	<div class="content">
+	<div class="content" <%= color('bg', @s, 'color', @p) %>>
 		<div class="inner">
 			<div class="left half">
 				<div class="module">
 					<div class="block title medium">
-						The Graphic Design BFA Program
+						Purchase College Graphic Design Department
 					</div>
 					<div class="block body">
 						<% if !About.first.nil? %>
@@ -16,27 +16,30 @@
 			</div>
 			<div class="right half">
 				<div class="module">
-					<div class="block title">
+					<div class="block title medium">
+						<a href="/backend">
+							Enter Backend
+						</a>
+					</div>
+				</div>
+
+				<div class="module">
+					<div class="block title medium">
 						About This Site
 					</div>
 					<div class="block body">
-						This website functions to serve as a reflection of the graphic design department's mission at Purchase College, SUNY. The site, in addition to the custom content management system was designed and coded by students, selected to participate in the Advanced Web Design course under the direction of faculty member, Jessica Wexler.
+						<p>This website was created by students of Purchase College, SUNY for the Advanced Web Design: Special Projects elective in Spring 2015 under the direction of faculty member <a href="http://www.greenblatt-wexler.com/" target="_blank">Jessica Wexler</a>. This course brought together students from the Graphic Design, New Media and Arts Management departments to explore how the Graphic Design major can visually reflect upon itself.</p>
+						<p>Our website invites the user to play. Its styling, like the department it represents, is dynamic, changeable, changing, vibrant, bold and eccentric. The design system values multiple perspectives. It includes an editing toolbar that allows the user to change the palette, logo, gradient, pattern, and content view.</p>
+						<p>The site was designed by <a href="http://www.alexapostolides.com/" target="_blank">Alex Apostolides</a>, <a href="https://www.behance.net/brandonshefton" target="_blank">Brand Shefton</a>, <a href="" target="_blank">Danielle Leggard</a>, <a href="" target="_blank">Krystalina Tom</a>, <a href="http://www.ndichiara.com/" target="_blank">Nicholas DiChiara</a>, <a href="http://www.shannencraftdesign.com/" target="_blank">Shannen Craft</a>, Danny Fabricant, project managed by Emily Green and developed by <a href="http://coreytegeler.com" target="_blank">Corey Tegeler.</a></p>
+						<p>The site is built on a customly developed and designed content management system. We’ve left the back door open if you want to give it a look. Though you can't make changes to the site, it shows an alternative view to the site's content and a transparent vision of it's interior.</p>
 					</div>
 				</div>
 
 
-				<div class="block title button" <%= color('bg', @p, 'border', @s, 'color', @s) %>>
-					<a href="/backend">
-						<div class="pattern" style="background-image:url(<%= @pattern %>)"></div>
-						<div class="gradient" style="background-image:url(<%= @gradient %>)"></div>
-						<div class="text">
-							Enter Backend
-						</div>
-					</a>
-				</div>
+				
 				
 				<div class="module">
-					<div class="block title">
+					<div class="block title medium">
 						Find Us
 					</div>
 					<div class="block list">

@@ -107,6 +107,12 @@ aside#side_bar #tools #buttons .button .method:not(.clear) {
 	width: 100%;
 	height: 100%;
 }
+.pattern_on .button#next_pattern,
+.gradient_on .button#next_pattern,
+.pattern_on .button#next_gradient,
+.gradient_on .button#next_gradient {
+	box-shadow: 0px 0px 3px -1px;
+}
 aside#side_bar #tools #buttons .button *:not(.tooltip) {
 	transition: opacity 400ms ease-in-out;
 	-moz-transition: opacity 400ms ease-in-out;
@@ -115,46 +121,6 @@ aside#side_bar #tools #buttons .button *:not(.tooltip) {
 aside#side_bar #tools #buttons #page_specific .button svg {
 	width: 40px;
 	height: 40px;
-}
-aside#side_bar #tools #buttons .button .tooltip {
-	position: absolute;
-	left: 40px;
-	top: 0;
-	font-size: 19px;
-	display: block;
-	padding-left: 15px;
-	width: 0px;
-	overflow: hidden;
-	transition: width 100ms ease-in-out;
-	-moz-transition: width 100ms ease-in-out;
-	-webkit-transition: width 100ms ease-in-out;
-	/*border-right: solid 1px;*/
-	min-height: 40px; 
-}
-/*aside#side_bar #tools #buttons .button:hover .tooltip {
-	width: 213px;
-	transition: width 200ms ease-in-out;
-	-moz-transition: width 200ms ease-in-out;
-	-webkit-transition: width 200ms ease-in-out;
-	border-right: solid 1px;
-}*/
-aside#side_bar #tools #buttons .button .tooltip .border {
-	width: 200px;
-	height: 40px;
-	display: table;
-	background: rgba(255,255,256,.05);
-	padding: 5px 5px 5px 8px;
-	/*border-top: solid 1px;
-	/*border-bottom: solid 1px;*/
-}
-aside#side_bar #tools #buttons .button .tooltip .border .inner {
-	display: table-cell;
-	vertical-align: middle;
-	width: 100%;
-}
-aside#side_bar #tools #buttons .button .tooltip .border .inner .text {
-	display: table;
-	margin: auto;
 }
 aside#side_bar #tools #buttons .button .clear {
 	display: none;
@@ -276,12 +242,6 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 /*****************/
 /******ABOUT******/
 /*****************/
-.about #border .page_content {
-	display: none;
-}
-.about #border  {
-	overflow: hidden;
-}
 #about {
 	position: absolute;
   	top: 100%;
@@ -289,7 +249,11 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
   	height: 100%;
   	width: 100%;
   	z-index: 19;
-  	display: none;
+  	display: block;
+  	-webkit-transition: -webkit-transform 300ms cubic-bezier(0.750, 0.750, 0.285, 0.950);
+}
+#about.opened {
+	-webkit-transform: translateY(-100%);
 }
 #about .buffer {
 	height: 170px;
@@ -306,26 +270,31 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
   	overflow: scroll;
 }
 #about .content .inner {
-	max-width: 1200px;
+	max-width: 1300px;
 	margin: auto;
 	padding: 40px;
 	display: table;
 }
 #about .half {
 	float: left;
+	display: table;
+	margin: auto;
+	width: 50%;
 }
-#about .half.left {
-	width: 60%
-}
-#about .half.right {
-	width: 40%;
+@media (max-width: 800px) {
+	#about .half {
+		width: 100% !important;
+		max-width: 600px;
+		display: table;
+		margin: auto;
+		float: none;
+	}
 }
 #about .module {
 	margin: 20px;
 }
 #about .block {
 	display: table;
-	/*width: 100%;*/
 	width: calc(100% - 20px);
 	width: -moz-calc(100% - 20px);
 	width: -webkit-calc(100% - 20px);
@@ -346,7 +315,7 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 	padding: 10px;
 	position: relative;
 }
-#about .block.button .pattern, #about .block.button .gradient {
+#about .block.button .pattern, #about .block.button .gradient, #about .block.button .link {
 	background-position: center;
 	width: 100%;
 	height: 100%;
@@ -357,9 +326,14 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 #about .block.button .gradient {
 	background-size: cover;
 }
+#about .block.button .link a {
+	width: 100%;
+  	height: 100%;
+  	display: block;
+}
 #about .block.body, #about .block.list {
 	font-size: 22px;
-	line-height: 28px;
+	line-height: 30px;
 }
 #about .block.body p {
 	margin: 0;

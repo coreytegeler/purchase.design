@@ -13,7 +13,7 @@ class AccessController < ApplicationController
   	if authorized_user
   		session[:admin_id] = authorized_user.id
       session[:email] = authorized_user.email
-  		flash[:notice] = "Hey #{authorized_user.first_name}."
+  		flash[:notice] = "You're in!b"
   		flash[:type] = "good"
   		go_back
   	else

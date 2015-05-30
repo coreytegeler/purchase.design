@@ -37,8 +37,10 @@
 			<section id="page_content">
 				<%= yield %>
 			</section>
-			<%= render 'public/about' %>
 		</div>
+
+		<%= render 'public/about' %>
+		
 	</main>
 	<div id="hiddenPalette" data-primary="<%= @p %>" data-secondary="<%= @s %>"></div>
 </body>

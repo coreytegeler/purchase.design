@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   root "works#index"
   
-  get 'admin', :to => 'access#index'
-  get 'cms', :to => 'access#index'
-  get 'backend', :to => 'access#index'
-
+  get 'admin', :to => 'access#login'
+  get 'cms', :to => 'access#login'
+  get 'backend', :to => 'access#login'
+  get 'access', :to => 'access#login'
   get 'login', :to => 'access#login'
 
   get 'admins', :to => 'admins#admin'
