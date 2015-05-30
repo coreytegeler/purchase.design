@@ -75,7 +75,7 @@ class PostsController < ApplicationController
     end
 
     def update_positions
-      Post.sorted.new_to_old.each_with_index do |f, i|
+      Post.new_to_old.each_with_index do |f, i|
           f.update_attribute(:position, i+1)
       end
     end

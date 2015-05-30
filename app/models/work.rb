@@ -6,8 +6,7 @@ class Work < ActiveRecord::Base
 	has_attached_file :image,
 	:styles => { 
 		:small =>  ['300x300'],
-		:medium => ['450x450'],
-		:large =>  ['800x800>']
+		:medium => ['525x450']
 	},
 	:default_url => "image.svg"
 		

@@ -13,11 +13,11 @@ class AccessController < ApplicationController
   	if authorized_user
   		session[:admin_id] = authorized_user.id
       session[:email] = authorized_user.email
-  		flash[:notice] = "You're in!b"
+  		flash[:notice] = "You're in!"
   		flash[:type] = "good"
-  		go_back
+  		redirect_to(:action => 'login')
   	else
-  		flash[:notice] = "Nope, sorry, that's not gonna work."
+  		flash[:notice] = "Nope, that's not gonna work."
   		flash[:type] = "bad"
   		redirect_to(:action => 'login')
   	end
