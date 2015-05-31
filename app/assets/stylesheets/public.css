@@ -304,6 +304,9 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 	width: -webkit-calc(100% - 20px);
 	padding: 10px;
 }
+#about .block.gif img {
+	width: 100%;
+}
 #about .block.title {
 	font-weight: 700;
 }
