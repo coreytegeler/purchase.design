@@ -11,6 +11,7 @@
 		<%#= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
 	<!-- </div> -->
 <%# end %>
+<%= f.hidden_field(:media_type, :value => "image") %>
 <div class="row file">
 	<% if work.persisted? %>
 		<% if work.media_type == 'image' %>
@@ -25,19 +26,16 @@
 		<div class="drop video" style="background-image:url(<%= bg_img %>)">
 			<%= f.file_field(:video, :data => {:position => work.position}) %>
 		</div>
-	<% end %>
+	<%end %>
 	<% if work.media_type == 'image' || work.media_type.nil? %>
 		<div class="drop image" style="background-image:url(<%= bg_img %>)">
 			<%= f.file_field(:image, :data => {:position => work.position}) %>
 		</div>
 	<% end %>
-
-
 </div>
 <div class="row designer">
 	<%= f.text_field(:designer, :placeholder => "Who made this?") %>
 </div>
-
 <div class="actions">
 	<% if work.persisted? %>
 		<%= link_to('Update', "#", :onclick => "$('#" + work.position.to_s + "').submit()", :class => "action submit") %>

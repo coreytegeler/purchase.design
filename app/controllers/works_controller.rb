@@ -10,7 +10,7 @@ class WorksController < ApplicationController
 
   def admin
     @works = Work.first_to_last
-    @new_work = Work.new(:position => 0)
+    @new_work = Work.new(:position => 0, :media_type => 'image')
     @media_types = ["image", "video"]
   end
 
