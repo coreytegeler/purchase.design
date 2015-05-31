@@ -10,7 +10,7 @@ var initWorks = function() {
 			var stackHeight = maxHeight + gaps + gap*2;
 			$('.public #stack').css({height: stackHeight, width: stackWidth});
 			$('#stack .work').each(function(i, w) {
-				$(w).addClass('loaded').css({y: -gap*i, x: gap*i});
+				$(w).addClass('loaded').css({y: gap * -i, x: gap * i});
 				if(!$(w).children('.designer').length) {
 					$(w).children('.mousepad').css({'cursor':'pointer'});
 				}
@@ -23,7 +23,7 @@ var initWorks = function() {
 			$(oldTop).insertBefore('.work:first-child');
 			var oldTooltip = $('.designer[data-position='+oldTopPosition+']');
 			$(oldTooltip).css({'display' : 'none'});
-
+			var gap = 5;
 			$('.work').each(function(i, w) {
 				$(w).css({y: -gap*i, x: gap*i});
 				if($(w).is('.video')) {
