@@ -1,6 +1,6 @@
 <div class="text">
-	<%= f.text_area :text, :rows => 20, :placeholder => "About this school" %>
+	<%= f.text_area :text, :rows => 20, :placeholder => placeholder %>
 </div>
 <div class="actions">
-	<%= link_to('Update', "#", :onclick => "$('#about').submit()", :class => "action submit") %>
+	<%= link_to('Update', "#", :onclick => "$('#" + save_id + "').submit()", :class => "action submit") %>
 </div>

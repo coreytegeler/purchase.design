@@ -28,16 +28,11 @@
 						About This Site
 					</div>
 					<div class="block body">
-						<p>This website was created by students of Purchase College, SUNY for the Advanced Web Design: Special Projects elective in Spring 2015 under the direction of faculty member <a href="http://www.greenblatt-wexler.com/" target="_blank">Jessica Wexler</a>. This course brought together students from the Graphic Design, New Media and Arts Management departments to explore how the Graphic Design major can visually reflect upon itself.</p>
-						<p>Our website invites the user to play. Its styling, like the department it represents, is dynamic, changeable, changing, vibrant, bold and eccentric. The design system values multiple perspectives. It includes an editing toolbar that allows the user to change the palette, logo, gradient, pattern, and content view.</p>
-						<p>The site was designed by <a href="http://www.alexapostolides.com/" target="_blank">Alex Apostolides</a>, <a href="https://www.behance.net/brandonshefton" target="_blank">Brand Shefton</a>, <a href="" target="_blank">Danielle Leggard</a>, <a href="" target="_blank">Krystalina Tom</a>, <a href="http://www.ndichiara.com/" target="_blank">Nicholas DiChiara</a>, <a href="http://www.shannencraftdesign.com/" target="_blank">Shannen Craft</a>, Danny Fabricant, project managed by Emily Green and developed by <a href="http://coreytegeler.com" target="_blank">Corey Tegeler.</a></p>
-						<p>The site is built on a customly developed and designed content management system. We’ve left the back door open if you want to give it a look. Though you can't make changes to the site, it shows an alternative view to the site's content and a transparent vision of it's interior.</p>
+						<% if !About.second.nil? %>
+							<%= About.second.text.html_safe %>
+						<% end %>
 					</div>
 				</div>
-
-
-				
-				
 				<div class="module">
 					<div class="block title medium">
 						Find Us

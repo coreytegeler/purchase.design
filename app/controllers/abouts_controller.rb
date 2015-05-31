@@ -4,10 +4,15 @@ class AboutsController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin]
 
   def admin
-    if About.count < 1
-      @about = About.new
+    if About.count == 0
+      @dept = About.new
+      @site = About.new
+    elsif About.count == 1
+      @dept = About.first
+      @site = About.new
     else
-      @about = About.first
+      @dept = About.first
+      @site = About.second
     end
   end
 
