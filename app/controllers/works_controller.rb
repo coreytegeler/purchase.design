@@ -15,6 +15,7 @@ class WorksController < ApplicationController
   end
 
   def create
+    put work_params
     @work = Work.new(work_params)
     if @work.save
       flash[:notice] = "Work was uploaded!"

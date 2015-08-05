@@ -15,8 +15,8 @@ class Work < ActiveRecord::Base
 
     has_attached_file :video,
     :styles => {
-        :medium => { :geometry => "600x450", :format => 'mp4'},
-        :thumb => {:geometry => "300x300#", :format => 'jpg', :time => 10}
+        :medium => { :geometry => "600x450", :format => 'mp4'}
+        # :thumb => {:geometry => "300x300#", :format => 'jpg', :time => 10}
     }, :processors => [:ffmpeg]
 
     validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/ 
