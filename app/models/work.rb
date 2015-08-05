@@ -19,12 +19,13 @@ class Work < ActiveRecord::Base
     #     :thumb => {:geometry => "300x300#", :format => 'jpg', :time => 10}
     # }, :processors => [:ffmpeg]
 
-    has_attached_file :video, :styles => {
-	    :medium => { :geometry => "640x480", :format => 'mp4' },
-	    :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
+    has_attached_file :video,
+     :styles => {
+	    :medium => { :geometry => "640x480", :format => 'mp4' }
+	    # :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
   	}, :processors => [:transcoder]
 
-    validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/ 
+    validates_attachment_content_type :video, :content_type => ['video/mp4']
 
     before_validation :choose_content_type
     validate :content_type
