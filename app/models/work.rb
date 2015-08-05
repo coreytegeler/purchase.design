@@ -8,7 +8,7 @@ class Work < ActiveRecord::Base
 		:small =>  ['300x300'],
 		:medium => ['525x450']
 	},
-	:default_url => "image.svg"
+	:default_url => ActionController::Base.helpers.asset_path("image.svg")
 		
   	validates_attachment_content_type :image, 
   		content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
@@ -31,7 +31,7 @@ class Work < ActiveRecord::Base
 	    def choose_content_type
 	    	if self.media_type == 'image'
 	    		self.video = nil
-	    	else 
+	    	elsif self.media_type == 'video'
 	    		self.image = nil
 	    	end
 	    end

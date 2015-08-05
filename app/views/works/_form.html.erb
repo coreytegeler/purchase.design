@@ -5,13 +5,13 @@
 		<%= f.select :position, 1..@works.size, {:include_blank => "New"}, {:class => 'position'} %>
 	<% end %>
 </div>
-<%# if !work.persisted? %>
-	<!-- <div class="row media_type"> -->
-		<%#= f.label :media_type, "Type:" %>
-		<%#= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
-	<!-- </div> -->
-<%# end %>
-<%= f.hidden_field(:media_type, :value => "image") %>
+<% if !work.persisted? %>
+	<div class="row media_type">
+		<%= f.label :media_type, "Type:" %>
+		<%= f.select :media_type, options_for_select(@media_types, :selected => f.object.media_type) %>
+	</div>
+<% end %>
+<%#= f.hidden_field(:media_type, :value => "image") %>
 <div class="row file">
 	<% if work.persisted? %>
 		<% if work.media_type == 'image' %>
@@ -22,8 +22,12 @@
 	<% else %>
 		<% bg_img = @upload_img %>
 	<% end %>
+
 	<% if work.media_type == 'video' || work.media_type.nil? %>
 		<div class="drop video" style="background-image:url(<%= bg_img %>)">
+			<% if work.persisted? %>
+				<%= video_tag work.video.url(:medium), controls: true, type: "video/mp4", size: "400x400" %>
+			<% end %>
 			<%= f.file_field(:video, :data => {:position => work.position}) %>
 		</div>
 	<%end %>
@@ -32,6 +36,7 @@
 			<%= f.file_field(:image, :data => {:position => work.position}) %>
 		</div>
 	<% end %>
+
 </div>
 <div class="row designer">
 	<%= f.text_field(:designer, :placeholder => "Who made this?") %>
