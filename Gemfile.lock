@@ -107,6 +107,8 @@ GEM
     paperclip-av-transcoder (0.6.4)
       av (~> 0.9.0)
       paperclip (>= 2.5.2)
+    paperclip-ffmpeg (1.0.1)
+      paperclip (>= 2.5.2)
     pg (0.18.2)
     puma (2.12.3)
     rack (1.6.4)
@@ -197,6 +199,7 @@ DEPENDENCIES
   mysql2
   paperclip (~> 4.2)
   paperclip-av-transcoder
+  paperclip-ffmpeg (~> 1.0.0)
   pg
   puma
   rack-timeout
