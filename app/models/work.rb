@@ -18,22 +18,14 @@ class Work < ActiveRecord::Base
     has_attached_file :video,
     :styles => {
     	:mp4 => {
-	      	:geometry => '520x390',
-	      	:format => 'mp4',
-	        :convert_options => {
-	        	:output => {
-	        		:vcodec => 'libx264',
-	          		# :vpre => 'ipod640',
-	          		:b => '250k', 
-	          		:bt => '50k',
-	          		:acodec => 'libfaac',
-	          		:ab => '56k',
-	          		:ac => 2
-	          	} 
-	        }
-        },
+    		:geometry => "640x480",
+    		:format => 'mp4',
+    		:convert_options => {
+    			:output => {:ar => 44100}
+    		}
+    	},
     	:thumb => {
-    		:geometry => '520x390',
+    		:geometry => '300x300',
     		:format => 'jpg',
     		:time => 2
     	}

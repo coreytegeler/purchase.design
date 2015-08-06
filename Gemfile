@@ -16,7 +16,7 @@ gem 'acts_as_list'
 gem 'layout_by_action'
 
 gem 'aws-sdk', '< 2.0'
-gem 'paperclip', '3.5.1'
+gem 'paperclip', '~> 4.2'
 gem 'paperclip-ffmpeg', '~> 1.0.0'
 gem 'paperclip-av-transcoder'
 gem 'delayed_paperclip'
