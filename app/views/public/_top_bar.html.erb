@@ -1,7 +1,7 @@
-<div id="top_bar" class="static" <%= color('color', @s) %>>
+<div id="top_bar" class="static">
 	<nav>
 		<div id="nav_wrapper">
-			<ul id="nav_links" <%= color('border', @s) %>>
+			<ul id="nav_links" <%= color('color', @s) %>>
 				<li class="nav_link"><%= active_link_to("Work", {:controller => 'work', :action => 'index'}) %></li>
 				<li class="nav_link"><%= active_link_to("Faculty", {:controller => 'faculty', :action => 'index'}) %></li>
 				<li class="nav_link"><%= active_link_to("Alumni", {:controller => 'alumni', :action => 'index'}) %></li>

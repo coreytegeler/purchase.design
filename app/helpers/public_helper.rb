@@ -13,12 +13,20 @@ module PublicHelper
 	end
 
 	def color(*args)
+
     	arrays = args.each_slice(2).to_a
     	styles = 'style='
-        
+        data_tags = ''
     	arrays.each do |pair|
     		prop = pair.first
-    		val = pair.last
+    		color = pair.last
+
+            if session[:palette].first == color
+                type = 'primary'
+            else
+                type = 'secondary'
+            end
+
     		case prop
     		when 'border'
     			prop = 'border-color'
@@ -28,10 +36,12 @@ module PublicHelper
     			prop = 'color'
     		end
 
-    		style = prop + ':' + val + ';'
+    		style = prop + ':' + color + ';'
+            data_tag = 'data-' + prop + '=' + type + ' '
+            data_tags << data_tag
     		styles << style
     	end
-    	styles
+        data_tags + styles
   	end
 
     def gradient

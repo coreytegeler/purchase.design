@@ -1,0 +1,44 @@
+var palette = {
+	"primary" : "<%= new_primary %>",
+	"secondary" : "<%= new_secondary %>",
+	"next_primary" : "<%= next_primary %>",
+	"next_secondary" : "<%= next_secondary %>"
+}
+var styles = ['border-color', 'background-color', 'color'];
+for(var i = 0; i < styles.length; i++) {
+	var style = styles[i];
+	var objects = document.querySelectorAll('[data-' + style + ']');
+	$(objects).each(function(i , obj) {	
+		if($(this).hasClass('next_color')) {
+			if($(this).hasClass('primary')) {
+				$(obj).css({'background-color':palette['next_primary']});	
+			}
+			else if($(this).hasClass('secondary')) {
+				$(obj).css({'border-color':palette['next_secondary']});	
+			}
+		}
+		else {
+			var palette_selector = $(obj).data(style);
+			var color = palette[palette_selector];
+			if(style == 'color') {
+				$(obj).css({'color':color});	
+			}
+			else if(style == 'background-color') {
+				$(obj).css({'background-color':color});	
+			}
+			else if(style == 'border-color') {
+				$(obj).css({'border-color':color});	
+			}
+		}
+	});
+}
+
+
+$('.primary_fill').each(function() {
+	console.log(palette.primary);
+	fill($(this).children(), palette.primary);
+});
+$('.secondary_fill').each(function() {
+	fill($(this).children(), palette.secondary);
+});
+

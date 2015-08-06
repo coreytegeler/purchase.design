@@ -20,23 +20,14 @@ class Work < ActiveRecord::Base
     	:mp4 => {
     		:geometry => "640x480",
     		:format => 'mp4',
-    		:convert_options => {
-    			:output => {:ar => 44100}
-    		}
     	},
     	:thumb => {
     		:geometry => '300x300',
     		:format => 'jpg',
-    		:time => 2
+    		:time => 10
     	}
     },
-    :processors => [:transcoder],
-    :max_size => 300.megabytes
-    # :storage => :s3,
-    # :s3_credentials => S3_CREDENTIALS
-  	
-  	##here comes delayed video processing using delayed_papeclip
-  	# process_in_background :source , :processing_image_url => "/images/loading.gif" 
+    :processors => [:transcoder]
     
     # validates_attachment_content_type :video, :content_type => ['video/mp4']
     before_validation :choose_content_type

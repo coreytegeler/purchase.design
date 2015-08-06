@@ -102,11 +102,27 @@ class ApplicationController < ActionController::Base
 
       def find_next_palette
         palettes = Palette.all
-        current_palette_pos = session[:palette].last
+        current_palette = session[:palette]
+        current_palette_pos = current_palette.last
         next_palette_pos = next_check(current_palette_pos, palettes)
         next_palette = palettes.where(:position => next_palette_pos).first
-        session[:next_palette] = [next_palette.primary_color, next_palette.secondary_color, next_palette.position]  
-        redirect_to(:controller => 'public', :action => 'index')
+        session[:next_palette] = [next_palette.primary_color, next_palette.secondary_color, next_palette.position]
+
+        respond_to do |format|
+          format.js { render partial: 'update_palette',
+            :locals => {
+              :new_primary => current_palette.first,
+              :new_secondary => current_palette.second,
+              :next_primary => next_palette.primary_color,
+              :next_secondary => next_palette.secondary_color
+            }
+          }
+          format.html { redirect_to '/' }
+        end
+      end
+
+      def update_palette 
+        
       end
 
       def select_logo
