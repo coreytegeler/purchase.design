@@ -135,6 +135,7 @@ aside#side_bar #tools #buttons .button .clear svg {
 	height: 100%;
 	display: table;
 }
+
 .gradient_on aside#side_bar #tools #buttons .button#next_gradient .clear,
 .pattern_on aside#side_bar #tools #buttons .button#next_pattern .clear {
 	display: block;
@@ -159,7 +160,7 @@ aside#side_bar #tools #buttons .button#next_palette .method .swatch.secondary {
 	border: 6px solid;
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4), inset 0px 0px 2px 0px rgba(0,0,0,0.4);
 }
-aside#side_bar #tools #buttons .button#next_logo .method .swatch svg {
+aside#side_bar #tools #buttons .button#next_logo .method svg {
 	width: 100%;
 	height: 100%;
 }
