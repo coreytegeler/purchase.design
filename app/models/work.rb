@@ -12,11 +12,14 @@ class Work < ActiveRecord::Base
 		
   	validates_attachment_content_type :image, 
   		content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
+  	validates_attachment_size :image, :less_than => 4.megabytes, 
+                          :unless => Proc.new {|m| m[:image].nil?}
 
     has_attached_file :video, :styles => {
     	# :medium => { :geometry => "640x480", :format => 'mp4' },
     	:thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
-  	}, :processors => [:transcoder]
+  	}, :processors => [:transcoder],
+	:default_url => ActionController::Base.helpers.asset_path("image.svg")
 
     validates_attachment_content_type :video, :content_type => ['video/mp4', 'video/mov', 'video/m4a']
 
