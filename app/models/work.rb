@@ -15,14 +15,38 @@ class Work < ActiveRecord::Base
   	validates_attachment_size :image, :less_than => 4.megabytes, 
                           :unless => Proc.new {|m| m[:image].nil?}
 
-    has_attached_file :video, :styles => {
-    	:medium => { :geometry => "640x480", :format => 'mp4' },
-    	:thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
-  	}, :processors => [:transcoder],
-	:default_url => ActionController::Base.helpers.asset_path("image.svg")
-
-    validates_attachment_content_type :video, :content_type => ['video/mp4']
-
+    has_attached_file :video,
+    :styles => {
+    	:mp4 => {
+	      	:geometry => '520x390',
+	      	:format => 'mp4',
+	        :convert_options => {
+	        	:output => {
+	        		:vcodec => 'libx264',
+	          		# :vpre => 'ipod640',
+	          		:b => '250k', 
+	          		:bt => '50k',
+	          		:acodec => 'libfaac',
+	          		:ab => '56k',
+	          		:ac => 2
+	          	} 
+	        }
+        },
+    	:thumb => {
+    		:geometry => '520x390',
+    		:format => 'jpg',
+    		:time => 2
+    	}
+    },
+    processors: [:ffmpeg],
+    :max_size => 300.megabytes
+    # :storage => :s3,
+    # :s3_credentials => S3_CREDENTIALS
+  	
+  	##here comes delayed video processing using delayed_papeclip
+  	# process_in_background :source , :processing_image_url => "/images/loading.gif" 
+    
+    # validates_attachment_content_type :video, :content_type => ['video/mp4']
     before_validation :choose_content_type
     validate :content_type
 

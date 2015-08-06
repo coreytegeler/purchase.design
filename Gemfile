@@ -19,7 +19,9 @@ gem 'aws-sdk', '< 2.0'
 gem "paperclip", "~> 4.2"
 gem 'paperclip-ffmpeg', '~> 1.0.0'
 gem 'paperclip-av-transcoder'
+gem 'delayed_paperclip'
 gem 'rmagick', '~> 2.13.4'
+
 
 gem 'sass-rails'
 
