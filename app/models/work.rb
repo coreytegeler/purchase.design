@@ -14,7 +14,7 @@ class Work < ActiveRecord::Base
   		content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)/
 
     has_attached_file :video, :styles => {
-    	:medium => { :geometry => "525x450", :format => 'mp4' },
+    	:medium => { :geometry => "525x450", :format => 'video/mp4' },
     	:thumb => { :geometry => "300x300#", :format => 'jpg', :time => 1 }
   	}, :processors => [:transcoder]
 
