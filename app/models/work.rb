@@ -21,7 +21,7 @@ class Work < ActiveRecord::Base
   	}, :processors => [:transcoder],
 	:default_url => ActionController::Base.helpers.asset_path("image.svg")
 
-    validates_attachment_content_type :video, :content_type => ['video/mp4', 'video/mov', 'video/m4a']
+    validates_attachment_content_type :video, :content_type => ['video/mp4']
 
     before_validation :choose_content_type
     validate :content_type
