@@ -30,7 +30,7 @@ class Work < ActiveRecord::Base
     		:time => 2
     	}
     },
-    processors: [:ffmpeg],
+    :processors => [:transcoder],
     :max_size => 300.megabytes
     # :storage => :s3,
     # :s3_credentials => S3_CREDENTIALS
