@@ -1,2 +1,2 @@
-github.com/shunjikonishi/heroku-buildpack-ffmpeg
-github.com/heroku/heroku-buildpack-play
+https://github.com/heroku/heroku-buildpack-ruby.git
+https://github.com/shunjikonishi/heroku-buildpack-ffmpeg.git
