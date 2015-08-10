@@ -19,7 +19,7 @@ class Work < ActiveRecord::Base
     :styles => {
     	:mp4 => {
     		:geometry => "640x480",
-    		:format => 'mp4',
+    		:format => 'mp4'
     	}
     },
     :processors => [:transcoder]
