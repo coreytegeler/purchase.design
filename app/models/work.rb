@@ -15,19 +15,10 @@ class Work < ActiveRecord::Base
   	validates_attachment_size :image, :less_than => 4.megabytes, 
                           :unless => Proc.new {|m| m[:image].nil?}
 
-    has_attached_file :video,
-    :styles => {
-    	:mp4 => {
-    		:geometry => "640x480",
-    		:format => 'mp4',
-    	},
-    	:thumb => {
-    		:geometry => '300x300',
-    		:format => 'jpg',
-    		:time => 10
-    	}
-    },
-    :processors => [:transcoder]
+    has_attached_file :video, :styles => {
+    :medium => { :geometry => "640x480", :format => 'flv' },
+    :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
+  }, :processors => [:transcoder]
     
     # validates_attachment_content_type :video, :content_type => ['video/mp4']
     before_validation :choose_content_type
