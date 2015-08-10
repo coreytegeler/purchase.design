@@ -22,7 +22,6 @@ gem 'paperclip-av-transcoder'
 gem 'delayed_paperclip'
 gem 'rmagick', '~> 2.13.4'
 
-
 gem 'sass-rails'
 
 gem 'jquery-rails'
