@@ -18,8 +18,8 @@ class Work < ActiveRecord::Base
     has_attached_file :video,
     :styles => {
     	:mp4 => {
-    		:geometry => "640x480"
-    		# :format => 'mp4',
+    		:geometry => "640x480",
+    		:format => 'mp4',
     	}
     },
     :processors => [:transcoder]
