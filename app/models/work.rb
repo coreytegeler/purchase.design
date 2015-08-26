@@ -19,12 +19,20 @@ class Work < ActiveRecord::Base
     :styles => {
     	:mp4 => {
     		:geometry => "640x480",
-    		:format => 'mp4'
+    		:format => 'mp4',
+    	},
+    	:thumb => {
+    		:geometry => '300x300',
+    		:format => 'jpg',
+    		:time => 10
     	}
     },
     :processors => [:transcoder]
     
-    # validates_attachment_content_type :video, :content_type => ['video/mp4']
+    validates_attachment_content_type :video, :content_type => ['video/mp4']
+    validates_attachment_size :video, :less_than => 100.megabytes, 
+                          :unless => Proc.new {|m| m[:video].nil?}
+
     before_validation :choose_content_type
     validate :content_type
 
