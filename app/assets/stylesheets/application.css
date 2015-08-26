@@ -2,7 +2,9 @@
 /***************/
 /*DEFAULT STUFF*/
 /***************/
-
+::-webkit-scrollbar { 
+    display: none; 
+}
 html {
 	height: 100%;
 }
@@ -112,7 +114,8 @@ main {
 #page_content {
 	height: 100%;
 	width: 100%;
-	display: block;
+	display: table;
+	padding-bottom: 50px;
 }
 .masonry {
 	display: table;

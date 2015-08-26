@@ -34,7 +34,7 @@
 }
 .public #apply_btn {
 	display: table;
-	margin: auto;
+	margin: 10px auto 20px auto;
 	text-decoration: none;
 	border: 4px solid;
 	padding: 20px;
