@@ -1,5 +1,5 @@
 var initPublic = function() {
-	// $('main').addClass('fadeIn');
+	$('main').addClass('fadeIn');
 	fillSvgs();
 	setUpSide();
 	size();
@@ -130,3 +130,6 @@ function setUpSide() {
 
 $(initPublic);
 $(document).on('page:load', initPublic);
+$(document).on('page:fetch', function() {
+	$('main').addClass('fadeOut');
+});
