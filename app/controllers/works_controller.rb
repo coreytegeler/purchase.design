@@ -1,5 +1,4 @@
 class WorksController < ApplicationController
-
   include AccessHelper
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]

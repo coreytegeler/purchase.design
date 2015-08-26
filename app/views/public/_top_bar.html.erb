@@ -2,12 +2,12 @@
 	<nav>
 		<div id="nav_wrapper">
 			<ul id="nav_links" <%= color('color', @s) %>>
-				<li class="nav_link"><%= active_link_to("Work", {:controller => 'work', :action => 'index'}) %></li>
-				<li class="nav_link"><%= active_link_to("Faculty", {:controller => 'faculty', :action => 'index'}) %></li>
-				<li class="nav_link"><%= active_link_to("Alumni", {:controller => 'alumni', :action => 'index'}) %></li>
-				<li class="nav_link"><%= active_link_to("News", {:controller => 'news', :action => 'index'}) %></li>
-				<li class="nav_link"><%= active_link_to("Resources", {:controller => 'resources', :action => 'index'}) %></li>
-				<li class="nav_link"><%= active_link_to("Apply", {:controller => 'apply', :action => 'index'}) %></li>
+				<li class="nav_link"><%= active_link_to("Work", {:controller => 'work', :action => 'index'}, :id => 'work') %></li>
+				<li class="nav_link"><%= active_link_to("Faculty", {:controller => 'faculty', :action => 'index'}, :id => 'faculty') %></li>
+				<li class="nav_link"><%= active_link_to("Alumni", {:controller => 'alumni', :action => 'index'}, :id => 'alumni') %></li>
+				<li class="nav_link"><%= active_link_to("News", {:controller => 'news', :action => 'index'}, :id => 'news') %></li>
+				<li class="nav_link"><%= active_link_to("Resources", {:controller => 'resources', :action => 'index'}, :id => 'resources') %></li>
+				<li class="nav_link"><%= active_link_to("Apply", {:controller => 'apply', :action => 'index'}, :id => 'apply') %></li>
 			</ul>
 		</div>
 	</nav>

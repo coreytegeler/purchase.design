@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   post "next_pattern", :to => "application#next_pattern"
   post "clear_gradient", :to => "application#clear_gradient"
   post "clear_pattern", :to => "application#clear_pattern"
+  post "change_page", :to => "application#change_page"
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
 

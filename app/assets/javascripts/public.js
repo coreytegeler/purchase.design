@@ -1,8 +1,25 @@
 var initPublic = function() {
-	$('main').addClass('fadeIn');
+	// $('main').addClass('fadeIn');
 	fillSvgs();
 	setUpSide();
 	size();
+
+	// $('.nav_link a').click(function(event) {
+	// 	event.preventDefault();
+	// 	var id = event.target.id;
+	// 	console.log(id);
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: 'change_page',
+	// 		data: {
+	// 			'page_id': id
+	// 		},
+	// 		success: function(result) {
+	// 		},
+	// 		error: function(xhr, status, error) {
+	// 		}
+ //    	});
+	// });
 
 	if( $('.masonry').length ) {
 		var blockWidth = parseInt($('.masonry .block').eq(0).css('width'));
@@ -113,6 +130,3 @@ function setUpSide() {
 
 $(initPublic);
 $(document).on('page:load', initPublic);
-$(document).on('page:fetch', function() {
-    $('main').addClass('fadeOut');
-});

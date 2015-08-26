@@ -101,7 +101,7 @@ li {
 	width: -webkit-calc(100% - 98px);
 	border: 9px solid;
 	display: block;
-	overflow: scroll;
+	overflow: auto;
 }
 main {
 	height: 100%;
