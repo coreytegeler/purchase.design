@@ -3,10 +3,18 @@
 		<div class="faculty block">
 			<div class="swappee large text name">
 				<div class="row">
-					<%= mail_to(faculty.email, faculty.first_name) %>
+					<% if(faculty.link) %>
+						<%= link_to(faculty.first_name, faculty.link, :target => '_blank') %>
+					<% else %>
+						<%= faculty.first_name %>
+					<% end %>
 				</div>
 				<div class="row">
-					<%= mail_to(faculty.email, faculty.last_name) %>
+					<% if(faculty.link) %>
+						<%= link_to(faculty.last_name, faculty.link, :target => '_blank') %>
+					<% else %>
+						<%= faculty.last_name %>
+					<% end %>
 				</div>
 			</div>
 			<% if !faculty.alma_maters.empty? %>

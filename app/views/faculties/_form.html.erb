@@ -13,6 +13,9 @@
 <div class="row email">
 	<%= f.text_field(:email, :placeholder => "E-mail") %>
 </div>
+<div class="row link">
+	<%= f.text_field(:link, :placeholder => "Website") %>
+</div>
 <%= f.fields_for :alma_maters do |am| %>
 	<div class="row alma_mater">
 		<%= am.text_field(:college, {:placeholder => "School", :class => 'school'}) %>

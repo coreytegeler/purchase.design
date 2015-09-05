@@ -32,9 +32,10 @@
 .public #apply .block .text {
   	display: table;
 }
-.public #apply_btn {
-	display: table;
-	margin: 10px auto 20px auto;
+.public .apply_btn {
+	margin: 20px 0;
+}
+.public .apply_btn a {
 	text-decoration: none;
 	border: 4px solid;
 	padding: 20px;

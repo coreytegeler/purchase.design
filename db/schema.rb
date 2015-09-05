@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521211723) do
+ActiveRecord::Schema.define(version: 20150905201858) do
 
   create_table "abouts", force: :cascade do |t|
     t.text "text", limit: 65535
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20150521211723) do
     t.datetime "updated_at"
     t.string   "first_name",         limit: 255
     t.string   "last_name",          limit: 255
+    t.string   "link",               limit: 255
   end
 
   create_table "gradients", force: :cascade do |t|

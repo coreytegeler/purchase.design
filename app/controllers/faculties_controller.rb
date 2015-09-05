@@ -71,11 +71,11 @@ class FacultiesController < ApplicationController
   private 
 
     def faculty_params
-      params.require(:faculty).permit(:first_name, :last_name, :position, :email, :title, alma_maters_attributes: [:id, :faculty_id, :college, :degree, :link])
+      params.require(:faculty).permit(:first_name, :last_name, :position, :email, :link, alma_maters_attributes: [:id, :faculty_id, :college, :degree, :link])
     end
 
     def update_positions
-      Faculty.first_to_last.each_with_index do |f, i|
+      Faculty.a_to_z.each_with_index do |f, i|
           f.update_attribute(:position, i+1)
       end
     end

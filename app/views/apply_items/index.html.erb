@@ -2,7 +2,7 @@
 
 </header>
 <section class="masonry" id="apply">
-	<% @apply_items.each do |item| %>
+	<% @apply_items.each_with_index do |item, i| %>
 		<div class="apply_item block">
 			<div class="box secondary_fill" <%= color('border', @s) %>>
 				<%= inline_svg('check', false) %>
@@ -11,6 +11,10 @@
 				<%= item.text.html_safe %>
 			</div>
 		</div>
+		<% if(i % 8 == 0) %>
+			<div class="block apply_btn">
+				<%= link_to 'Apply!', 'http://www.purchase.edu/departments/admissions/', {:class => "large", :target => '_blank'} %>
+			</div>
+		<% end %>
 	<% end %>
 </section>
-<%= link_to 'Apply!', 'http://www.purchase.edu/departments/admissions/', {:id => 'apply_btn', :class => 'text large', :target => '_blank'} %>
