@@ -249,7 +249,6 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
   	width: 100%;
   	z-index: 19;
   	display: block;
-  	overflow-y: auto; 
   	-webkit-transition: -webkit-transform 300ms cubic-bezier(0.750, 0.750, 0.285, 0.950);
   	-moz-transition: -moz-transform 300ms cubic-bezier(0.750, 0.750, 0.285, 0.950);
   	transition: transform 300ms cubic-bezier(0.750, 0.750, 0.285, 0.950);
@@ -271,7 +270,7 @@ aside#side_bar #tools #buttons .button#next_pattern .method .tile {
 	height: calc(100% - 170px);
   	height: -moz-calc(100% - 170px);
   	height: -webkit-calc(100% - 170px);
-  	overflow: scroll;
+  	overflow-y: scroll; 
 }
 #about .content .inner {
 	max-width: 1300px;

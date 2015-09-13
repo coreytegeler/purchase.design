@@ -35,6 +35,7 @@ var initPublic = function() {
 	var aboutEase = 'cubic-bezier(0.750, 0.750, 0.285, 0.950)';
 	$('#logo').click(function() {
 		$('#about').addClass('opened');
+		$('#about .content').animate({ scrollTop: 0 }, 0);
 	});
 
 	$('#about .buffer').click(function() {
