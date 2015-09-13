@@ -9,6 +9,7 @@
 }
 .gradient_on #gradient, .pattern_on #pattern {
 	display: block;
+	z-index: 0;
 }
 #gradient .background, #pattern .background {
 	background-position: center;
