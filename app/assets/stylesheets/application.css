@@ -128,20 +128,30 @@ main {
 /*TOP NOTIFICATION BAR*/
 /**********************/
 .notice {
+	height: 70px;
+}
+.notice .bar {
+	position: fixed;
 	font-size: 30px;
 	font-weight: 700;
 	padding: 10px;
-	color: black;
+	height: 50px;
+	width: 100%;
+	display: table;
 }
-.notice.good {
+.notice .bar .vert {
+	vertical-align: middle;
+	display: table-cell;
+}
+.notice.good .bar {
 	background: #0aff51;
 	color:black;
 }
-.notice.bad {
+.notice.bad .bar {
 	background: red;
 	color: white;
 }
-.notice.neutral {
+.notice.neutral .bar {
 	background: black;
 	color: white;
 }
