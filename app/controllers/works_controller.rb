@@ -1,5 +1,9 @@
 class WorksController < ApplicationController
   include AccessHelper
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
+
   layout_by_action "access", [:index] => "public"
   before_action :confirm_logged_in, :except => [:index, :admin]
 
@@ -51,6 +55,35 @@ class WorksController < ApplicationController
     flash[:notice] = "Work was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
+  end
+
+  # def download
+  #   @works = Work.all
+  #   @works.each do |work|
+  #     send_file work.image.path,
+  #             :filename => work.image_file_name,
+  #             :type => work.image_content_type,
+  #             :disposition => 'attachment'
+  #   end
+  # end  
+
+  def export
+    @works = Work.all
+    t = Tempfile.new("temp-#{Time.now}")
+    Zip::OutputStream.open(t.path) do |z|
+      @works.each do |work|
+        title = work.image_file_name
+        z.put_next_entry("PurchaseCollegeGraphicDesignStudentWork/#{title}")
+        url1 = 'http://localhost:3000/'+work.image.url
+        url1_data = open(url1)
+        z.print IO.read(url1_data)
+      end
+    end
+
+    send_file t.path, :type => 'application/zip',
+                      :disposition => 'attachment',
+                      :filename => "pcgdwork.zip"                             
+    t.close
   end
 
   private 

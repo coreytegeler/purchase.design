@@ -15,7 +15,11 @@
 <body class="admin" id="<%= params[:controller].parameterize %>">
   <% if !flash[:notice].blank? %>
     <div class="notice <%= flash[:type] %>">
-      <%= flash[:notice].html_safe %>
+      <div class="bar">
+        <div class="vert">
+          <%= flash[:notice].html_safe %>
+        </div>
+      </div>
     </div>
   <% end %>
   <main>

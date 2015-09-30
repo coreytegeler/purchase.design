@@ -10,7 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt', '~> 3.1.7'
 
-
+gem 'rubyzip'
 gem 'acts_as_list'
 
 gem 'layout_by_action'
