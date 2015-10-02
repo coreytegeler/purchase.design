@@ -57,7 +57,7 @@ class LogosController < ApplicationController
     t = Tempfile.new("temp-#{Time.now}")
     Zip::OutputStream.open(t.path) do |z|
       @logos.each_with_index do |logo, i|
-        title = 'logo-'+i.to_s
+        title = 'logo-'+i.to_s+'.svg'
         z.put_next_entry("PurchaseCollegeGraphicDesignLogos/#{title}")
         url = logo.file.url
         url_data = open(url)

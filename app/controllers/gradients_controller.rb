@@ -57,7 +57,7 @@ class GradientsController < ApplicationController
     t = Tempfile.new("temp-#{Time.now}")
     Zip::OutputStream.open(t.path) do |z|
       @gradients.each_with_index do |gradient, i|
-        title = 'gradient-'+i.to_s
+        title = 'gradient-'+i.to_s+'.svg'
         z.put_next_entry("PurchaseCollegeGraphicDesignGradients/#{title}")
         url = gradient.file.url
         url_data = open(url)
