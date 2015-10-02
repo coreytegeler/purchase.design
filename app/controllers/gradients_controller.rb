@@ -1,8 +1,10 @@
 class GradientsController < ApplicationController
-
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
   include AccessHelper
   layout 'access'
-  before_action :confirm_logged_in, :except => [:index, :admin]
+  before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def admin
     @gradients = Gradient.first_to_last
@@ -48,6 +50,24 @@ class GradientsController < ApplicationController
     flash[:notice] = "Gradient was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
+  end
+
+  def download
+    @gradients = Gradient.all
+    t = Tempfile.new("temp-#{Time.now}")
+    Zip::OutputStream.open(t.path) do |z|
+      @gradients.each_with_index do |gradient, i|
+        title = 'gradient-'+i.to_s
+        z.put_next_entry("PurchaseCollegeGraphicDesignGradients/#{title}")
+        url = root_url+gradient.file.url
+        url_data = open(url)
+        z.print url_data.read()
+      end
+    end
+    send_file t.path, :type => 'application/zip',
+                      :disposition => 'attachment',
+                      :filename => "pcgdgradients.zip" 
+    t.close
   end
 
   private

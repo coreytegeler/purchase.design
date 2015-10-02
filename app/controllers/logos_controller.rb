@@ -1,8 +1,10 @@
 class LogosController < ApplicationController
-
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
   include AccessHelper
   layout 'access'
-  before_action :confirm_logged_in, :except => [:index, :admin]
+  before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def admin
     @logos = Logo.first_to_last
@@ -48,6 +50,25 @@ class LogosController < ApplicationController
     flash[:notice] = "Logo was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
+  end
+
+  def download
+    @logos = Logo.all
+    t = Tempfile.new("temp-#{Time.now}")
+    Zip::OutputStream.open(t.path) do |z|
+      @logos.each_with_index do |logo, i|
+        title = 'logo-'+i.to_s
+        z.put_next_entry("PurchaseCollegeGraphicDesignLogos/#{title}")
+        url = root_url+logo.file.url
+        url_data = open(url)
+        z.print url_data.read()
+      end
+    end
+
+    send_file t.path, :type => 'application/zip',
+                      :disposition => 'attachment',
+                      :filename => "pcgdlogos.zip"                             
+    t.close
   end
 
   private

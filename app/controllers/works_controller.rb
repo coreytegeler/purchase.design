@@ -64,9 +64,9 @@ class WorksController < ApplicationController
       @works.each do |work|
         title = work.image_file_name
         z.put_next_entry("PurchaseCollegeGraphicDesignStudentWork/#{title}")
-        url1 = 'http://localhost:3000/'+work.image.url
-        url1_data = open(url1)
-        z.print IO.read(url1_data)
+        url = root_url+gradient.file.url
+        url_data = open(url)
+        z.print IO.read(url_data)
       end
     end
 

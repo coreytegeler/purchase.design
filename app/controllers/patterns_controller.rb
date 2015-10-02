@@ -1,8 +1,10 @@
 class PatternsController < ApplicationController
-
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
   include AccessHelper
   layout 'access'
-  before_action :confirm_logged_in, :except => [:index, :admin]
+  before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def admin
     @patterns = Pattern.first_to_last
@@ -48,6 +50,25 @@ class PatternsController < ApplicationController
     flash[:notice] = "Pattern was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
+  end
+
+  def download
+    @patterns = Pattern.all
+    t = Tempfile.new("temp-#{Time.now}")
+    Zip::OutputStream.open(t.path) do |z|
+      @patterns.each do |pattern|
+        title = pattern.tile_file_name
+        z.put_next_entry("PurchaseCollegeGraphicDesignStudentPatterns/#{title}")
+        url = root_url+pattern.tile.url
+        url_data = open(url)
+        z.print IO.read(url_data)
+      end
+    end
+
+    send_file t.path, :type => 'application/zip',
+                      :disposition => 'attachment',
+                      :filename => "pcgdpatterns.zip"                             
+    t.close
   end
 
   private
