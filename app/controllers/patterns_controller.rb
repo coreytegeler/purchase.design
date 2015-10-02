@@ -59,7 +59,7 @@ class PatternsController < ApplicationController
       @patterns.each do |pattern|
         title = pattern.tile_file_name
         z.put_next_entry("PurchaseCollegeGraphicDesignStudentPatterns/#{title}")
-        url = root_url+pattern.tile.url
+        url = pattern.tile.url
         url_data = open(url)
         z.print IO.read(url_data)
       end

@@ -59,7 +59,7 @@ class GradientsController < ApplicationController
       @gradients.each_with_index do |gradient, i|
         title = 'gradient-'+i.to_s
         z.put_next_entry("PurchaseCollegeGraphicDesignGradients/#{title}")
-        url = root_url+gradient.file.url
+        url = gradient.file.url
         url_data = open(url)
         z.print url_data.read()
       end

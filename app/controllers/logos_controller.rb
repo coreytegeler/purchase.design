@@ -59,7 +59,7 @@ class LogosController < ApplicationController
       @logos.each_with_index do |logo, i|
         title = 'logo-'+i.to_s
         z.put_next_entry("PurchaseCollegeGraphicDesignLogos/#{title}")
-        url = root_url+logo.file.url
+        url = logo.file.url
         url_data = open(url)
         z.print url_data.read()
       end
