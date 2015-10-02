@@ -61,7 +61,7 @@ class PatternsController < ApplicationController
         z.put_next_entry("PurchaseCollegeGraphicDesignStudentPatterns/#{title}")
         url = pattern.tile.url
         url_data = open(url)
-        z.print IO.read(url_data)
+        z.print url_data.read()
       end
     end
 
