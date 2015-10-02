@@ -5,7 +5,7 @@ class WorksController < ApplicationController
   require 'open-uri'
 
   layout_by_action "access", [:index] => "public"
-  before_action :confirm_logged_in, :except => [:index, :admin]
+  before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def index
     @works = Work.last_to_first
@@ -57,17 +57,7 @@ class WorksController < ApplicationController
     redirect_to(:action => 'admin')
   end
 
-  # def download
-  #   @works = Work.all
-  #   @works.each do |work|
-  #     send_file work.image.path,
-  #             :filename => work.image_file_name,
-  #             :type => work.image_content_type,
-  #             :disposition => 'attachment'
-  #   end
-  # end  
-
-  def export
+  def download
     @works = Work.all
     t = Tempfile.new("temp-#{Time.now}")
     Zip::OutputStream.open(t.path) do |z|
