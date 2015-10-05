@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
   include AccessHelper
   layout_by_action "access", [:index] => "public"
-  before_action :confirm_logged_in, :except => [:index, :admin]
+  before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def index
     @posts = Post.new_to_old
@@ -66,6 +68,27 @@ class PostsController < ApplicationController
     flash[:notice] = "Post was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
+  end
+
+  def download
+    @posts = Post.all
+    t = Tempfile.new("temp-#{Time.now}")
+    Zip::OutputStream.open(t.path) do |z|
+      @posts.each do |post|
+        post.post_images.each do |image|
+          title = image.image_file_name
+          z.put_next_entry("PurchaseCollegeGraphicDesignPosts/#{title}")
+          url = image.image.url
+          url_data = open(url)
+          z.print IO.read(url_data)
+        end
+      end
+    end
+
+    send_file t.path, :type => 'application/zip',
+                      :disposition => 'attachment',
+                      :filename => "pcgdposts.zip"                             
+    t.close
   end
 
   private 
