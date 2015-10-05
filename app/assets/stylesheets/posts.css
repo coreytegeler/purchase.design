@@ -37,6 +37,7 @@
 	margin: 10px;
 	position: relative;
 	float: left;
+	background-size: contain !important;
 }
 .admin .block form .images .drop .file  {
 	width: 100% !important;

@@ -12,7 +12,7 @@
 default: &default
   encoding: utf8
   pool: 5
-  username: corey
+  username: coreytegeler
   password: 282wi7
   socket: /tmp/mysql.sock
 

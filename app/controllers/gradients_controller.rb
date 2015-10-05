@@ -8,12 +8,13 @@ class GradientsController < ApplicationController
 
   def admin
     @gradients = Gradient.first_to_last
-    @new_gradient = Gradient.new(:position => 0)
+    position = @gradients.last.position + 1
+    @new_gradient = Gradient.new(:position => position)
   end
 
   def create
+    @gradients = Gradient.first_to_last
     @gradient = Gradient.new(gradient_params)
-    @gradient.position = 1
     if @gradient.save
       flash[:notice] = "Gradient was created!"
       flash[:type] = 'good'
