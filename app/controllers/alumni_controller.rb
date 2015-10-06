@@ -73,6 +73,7 @@ class AlumniController < ApplicationController
         z.print IO.read(url_data)
       end
     end
+
     send_file t.path, :type => 'application/zip',
                       :disposition => 'attachment',
                       :filename => "pcgdalumni.zip"                             
