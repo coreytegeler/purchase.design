@@ -65,7 +65,7 @@ class AlumniController < ApplicationController
     @alumni = Alumnus.all
     t = Tempfile.new("temp-#{Time.now}")
     Zip::OutputStream.open(t.path) do |z|
-      alumni.each do |alumnus|
+      @alumni.each do |alumnus|
         title = alumnus.image_file_name
         z.put_next_entry("pcgdalumni/#{title}")
         url = alumnus.image.url
