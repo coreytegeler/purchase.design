@@ -90,7 +90,7 @@ class ResourcesController < ApplicationController
     end
 
     def update_positions
-      Resource.sorted.reverse_order.each_with_index do |f, i|
+      Resource.a_to_z.each_with_index do |f, i|
           f.update_attribute(:position, i+1)
       end
     end
