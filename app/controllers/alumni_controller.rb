@@ -62,7 +62,7 @@ class AlumniController < ApplicationController
   end
 
   def download
-    @alumni = Alumni.all
+    @alumni = Alumnus.all
     t = Tempfile.new("temp-#{Time.now}")
     Zip::OutputStream.open(t.path) do |z|
       alumni.each do |alumnus|
