@@ -66,11 +66,13 @@ class AlumniController < ApplicationController
     t = Tempfile.new("temp-#{Time.now}")
     Zip::OutputStream.open(t.path) do |z|
       @alumni.each do |alumnus|
-        title = alumnus.image_file_name
-        z.put_next_entry("pcgdalumni/#{title}")
-        url = 'http://localhost:3000'+alumnus.image.url
-        url_data = open(url)
-        z.print File.read(url_data)
+        if alumnus.image.exists?
+          title = alumnus.image_file_name
+          z.put_next_entry("pcgdalumni/#{title}")
+          url = 'http://localhost:3000'+alumnus.image.url
+          url_data = open(url)
+          z.print IO.read(url_data)
+        end
       end
     end
 
