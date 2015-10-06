@@ -77,7 +77,7 @@ class PostsController < ApplicationController
       @posts.each do |post|
         post.post_images.each do |image|
           title = image.image_file_name
-          z.put_next_entry("PurchaseCollegeGraphicDesignPosts/#{title}")
+          z.put_next_entry("pcgdnewsimages/#{title}")
           url = image.image.url
           url_data = open(url)
           z.print IO.read(url_data)
@@ -87,7 +87,7 @@ class PostsController < ApplicationController
 
     send_file t.path, :type => 'application/zip',
                       :disposition => 'attachment',
-                      :filename => "pcgdposts.zip"                             
+                      :filename => "pcgdnewsimages.zip"                             
     t.close
   end
 

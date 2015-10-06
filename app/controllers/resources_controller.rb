@@ -1,8 +1,10 @@
 class ResourcesController < ApplicationController
-
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
   include AccessHelper
   layout_by_action "access", [:index] => "public"
-  before_action :confirm_logged_in, :except => [:index, :admin]
+  before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def index
     @resources = Resource.a_to_z
@@ -60,6 +62,25 @@ class ResourcesController < ApplicationController
     flash[:notice] = "Resource was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
+  end
+
+  def download
+    @resources = Resource.all
+    t = Tempfile.new("temp-#{Time.now}")
+    Zip::OutputStream.open(t.path) do |z|
+      @resources.each do |resource|
+        title = resource.image_file_name
+        z.put_next_entry("pcgdresources/#{title}")
+        url = resource.image.url
+        url_data = open(url)
+        z.print IO.read(url_data)
+      end
+    end
+
+    send_file t.path, :type => 'application/zip',
+                      :disposition => 'attachment',
+                      :filename => "pcgdresources.zip"                             
+    t.close
   end
 
   private 

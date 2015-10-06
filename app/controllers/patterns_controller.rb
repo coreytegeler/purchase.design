@@ -58,7 +58,7 @@ class PatternsController < ApplicationController
     Zip::OutputStream.open(t.path) do |z|
       @patterns.each do |pattern|
         title = pattern.tile_file_name
-        z.put_next_entry("PurchaseCollegeGraphicDesignStudentPatterns/#{title}")
+        z.put_next_entry("pcgdpatterns/#{title}")
         url = pattern.tile.url
         url_data = open(url)
         z.print url_data.read()

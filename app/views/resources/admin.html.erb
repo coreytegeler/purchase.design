@@ -1,11 +1,9 @@
 <section class="masonry big" id="resources">
-
 	<div class="resource block">
 		<%= form_for(@new_resource, :url => {:action => 'create', :id => @new_resource.id}, :html => { :id => @new_resource.position.to_s, :class => 'new', :method => :post}) do |f| %>
 			<%= render(:partial => "form", :locals => {:resource => @new_resource, :f => f}) %>
 		<% end %>
 	</div>
-
 	<% @resources.each do |resource| %>
 		<div class="resource block">
 			<%= form_for(resource, :url => {:action => 'update', :id => resource.id}, :html => { :id => resource.position.to_s, :method => :post}) do |f| %>
@@ -13,5 +11,5 @@
 			<% end %>
 		</div>
 	<% end %>
-	
 </section>
+<%= link_to("Download All", {:controller => 'resources', :action => 'download'}, :class => 'large download') %>

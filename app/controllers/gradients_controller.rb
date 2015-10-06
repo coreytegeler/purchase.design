@@ -59,7 +59,7 @@ class GradientsController < ApplicationController
     Zip::OutputStream.open(t.path) do |z|
       @gradients.each_with_index do |gradient, i|
         title = 'gradient-'+i.to_s+'.svg'
-        z.put_next_entry("PurchaseCollegeGraphicDesignGradients/#{title}")
+        z.put_next_entry("pcgdgradients/#{title}")
         url = gradient.file.url
         url_data = open(url)
         z.print url_data.read()

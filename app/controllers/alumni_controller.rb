@@ -1,8 +1,10 @@
 class AlumniController < ApplicationController
-
+  require 'rubygems'
+  require 'zip'
+  require 'open-uri'
   include AccessHelper
   layout_by_action "access", [:index] => "public"
-  before_action :confirm_logged_in, :except => [:index, :admin]
+  before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def index
     @alumni = Alumnus.first_to_last
@@ -57,6 +59,24 @@ class AlumniController < ApplicationController
     flash[:notice] = "Alumnus was deleted!"
     flash[:type] = 'good'
     redirect_to(:action => 'admin')
+  end
+
+  def download
+    @alumni = Alumni.all
+    t = Tempfile.new("temp-#{Time.now}")
+    Zip::OutputStream.open(t.path) do |z|
+      alumni.each do |alumnus|
+        title = alumnus.image_file_name
+        z.put_next_entry("pcgdalumni/#{title}")
+        url = alumnus.image.url
+        url_data = open(url)
+        z.print IO.read(url_data)
+      end
+    end
+    send_file t.path, :type => 'application/zip',
+                      :disposition => 'attachment',
+                      :filename => "pcgdalumni.zip"                             
+    t.close
   end
 
   private 

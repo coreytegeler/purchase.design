@@ -63,7 +63,7 @@ class WorksController < ApplicationController
     Zip::OutputStream.open(t.path) do |z|
       @works.each do |work|
         title = work.image_file_name
-        z.put_next_entry("PurchaseCollegeGraphicDesignStudentWork/#{title}")
+        z.put_next_entry("pcgdwork/#{title}")
         url = work.image.url
         url_data = open(url)
         z.print IO.read(url_data)
