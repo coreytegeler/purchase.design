@@ -8,7 +8,7 @@ class WorksController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def index
-    @works = Work.last_to_first
+    @works = Work.last_to_first.limit(20)
   end
 
   def admin
