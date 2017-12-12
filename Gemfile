@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 gem 'mysql2'
 gem 'pg'
+gem 'rack', '~> 1.5.4.'
 
 gem 'jbuilder', '~> 2.0'
 
