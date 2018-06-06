@@ -2,15 +2,11 @@
 <html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
 <head>
 	<title>Purchase College Graphic Design BFA Program</title>
-	<%= stylesheet_link_tag "application", params[:controller], :media => "all", 'data-turbolinks-track' => true %>
-	<%= stylesheet_link_tag "animate", :media => "all", 'data-turbolinks-track' => true %>
-	<%= stylesheet_link_tag "public", :media => "all", 'data-turbolinks-track' => true if !public? %>
-	<%= javascript_include_tag "application", params[:controller], 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag "public", 'data-turbolinks-track' => true if !public? %>
+	<%= stylesheet_link_tag "public", :media => "all", "data-turbolinks-track" => true if !public? %>
+	<%= javascript_include_tag "application", "public", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 	<meta charset="UTF-16">
 	<meta name="description" content="Graphic Design BFA Program, School of Art + Design, Purchase College, SUNY">
-	<meta name="keywords" content="Purchase College, SUNY, State University of New York, Visual Arts, Art+Design, art, design, graphic design, graphic design department, BFA, graphic design BFA, bachelors of fine arts, university, college, education">
 	<meta name="google" content="notranslate">
 	<meta http-equiv="Content-Language" content="en">
 	<script>

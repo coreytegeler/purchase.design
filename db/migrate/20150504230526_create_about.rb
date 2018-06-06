@@ -1,4 +1,4 @@
-class CreateAbout < ActiveRecord::Migration
+class CreateAbout < ActiveRecord::Migration[4.2]
   def change
     create_table :abouts do |t|
     	t.string	'dept_title'

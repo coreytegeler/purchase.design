@@ -1,0 +1,39 @@
+#apply .block {
+	display: block;
+	clear: both;
+	padding-bottom: 40px;
+	width: 450px;
+}
+#apply .block .box {
+	display: inline-block;
+	float: left;
+	width: 30px;
+	height: 30px;
+	border: 4px solid;
+	margin-right: 30px;
+	position: relative;
+	cursor: pointer;
+	margin-top: 7px;
+}
+#apply .block .box svg {
+	display: none;
+	position: absolute;
+	bottom: 0px;
+	left: 3px;
+	width: 45px;
+	height: 45px;
+}
+#apply .block .box.checked svg {
+	display: block;
+}
+#apply .block .text {
+  	display: table;
+}
+.apply_btn {
+	margin: 20px 0;
+}
+.apply_btn a {
+	text-decoration: none;
+	border: 4px solid;
+	padding: 20px;
+}

@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_filter :select_palette, only: [:index]
-  before_filter :select_logo, only: [:index]
-  before_filter :select_gradient, only: [:index]
-  before_filter :select_pattern, only: [:index]
-  before_filter :get_upload_icon, only: [:admin]
-  before_filter :get_last_page, only: [:logout, :login]
+  before_action :select_palette, only: [:index]
+  before_action :select_logo, only: [:index]
+  before_action :select_gradient, only: [:index]
+  before_action :select_pattern, only: [:index]
+  before_action :get_upload_icon, only: [:admin]
+  before_action :get_last_page, only: [:logout, :login]
 
   def logged_in?
   	!!session[:admin_id]
@@ -187,7 +187,6 @@ class ApplicationController < ActionController::Base
         end
 
         @next_gradient = gradients.where(:position => session[:next_gradient]).first.file
-
       end
 
       def find_next_gradient

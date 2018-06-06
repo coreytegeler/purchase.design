@@ -1,4 +1,4 @@
-class AddLinkToFaculty < ActiveRecord::Migration
+class AddLinkToFaculty < ActiveRecord::Migration[4.2]
   def change
   	add_column 'faculties', 'link', :string
   end

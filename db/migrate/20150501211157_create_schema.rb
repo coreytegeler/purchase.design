@@ -1,4 +1,4 @@
-class CreateSchema < ActiveRecord::Migration
+class CreateSchema < ActiveRecord::Migration[4.2]
   	def change
 		create_table "admins", force: :cascade do |t|
 			t.string   "first_name",      limit: 255

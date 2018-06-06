@@ -1,0 +1,17 @@
+body.admin#works {
+	form .file .drop {
+		display: none;
+		border: 0;
+	}
+	form[data-media="image"] .file .drop.image, form[data-media="video"] .file .drop.video {
+		display: block;
+		overflow: hidden;
+	}
+	form[data-media="video"] .file .drop.video video {
+		height: 100%;
+		width: auto;
+	}
+	form select, form input {
+		font-size: 27px;
+	}
+}

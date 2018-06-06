@@ -1,0 +1,25 @@
+#courses {
+	.year {
+		padding: 0 0 30px 0;
+	}
+	.semester {
+		padding: 0 0 15px 0;
+	}
+	.course {
+		max-height: 500px;
+		padding: 15px;
+		margin: 15px 0 0 0;
+		border: 5px solid;
+		overflow-y: auto;
+		.text {
+			position: relative;
+			.required {
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-align: right;
+				font-size: 17px;
+			}
+		}
+	}
+}

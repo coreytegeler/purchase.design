@@ -7,9 +7,15 @@ class GradientsController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :admin, :download]
 
   def admin
+    # @gradients = Gradient.first_to_last
+    # if @gradients.length
+    #   position = @gradients.last.position + 1
+    # else
+    #   position = 0
+    # end
+    # @new_gradient = Gradient.new(:position => position)
     @gradients = Gradient.first_to_last
-    position = @gradients.last.position + 1
-    @new_gradient = Gradient.new(:position => position)
+    @new_gradient = Gradient.new(:position => 0)
   end
 
   def create

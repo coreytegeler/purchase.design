@@ -1,4 +1,4 @@
-class CleanUpSchema < ActiveRecord::Migration
+class CleanUpSchema < ActiveRecord::Migration[4.2]
   def change
   	drop_table "abouts"
   	remove_column "alma_maters", "year"

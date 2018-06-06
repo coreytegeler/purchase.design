@@ -1,4 +1,4 @@
-class RemoveParentAndStudentView < ActiveRecord::Migration
+class RemoveParentAndStudentView < ActiveRecord::Migration[4.2]
   def change
   	remove_column "apply_items", "parent"
   	remove_column "apply_items", "student"

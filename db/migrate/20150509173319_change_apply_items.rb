@@ -1,4 +1,4 @@
-class ChangeApplyItems < ActiveRecord::Migration
+class ChangeApplyItems < ActiveRecord::Migration[4.2]
   def change
   	remove_column "apply_items", "show_to"
   	remove_column "apply_items", "text"

@@ -1,0 +1,42 @@
+<section id="courses">
+	<% @course_list.each do |year| %>
+		<div class="year">
+			<h2><%= year[:name] %> Year</h2>
+			<% year[:semesters].each do |semester| %>
+				<% if semester[:courses].any? %>
+					<div class="semester">
+						<h3><%= semester[:name] %></h3>
+						<% semester[:courses].each do |course| %>
+							<div class="course" <%= color('border', @s) %>>
+								<div class="text">
+									<% if course[:required] %>
+										<div class="required">Required</div>
+									<% end %>
+									<h2 class="name">
+										<%= course.name %>
+									</h2>
+									<div class="about">
+										<%= course.about.html_safe %>
+									</div>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	<% end %>
+
+	<%# @courses.each do |course| %>
+		<!-- <div class="course row block"> -->
+			<!-- <div class="stack"> -->
+				<%# course.course_images.each do |pi| %>
+					<!-- <div class="image" <%#= color('bg', @p, 'border', @s) %>> -->
+						<!-- <div class="image_wrapper"> -->
+							<%#= image_tag pi.image.url(:medium) %>
+						<!-- </div> -->
+					<!-- </div> -->
+				<%# end %>
+			<!-- </div> -->
+	<%# end %>
+</section>

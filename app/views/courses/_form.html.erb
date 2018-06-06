@@ -1,0 +1,30 @@
+<% if !course %>
+	<% course = @new_course %>
+<% end %>
+
+<div class="row name">
+	<%= f.text_field(:name, :placeholder => "Name") %>
+</div>
+<div class="row year">
+	<%= f.label :year, "Year:" %>
+	<%= f.select :year, options_for_select(@years, :selected => f.object.year) %>
+</div>
+<div class="row semester">
+	<%= f.label :semester, "Semester:" %>
+	<%= f.select :semester, options_for_select(@semesters, :selected => f.object.semester) %>
+</div>
+<div class="row about">
+	<%= f.text_area(:about, :rows => 15, :placeholder => "What's this course about?") %>
+</div>
+<div class="row required">
+	<%= f.label :required, "Required:" %>
+	<%= f.select :required, options_for_select({"Yes" => true, "No" => false}, :selected => f.object.required) %>
+</div>
+<div class="actions">
+	<% if course.persisted? %>
+		<%= link_to('Update', "#", :onclick => "$('#" + course.position.to_s + "').submit()", :class => "action submit") %>
+		<%= link_to("Delete", {:controller => 'faculties', :action => 'delete', :id => course.id}, :remote => true, :class => 'action delete') %>
+	<% else %>
+		<%= link_to('Create', "#", :onclick => "$('#" + course.position.to_s + "').submit()", :class => "action submit") %>
+	<% end %>
+</div>

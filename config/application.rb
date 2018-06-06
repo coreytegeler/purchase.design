@@ -21,7 +21,6 @@ module Pcgd
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end

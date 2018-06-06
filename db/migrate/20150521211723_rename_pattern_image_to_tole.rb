@@ -1,4 +1,4 @@
-class RenamePatternImageToTole < ActiveRecord::Migration
+class RenamePatternImageToTole < ActiveRecord::Migration[4.2]
   def change
   	rename_column :patterns, :image_file_name, :tile_file_name
     rename_column :patterns, :image_file_size, :tile_file_size

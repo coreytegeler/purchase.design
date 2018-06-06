@@ -1,0 +1,18 @@
+<section class="masonry big" id="courses">
+
+	<div class="course block">
+		<%= form_for(@new_course, :url => {:action => 'create', :id => @new_course.id}, :html => { :id => @new_course.position.to_s, :class => 'new', :method => :post}) do |f| %>
+			<%= render(:partial => "form", :locals => {:course => @new_course, :f => f}) %>
+		<% end %>
+	</div>
+
+	<% @courses.each do |course| %>
+		<div class="course block">
+			<div class="row">
+				<%= form_for(course, :url => {:action => 'update', :id => course.id}, :html => { :id => course.position.to_s, :method => :post}) do |f| %>
+				<%= render(:partial => "form", :locals => {:course => course, :f => f}) %>
+			<% end %>
+			</div>
+		</div>
+	<% end %>
+</section>

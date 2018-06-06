@@ -36,6 +36,10 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.sass.preferred_syntax = :sass
+  config.sass.line_comments = false
+  config.sass.cache = false
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

@@ -1,0 +1,51 @@
+body.admin#posts {
+	.block form select {
+		width: 100%;
+	}
+	.block form .date span {
+		opacity: 0.7;
+		font-weight: 700;
+		padding: 10px;
+		float: left;
+		width: 60px;
+	}
+	.block form .date select {
+		border-left: 1px solid rgba(255,255,255,0.3);
+		float: left;
+	}
+	.block form .date select:nth-child(2) {
+		width: 220px;
+	}
+	.block form .date select:nth-child(3) {
+		width: 55px;
+	}
+	.block form .date select:nth-child(4) {
+		width: 90px;
+	}
+	.block form .images {
+		width: calc(100% - 20px);
+		width: -moz-calc(100% - 20px);
+		width: -webkit-calc(100% - 20px);
+		padding: 10px;
+		height: auto;
+		border-top: none;
+		border-bottom: 1px solid rgba(255,255,255,0.3);
+		display: table;
+	}
+	.block form .images .drop  {
+		width: 220px !important;
+		height: 220px !important;
+		margin: 10px;
+		position: relative;
+		float: left;
+		background-size: contain !important;
+	}
+	.block form .images .drop .file  {
+		width: 100% !important;
+		height: 100% !important;
+	}
+	.block form .images .drop .remove svg {
+		width: 100%;
+		height: 100%;
+	}
+}

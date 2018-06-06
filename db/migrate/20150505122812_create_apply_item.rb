@@ -1,4 +1,4 @@
-class CreateApplyItem < ActiveRecord::Migration
+class CreateApplyItem < ActiveRecord::Migration[4.2]
   def change
     create_table :apply_items do |t|
     	t.string :text

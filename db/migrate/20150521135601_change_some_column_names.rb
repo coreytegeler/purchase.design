@@ -1,4 +1,4 @@
-class ChangeSomeColumnNames < ActiveRecord::Migration
+class ChangeSomeColumnNames < ActiveRecord::Migration[4.2]
   def change
   	rename_column :patterns, :tile_file_name, :image_file_name
     rename_column :patterns, :tile_file_size, :image_file_size
