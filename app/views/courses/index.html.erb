@@ -15,8 +15,19 @@
 									<h2 class="name">
 										<%= course.name %>
 									</h2>
-									<div class="about">
-										<%= course.about.html_safe %>
+									<div class="inner">
+										<div class="about">
+											<%= course.about.html_safe %>
+										</div>
+										<% if course.course_images.any? %>
+											<div class="images masonry">
+												<% course.course_images.each do |ci| %>
+													<div class="image block" <%= color('bg', @p, 'border', @s) %>>
+														<%= image_tag ci.image.url(:medium) %>
+													</div>
+												<% end %>
+											</div>
+										<% end %>
 									</div>
 								</div>
 							</div>
@@ -26,17 +37,4 @@
 			<% end %>
 		</div>
 	<% end %>
-
-	<%# @courses.each do |course| %>
-		<!-- <div class="course row block"> -->
-			<!-- <div class="stack"> -->
-				<%# course.course_images.each do |pi| %>
-					<!-- <div class="image" <%#= color('bg', @p, 'border', @s) %>> -->
-						<!-- <div class="image_wrapper"> -->
-							<%#= image_tag pi.image.url(:medium) %>
-						<!-- </div> -->
-					<!-- </div> -->
-				<%# end %>
-			<!-- </div> -->
-	<%# end %>
 </section>

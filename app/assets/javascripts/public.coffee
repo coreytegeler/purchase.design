@@ -3,14 +3,19 @@
 	fillSvgs()
 	setUpSide()
 	size()
-	if $('.masonry').length
-		blockWidth = parseInt($('.masonry .block').eq(0).css('width'))
-		$('.masonry').masonry
-			itemSelector: '.block'
-			columnWidth: blockWidth
-			gutterWidth: 40
-			isFitWidth: true
-			isResizable: true
+	$('.masonry').each (i, container) ->
+		if $block = $(container).find('.block').eq(0)
+			gutter = parseInt($block.css('marginBottom'))
+			$(container).masonry
+				itemSelector: '.block'
+				columnWidth: '.block:first-child'
+				gutter: gutter
+				isFitWidth: true
+				isResizable: true
+				transitionDuration: 0
+			.imagesLoaded () ->
+	      $(container).masonry()
+
 	aboutEase = 'cubic-bezier(0.750, 0.750, 0.285, 0.950)'
 	$('#logo').click ->
 		$('#about').addClass 'opened'
@@ -150,6 +155,9 @@ initWorks = ->
 			tooltip = $('#stack .designer[data-position=' + position + ']')
 			$(tooltip).css 'display': 'none'
 
+initCourses = ->
+	$('.course .name').click () ->
+		$(this).parents('.course').toggleClass('open')
 
 initPosts = ->
 	$('.remove').each ->
@@ -188,15 +196,15 @@ initApply = ->
 	$('.box').click ->
 		$(this).toggleClass 'checked'
 
+$(window).resize () ->
+	$('.masonry').each () ->
+		$(this).masonry()
 
-$(initPublic)
-$(initWorks)
-$(initPosts)
-$(initApply)
 
 $(document).on 'turbolinks:load', () ->
 	initPublic()
 	initWorks()
+	initCourses()
 	initPosts()
 	initApply()
 

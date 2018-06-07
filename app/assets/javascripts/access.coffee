@@ -1,12 +1,18 @@
 initAccess = ->
   size()
-  columnWidth = $('.masonry .block:first-child').width()
-  $('.masonry').masonry
-    itemSelector: '.block'
-    columnWidth: columnWidth
-    gutterWidth: 40
-    isFitWidth: true
-    isResizable: true
+  $('.masonry').each (i, container) ->
+    console.log container
+    if $block = $(this).find('.block').eq(0)
+      gutter = parseInt($block.css('marginBottom'))
+      $(container).masonry
+        itemSelector: '.block'
+        columnWidth: '.block:first-child'
+        gutter: gutter
+        isFitWidth: true
+        isResizable: true
+        transitionDuration: 0
+      .imagesLoaded () ->
+        $(container).masonry();
   $('select').change (e) ->
     if $(this).val() == ''
       $(this).css 'opacity': 0.7
@@ -64,13 +70,11 @@ initGradients = ->
     files = event.target.files
     file = files[0]
     reader = new FileReader
-    console.log file
     reader.onload = (file) ->
       src = file.target.result
       image = new Image
       image.src = src
       $(input).parent('.drop').css('backgroundImage': 'url(' + src + ')')
-      console.log $(input)
       $('form#' + position).addClass('can_save')
       return
 
@@ -106,24 +110,15 @@ imagePreview = ->
 
             if file != undefined
               reader.readAsDataURL file
-          else
-            console.log type
         else if $(drop).hasClass('video')
           if type.match('video/mp4')
             $(drop).css 'background-image': ''
             $('form#' + position).addClass 'can_save'
-          else
-            console.log type
       else
         $(drop).css 'background-image': ''
         $('form#' + position).removeClass 'can_save'
 
-$(initAccess)
-$(initLogos)
-$(initGradients)
-$(initWorks)
-
-$(document).on 'turbolink:load', () ->
+$(document).on 'turbolinks:load', () ->
   initAccess()
   initLogos()
   initGradients()

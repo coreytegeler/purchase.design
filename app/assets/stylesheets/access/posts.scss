@@ -22,30 +22,4 @@ body.admin#posts {
 	.block form .date select:nth-child(4) {
 		width: 90px;
 	}
-	.block form .images {
-		width: calc(100% - 20px);
-		width: -moz-calc(100% - 20px);
-		width: -webkit-calc(100% - 20px);
-		padding: 10px;
-		height: auto;
-		border-top: none;
-		border-bottom: 1px solid rgba(255,255,255,0.3);
-		display: table;
-	}
-	.block form .images .drop  {
-		width: 220px !important;
-		height: 220px !important;
-		margin: 10px;
-		position: relative;
-		float: left;
-		background-size: contain !important;
-	}
-	.block form .images .drop .file  {
-		width: 100% !important;
-		height: 100% !important;
-	}
-	.block form .images .drop .remove svg {
-		width: 100%;
-		height: 100%;
-	}
 }

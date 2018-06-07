@@ -24,10 +24,16 @@ class CoursesController < ApplicationController
 
   def admin
     @courses = Course.a_to_z
+    @courses.each do |f|
+      f.course_images.new
+      f.position = f.position + 1
+    end
     @new_course = Course.new
     @new_course.position = Course.all.count + 1
+    @course_images = CourseImage.sorted
     @years = ["Freshman", "Sophomore", "Junior", "Senior"]
     @semesters = ["Semester 1", "Semester 2", "Semester 3", "Semester 4"]
+
   end
 
   def create
@@ -77,7 +83,7 @@ class CoursesController < ApplicationController
   private 
 
     def course_params
-      params.require(:course).permit(:name, :year, :semester, :about, :required, :position)
+      params.require(:course).permit(:name, :year, :semester, :about, :required, :position, course_images_attributes: [:id, :image, :position, :_destroy])
     end
 
     def update_positions
