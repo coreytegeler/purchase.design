@@ -2,7 +2,9 @@ class Course < ActiveRecord::Base
 
 	scope :a_to_z, lambda {order("courses.name ASC")}
 
-	acts_as_list scope: [:position]
+	scope :in_order, lambda {order("courses.updated_at DESC")}
+
+	# acts_as_list scope: [:position]
 
 	has_many :course_images, :dependent => :destroy
 

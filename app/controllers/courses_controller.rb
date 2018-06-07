@@ -23,13 +23,13 @@ class CoursesController < ApplicationController
 	end
 
 	def admin
-		@courses = Course.a_to_z
+		@courses = Course.in_order
+		@new_course = Course.new
+		# @new_course.position = Course.all.count + 1
 		@courses.each do |f|
 			f.course_images.new
-			f.position = f.position + 1
+			# f.position = f.position + 1
 		end
-		@new_course = Course.new
-		@new_course.position = Course.all.count + 1
 		@course_images = CourseImage.sorted
 		@years = ["Freshman", "Sophomore", "Junior", "Senior"]
 		@semesters = ["Semester 1", "Semester 2", "Semester 3", "Semester 4"]
@@ -38,9 +38,9 @@ class CoursesController < ApplicationController
 
 	def create
 		@course = Course.new(course_params)
-		@course.position = 1
+		# @course.position = 1
 		if @course.save
-			update_positions
+			# update_positions
 			flash[:notice] = "Course was created!"
 			flash[:type] = 'good'
 			redirect_to(:action => 'admin')
@@ -54,7 +54,7 @@ class CoursesController < ApplicationController
 	def update
 		@course = Course.find(params[:id])
 		if @course.update_attributes(course_params)
-			update_positions
+			# update_positions
 			flash[:notice] = "Course was updated!"
 			flash[:type] = 'good'
 			redirect_to(:action => 'admin')
@@ -83,13 +83,13 @@ class CoursesController < ApplicationController
 	private 
 
 		def course_params
-			params.require(:course).permit(:name, :year, :semester, :about, :required, :position, course_images_attributes: [:id, :image, :position, :_destroy])
+			params.require(:course).permit(:name, :year, :semester, :about, :required, course_images_attributes: [:id, :image, :position, :_destroy])
 		end
 
-		def update_positions
-			Course.a_to_z.each_with_index do |c, i|
-				c.update_attribute(:position, i+1)
-			end
-		end
+		# def update_positions
+		# 	Course.a_to_z.each_with_index do |c, i|
+		# 		c.update_attribute(:position, i+1)
+		# 	end
+		# end
 
 end

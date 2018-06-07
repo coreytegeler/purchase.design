@@ -1,0 +1,680 @@
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:24:06 -0400
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:34)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:35)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:37)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:38)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:41)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:42)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:45)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:46)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:49)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:50)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:53)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:54)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.9ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (10.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.4ms)
+  Rendered courses/admin.html.erb within layouts/access (28.4ms)
+  Rendered access/_top_bar.html.erb (7.5ms)
+Completed 200 OK in 885ms (Views: 769.9ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/assets/access.self-6b67856777060da1ce0f0980d9a4cb80784cd04606ad7f35c7bd7baad2b8cc1a.js?body=1" for ::1 at 2018-06-07 11:24:07 -0400
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:24:10 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+Started POST "/course/update?id=1" for ::1 at 2018-06-07 11:24:10 -0400
+  Rendered courses/_form.html.erb (9.3ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (10.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (3.0ms)
+  Rendered courses/admin.html.erb within layouts/access (48.1ms)
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Rgrv37pxk6zoxK7cKwlGtqdaAK6RKu5YLDYVWuzN3tRZBpFNy79AadpjMDtNsSJRHreMi19N6M0xlqJ4gKq8g==", "course"=>{"name"=>"Letterpress Workshop", "year"=>"Senior", "semester"=>"Semester 1", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true"}, "id"=>"1"}
+  [1m[36mCourse Load (9.7ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Update (0.8ms)[0m  [1m[33mUPDATE `courses` SET `required` = 0, `updated_at` = '2018-06-07 15:24:10' WHERE `courses`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 22ms (ActiveRecord: 11.9ms)
+
+
+  Rendered access/_top_bar.html.erb (7.5ms)
+Completed 200 OK in 156ms (Views: 143.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:24:10 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (2.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (5.9ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (10.4ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (3.7ms)
+  Rendered courses/admin.html.erb within layouts/access (36.1ms)
+  Rendered access/_top_bar.html.erb (11.8ms)
+Completed 200 OK in 125ms (Views: 107.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:24:14 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.3ms)
+  [1m[36mCourseImage Load (0.6ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (9.8ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.8ms)
+  Rendered courses/admin.html.erb within layouts/access (30.5ms)
+  Rendered access/_top_bar.html.erb (16.2ms)
+Completed 200 OK in 112ms (Views: 100.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:24:21 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.2ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (14.9ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.6ms)
+  Rendered courses/admin.html.erb within layouts/access (34.1ms)
+  Rendered access/_top_bar.html.erb (5.5ms)
+Completed 200 OK in 86ms (Views: 78.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:24:41 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.3ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (13.4ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (3.8ms)
+  Rendered courses/admin.html.erb within layouts/access (37.3ms)
+Started POST "/course/update?id=1" for ::1 at 2018-06-07 11:24:42 -0400
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2iFECgJN3s1lY+8Rye+Y14WxsgtWP/ZhrXC+hXj6sDFuXXXwS4rlgnGpcWpUdXlEG1YEO8EGanv5BjxZ8UstuA==", "course"=>{"name"=>"Letterpress Workshop", "year"=>"Senior", "semester"=>"Semester 1", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true"}, "id"=>"1"}
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Update (4.0ms)[0m  [1m[33mUPDATE `courses` SET `required` = 0, `updated_at` = '2018-06-07 15:24:42' WHERE `courses`.`id` = 1[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 22ms (ActiveRecord: 8.0ms)
+
+
+  Rendered access/_top_bar.html.erb (6.1ms)
+Completed 200 OK in 156ms (Views: 146.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:24:42 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (8.8ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.3ms)
+  Rendered courses/admin.html.erb within layouts/access (23.7ms)
+  Rendered access/_top_bar.html.erb (4.6ms)
+Completed 200 OK in 79ms (Views: 71.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:26:06 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.5ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (15.4ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (3.2ms)
+  Rendered courses/admin.html.erb within layouts/access (36.9ms)
+  Rendered access/_top_bar.html.erb (4.0ms)
+Completed 200 OK in 136ms (Views: 123.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:26:11 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.6ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (8.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.4ms)
+  Rendered courses/admin.html.erb within layouts/access (25.2ms)
+  Rendered access/_top_bar.html.erb (3.8ms)
+Completed 200 OK in 82ms (Views: 74.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:26:43 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.5ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (9.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.2ms)
+  Rendered courses/admin.html.erb within layouts/access (23.3ms)
+  Rendered access/_top_bar.html.erb (4.2ms)
+Completed 200 OK in 77ms (Views: 69.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:26:47 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.4ms)
+  [1m[36mCourseImage Load (0.7ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (15.4ms)
+Started POST "/course/update?id=2" for ::1 at 2018-06-07 11:26:47 -0400
+  [1m[36mCourseImage Load (1.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (3.6ms)
+  Rendered courses/admin.html.erb within layouts/access (39.4ms)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ii3Xb1I145DpS8HnOEjLEYeXK/9wBjYHWJ3ic8QWyLY+UeaVG/LY3/2BX5yl0iqCGXCdz+c/qh0M62CvTadVPw==", "course"=>{"name"=>"XDigital Media for Designers I", "year"=>"Freshman", "semester"=>"Semester 4", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true", "course_images_attributes"=>{"0"=>{"_destroy"=>"0", "id"=>"1"}, "1"=>{"_destroy"=>"0", "id"=>"3"}, "2"=>{"_destroy"=>"0", "id"=>"4"}}}, "id"=>"2"}
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourseImage Load (8.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2 AND `course_images`.`id` IN (1, 3, 4)[0m
+  [1m[36mCourse Update (4.0ms)[0m  [1m[33mUPDATE `courses` SET `name` = 'XDigital Media for Designers I', `required` = 0, `updated_at` = '2018-06-07 15:26:47' WHERE `courses`.`id` = 2[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 23ms (ActiveRecord: 13.9ms)
+
+
+  Rendered access/_top_bar.html.erb (5.2ms)
+Completed 200 OK in 110ms (Views: 100.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:26:47 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.name ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.4ms)
+  [1m[36mCourseImage Load (3.6ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (8.9ms)
+  [1m[36mCourseImage Load (1.1ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (12.2ms)
+  Rendered courses/admin.html.erb within layouts/access (40.7ms)
+  Rendered access/_top_bar.html.erb (4.3ms)
+Completed 200 OK in 107ms (Views: 92.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:27:04 -0400
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:34)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:35)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:37)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:38)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:41)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:42)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:45)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:46)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:49)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:50)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:53)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:54)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+Processing by CoursesController#admin as HTML
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `each' for #<Class:0x00007f8d2cee0488>):
+  
+app/controllers/courses_controller.rb:26:in `admin'
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:27:11 -0400
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:34)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:35)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:37)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:38)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:41)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:42)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:45)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:46)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:49)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:50)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:53)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:54)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.7ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (4.0ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (15.2ms)
+  Rendered courses/admin.html.erb within layouts/access (35.1ms)
+  Rendered access/_top_bar.html.erb (3.9ms)
+Completed 200 OK in 135ms (Views: 81.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:27:17 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (5.6ms)
+  [1m[36mCourseImage Load (2.2ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (6.1ms)
+  [1m[36mCourseImage Load (0.7ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+Started POST "/course/update?id=2" for ::1 at 2018-06-07 11:27:17 -0400
+  Rendered courses/_form.html.erb (13.1ms)
+  Rendered courses/admin.html.erb within layouts/access (50.0ms)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wIF0slqcnRDuT6pRtAVqflrb/8KnIfmIxi6DRT17nAZ0/UVIE1umX/qFNCopn4vtxDxJ8jAYZZKSWAGZtMoBjw==", "course"=>{"name"=>"Digital Media for Designers I", "year"=>"Freshman", "semester"=>"Semester 4", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true", "course_images_attributes"=>{"0"=>{"_destroy"=>"0", "id"=>"1"}, "1"=>{"_destroy"=>"0", "id"=>"3"}, "2"=>{"_destroy"=>"0", "id"=>"4"}}}, "id"=>"2"}
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourseImage Load (0.6ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2 AND `course_images`.`id` IN (1, 3, 4)[0m
+  [1m[36mCourse Update (3.4ms)[0m  [1m[33mUPDATE `courses` SET `name` = 'Digital Media for Designers I', `required` = 0, `updated_at` = '2018-06-07 15:27:17' WHERE `courses`.`id` = 2[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 15ms (ActiveRecord: 5.6ms)
+
+
+  Rendered access/_top_bar.html.erb (4.0ms)
+Completed 200 OK in 119ms (Views: 107.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:27:17 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.2ms)
+  [1m[36mCourseImage Load (1.9ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (9.6ms)
+  [1m[36mCourseImage Load (0.6ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (12.6ms)
+  Rendered courses/admin.html.erb within layouts/access (40.4ms)
+  Rendered access/_top_bar.html.erb (4.3ms)
+Completed 200 OK in 95ms (Views: 84.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:27:23 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.0ms)
+Started POST "/course/create" for ::1 at 2018-06-07 11:27:23 -0400
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (4.5ms)
+  [1m[36mCourseImage Load (1.9ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (14.8ms)
+  Rendered courses/admin.html.erb within layouts/access (37.6ms)
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4ECLuFnYhzs1Uw+JVBQ8z2VrEIQ1DyuCOXeqaVDJtfL/TPUqKBZU/gf0kW4yrFgo3IacoftoLRck1x1LPK7Xg==", "course"=>{"name"=>"1111", "year"=>"Freshman", "semester"=>"Semester 1", "about"=>"", "required"=>"true"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`position` IS NULL AND (`courses`.`position` IS NOT NULL) ORDER BY `courses`.`position` DESC LIMIT 1[0m
+  [1m[36mCourse Create (2.4ms)[0m  [1m[32mINSERT INTO `courses` (`name`, `position`, `created_at`, `updated_at`, `semester`, `year`, `about`, `required`) VALUES ('1111', 1, '2018-06-07 15:27:23', '2018-06-07 15:27:23', 'Semester 1', 'Freshman', '', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 12ms (ActiveRecord: 5.9ms)
+
+
+  Rendered access/_top_bar.html.erb (4.4ms)
+Completed 200 OK in 109ms (Views: 98.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:27:23 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.0ms)
+  [1m[36mCourseImage Load (1.2ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (5.4ms)
+  [1m[36mCourseImage Load (1.2ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (15.0ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.1ms)
+  Rendered courses/admin.html.erb within layouts/access (44.9ms)
+  Rendered access/_top_bar.html.erb (4.1ms)
+Completed 200 OK in 102ms (Views: 91.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:28:57 -0400
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:34)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:35)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:37)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:38)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:41)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:42)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:45)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:46)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:49)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:50)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:53)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:54)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at ASC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (1.9ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.3ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (6.4ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (1.9ms)
+  Rendered courses/admin.html.erb within layouts/access (24.7ms)
+  Rendered access/_top_bar.html.erb (4.7ms)
+Completed 200 OK in 125ms (Views: 79.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:29:09 -0400
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:34)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:35)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:37)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:38)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:41)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:42)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:45)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:46)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:49)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:50)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:53)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:54)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:64)
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.3ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (2.7ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (7.0ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.7ms)
+  Rendered courses/admin.html.erb within layouts/access (29.3ms)
+  Rendered access/_top_bar.html.erb (6.2ms)
+Completed 200 OK in 125ms (Views: 80.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:29:20 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.6ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.7ms)
+  [1m[36mCourseImage Load (1.8ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+Started POST "/course/update?id=2" for ::1 at 2018-06-07 11:29:20 -0400
+  Rendered courses/_form.html.erb (22.3ms)
+  [1m[36mCourseImage Load (0.6ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (5.0ms)
+  Rendered courses/admin.html.erb within layouts/access (54.6ms)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ap2u7wR8eYCOwyb3XvaPOcbycofX+9JjJ4ZLQMyfcHLe4Z8VTbtCz5oJuIzDbG6qWBXEt0DCTnlz8MmcRS7t+w==", "course"=>{"name"=>"Digitasl Media for Designers I", "year"=>"Freshman", "semester"=>"Semester 4", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true", "course_images_attributes"=>{"0"=>{"_destroy"=>"0", "id"=>"1"}, "1"=>{"_destroy"=>"0", "id"=>"3"}, "2"=>{"_destroy"=>"0", "id"=>"4"}}}, "id"=>"2"}
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2 AND `course_images`.`id` IN (1, 3, 4)[0m
+  [1m[36mCourse Update (3.2ms)[0m  [1m[33mUPDATE `courses` SET `name` = 'Digitasl Media for Designers I', `required` = 0, `updated_at` = '2018-06-07 15:29:20' WHERE `courses`.`id` = 2[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 15ms (ActiveRecord: 6.4ms)
+
+
+  Rendered access/_top_bar.html.erb (6.9ms)
+Completed 200 OK in 127ms (Views: 117.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:29:20 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (10.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (14.8ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.3ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.7ms)
+  Rendered courses/admin.html.erb within layouts/access (49.3ms)
+  Rendered access/_top_bar.html.erb (7.1ms)
+Completed 200 OK in 110ms (Views: 100.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:29:28 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.8ms)
+  [1m[36mCourseImage Load (0.8ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (12.3ms)
+Started POST "/course/update?id=2" for ::1 at 2018-06-07 11:29:28 -0400
+  [1m[36mCourseImage Load (3.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (6.7ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (3.0ms)
+  Rendered courses/admin.html.erb within layouts/access (45.8ms)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mcT1MTfBpBeYJiP9FBpAvjGEURkwwRJ4Ecm9GxjBjxQtuMTLfgafWIzsvYaJgKEtr2PnKaf4jmJFvz/HkXASnQ==", "course"=>{"name"=>"Digital Media for Designers I", "year"=>"Freshman", "semester"=>"Semester 4", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true", "course_images_attributes"=>{"0"=>{"_destroy"=>"0", "id"=>"1"}, "1"=>{"_destroy"=>"0", "id"=>"3"}, "2"=>{"_destroy"=>"0", "id"=>"4"}}}, "id"=>"2"}
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2 AND `course_images`.`id` IN (1, 3, 4)[0m
+  [1m[36mCourse Update (0.4ms)[0m  [1m[33mUPDATE `courses` SET `name` = 'Digital Media for Designers I', `required` = 0, `updated_at` = '2018-06-07 15:29:28' WHERE `courses`.`id` = 2[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+  Rendered access/_top_bar.html.erb (4.2ms)
+Completed 200 OK in 111ms (Views: 98.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:29:28 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.5ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (24.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.5ms)
+  [1m[36mCourseImage Load (0.8ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (4.3ms)
+  Rendered courses/admin.html.erb within layouts/access (54.7ms)
+  Rendered access/_top_bar.html.erb (5.8ms)
+Completed 200 OK in 108ms (Views: 97.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:35:29 -0400
+  [1m[35m (3.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (3.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (1.9ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (6.9ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (2.1ms)
+  [1m[36mCourseImage Load (0.2ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (1.6ms)
+  Rendered courses/admin.html.erb within layouts/access (24.0ms)
+  Rendered access/_top_bar.html.erb (4.4ms)
+Completed 200 OK in 91ms (Views: 78.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/access.self-e382b805136f95b6441bc8f354712fc092b97463053d3addd391665363baa0d0.css?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/masonry.pkgd.min.self-ba02ad3e4a8dd86e29ae54ad70ab81187a1ec9dddd167857c41bfafc4ba4e3e3.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/jquery.transit.min.self-aeca2ce79bac9fd150d77da5c6d698557db07371255a272da9c29156ac4ff0c9.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/imagesloaded.pkgd.min.self-f421bd9983db8dc50ed956494eecba69d8e9e11b59880954537b8e781babf313.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/helpers.self-a30b3c8eff061098327addf5002685a889a41932b4d3c9c0fcaecce8fc0763b9.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/access.self-6b67856777060da1ce0f0980d9a4cb80784cd04606ad7f35c7bd7baad2b8cc1a.js?body=1" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/upload-b968569d3bf8069300a283f744acfb9d837a2d8c6615dd3015ef946a820519e5.svg" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/clear-6a894e55e3637e84795e445a68908f7e5f6103a0f173c435cc4139450efb18f7.svg" for ::1 at 2018-06-07 11:35:29 -0400
+Started GET "/assets/favicon/favicon-32x32-3f749b8ea51caa3175a6559f62b2a9bd568d25e84bfabee009ade20dc47f98e7.png" for ::1 at 2018-06-07 11:35:30 -0400
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:35:56 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (59.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.0ms)
+  [1m[36mCourseImage Load (3.9ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (10.3ms)
+  [1m[36mCourseImage Load (0.8ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.3ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.5ms)
+  Rendered courses/admin.html.erb within layouts/access (33.8ms)
+  Rendered access/_top_bar.html.erb (4.4ms)
+Completed 200 OK in 160ms (Views: 86.6ms | ActiveRecord: 64.4ms)
+
+
+Started GET "/assets/access.self-e382b805136f95b6441bc8f354712fc092b97463053d3addd391665363baa0d0.css?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/jquery.transit.min.self-aeca2ce79bac9fd150d77da5c6d698557db07371255a272da9c29156ac4ff0c9.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/masonry.pkgd.min.self-ba02ad3e4a8dd86e29ae54ad70ab81187a1ec9dddd167857c41bfafc4ba4e3e3.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/imagesloaded.pkgd.min.self-f421bd9983db8dc50ed956494eecba69d8e9e11b59880954537b8e781babf313.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/helpers.self-a30b3c8eff061098327addf5002685a889a41932b4d3c9c0fcaecce8fc0763b9.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/access.self-6b67856777060da1ce0f0980d9a4cb80784cd04606ad7f35c7bd7baad2b8cc1a.js?body=1" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/upload-b968569d3bf8069300a283f744acfb9d837a2d8c6615dd3015ef946a820519e5.svg" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/assets/clear-6a894e55e3637e84795e445a68908f7e5f6103a0f173c435cc4139450efb18f7.svg" for ::1 at 2018-06-07 11:35:56 -0400
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:36:00 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.2ms)
+  [1m[36mCourseImage Load (0.9ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (14.3ms)
+  [1m[36mCourseImage Load (0.7ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (4.0ms)
+Started POST "/course/update?id=2" for ::1 at 2018-06-07 11:36:00 -0400
+  [1m[36mCourseImage Load (4.7ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (8.1ms)
+  Rendered courses/admin.html.erb within layouts/access (54.7ms)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U3WIzqaYzH1AX4FZQFV4aFp51EXkkWdBq1KrqlNLBc3nCbk071/3MlSVHyLdz5n7xJ5idXOo+1v/JCl22vqYRA==", "course"=>{"name"=>"Digital Media for Designers I", "year"=>"Freshman", "semester"=>"Semester 4", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true", "course_images_attributes"=>{"0"=>{"_destroy"=>"0", "id"=>"1"}, "1"=>{"_destroy"=>"0", "id"=>"3"}, "2"=>{"_destroy"=>"0", "id"=>"4"}}}, "id"=>"2"}
+  [1m[36mCourse Load (6.7ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourseImage Load (2.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2 AND `course_images`.`id` IN (1, 3, 4)[0m
+  [1m[36mCourse Update (2.7ms)[0m  [1m[33mUPDATE `courses` SET `required` = 0, `updated_at` = '2018-06-07 15:36:00' WHERE `courses`.`id` = 2[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 26ms (ActiveRecord: 13.7ms)
+
+
+  Rendered access/_top_bar.html.erb (5.8ms)
+Completed 200 OK in 138ms (Views: 120.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:36:00 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (4.3ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (14.6ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.5ms)
+  [1m[36mCourseImage Load (0.8ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (4.5ms)
+  Rendered courses/admin.html.erb within layouts/access (46.6ms)
+  Rendered access/_top_bar.html.erb (7.5ms)
+Completed 200 OK in 122ms (Views: 109.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:36:55 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.6ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (10.0ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (2.3ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.6ms)
+  Rendered courses/admin.html.erb within layouts/access (30.6ms)
+  Rendered access/_top_bar.html.erb (3.8ms)
+Completed 200 OK in 77ms (Views: 69.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/access.self-e382b805136f95b6441bc8f354712fc092b97463053d3addd391665363baa0d0.css?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/imagesloaded.pkgd.min.self-f421bd9983db8dc50ed956494eecba69d8e9e11b59880954537b8e781babf313.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/masonry.pkgd.min.self-ba02ad3e4a8dd86e29ae54ad70ab81187a1ec9dddd167857c41bfafc4ba4e3e3.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/jquery.transit.min.self-aeca2ce79bac9fd150d77da5c6d698557db07371255a272da9c29156ac4ff0c9.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/helpers.self-a30b3c8eff061098327addf5002685a889a41932b4d3c9c0fcaecce8fc0763b9.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/access.self-6b67856777060da1ce0f0980d9a4cb80784cd04606ad7f35c7bd7baad2b8cc1a.js?body=1" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/upload-b968569d3bf8069300a283f744acfb9d837a2d8c6615dd3015ef946a820519e5.svg" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/assets/clear-6a894e55e3637e84795e445a68908f7e5f6103a0f173c435cc4139450efb18f7.svg" for ::1 at 2018-06-07 11:36:55 -0400
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:37:03 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (5.8ms)
+Started POST "/course/update?id=2" for ::1 at 2018-06-07 11:37:03 -0400
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (11.3ms)
+  [1m[36mCourseImage Load (0.8ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.6ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.3ms)
+  Rendered courses/admin.html.erb within layouts/access (43.6ms)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xz/9lhU7CzHsk6dCdQr6sTD36bRY09/R/44bpZ7edtvrQ8xsXPwwfvhZOTnokBsirhBfhM/qQ8ur+Jl5F2/rUg==", "course"=>{"name"=>"Digital Media for Designers I", "year"=>"Freshman", "semester"=>"Semester 4", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true", "course_images_attributes"=>{"0"=>{"_destroy"=>"0", "id"=>"1"}, "1"=>{"_destroy"=>"0", "id"=>"3"}, "2"=>{"_destroy"=>"1", "id"=>"4"}}}, "id"=>"2"}
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourseImage Load (1.9ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2 AND `course_images`.`id` IN (1, 3, 4)[0m
+  [1m[36mCourse Update (6.5ms)[0m  [1m[33mUPDATE `courses` SET `required` = 0, `updated_at` = '2018-06-07 15:37:03' WHERE `courses`.`id` = 2[0m
+  [1m[36mCourseImage Destroy (0.5ms)[0m  [1m[31mDELETE FROM `course_images` WHERE `course_images`.`id` = 4[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[paperclip] deleting /Users/coreytegeler/Sites/purchase.design/cms/public/system/course_images/images/000/000/004/original/29.png
+[paperclip] deleting /Users/coreytegeler/Sites/purchase.design/cms/public/system/course_images/images/000/000/004/small/29.png
+[paperclip] deleting /Users/coreytegeler/Sites/purchase.design/cms/public/system/course_images/images/000/000/004/medium/29.png
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 33ms (ActiveRecord: 10.4ms)
+
+
+  Rendered access/_top_bar.html.erb (5.5ms)
+Completed 200 OK in 132ms (Views: 119.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-06-07 11:37:03 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.1ms)
+  [1m[36mCourseImage Load (4.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (13.6ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (4.0ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.9ms)
+  Rendered courses/admin.html.erb within layouts/access (42.5ms)
+  Rendered access/_top_bar.html.erb (5.4ms)
+Completed 200 OK in 104ms (Views: 90.8ms | ActiveRecord: 5.8ms)
+
+
