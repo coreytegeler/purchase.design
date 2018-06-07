@@ -74,7 +74,7 @@ class CoursesController < ApplicationController
 
 	def destroy
 		@course = Course.find(params[:id]).destroy
-		update_positions
+		# update_positions
 		flash[:notice] = "Course was deleted!"
 		flash[:type] = 'good'
 		redirect_to(:action => 'admin')

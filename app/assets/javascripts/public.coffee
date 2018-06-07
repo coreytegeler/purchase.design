@@ -89,7 +89,7 @@ setUpSide = ->
 				else if !hidden
 					$(this).addClass 'hidden'
 
-		$('.masonry').masonry 'reload'
+		$('.masonry').masonry()
 
 
 initWorks = ->
