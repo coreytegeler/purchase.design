@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'backend/admins', :to => 'admins#admin'
   get 'backend/alumni', :to => 'alumni#admin'
   get 'backend/apply_items', :to => 'apply_items#admin'
+  get 'backend/courses', :to => 'courses#admin'
   get 'backend/faculties', :to => 'faculties#admin'
   get 'backend/gradients', :to => 'gradients#admin'
   get 'backend/logos', :to => 'logos#admin'
@@ -39,6 +40,10 @@ Rails.application.routes.draw do
   get 'apply', :to => 'apply_items#index'
   get 'apply/:action', :to => 'apply_items#action'
   post 'apply/:action', :to => 'apply_items#action'
+
+  get 'course', :to => 'courses#index'
+  get 'course/:action', :to => 'courses#action'
+  post 'course/:action', :to => 'courses#action'
 
   get 'work', :to => 'works#index'
   get 'work/:action', :to => 'works#action'

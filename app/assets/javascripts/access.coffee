@@ -1,7 +1,6 @@
 initAccess = ->
   size()
   $('.masonry').each (i, container) ->
-    console.log container
     if $block = $(this).find('.block').eq(0)
       gutter = parseInt($block.css('marginBottom'))
       $(container).masonry
