@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_action :select_palette, only: [:index]
-  before_action :select_logo, only: [:index]
-  before_action :select_gradient, only: [:index]
-  before_action :select_pattern, only: [:index]
+  before_action :select_palette, only: [:index, :single]
+  before_action :select_logo, only: [:index, :single]
+  before_action :select_gradient, only: [:index, :single]
+  before_action :select_pattern, only: [:index, :single]
   before_action :get_upload_icon, only: [:admin]
   before_action :get_last_page, only: [:logout, :login]
 

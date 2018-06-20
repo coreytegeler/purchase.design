@@ -1,8 +1,8 @@
 class CoursesController < ApplicationController
 
 	include AccessHelper
-	layout_by_action "access", [:index] => "public"
-	before_action :confirm_logged_in, :except => [:index, :admin]
+	layout_by_action "access", [:index, :single] => "public"
+	before_action :confirm_logged_in, :except => [:index, :admin, :single]
 
 	def index
 		@courses = Course.all
@@ -20,6 +20,10 @@ class CoursesController < ApplicationController
 				})
 			end
 		end
+	end
+
+	def single
+		@course = Course.find(params[:id])
 	end
 
 	def admin

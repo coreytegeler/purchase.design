@@ -1,0 +1,27 @@
+<section id="course">
+	<div class="course" <%= color('border', @s) %>>
+		<div class="text">
+			<% if @course[:required] %>
+				<h5 class="required">Required</h5>
+			<% end %>
+			<h2 class="name">
+				<%= @course.name %>
+			</h2>
+			<div class="inner">
+				<div class="about">
+					<%= @course.about.html_safe %>
+				</div>
+				<% if @course.course_images.any? %>
+					<div class="images masonry">
+						<% @course.course_images.each do |ci| %>
+							<div class="image block" <%= color('bg', @p, 'border', @s) %>>
+								<%= image_tag ci.image.url(:medium) %>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<h4><%= active_link_to("Back to courses", {:controller => 'courses', :action => 'index'}, :id => 'courses') %></h4>
+</section>

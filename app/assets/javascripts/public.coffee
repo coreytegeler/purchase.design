@@ -156,8 +156,8 @@ initWorks = ->
 			$(tooltip).css 'display': 'none'
 
 initCourses = ->
-	$('.course .name').click () ->
-		$(this).parents('.course').toggleClass('open')
+	# $('.course .name').click () ->
+	# 	$(this).parents('.course').toggleClass('open')
 
 initPosts = ->
 	$('.remove').each ->
