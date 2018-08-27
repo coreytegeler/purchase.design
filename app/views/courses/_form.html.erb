@@ -42,9 +42,9 @@
 </div>
 <div class="actions">
 	<% if course.persisted? %>
-		<%= link_to('Update', "#", :onclick => "$('#"+course.id.to_s+"').submit()", :class => "action submit") %>
+		<%= link_to('Update', "#", :onclick => "$('#"+course.position.to_s+"').submit()", :class => "action submit") %>
 		<%= link_to("Delete", {:controller => 'courses', :action => 'delete', :id => course.id}, :remote => true, :class => 'action delete') %>
 	<% else %>
-		<%= link_to('Create', "#", :onclick => "$('#"+course.id.to_s+"').submit()", :class => "action submit") %>
+		<%= link_to('Create', "#", :onclick => "$('#"+course.position.to_s+"').submit()", :class => "action submit") %>
 	<% end %>
 </div>

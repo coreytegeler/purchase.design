@@ -28,37 +28,40 @@ class CoursesController < ApplicationController
 
 	def admin
 		@courses = Course.in_order
-		@new_course = Course.new
-		@new_course.position = Course.all.count + 1
-		@courses.each do |f|
-			f.course_images.new
-			f.position = f.position + 1
-		end
-		@course_images = CourseImage.sorted
+    @courses.each do |f|
+      f.course_images.new
+    end
+    @new_course = Course.new
+    @new_course.position = Course.all.count + 1
+    @new_course.course_images.new
+    @course_images = CourseImage.sorted
+    
 		@years = ["Freshman", "Sophomore", "Junior", "Senior"]
 		@semesters = ["Semester 1", "Semester 2", "Semester 3", "Semester 4"]
-
 	end
 
 	def create
 		@course = Course.new(course_params)
-		# @course.position = 1
-		if @course.save
-			# update_positions
-			flash[:notice] = "Course was created!"
-			flash[:type] = 'good'
-			redirect_to(:action => 'admin')
-		else
-			flash[:notice] = errors_for(@course)
-			flash[:type] = 'bad'
-			redirect_to(:action => 'admin')
-		end
+    if @course.course_images.first
+      @course.course_images.first.course_id = @course.id
+    end
+    if @course.save
+      update_positions
+      flash[:notice] = "Post was created!"
+      flash[:type] = 'good'
+      redirect_to(:action => 'admin')
+    else
+      flash[:notice] = errors_for(@course)
+      p @course.errors.full_messages
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+    end
 	end
 
 	def update
 		@course = Course.find(params[:id])
 		if @course.update_attributes(course_params)
-			# update_positions
+			update_positions
 			flash[:notice] = "Course was updated!"
 			flash[:type] = 'good'
 			redirect_to(:action => 'admin')
@@ -78,7 +81,7 @@ class CoursesController < ApplicationController
 
 	def destroy
 		@course = Course.find(params[:id]).destroy
-		# update_positions
+		update_positions
 		flash[:notice] = "Course was deleted!"
 		flash[:type] = 'good'
 		redirect_to(:action => 'admin')
@@ -90,10 +93,10 @@ class CoursesController < ApplicationController
 			params.require(:course).permit(:name, :year, :semester, :about, :required, course_images_attributes: [:id, :image, :position, :_destroy])
 		end
 
-		# def update_positions
-		# 	Course.a_to_z.each_with_index do |c, i|
-		# 		c.update_attribute(:position, i+1)
-		# 	end
-		# end
+		def update_positions
+			Course.a_to_z.each_with_index do |c, i|
+				c.update_attribute(:position, i+1)
+			end
+		end
 
 end

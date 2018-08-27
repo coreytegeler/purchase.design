@@ -198,7 +198,6 @@ body.admin {
 		height: 100%;
 		background-position: center;
 		background-size: contain;
-		/*background-repeat: no-repeat;*/
 	}
 
 	.block form .drop {
@@ -209,6 +208,11 @@ body.admin {
 		background-size: 90% 90%;
 		background-repeat: no-repeat;
 		background-image: url(asset-path("upload.svg"));
+	}
+
+	.block form .drop img {
+		width: 100%;
+		height: auto;
 	}
 
 	.block form .drop.readingFile {
