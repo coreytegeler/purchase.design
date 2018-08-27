@@ -24,16 +24,20 @@
 	<%= f.fields_for :course_images do |ci| %>
 		<% if ci.object.image.exists? %>
 			<% image = ci.object.image.url(:medium) %>
-			<div class="image drop" style="background-image:url(<%= image %>)">
-				<div class="destroy">
-					<%= ci.check_box(:_destroy) %>
-					<%= ci.label(:_destroy, '&nbsp;'.html_safe) %>
+			<% if image %>
+				<div class="image drop" style="background-image:url(<%= image %>)">
+					<div class="destroy">
+						<%= ci.check_box(:_destroy) %>
+						<%= ci.label(:_destroy, '&nbsp;'.html_safe) %>
+					</div>
+					<%= ci.file_field(:image) %>
 				</div>
+			<% end %>
 		<% else %>
 			<div class="image drop" style="background-image:url(<%= @upload_img %>)">
-		<% end %>
 				<%= ci.file_field(:image) %>
 			</div>
+		<% end %>
 	<% end %>
 </div>
 <div class="actions">
