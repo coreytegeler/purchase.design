@@ -29,10 +29,10 @@ class CoursesController < ApplicationController
 	def admin
 		@courses = Course.in_order
 		@new_course = Course.new
-		# @new_course.position = Course.all.count + 1
+		@new_course.position = Course.all.count + 1
 		@courses.each do |f|
 			f.course_images.new
-			# f.position = f.position + 1
+			f.position = f.position + 1
 		end
 		@course_images = CourseImage.sorted
 		@years = ["Freshman", "Sophomore", "Junior", "Senior"]

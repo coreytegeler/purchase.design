@@ -4034,3 +4034,49 @@ Processing by CoursesController#admin as HTML
 Completed 200 OK in 90ms (Views: 77.2ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/backend/courses" for ::1 at 2018-08-27 09:21:05 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (3.9ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.1ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (2.1ms)
+  Rendered courses/admin.html.erb within layouts/access (22.9ms)
+  Rendered access/_top_bar.html.erb (5.4ms)
+Completed 200 OK in 89ms (Views: 78.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/favicon/favicon-32x32-3f749b8ea51caa3175a6559f62b2a9bd568d25e84bfabee009ade20dc47f98e7.png" for ::1 at 2018-08-27 09:21:06 -0400
+Started GET "/backend/courses" for ::1 at 2018-08-27 09:26:30 -0400
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:34)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:35)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:37)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:38)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:41)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:42)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:47)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:48)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:51)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:52)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:62)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:62)
+Processing by CoursesController#admin as HTML
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.3ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (5.8ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.4ms)
+  [1m[36mCourseImage Load (0.7ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 4[0m
+  Rendered courses/_form.html.erb (3.4ms)
+  Rendered courses/admin.html.erb within layouts/access (29.7ms)
+  Rendered access/_top_bar.html.erb (9.4ms)
+Completed 200 OK in 151ms (Views: 97.8ms | ActiveRecord: 9.3ms)
+
+
