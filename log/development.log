@@ -4024,3 +4024,13 @@ Completed 200 OK in 101ms (Views: 92.3ms | ActiveRecord: 1.8ms)
 
 
 Started GET "/assets/favicon/favicon-32x32-3f749b8ea51caa3175a6559f62b2a9bd568d25e84bfabee009ade20dc47f98e7.png" for ::1 at 2018-08-27 09:14:36 -0400
+Started GET "/backend/courses" for ::1 at 2018-08-27 09:19:35 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.0ms)
+  Rendered courses/admin.html.erb within layouts/access (9.9ms)
+  Rendered access/_top_bar.html.erb (3.9ms)
+Completed 200 OK in 90ms (Views: 77.2ms | ActiveRecord: 0.9ms)
+
+
