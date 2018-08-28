@@ -4,10 +4,9 @@ class Course < ActiveRecord::Base
 	scope :in_order, lambda {order("courses.position ASC")}
 
 	acts_as_list scope: [:position]
+	validates_presence_of :name
 
 	has_many :course_images, :dependent => :destroy
-
-	validates_presence_of :name
 	accepts_nested_attributes_for :course_images, reject_if: proc { |attributes| attributes['image'].blank? }, :allow_destroy => true
 
 end
