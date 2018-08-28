@@ -8,7 +8,6 @@ class Course < ActiveRecord::Base
 	has_many :course_images, :dependent => :destroy
 
 	validates_presence_of :name
-	accepts_nested_attributes_for :course_images, :allow_destroy => true
-	# accepts_nested_attributes_for :course_images, reject_if: proc { |attributes| attributes['image'].blank? }, :allow_destroy => true
+	accepts_nested_attributes_for :course_images, reject_if: proc { |attributes| attributes['image'].blank? }, :allow_destroy => true
 
 end

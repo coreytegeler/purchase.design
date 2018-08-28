@@ -47,7 +47,7 @@ class CoursesController < ApplicationController
     end
     if @course.save
       update_positions
-      flash[:notice] = "Post was created!"
+      flash[:notice] = "Course was created!"
       flash[:type] = 'good'
       redirect_to(:action => 'admin')
     else
@@ -60,16 +60,16 @@ class CoursesController < ApplicationController
 
 	def update
 		@course = Course.find(params[:id])
-		if @course.update_attributes(course_params)
-			update_positions
-			flash[:notice] = "Course was updated!"
-			flash[:type] = 'good'
-			redirect_to(:action => 'admin')
-		else
-			flash[:notice] = errors_for(@course)
-			flash[:type] = 'bad'
-			redirect_to(:action => 'admin')
-		end
+    if @course.update_attributes(course_params)
+      update_positions
+      flash[:notice] = "Course was updated!"
+      flash[:type] = 'good'
+      redirect_to(:action => 'admin')
+    else
+      flash[:notice] = errors_for(@course)
+      flash[:type] = 'bad'
+      redirect_to(:action => 'admin')
+    end
 	end
 
 	def delete
@@ -90,13 +90,13 @@ class CoursesController < ApplicationController
 	private 
 
 		def course_params
-			params.require(:course).permit(:name, :year, :semester, :about, :required, course_images_attributes: [:id, :image, :position, :_destroy])
-		end
+      params.require(:course).permit(:name, :position, :semester, :year, :about, :required, course_images_attributes: [:id, :image, :position, :_destroy])
+    end
 
-		def update_positions
-			Course.a_to_z.each_with_index do |c, i|
-				c.update_attribute(:position, i+1)
-			end
-		end
+    def update_positions
+      Course.in_order.each_with_index do |f, i|
+         f.update_attribute(:position, i+1)
+      end
+    end
 
 end

@@ -7751,3 +7751,364 @@ Processing by CoursesController#admin as HTML
 Completed 200 OK in 98ms (Views: 85.0ms | ActiveRecord: 2.2ms)
 
 
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+Started GET "/courses" for ::1 at 2018-08-28 09:26:11 -0400
+  [1m[35m (21.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.6ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+Creating scope :in_list. Overwriting existing method Gradient.in_list.
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.5ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (36.8ms)
+  Rendered public/_gradient_bg.html.erb (0.6ms)
+  Rendered public/_pattern_bg.html.erb (0.4ms)
+  Rendered public/_top_bar.html.erb (3.1ms)
+  Rendered public/_logo.html.erb (2.2ms)
+  Rendered public/buttons/_gradient.html.erb (2.3ms)
+  Rendered public/buttons/_pattern.html.erb (1.1ms)
+  Rendered public/buttons/_logo.html.erb (2.7ms)
+  Rendered public/_side_bar.html.erb (22.8ms)
+  [1m[36mAbout Load (0.2ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (6.7ms)
+Completed 200 OK in 2764ms (Views: 2645.1ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/course/single/2" for ::1 at 2018-08-28 09:26:26 -0400
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLogo Load (0.8ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.6ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.5ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  Rendering courses/single.html.erb within layouts/public
+  [1m[36mCourseImage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `course_images` WHERE `course_images`.`course_id` = 2 LIMIT 1[0m
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/single.html.erb within layouts/public (43.8ms)
+  Rendered public/_gradient_bg.html.erb (0.3ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.7ms)
+  Rendered public/_logo.html.erb (2.2ms)
+  Rendered public/buttons/_gradient.html.erb (2.3ms)
+  Rendered public/buttons/_pattern.html.erb (0.8ms)
+  Rendered public/buttons/_logo.html.erb (1.8ms)
+  Rendered public/_side_bar.html.erb (22.0ms)
+  [1m[36mAbout Load (0.5ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (3.2ms)
+Completed 200 OK in 133ms (Views: 109.0ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/course/admin" for ::1 at 2018-08-28 09:26:29 -0400
+Processing by CoursesController#admin as HTML
+  Parameters: {"admin"=>"admin"}
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (15.1ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 6[0m
+  Rendered courses/_form.html.erb (2.5ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (8.7ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.5ms)
+  Rendered courses/admin.html.erb within layouts/access (43.4ms)
+  Rendered access/_top_bar.html.erb (7.6ms)
+Completed 200 OK in 110ms (Views: 97.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/course/admin" for ::1 at 2018-08-28 09:26:34 -0400
+Processing by CoursesController#admin as HTML
+  Parameters: {"admin"=>"admin"}
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (4.9ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 6[0m
+  Rendered courses/_form.html.erb (13.9ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (5.5ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.4ms)
+  Rendered courses/admin.html.erb within layouts/access (43.6ms)
+  Rendered access/_top_bar.html.erb (4.7ms)
+Completed 200 OK in 99ms (Views: 86.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/news/admin" for ::1 at 2018-08-28 09:27:09 -0400
+Processing by PostsController#admin as HTML
+  Parameters: {"admin"=>"admin"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  Rendering posts/admin.html.erb within layouts/access
+  Rendered posts/_form.html.erb (5.8ms)
+  Rendered posts/admin.html.erb within layouts/access (10.3ms)
+  Rendered access/_top_bar.html.erb (4.4ms)
+Completed 200 OK in 91ms (Views: 54.1ms | ActiveRecord: 2.9ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/news/admin" for ::1 at 2018-08-28 09:27:24 -0400
+Processing by PostsController#admin as HTML
+  Parameters: {"admin"=>"admin"}
+  [1m[36mPost Load (5.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  Rendering posts/admin.html.erb within layouts/access
+  Rendered posts/_form.html.erb (8.3ms)
+  Rendered posts/admin.html.erb within layouts/access (15.1ms)
+Started POST "/posts/create" for ::1 at 2018-08-28 09:27:24 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GkxmwO1vsSxyHGhsl+6TsZqvU1QeeAVQfjySU9ozVNLjWQ8NTkSRFvRQbJGcDsFsv6fx6GWtvAfRSd2HLb0khA==", "post"=>{"title"=>"Armageddon", "post_images_attributes"=>{"0"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f867b2a67d8 @tempfile=#<Tempfile:/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/RackMultipart20180828-78222-1or5t4x.jpg>, @original_filename="watchtower.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[post_images_attributes][0][image]\"; filename=\"watchtower.jpg\"\r\nContent-Type: image/jpeg\r\n">}}, "body"=>"Test", "start_date(2i)"=>"1", "start_date(3i)"=>"1", "start_date(1i)"=>"2014", "end_date(2i)"=>"", "end_date(3i)"=>"", "end_date(1i)"=>""}}
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z5.jpg[0]' 2>/dev/null
+  Rendered access/_top_bar.html.erb (9.6ms)
+Completed 200 OK in 143ms (Views: 129.4ms | ActiveRecord: 5.2ms)
+
+
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z5.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z5.jpg[0]' -auto-orient -resize "300x300" '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z520180828-78222-zwnc0a'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z520180828-78222-zwnc0a'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z5.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z5.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z5.jpg[0]' -auto-orient -resize "400x350" '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z520180828-78222-16i9qlx'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-5sk1z520180828-78222-16i9qlx'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/2275d0f0b4b56335df35f557714be32720180828-78222-13uffkk.jpg'
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`position` IS NULL AND (`posts`.`position` IS NOT NULL) ORDER BY `posts`.`position` DESC LIMIT 1[0m
+  [1m[36mPost Create (7.3ms)[0m  [1m[32mINSERT INTO `posts` (`title`, `body`, `position`, `created_at`, `updated_at`, `start_date`) VALUES ('Armageddon', 'Test', 1, '2018-08-28 13:27:25', '2018-08-28 13:27:25', '2014-01-01 00:00:00')[0m
+  [1m[36mPostImage Create (1.8ms)[0m  [1m[32mINSERT INTO `post_images` (`image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `post_id`, `created_at`, `updated_at`) VALUES ('watchtower.jpg', 'image/jpeg', 265415, '2018-08-28 13:27:24', 1, '2018-08-28 13:27:25', '2018-08-28 13:27:25')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/posts
+Completed 302 Found in 404ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/backend/posts" for ::1 at 2018-08-28 09:27:25 -0400
+Processing by PostsController#admin as HTML
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  Rendering posts/admin.html.erb within layouts/access
+  Rendered posts/_form.html.erb (4.8ms)
+  [1m[36mPostImage Load (0.4ms)[0m  [1m[34mSELECT `post_images`.* FROM `post_images` WHERE `post_images`.`post_id` = 1[0m
+  Rendered posts/_form.html.erb (7.7ms)
+  Rendered posts/admin.html.erb within layouts/access (20.6ms)
+  Rendered access/_top_bar.html.erb (6.2ms)
+Completed 200 OK in 93ms (Views: 80.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/backend/posts" for ::1 at 2018-08-28 09:27:32 -0400
+Processing by PostsController#admin as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  Rendering posts/admin.html.erb within layouts/access
+  Rendered posts/_form.html.erb (8.8ms)
+  [1m[36mPostImage Load (2.2ms)[0m  [1m[34mSELECT `post_images`.* FROM `post_images` WHERE `post_images`.`post_id` = 1[0m
+  Rendered posts/_form.html.erb (13.8ms)
+  Rendered posts/admin.html.erb within layouts/access (34.8ms)
+Started POST "/posts/update/1" for ::1 at 2018-08-28 09:27:32 -0400
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sdPKnHJRevch3psbfIVdK5dWJl0nyKYWxLydt5JMcCpIxqNR0XpazaeSn+Z3ZQ/2sl6E4VwdH0FrydJjZcIAfA==", "post"=>{"title"=>"Armageddon", "post_images_attributes"=>{"0"=>{"_destroy"=>"0", "id"=>"1"}, "1"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f8683c19da8 @tempfile=#<Tempfile:/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/RackMultipart20180828-78222-4uyv7b.jpg>, @original_filename="whatdojehovahwitnessbelieve.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[post_images_attributes][1][image]\"; filename=\"whatdojehovahwitnessbelieve.jpg\"\r\nContent-Type: image/jpeg\r\n">}}, "body"=>"Test", "start_date(2i)"=>"1", "start_date(3i)"=>"1", "start_date(1i)"=>"2014", "end_date(2i)"=>"", "end_date(3i)"=>"", "end_date(1i)"=>""}, "id"=>"1"}
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT  `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPostImage Load (2.6ms)[0m  [1m[34mSELECT `post_images`.* FROM `post_images` WHERE `post_images`.`post_id` = 1 AND `post_images`.`id` = 1[0m
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d.jpg[0]' 2>/dev/null
+  Rendered access/_top_bar.html.erb (6.6ms)
+Completed 200 OK in 151ms (Views: 138.6ms | ActiveRecord: 2.6ms)
+
+
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d.jpg[0]' -auto-orient -resize "300x300" '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d20180828-78222-1r9thzi'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d20180828-78222-1r9thzi'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d.jpg[0]' -auto-orient -resize "400x350" '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d20180828-78222-o3pu7h'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1x6mp9d20180828-78222-o3pu7h'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/0c/lkqp7bn55hb90twldgmbdsgw0000gn/T/81685579ceb8ed0cd0b9c4db1ba74e5220180828-78222-1j0fain.jpg'
+  [1m[36mPostImage Create (0.5ms)[0m  [1m[32mINSERT INTO `post_images` (`image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `post_id`, `created_at`, `updated_at`) VALUES ('whatdojehovahwitnessbelieve.jpg', 'image/jpeg', 451453, '2018-08-28 13:27:32', 1, '2018-08-28 13:27:32', '2018-08-28 13:27:32')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/posts
+Completed 302 Found in 504ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/backend/posts" for ::1 at 2018-08-28 09:27:32 -0400
+Processing by PostsController#admin as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  Rendering posts/admin.html.erb within layouts/access
+  Rendered posts/_form.html.erb (3.6ms)
+  [1m[36mPostImage Load (0.7ms)[0m  [1m[34mSELECT `post_images`.* FROM `post_images` WHERE `post_images`.`post_id` = 1[0m
+  Rendered posts/_form.html.erb (9.1ms)
+  Rendered posts/admin.html.erb within layouts/access (20.2ms)
+  Rendered access/_top_bar.html.erb (4.2ms)
+Completed 200 OK in 74ms (Views: 66.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/courses/admin" for ::1 at 2018-08-28 09:27:44 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (2.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.5ms)
+  [1m[36mCourseImage Load (0.5ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 6[0m
+  Rendered courses/_form.html.erb (2.3ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (3.5ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.3ms)
+  Rendered courses/admin.html.erb within layouts/access (23.4ms)
+  Rendered access/_top_bar.html.erb (3.8ms)
+Completed 200 OK in 73ms (Views: 60.1ms | ActiveRecord: 3.7ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+Started GET "/courses/admin" for ::1 at 2018-08-28 09:31:35 -0400
+  [1m[35m (1.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (12.1ms)
+  [1m[36mCourseImage Load (1.0ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 6[0m
+  Rendered courses/_form.html.erb (7.5ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (10.1ms)
+  [1m[36mCourseImage Load (0.8ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (4.5ms)
+  Rendered courses/admin.html.erb within layouts/access (55.9ms)
+  Rendered access/_top_bar.html.erb (4.3ms)
+Completed 200 OK in 853ms (Views: 293.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/favicon/favicon-32x32-3f749b8ea51caa3175a6559f62b2a9bd568d25e84bfabee009ade20dc47f98e7.png" for ::1 at 2018-08-28 09:31:37 -0400
+Started GET "/courses/admin" for ::1 at 2018-08-28 09:31:46 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+Started POST "/courses/update/1" for ::1 at 2018-08-28 09:31:46 -0400
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.1ms)
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 6[0m
+  Rendered courses/_form.html.erb (2.8ms)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKNr35lrqulFlE4GCMHzhUHU4lzwcQqWcH2CPJdE+gvNtgISOkCK08PYSvsDIaFYZNxA4Iuks8HfCM3oYMqKXQ==", "course"=>{"name"=>"Letterpress Workshop", "year"=>"Senior", "semester"=>"Semester 1", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true"}, "id"=>"1"}
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  Rendered courses/_form.html.erb (6.3ms)
+  [1m[36mCourse Update (6.6ms)[0m  [1m[33mUPDATE `courses` SET `required` = 0, `updated_at` = '2018-08-28 13:31:46' WHERE `courses`.`id` = 1[0m
+  [1m[36mCourseImage Load (1.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (4.5ms)
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendered courses/admin.html.erb within layouts/access (41.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 10.4ms)
+
+
+  
+NoMethodError (undefined method `new_to_old' for #<Class:0x00007f947850ebf0>):
+  
+app/controllers/courses_controller.rb:97:in `update_positions'
+app/controllers/courses_controller.rb:64:in `update'
+  Rendered access/_top_bar.html.erb (7.9ms)
+Completed 200 OK in 244ms (Views: 231.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/courses/update/1" for ::1 at 2018-08-28 09:32:18 -0400
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+Processing by CoursesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKNr35lrqulFlE4GCMHzhUHU4lzwcQqWcH2CPJdE+gvNtgISOkCK08PYSvsDIaFYZNxA4Iuks8HfCM3oYMqKXQ==", "course"=>{"name"=>"Letterpress Workshop", "year"=>"Senior", "semester"=>"Semester 1", "about"=>"An introduction to the professional program in graphic design and visual communications. Emphasis is on skill development in controlling the performance of elements within a field; generation, refinement, and analysis of graphic forms and representations through a variety of drawing techniques; development of symbols and icons; and composition, variation, and discovery of word/image relationships through experimentation and play. Historical typographic distinctions are also explored. Required for graphic design majors.", "required"=>"true"}, "id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Update (0.4ms)[0m  [1m[33mUPDATE `courses` SET `required` = 0, `updated_at` = '2018-08-28 13:32:18' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`position` = 2 AND (`courses`.`position` >= 2) AND (`courses`.id != 1) ORDER BY `courses`.`position` ASC LIMIT 1[0m
+  [1m[36mCourse Update All (1.1ms)[0m  [1m[33mUPDATE `courses` SET `position` = (`courses`.`position` + 1), `updated_at` = '2018-08-28 13:32:18.350636' WHERE `courses`.`position` = 1 AND (`courses`.id != 1) AND (`courses`.`position` >= 1)[0m
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE `courses` SET `position` = 1 WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses` WHERE `courses`.`position` = 1 AND (`courses`.`position` = 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`position` = 3 AND (`courses`.`position` >= 3) AND (`courses`.id != 6) ORDER BY `courses`.`position` ASC LIMIT 1[0m
+  [1m[36mCourse Update All (0.3ms)[0m  [1m[33mUPDATE `courses` SET `position` = (`courses`.`position` + 1), `updated_at` = '2018-08-28 13:32:18.356414' WHERE `courses`.`position` = 2 AND (`courses`.id != 6) AND (`courses`.`position` >= 2)[0m
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE `courses` SET `position` = 2, `updated_at` = '2018-08-28 13:32:18' WHERE `courses`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses` WHERE `courses`.`position` = 2 AND (`courses`.`position` = 2)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`position` = 1 AND (`courses`.`position` >= 1) AND (`courses`.id != 2) ORDER BY `courses`.`position` ASC LIMIT 1[0m
+  [1m[36mCourse Update All (0.2ms)[0m  [1m[33mUPDATE `courses` SET `position` = (`courses`.`position` - 1), `updated_at` = '2018-08-28 13:32:18.361563' WHERE `courses`.`position` = 1 AND (`courses`.`position` > 1)[0m
+  [1m[36mCourse Update All (0.3ms)[0m  [1m[33mUPDATE `courses` SET `position` = (`courses`.`position` + 1), `updated_at` = '2018-08-28 13:32:18.362481' WHERE `courses`.`position` = 3 AND (`courses`.id != 2) AND (`courses`.`position` >= 3)[0m
+  [1m[36mCourse Update (0.2ms)[0m  [1m[33mUPDATE `courses` SET `position` = 3, `updated_at` = '2018-08-28 13:32:18' WHERE `courses`.`id` = 2[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses` WHERE `courses`.`position` = 3 AND (`courses`.`position` = 3)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/courses
+Completed 302 Found in 45ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-08-28 09:32:18 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (2.0ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.6ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (3.6ms)
+  [1m[36mCourseImage Load (0.6ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 6[0m
+  Rendered courses/_form.html.erb (2.9ms)
+  Rendered courses/admin.html.erb within layouts/access (22.8ms)
+  Rendered access/_top_bar.html.erb (4.5ms)
+Completed 200 OK in 94ms (Views: 67.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/backend/courses" for ::1 at 2018-08-28 09:32:23 -0400
+Processing by CoursesController#admin as HTML
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` ORDER BY courses.updated_at DESC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `courses`[0m
+  Rendering courses/admin.html.erb within layouts/access
+  Rendered courses/_form.html.erb (3.0ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/_form.html.erb (2.4ms)
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/_form.html.erb (4.8ms)
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 6[0m
+  Rendered courses/_form.html.erb (2.2ms)
+  Rendered courses/admin.html.erb within layouts/access (30.6ms)
+  Rendered access/_top_bar.html.erb (3.8ms)
+Completed 200 OK in 83ms (Views: 71.2ms | ActiveRecord: 1.8ms)
+
+
