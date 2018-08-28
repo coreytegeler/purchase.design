@@ -9,7 +9,7 @@
 	<% @courses.each_with_index do |course, index| %>
 		<div class="course block">
 			<div class="row">
-				<%= form_for(course, :url => {:action => 'update', :id => course.id}, :html => { :id => course.id.to_s, :method => :post}) do |f| %>
+				<%= form_for(course, :url => {:action => 'update', :id => course.id}, :html => { :id => course.position.to_s, :method => :post}) do |f| %>
 					<%= render(:partial => 'form', :locals => {:course => course, :f => f}) %>
 				<% end %>
 			</div>
