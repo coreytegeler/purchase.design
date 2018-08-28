@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
 
 	scope :a_to_z, lambda {order("courses.name ASC")}
-	scope :in_order, lambda {order("courses.updated_at DESC")}
+	scope :in_order, lambda {order("courses.position ASC")}
 
 	acts_as_list scope: [:position]
 

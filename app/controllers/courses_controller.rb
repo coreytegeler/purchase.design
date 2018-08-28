@@ -94,8 +94,8 @@ class CoursesController < ApplicationController
     end
 
     def update_positions
-      Course.in_order.each_with_index do |f, i|
-         f.update_attribute(:position, i+1)
+      Course.in_order.each_with_index do |c, i|
+        c.update_attribute(:position, i+1)
       end
     end
 
