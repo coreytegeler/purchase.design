@@ -12351,3 +12351,288 @@ Processing by WorksController#index as HTML
 Completed 200 OK in 94ms (Views: 75.4ms | ActiveRecord: 4.2ms)
 
 
+Started GET "/admin" for ::1 at 2018-08-29 13:20:06 -0400
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by AccessController#login as HTML
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT  `admins`.* FROM `admins` WHERE `admins`.`id` = 1 ORDER BY `admins`.`id` ASC LIMIT 1[0m
+  Rendering access/login.html.erb within layouts/access
+  Rendered access/login.html.erb within layouts/access (0.8ms)
+  Rendered access/_top_bar.html.erb (4.6ms)
+Completed 200 OK in 83ms (Views: 75.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/helpers.self-a30b3c8eff061098327addf5002685a889a41932b4d3c9c0fcaecce8fc0763b9.js?body=1" for ::1 at 2018-08-29 13:20:06 -0400
+Started GET "/assets/application.self-538d6440534fa5f615e8a26932792a82a2e4a33a97886e2d815eab8fc216d415.js?body=1" for ::1 at 2018-08-29 13:20:06 -0400
+Started GET "/backend/works" for ::1 at 2018-08-29 13:20:07 -0400
+Processing by WorksController#admin as HTML
+  Rendering works/admin.html.erb within layouts/access
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `works`[0m
+  Rendered works/_form.html.erb (4.6ms)
+  [1m[36mWork Load (0.5ms)[0m  [1m[34mSELECT `works`.* FROM `works` ORDER BY works.position ASC[0m
+  Rendered works/_form.html.erb (1.7ms)
+  Rendered works/_form.html.erb (1.2ms)
+  Rendered works/_form.html.erb (1.6ms)
+  Rendered works/_form.html.erb (1.1ms)
+  Rendered works/admin.html.erb within layouts/access (30.1ms)
+  Rendered access/_top_bar.html.erb (5.1ms)
+Completed 200 OK in 83ms (Views: 74.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/backend/works" for ::1 at 2018-08-29 13:20:20 -0400
+Processing by WorksController#admin as HTML
+  Rendering works/admin.html.erb within layouts/access
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `works`[0m
+  Rendered works/_form.html.erb (3.9ms)
+Started POST "/works/update/4" for ::1 at 2018-08-29 13:20:20 -0400
+  [1m[36mWork Load (1.2ms)[0m  [1m[34mSELECT `works`.* FROM `works` ORDER BY works.position ASC[0m
+  Rendered works/_form.html.erb (2.6ms)
+  Rendered works/_form.html.erb (1.3ms)
+  Rendered works/_form.html.erb (1.8ms)
+  Rendered works/_form.html.erb (1.2ms)
+  Rendered works/admin.html.erb within layouts/access (39.4ms)
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by WorksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2AJdvHVppecZOS0wm3mzaZ94UFirvXJoqJEPU5kSLB8s5sVoDjA1xuUQX5InO8Xo4DHrcpGu+WjfgVC5gmwk0A==", "work"=>{"position"=>"4", "designer"=>"Them!"}, "id"=>"4"}
+  [1m[36mWork Load (0.7ms)[0m  [1m[34mSELECT  `works`.* FROM `works` WHERE `works`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWork Update (3.2ms)[0m  [1m[33mUPDATE `works` SET `designer` = 'Them!', `updated_at` = '2018-08-29 17:20:20' WHERE `works`.`id` = 4[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/works
+Completed 302 Found in 14ms (ActiveRecord: 5.0ms)
+
+
+  Rendered access/_top_bar.html.erb (7.3ms)
+Completed 200 OK in 112ms (Views: 104.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/backend/works" for ::1 at 2018-08-29 13:20:20 -0400
+Processing by WorksController#admin as HTML
+  Rendering works/admin.html.erb within layouts/access
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `works`[0m
+  Rendered works/_form.html.erb (4.5ms)
+  [1m[36mWork Load (0.5ms)[0m  [1m[34mSELECT `works`.* FROM `works` ORDER BY works.position ASC[0m
+  Rendered works/_form.html.erb (1.4ms)
+  Rendered works/_form.html.erb (2.4ms)
+  Rendered works/_form.html.erb (2.1ms)
+  Rendered works/_form.html.erb (1.5ms)
+  Rendered works/admin.html.erb within layouts/access (32.5ms)
+  Rendered access/_top_bar.html.erb (5.0ms)
+Completed 200 OK in 91ms (Views: 83.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/backend/works" for ::1 at 2018-08-29 13:20:24 -0400
+Processing by WorksController#admin as HTML
+  Rendering works/admin.html.erb within layouts/access
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `works`[0m
+  Rendered works/_form.html.erb (6.0ms)
+Started POST "/works/update/1" for ::1 at 2018-08-29 13:20:24 -0400
+  [1m[36mWork Load (0.6ms)[0m  [1m[34mSELECT `works`.* FROM `works` ORDER BY works.position ASC[0m
+  Rendered works/_form.html.erb (2.5ms)
+  Rendered works/_form.html.erb (1.4ms)
+  Rendered works/_form.html.erb (2.0ms)
+  Rendered works/_form.html.erb (2.8ms)
+  Rendered works/admin.html.erb within layouts/access (42.1ms)
+Processing by WorksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5DERSAKTDEyqov0DcLSTLjZbl8Emrk4YAgvWVXRIgFoQ1YmcecqcbVaLj6HM9uWvSRIs6xy9xRh1G4m/bzaIlQ==", "work"=>{"position"=>"1", "designer"=>"Me!"}, "id"=>"1"}
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT  `works`.* FROM `works` WHERE `works`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWork Update (0.7ms)[0m  [1m[33mUPDATE `works` SET `designer` = 'Me!', `updated_at` = '2018-08-29 17:20:25' WHERE `works`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/works
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+  Rendered access/_top_bar.html.erb (4.2ms)
+Completed 200 OK in 107ms (Views: 99.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/backend/works" for ::1 at 2018-08-29 13:20:25 -0400
+Processing by WorksController#admin as HTML
+  Rendering works/admin.html.erb within layouts/access
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `works`[0m
+  Rendered works/_form.html.erb (3.6ms)
+  [1m[36mWork Load (0.8ms)[0m  [1m[34mSELECT `works`.* FROM `works` ORDER BY works.position ASC[0m
+  Rendered works/_form.html.erb (4.3ms)
+  Rendered works/_form.html.erb (1.4ms)
+  Rendered works/_form.html.erb (1.8ms)
+  Rendered works/_form.html.erb (1.7ms)
+  Rendered works/admin.html.erb within layouts/access (36.0ms)
+  Rendered access/_top_bar.html.erb (7.7ms)
+Completed 200 OK in 94ms (Views: 87.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/backend/works" for ::1 at 2018-08-29 13:20:29 -0400
+Processing by WorksController#admin as HTML
+  Rendering works/admin.html.erb within layouts/access
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `works`[0m
+  Rendered works/_form.html.erb (5.5ms)
+Started POST "/works/update/2" for ::1 at 2018-08-29 13:20:29 -0400
+  [1m[36mWork Load (0.6ms)[0m  [1m[34mSELECT `works`.* FROM `works` ORDER BY works.position ASC[0m
+  Rendered works/_form.html.erb (2.1ms)
+  Rendered works/_form.html.erb (1.5ms)
+  Rendered works/_form.html.erb (1.6ms)
+  Rendered works/_form.html.erb (1.2ms)
+  Rendered works/admin.html.erb within layouts/access (39.4ms)
+Processing by WorksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M4o95Vse5E4rZbSDTy2B9QHgG1GIOSOvQahEk07npGDHbqUxIEd0b9dMxiHzb/d0fqmge7IqqK82uBt5VZmsrw==", "work"=>{"position"=>"2", "designer"=>"You!"}, "id"=>"2"}
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT  `works`.* FROM `works` WHERE `works`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWork Update (2.6ms)[0m  [1m[33mUPDATE `works` SET `designer` = 'You!', `updated_at` = '2018-08-29 17:20:29' WHERE `works`.`id` = 2[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/backend/works
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms)
+
+
+  Rendered access/_top_bar.html.erb (4.2ms)
+Completed 200 OK in 103ms (Views: 96.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/backend/works" for ::1 at 2018-08-29 13:20:29 -0400
+Processing by WorksController#admin as HTML
+  Rendering works/admin.html.erb within layouts/access
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `works`[0m
+  Rendered works/_form.html.erb (3.0ms)
+  [1m[36mWork Load (1.0ms)[0m  [1m[34mSELECT `works`.* FROM `works` ORDER BY works.position ASC[0m
+  Rendered works/_form.html.erb (1.8ms)
+  Rendered works/_form.html.erb (1.6ms)
+  Rendered works/_form.html.erb (2.9ms)
+  Rendered works/_form.html.erb (1.5ms)
+  Rendered works/admin.html.erb within layouts/access (32.4ms)
+  Rendered access/_top_bar.html.erb (4.5ms)
+Completed 200 OK in 93ms (Views: 85.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2018-08-29 13:20:32 -0400
+Processing by WorksController#index as HTML
+  [1m[36mLogo Load (0.6ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.5ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.5ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering works/index.html.erb within layouts/public
+  [1m[36mWork Load (0.5ms)[0m  [1m[34mSELECT  `works`.* FROM `works` ORDER BY works.position DESC LIMIT 20[0m
+  Rendered works/index.html.erb within layouts/public (5.0ms)
+  Rendered public/_gradient_bg.html.erb (0.5ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.0ms)
+  Rendered public/_logo.html.erb (2.4ms)
+  Rendered public/buttons/_gradient.html.erb (2.3ms)
+  Rendered public/buttons/_pattern.html.erb (1.0ms)
+  Rendered public/buttons/_logo.html.erb (2.2ms)
+  Rendered public/_side_bar.html.erb (22.8ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (4.1ms)
+Completed 200 OK in 100ms (Views: 82.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/backend_animate-da2ae242ebbeb8b93ce92fbb3d238e0052e97f4c5f55abe904d2d3035f7e33fd.gif" for ::1 at 2018-08-29 13:20:32 -0400
+Started GET "/" for ::1 at 2018-08-29 13:20:53 -0400
+Processing by WorksController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering works/index.html.erb within layouts/public
+  [1m[36mWork Load (0.5ms)[0m  [1m[34mSELECT  `works`.* FROM `works` ORDER BY works.position DESC LIMIT 20[0m
+  Rendered works/index.html.erb within layouts/public (4.1ms)
+  Rendered public/_gradient_bg.html.erb (1.4ms)
+  Rendered public/_pattern_bg.html.erb (0.5ms)
+  Rendered public/_top_bar.html.erb (2.9ms)
+  Rendered public/_logo.html.erb (2.7ms)
+  Rendered public/buttons/_gradient.html.erb (2.6ms)
+  Rendered public/buttons/_pattern.html.erb (1.1ms)
+  Rendered public/buttons/_logo.html.erb (2.6ms)
+  Rendered public/_side_bar.html.erb (22.2ms)
+  [1m[36mAbout Load (0.8ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (5.3ms)
+Completed 200 OK in 551ms (Views: 538.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2018-08-29 13:21:14 -0400
+Processing by WorksController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering works/index.html.erb within layouts/public
+  [1m[36mWork Load (0.5ms)[0m  [1m[34mSELECT  `works`.* FROM `works` ORDER BY works.position DESC LIMIT 20[0m
+  Rendered works/index.html.erb within layouts/public (4.7ms)
+  Rendered public/_gradient_bg.html.erb (0.9ms)
+  Rendered public/_pattern_bg.html.erb (0.5ms)
+  Rendered public/_top_bar.html.erb (3.0ms)
+  Rendered public/_logo.html.erb (2.3ms)
+  Rendered public/buttons/_gradient.html.erb (1.7ms)
+  Rendered public/buttons/_pattern.html.erb (0.8ms)
+  Rendered public/buttons/_logo.html.erb (2.5ms)
+  Rendered public/_side_bar.html.erb (20.6ms)
+  [1m[36mAbout Load (0.7ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (6.1ms)
+Completed 200 OK in 369ms (Views: 356.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/public.self-62184240bb3fe4351239c2dabc97a2ab303388a6f0aa1e3103ddb77e021297d1.js?body=1" for ::1 at 2018-08-29 13:21:14 -0400
+Started GET "/" for ::1 at 2018-08-29 13:21:33 -0400
+Processing by WorksController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering works/index.html.erb within layouts/public
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT  `works`.* FROM `works` ORDER BY works.position DESC LIMIT 20[0m
+  Rendered works/index.html.erb within layouts/public (4.4ms)
+  Rendered public/_gradient_bg.html.erb (1.1ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (3.0ms)
+  Rendered public/_logo.html.erb (2.1ms)
+  Rendered public/buttons/_gradient.html.erb (1.6ms)
+  Rendered public/buttons/_pattern.html.erb (1.1ms)
+  Rendered public/buttons/_logo.html.erb (2.6ms)
+  Rendered public/_side_bar.html.erb (20.3ms)
+  [1m[36mAbout Load (0.7ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.7ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (5.8ms)
+Completed 200 OK in 363ms (Views: 347.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/public.self-ce6653ed7c881401db3968eabed4efe44e87459c24e4c2bc6acf5c9a645e7c47.js?body=1" for ::1 at 2018-08-29 13:21:33 -0400
+Started GET "/news" for ::1 at 2018-08-29 13:21:39 -0400
+Processing by PostsController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.6ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.7ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.6ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.5ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering posts/index.html.erb within layouts/public
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY posts.created_at DESC[0m
+  [1m[36mPostImage Load (0.3ms)[0m  [1m[34mSELECT `post_images`.* FROM `post_images` WHERE `post_images`.`post_id` = 1[0m
+  Rendered posts/index.html.erb within layouts/public (5.7ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.0ms)
+  Rendered public/_logo.html.erb (1.8ms)
+  Rendered public/buttons/_gradient.html.erb (1.5ms)
+  Rendered public/buttons/_pattern.html.erb (0.8ms)
+  Rendered public/buttons/_logo.html.erb (1.7ms)
+  Rendered public/_side_bar.html.erb (17.6ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (4.7ms)
+Completed 200 OK in 99ms (Views: 73.7ms | ActiveRecord: 4.7ms)
+
+

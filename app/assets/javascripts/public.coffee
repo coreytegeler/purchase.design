@@ -141,19 +141,19 @@ initStack = ->
 					else
 						$('.media:last-child .media_wrapper video').stop()
 
-		$('#stack .media .mousepad').mousemove((e) ->
+		$('.stack .media .mousepad').mousemove (e) ->
 			if $(this).parent('.media').is(':last-child')
 				position = $(this).parent('.media').data('position')
-				tooltip = $('#stack .designer[data-position=' + position + ']')
+				tooltip = $('.stack .designer[data-position=' + position + ']')
 				top = e.offsetY - ($(tooltip).height() / 2)
 				left = e.offsetX - ($(tooltip).width() / 2)
 				$(tooltip).css
 					'top': top
 					'left': left
-		).mouseover((e) ->
+		.mouseover (e) ->
 			if $(this).parent('.media').is(':last-child')
 				position = $(this).parent('.work').data('position')
-				tooltip = $('#stack .designer[data-position=' + position + ']')
+				tooltip = $('.stack .designer[data-position=' + position + ']')
 				top = e.offsetY - ($(tooltip).height() / 2)
 				left = e.offsetX - ($(tooltip).width() / 2)
 				$(tooltip).css
@@ -161,44 +161,15 @@ initStack = ->
 					'top': top
 					'left': left
 
-		).mouseleave ->
+		.mouseleave ->
 			if $(this).parent('.media').is(':last-child')
 				position = $(this).parent('.work').data('position')
-				tooltip = $('#stack .designer[data-position=' + position + ']')
+				tooltip = $('.stack .designer[data-position=' + position + ']')
 				$(tooltip).css 'display': 'none'
 
 initPosts = ->
 	$('.remove').each ->
 		fill this, '#fff'
-
-	# maxWidth = 400
-	# maxHeight = 350
-	# gap = 4
-	# $('.post').each (i, post) ->
-	# 	stack = $(post).children('.stack')
-	# 	stackSize = $(stack).children('.image').length
-	# 	gaps = stackSize * gap - gap
-	# 	stackWidth = maxWidth + gaps + gap * 2
-	# 	stackHeight = maxHeight + gaps + gap * 2
-	# 	$(stack).children('.image').each (i, img) ->
-	# 		$(img).imagesLoaded ->
-	# 			$(img).addClass('loaded').css
-	# 				y: -gap * i
-	# 				x: gap * i
-
-	# 	$(stack).css
-	# 		width: stackWidth
-	# 		height: stackHeight
-
-	# 	$(post).css width: stackWidth + 100
-
-	# $('.public .stack').click ->
-	# 	$top = $(this).children('.image:last-child')
-	# 	$top.insertBefore $(this).children('.image:first-child')
-	# 	$(this).children('.image').each (i, img) ->
-	# 		$(img).css
-	# 			y: -gap * i
-	# 			x: gap * i
 
 initApply = ->
 	$('.box').click ->
