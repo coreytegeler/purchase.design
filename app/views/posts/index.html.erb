@@ -3,8 +3,8 @@
 		<div class="post row block">
 			<div class="stack">
 				<% post.post_images.each do |pi| %>
-					<div class="image" <%= color('bg', @p, 'border', @s) %>>
-						<div class="image_wrapper">
+					<div class="post_image media image" <%= color('bg', @p, 'border', @s) %>>
+						<div class="media_wrapper">
 							<%= image_tag pi.image.url(:medium) %>
 						</div>
 					</div>

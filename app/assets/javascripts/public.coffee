@@ -92,105 +92,113 @@ setUpSide = ->
 		$('.masonry').masonry()
 
 
-initWorks = ->
-	$('#stack').ready ->
-		maxWidth = 525
-		maxHeight = 450
+initStack = ->
+	$stack = $('.stack')
+	$stack.ready ->
+		$media = $stack.find('.media')
 		gap = 5
-		stackSize = $('#stack .work').length
-		gaps = stackSize * gap - gap
-		stackWidth = maxWidth + gaps + gap * 2
-		stackHeight = maxHeight + gaps + gap * 2
-		$('.public #stack').css
+		stackSize = $media.length
+		gaps = stackSize * gap
+		tallestHeight = 0
+		$media.each (i, m) ->
+			$img = $(m).find('img')
+			$img.load () ->
+				imgHeight = $img[0].naturalHeight
+				if imgHeight > tallestHeight
+					tallestHeight = imgHeight
+					$stack.css
+						height: tallestHeight + gaps
+				$(m).addClass('loaded').css
+					y: gap * -i
+					x: gap * i
+				if !$(m).children('.designer').length
+					$(m).children('.mousepad').css 'cursor': 'pointer'
+
+		maxWidth = 525
+		maxHeight = tallestHeight
+		stackWidth = maxWidth + gaps
+		stackHeight = maxHeight + gaps
+
+		$stack.css
 			height: stackHeight
 			width: stackWidth
-		$('#stack .work').each (i, w) ->
-			$(w).addClass('loaded').css
-				y: gap * -i
-				x: gap * i
-			if !$(w).children('.designer').length
-				$(w).children('.mousepad').css 'cursor': 'pointer'
 
-	$('#stack .work').click (e) ->
-		oldTop = $('.work:last-child')
-		oldTopPosition = $(oldTop).data('position')
-		$(oldTop).insertBefore '.work:first-child'
-		oldTooltip = $('.designer[data-position=' + oldTopPosition + ']')
-		$(oldTooltip).css 'display': 'none'
-		gap = 5
-		$('.work').each (i, w) ->
-			$(w).css
-				y: -gap * i
-				x: gap * i
-			if $(w).is('.video')
-				if $(w).is(':last-child')
-					$(w).children('.media_wrapper').children('video')[0].play()
-				else
-					$('.work:last-child .media_wrapper video').stop()
+		$media.click (e) ->
+			$media = $stack.find('.media')
+			$oldTop = $media.last()
+			oldTopPosition = $oldTop.attr('data-position')
+			$oldTop.insertBefore($media.first())
+			if $oldTooltip = $('.designer[data-position=' + oldTopPosition + ']')
+				$oldTooltip.css 'display': 'none'
+			gap = 5
+			$('.media').each (i, m) ->
+				$(m).css
+					y: -gap * i
+					x: gap * i
+				if $(m).is('.video')
+					if $(m).is(':last-child')
+						$(m).children('.media_wrapper').children('video')[0].play()
+					else
+						$('.media:last-child .media_wrapper video').stop()
 
-	$('#stack .work .mousepad').mousemove((e) ->
-		if $(this).parent('.work').is(':last-child')
-			position = $(this).parent('.work').data('position')
-			tooltip = $('#stack .designer[data-position=' + position + ']')
-			top = e.offsetY - ($(tooltip).height() / 2)
-			left = e.offsetX - ($(tooltip).width() / 2)
-			$(tooltip).css
-				'top': top
-				'left': left
+		$('#stack .media .mousepad').mousemove((e) ->
+			if $(this).parent('.media').is(':last-child')
+				position = $(this).parent('.media').data('position')
+				tooltip = $('#stack .designer[data-position=' + position + ']')
+				top = e.offsetY - ($(tooltip).height() / 2)
+				left = e.offsetX - ($(tooltip).width() / 2)
+				$(tooltip).css
+					'top': top
+					'left': left
+		).mouseover((e) ->
+			if $(this).parent('.media').is(':last-child')
+				position = $(this).parent('.work').data('position')
+				tooltip = $('#stack .designer[data-position=' + position + ']')
+				top = e.offsetY - ($(tooltip).height() / 2)
+				left = e.offsetX - ($(tooltip).width() / 2)
+				$(tooltip).css
+					'display': 'table'
+					'top': top
+					'left': left
 
-	).mouseover((e) ->
-		if $(this).parent('.work').is(':last-child')
-			position = $(this).parent('.work').data('position')
-			tooltip = $('#stack .designer[data-position=' + position + ']')
-			top = e.offsetY - ($(tooltip).height() / 2)
-			left = e.offsetX - ($(tooltip).width() / 2)
-			$(tooltip).css
-				'display': 'table'
-				'top': top
-				'left': left
-
-	).mouseleave ->
-		if $(this).parent('.work').is(':last-child')
-			position = $(this).parent('.work').data('position')
-			tooltip = $('#stack .designer[data-position=' + position + ']')
-			$(tooltip).css 'display': 'none'
-
-initCourses = ->
-	# $('.course .name').click () ->
-	# 	$(this).parents('.course').toggleClass('open')
+		).mouseleave ->
+			if $(this).parent('.media').is(':last-child')
+				position = $(this).parent('.work').data('position')
+				tooltip = $('#stack .designer[data-position=' + position + ']')
+				$(tooltip).css 'display': 'none'
 
 initPosts = ->
 	$('.remove').each ->
 		fill this, '#fff'
 
-	maxWidth = 400
-	maxHeight = 350
-	gap = 4
-	$('.post').each (i, post) ->
-		stack = $(post).children('.stack')
-		stackSize = $(stack).children('.image').length
-		gaps = stackSize * gap - gap
-		stackWidth = maxWidth + gaps + gap * 2
-		stackHeight = maxHeight + gaps + gap * 2
-		$(stack).children('.image').each (i, img) ->
-			$(img).imagesLoaded ->
-				$(img).addClass('loaded').css
-					y: -gap * i
-					x: gap * i
+	# maxWidth = 400
+	# maxHeight = 350
+	# gap = 4
+	# $('.post').each (i, post) ->
+	# 	stack = $(post).children('.stack')
+	# 	stackSize = $(stack).children('.image').length
+	# 	gaps = stackSize * gap - gap
+	# 	stackWidth = maxWidth + gaps + gap * 2
+	# 	stackHeight = maxHeight + gaps + gap * 2
+	# 	$(stack).children('.image').each (i, img) ->
+	# 		$(img).imagesLoaded ->
+	# 			$(img).addClass('loaded').css
+	# 				y: -gap * i
+	# 				x: gap * i
 
-		$(stack).css
-			width: stackWidth
-			height: stackHeight
+	# 	$(stack).css
+	# 		width: stackWidth
+	# 		height: stackHeight
 
-		$(post).css width: stackWidth + 100
+	# 	$(post).css width: stackWidth + 100
 
-	$('.public .stack').click ->
-		$top = $(this).children('.image:last-child')
-		$top.insertBefore $(this).children('.image:first-child')
-		$(this).children('.image').each (i, img) ->
-			$(img).css
-				y: -gap * i
-				x: gap * i
+	# $('.public .stack').click ->
+	# 	$top = $(this).children('.image:last-child')
+	# 	$top.insertBefore $(this).children('.image:first-child')
+	# 	$(this).children('.image').each (i, img) ->
+	# 		$(img).css
+	# 			y: -gap * i
+	# 			x: gap * i
 
 initApply = ->
 	$('.box').click ->
@@ -203,8 +211,7 @@ $(window).resize () ->
 
 $(document).on 'turbolinks:load', () ->
 	initPublic()
-	initWorks()
-	initCourses()
+	initStack()
 	initPosts()
 	initApply()
 

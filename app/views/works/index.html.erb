@@ -1,8 +1,8 @@
 <div class="horz_center">
 	<section class="vert_center" id="works">
-		<div id="stack" class="static">
+		<div class="stack">
 			<% @works.each do |work| %>
-				<div data-position="<%= work.position %>" class="work <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
+				<div data-position="<%= work.position %>" class="work media <%= work.media_type %>" <%= color('bg', @p, 'border', @s) %>>
 					<div class="mousepad"></div>
 					<div class="media_wrapper">
 						<% if work.media_type == 'image' %>

@@ -7,32 +7,32 @@
 	clear: both;
 	display: block;
 }
-#posts .post .stack {
-	position: relative;
-	display: table;
-	cursor: pointer;
-	float: left;
-}
-#posts .post .stack .image {
-	position: absolute;
-	opacity: 0;
-	bottom: 0;
-	left: 0;
-	transition: transform 200ms ease-in-out;
-	-moz-transition: -moz-transform 200ms ease-in-out;
-	-webkit-transition: -webkit-transform 200ms ease-in-out;
-}
-#posts .post .stack .image.loaded {
-	opacity: 1;
-}
-#posts .post .stack .image .image_wrapper {
-	overflow: hidden;
-	border: 2px solid;
-	background-color: rgba(255,255,255,0.2);
-}
-#posts .post .stack .image .image_wrapper img {
-	vertical-align: bottom;
-}
+// #posts .post .stack {
+// 	position: relative;
+// 	display: table;
+// 	cursor: pointer;
+// 	float: left;
+// }
+// #posts .post .stack .image {
+// 	position: absolute;
+// 	opacity: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	transition: transform 200ms ease-in-out;
+// 	-moz-transition: -moz-transform 200ms ease-in-out;
+// 	-webkit-transition: -webkit-transform 200ms ease-in-out;
+// }
+// #posts .post .stack .image.loaded {
+// 	opacity: 1;
+// }
+// #posts .post .stack .image .image_wrapper {
+// 	overflow: hidden;
+// 	border: 2px solid;
+// 	background-color: rgba(255,255,255,0.2);
+// }
+// #posts .post .stack .image .image_wrapper img {
+// 	vertical-align: bottom;
+// }
 #posts .post .text {
 	display: block;
 	width: 100%;

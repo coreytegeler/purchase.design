@@ -12,10 +12,13 @@
 					<%= @course.about.html_safe %>
 				</div>
 				<% if @course.course_images.any? %>
-					<div class="images masonry">
-						<% @course.course_images.each do |ci| %>
-							<div class="image block" <%= color('bg', @p, 'border', @s) %>>
-								<%= image_tag ci.image.url(:medium) %>
+					<div class="stack">
+						<% @course.course_images.each_with_index do |ci, i| %>
+							<div data-position="<%= i %>" class="course_image image media" <%= color('bg', @p, 'border', @s) %>>
+								<div class="mousepad"></div>
+								<div class="media_wrapper">
+									<%= image_tag ci.image.url(:medium) %>
+								</div>
 							</div>
 						<% end %>
 					</div>
@@ -23,5 +26,6 @@
 			</div>
 		</div>
 	</div>
+	<br/><br/>
 	<h4><%= active_link_to("Back to courses", {:controller => 'courses', :action => 'index'}, :id => 'courses') %></h4>
 </section>
