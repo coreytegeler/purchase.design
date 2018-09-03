@@ -58,9 +58,9 @@ Rails.application.routes.draw do
 	post 'apply/:delete', :to => 'apply_items#delete'
 	post 'apply/:destroy', :to => 'apply_items#destroy'
 	
-	get 'course', :to => 'courses#index'
+	get 'curriculum', :to => 'courses#index'
+	get 'curriculum/:id', :to => 'courses#single'
 	get 'course/:admin', :to => 'courses#admin'
-	get 'course/single/:id', :to => 'courses#single'
 	post 'course/:create', :to => 'courses#create'
 	post 'course/:update', :to => 'courses#update'
 	post 'course/:delete', :to => 'courses#delete'

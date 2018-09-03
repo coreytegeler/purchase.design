@@ -12973,3 +12973,680 @@ Processing by CoursesController#single as HTML
 Completed 200 OK in 143ms (Views: 119.9ms | ActiveRecord: 5.9ms)
 
 
+Started GET "/course/single/2" for ::1 at 2018-09-03 16:12:14 -0400
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLogo Load (0.5ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  Rendering courses/single.html.erb within layouts/public
+  [1m[36mCourseImage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `course_images` WHERE `course_images`.`course_id` = 2 LIMIT 1[0m
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/single.html.erb within layouts/public (5.2ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.3ms)
+  Rendered public/_logo.html.erb (2.0ms)
+  Rendered public/buttons/_gradient.html.erb (1.8ms)
+  Rendered public/buttons/_pattern.html.erb (0.9ms)
+  Rendered public/buttons/_logo.html.erb (2.3ms)
+  Rendered public/_side_bar.html.erb (20.4ms)
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (3.9ms)
+Completed 200 OK in 89ms (Views: 77.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/course/single/2" for ::1 at 2018-09-03 16:13:39 -0400
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0. (called from block in <top (required)> at /Users/coreytegeler/Sites/purchase.design/cms/config/routes.rb:133)
+  
+ActionController::RoutingError (No route matches [GET] "/course/single/2"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2018-09-03 16:13:42 -0400
+Processing by WorksController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+Creating scope :in_list. Overwriting existing method Gradient.in_list.
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering works/index.html.erb within layouts/public
+  [1m[36mWork Load (0.6ms)[0m  [1m[34mSELECT  `works`.* FROM `works` ORDER BY works.position DESC LIMIT 20[0m
+  Rendered works/index.html.erb within layouts/public (20.3ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.4ms)
+  Rendered public/_top_bar.html.erb (3.6ms)
+  Rendered public/_logo.html.erb (3.1ms)
+  Rendered public/buttons/_gradient.html.erb (2.1ms)
+  Rendered public/buttons/_pattern.html.erb (0.9ms)
+  Rendered public/buttons/_logo.html.erb (2.1ms)
+  Rendered public/_side_bar.html.erb (21.4ms)
+  [1m[36mAbout Load (0.2ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (7.1ms)
+Completed 200 OK in 159ms (Views: 95.4ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/curriculum" for ::1 at 2018-09-03 16:13:43 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.5ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (3.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.6ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.5ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.5ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  Rendered courses/index.html.erb within layouts/public (22.2ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 8.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `link' for #<Course:0x00007fbe07f530f8>):
+    13: 										<h5 class="required">Required</h5>
+    14: 									<% end %>
+    15: 									<h2 class="name">
+    16: 										<%= active_link_to(course.name, course.link) %>
+    17: 									</h2>
+    18: 								</div>
+    19: 							</div>
+  
+app/views/courses/index.html.erb:16:in `block (3 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227150465040'
+app/views/courses/index.html.erb:9:in `block (2 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227150465040'
+app/views/courses/index.html.erb:5:in `each'
+app/views/courses/index.html.erb:5:in `block in _app_views_courses_index_html_erb___3411182791885130099_70227150465040'
+app/views/courses/index.html.erb:2:in `each'
+app/views/courses/index.html.erb:2:in `_app_views_courses_index_html_erb___3411182791885130099_70227150465040'
+Started GET "/curriculum" for ::1 at 2018-09-03 16:15:08 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  Rendered courses/index.html.erb within layouts/public (16.5ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `link' for #<Course:0x00007fbe07bf7b48>):
+    13: 										<h5 class="required">Required</h5>
+    14: 									<% end %>
+    15: 									<h2 class="name">
+    16: 										<%= active_link_to(course.name, course.link) %>
+    17: 										<%= active_link_to(course.name, {:controller => 'course', :action => 'single'}, :id => course.id) %>
+    18: 									</h2>
+    19: 								</div>
+  
+app/views/courses/index.html.erb:16:in `block (3 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227093750560'
+app/views/courses/index.html.erb:9:in `block (2 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227093750560'
+app/views/courses/index.html.erb:5:in `each'
+app/views/courses/index.html.erb:5:in `block in _app_views_courses_index_html_erb___3411182791885130099_70227093750560'
+app/views/courses/index.html.erb:2:in `each'
+app/views/courses/index.html.erb:2:in `_app_views_courses_index_html_erb___3411182791885130099_70227093750560'
+Started GET "/curriculum" for ::1 at 2018-09-03 16:15:12 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (11.0ms)
+  Rendered public/_gradient_bg.html.erb (0.3ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.3ms)
+  Rendered public/_logo.html.erb (2.2ms)
+  Rendered public/buttons/_gradient.html.erb (1.9ms)
+  Rendered public/buttons/_pattern.html.erb (0.8ms)
+  Rendered public/buttons/_logo.html.erb (2.2ms)
+  Rendered public/_side_bar.html.erb (19.5ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (4.5ms)
+Completed 200 OK in 107ms (Views: 93.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/curriculum" for ::1 at 2018-09-03 16:16:50 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.8ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  Rendered courses/index.html.erb within layouts/public (12.4ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Integer into String):
+    13: 										<h5 class="required">Required</h5>
+    14: 									<% end %>
+    15: 									<h2 class="name">
+    16: 										<%= active_link_to(course.name, {:controller => 'curriculum', :action => 'single/'+course.id}, :id => course.id) %>
+    17: 									</h2>
+    18: 								</div>
+    19: 							</div>
+  
+app/views/courses/index.html.erb:16:in `+'
+app/views/courses/index.html.erb:16:in `block (3 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227155220460'
+app/views/courses/index.html.erb:9:in `block (2 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227155220460'
+app/views/courses/index.html.erb:5:in `each'
+app/views/courses/index.html.erb:5:in `block in _app_views_courses_index_html_erb___3411182791885130099_70227155220460'
+app/views/courses/index.html.erb:2:in `each'
+app/views/courses/index.html.erb:2:in `_app_views_courses_index_html_erb___3411182791885130099_70227155220460'
+Started GET "/curriculum" for ::1 at 2018-09-03 16:17:00 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.2ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (18.1ms)
+  Rendered public/_gradient_bg.html.erb (0.5ms)
+  Rendered public/_pattern_bg.html.erb (0.4ms)
+  Rendered public/_top_bar.html.erb (2.6ms)
+  Rendered public/_logo.html.erb (8.3ms)
+  Rendered public/buttons/_gradient.html.erb (3.2ms)
+  Rendered public/buttons/_pattern.html.erb (2.3ms)
+  Rendered public/buttons/_logo.html.erb (3.0ms)
+  Rendered public/_side_bar.html.erb (34.9ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.2ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (4.0ms)
+Completed 200 OK in 127ms (Views: 110.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/curriculum/single%2F2" for ::1 at 2018-09-03 16:17:02 -0400
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"single/2"}
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.5ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 14ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=single/2):
+  
+app/controllers/courses_controller.rb:26:in `single'
+Started GET "/curriculum/single%2F2" for ::1 at 2018-09-03 16:17:09 -0400
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"single/2"}
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 8ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=single/2):
+  
+app/controllers/courses_controller.rb:26:in `single'
+Started GET "/curriculum/single%2F2" for ::1 at 2018-09-03 16:17:22 -0400
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"single/2"}
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 13ms (ActiveRecord: 2.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=single/2):
+  
+app/controllers/courses_controller.rb:26:in `single'
+Started GET "/curriculum/" for ::1 at 2018-09-03 16:17:26 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.2ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (11.7ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.1ms)
+  Rendered public/_logo.html.erb (1.9ms)
+  Rendered public/buttons/_gradient.html.erb (1.7ms)
+  Rendered public/buttons/_pattern.html.erb (0.8ms)
+  Rendered public/buttons/_logo.html.erb (2.0ms)
+  Rendered public/_side_bar.html.erb (19.4ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (3.5ms)
+Completed 200 OK in 90ms (Views: 76.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/curriculum/" for ::1 at 2018-09-03 16:17:35 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.2ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (15.1ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.4ms)
+  Rendered public/_top_bar.html.erb (2.4ms)
+  Rendered public/_logo.html.erb (1.7ms)
+  Rendered public/buttons/_gradient.html.erb (1.4ms)
+  Rendered public/buttons/_pattern.html.erb (0.7ms)
+  Rendered public/buttons/_logo.html.erb (1.7ms)
+  Rendered public/_side_bar.html.erb (18.5ms)
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.2ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (2.7ms)
+Completed 200 OK in 88ms (Views: 72.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/curriculum/" for ::1 at 2018-09-03 16:17:45 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.7ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.6ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (20.8ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.4ms)
+  Rendered public/_top_bar.html.erb (2.2ms)
+  Rendered public/_logo.html.erb (2.3ms)
+  Rendered public/buttons/_gradient.html.erb (1.9ms)
+  Rendered public/buttons/_pattern.html.erb (1.0ms)
+  Rendered public/buttons/_logo.html.erb (2.6ms)
+  Rendered public/_side_bar.html.erb (21.7ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.2ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (3.2ms)
+Completed 200 OK in 124ms (Views: 98.7ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/curriculum/" for ::1 at 2018-09-03 16:18:00 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (12.2ms)
+  Rendered public/_gradient_bg.html.erb (0.3ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.1ms)
+  Rendered public/_logo.html.erb (3.0ms)
+  Rendered public/buttons/_gradient.html.erb (1.8ms)
+  Rendered public/buttons/_pattern.html.erb (1.0ms)
+  Rendered public/buttons/_logo.html.erb (2.2ms)
+  Rendered public/_side_bar.html.erb (20.9ms)
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.2ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (2.7ms)
+Completed 200 OK in 88ms (Views: 72.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/curriculum/2" for ::1 at 2018-09-03 16:18:02 -0400
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLogo Load (0.9ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.3ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  Rendering courses/single.html.erb within layouts/public
+  [1m[36mCourseImage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `course_images` WHERE `course_images`.`course_id` = 2 LIMIT 1[0m
+  [1m[36mCourseImage Load (0.3ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 2[0m
+  Rendered courses/single.html.erb within layouts/public (38.0ms)
+  Rendered public/_gradient_bg.html.erb (0.3ms)
+  Rendered public/_pattern_bg.html.erb (0.2ms)
+  Rendered public/_top_bar.html.erb (2.1ms)
+  Rendered public/_logo.html.erb (1.7ms)
+  Rendered public/buttons/_gradient.html.erb (2.2ms)
+  Rendered public/buttons/_pattern.html.erb (2.1ms)
+  Rendered public/buttons/_logo.html.erb (2.0ms)
+  Rendered public/_side_bar.html.erb (21.8ms)
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.2ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (2.9ms)
+Completed 200 OK in 121ms (Views: 99.2ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/curriculum/1" for ::1 at 2018-09-03 16:18:05 -0400
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.5ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  Rendering courses/single.html.erb within layouts/public
+  [1m[36mCourseImage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `course_images` WHERE `course_images`.`course_id` = 1 LIMIT 1[0m
+  [1m[36mCourseImage Load (0.4ms)[0m  [1m[34mSELECT `course_images`.* FROM `course_images` WHERE `course_images`.`course_id` = 1[0m
+  Rendered courses/single.html.erb within layouts/public (5.5ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.2ms)
+  Rendered public/_top_bar.html.erb (2.2ms)
+  Rendered public/_logo.html.erb (2.2ms)
+  Rendered public/buttons/_gradient.html.erb (1.5ms)
+  Rendered public/buttons/_pattern.html.erb (0.6ms)
+  Rendered public/buttons/_logo.html.erb (1.2ms)
+  Rendered public/_side_bar.html.erb (16.4ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.8ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (5.1ms)
+Completed 200 OK in 92ms (Views: 73.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/curriculum/6" for ::1 at 2018-09-03 16:18:13 -0400
+Processing by CoursesController#single as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.2ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.5ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.5ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 6 LIMIT 1[0m
+  Rendering courses/single.html.erb within layouts/public
+  [1m[36mCourseImage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `course_images` WHERE `course_images`.`course_id` = 6 LIMIT 1[0m
+  Rendered courses/single.html.erb within layouts/public (3.0ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.4ms)
+  Rendered public/_top_bar.html.erb (2.2ms)
+  Rendered public/_logo.html.erb (1.8ms)
+  Rendered public/buttons/_gradient.html.erb (1.7ms)
+  Rendered public/buttons/_pattern.html.erb (0.9ms)
+  Rendered public/buttons/_logo.html.erb (1.9ms)
+  Rendered public/_side_bar.html.erb (17.8ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (3.6ms)
+Completed 200 OK in 87ms (Views: 72.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/curriculum" for ::1 at 2018-09-03 16:18:15 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.7ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.7ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.4ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (4.8ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  [1m[36mCourse Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Sophomore' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Junior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 1'[0m
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Senior' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  Rendered courses/index.html.erb within layouts/public (33.5ms)
+  Rendered public/_gradient_bg.html.erb (0.4ms)
+  Rendered public/_pattern_bg.html.erb (0.3ms)
+  Rendered public/_top_bar.html.erb (2.1ms)
+  Rendered public/_logo.html.erb (1.5ms)
+  Rendered public/buttons/_gradient.html.erb (1.8ms)
+  Rendered public/buttons/_pattern.html.erb (0.7ms)
+  Rendered public/buttons/_logo.html.erb (2.5ms)
+  Rendered public/_side_bar.html.erb (17.4ms)
+  [1m[36mAbout Load (0.4ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1[0m
+  [1m[36mAbout Load (0.3ms)[0m  [1m[34mSELECT  `abouts`.* FROM `abouts` ORDER BY `abouts`.`id` ASC LIMIT 1 OFFSET 1[0m
+  Rendered public/_about.html.erb (3.8ms)
+Completed 200 OK in 117ms (Views: 84.3ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/curriculum" for ::1 at 2018-09-03 16:18:20 -0400
+Processing by CoursesController#index as HTML
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mCACHE Logo Load (0.0ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 1 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mLogo Load (0.4ms)[0m  [1m[34mSELECT  `logos`.* FROM `logos` WHERE `logos`.`position` = 2 ORDER BY logos.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.3ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 2 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mGradient Load (0.4ms)[0m  [1m[34mSELECT  `gradients`.* FROM `gradients` WHERE `gradients`.`position` = 1 ORDER BY gradients.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.3ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 2 ORDER BY patterns.position ASC LIMIT 1[0m
+  [1m[36mPattern Load (0.2ms)[0m  [1m[34mSELECT  `patterns`.* FROM `patterns` WHERE `patterns`.`position` = 1 ORDER BY patterns.position ASC LIMIT 1[0m
+  Rendering courses/index.html.erb within layouts/public
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 1' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 2' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 3' LIMIT 1[0m
+  [1m[36mCourse Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4' LIMIT 1[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT `courses`.* FROM `courses` WHERE `courses`.`year` = 'Freshman' AND `courses`.`semester` = 'Semester 4'[0m
+  Rendered courses/index.html.erb within layouts/public (15.3ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `slug' for #<Course:0x00007fbe0db4b9f0>):
+    13: 										<h5 class="required">Required</h5>
+    14: 									<% end %>
+    15: 									<h2 class="name">
+    16: 										<%= active_link_to(course.name, {:controller => 'curriculum', :action => course.id}, :id => course.slug) %>
+    17: 									</h2>
+    18: 								</div>
+    19: 							</div>
+  
+app/views/courses/index.html.erb:16:in `block (3 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227091372180'
+app/views/courses/index.html.erb:9:in `block (2 levels) in _app_views_courses_index_html_erb___3411182791885130099_70227091372180'
+app/views/courses/index.html.erb:5:in `each'
+app/views/courses/index.html.erb:5:in `block in _app_views_courses_index_html_erb___3411182791885130099_70227091372180'
+app/views/courses/index.html.erb:2:in `each'
+app/views/courses/index.html.erb:2:in `_app_views_courses_index_html_erb___3411182791885130099_70227091372180'
