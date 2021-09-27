@@ -1,4 +1,4 @@
-#Purchase College Graphic Design Department
+**Purchase College Graphic Design Department**
 
 This website was created by students of Purchase College, SUNY for the Advanced Web Design: Special Projects elective in Spring 2015 under the direction of faculty member Jessica Wexler. This course brought together students from the Graphic Design, New Media and Arts Management departments to explore how the Graphic Design major can visually reflect upon itself.
 
